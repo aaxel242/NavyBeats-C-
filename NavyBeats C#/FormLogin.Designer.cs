@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
+            this.botonRedondo1 = new NavyBeats_C_.Controles.BotonRedondo();
             this.buttonIniciar = new System.Windows.Forms.Button();
             this.textBoxContra = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.pictureBoxLogoName = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.botonRedondo1 = new NavyBeats_C_.Controles.BotonRedondo();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -53,6 +53,19 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(850, 650);
             this.panel.TabIndex = 0;
+            // 
+            // botonRedondo1
+            // 
+            this.botonRedondo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.botonRedondo1.FlatAppearance.BorderSize = 0;
+            this.botonRedondo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonRedondo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(31)))));
+            this.botonRedondo1.Location = new System.Drawing.Point(520, 497);
+            this.botonRedondo1.Name = "botonRedondo1";
+            this.botonRedondo1.Size = new System.Drawing.Size(150, 40);
+            this.botonRedondo1.TabIndex = 5;
+            this.botonRedondo1.Text = "botonRedondo1";
+            this.botonRedondo1.UseVisualStyleBackColor = false;
             // 
             // buttonIniciar
             // 
@@ -108,19 +121,6 @@
             this.pictureBoxLogo.Size = new System.Drawing.Size(140, 140);
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
-            // 
-            // botonRedondo1
-            // 
-            this.botonRedondo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondo1.FlatAppearance.BorderSize = 0;
-            this.botonRedondo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(31)))));
-            this.botonRedondo1.Location = new System.Drawing.Point(520, 497);
-            this.botonRedondo1.Name = "botonRedondo1";
-            this.botonRedondo1.Size = new System.Drawing.Size(150, 40);
-            this.botonRedondo1.TabIndex = 5;
-            this.botonRedondo1.Text = "botonRedondo1";
-            this.botonRedondo1.UseVisualStyleBackColor = false;
             // 
             // FormLogin
             // 
