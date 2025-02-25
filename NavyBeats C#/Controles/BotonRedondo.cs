@@ -17,7 +17,7 @@ namespace NavyBeats_C_.Controles
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
             this.BackColor = Color.FromArgb(229, 177, 129);
-            this.ForeColor = Color.FromArgb(32, 32, 31);
+            this.ForeColor = Color.FromArgb(8, 61, 119);
 
         }
 

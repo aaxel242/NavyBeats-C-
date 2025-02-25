@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
-            this.buttonIniciar = new System.Windows.Forms.Button();
             this.textBoxContra = new System.Windows.Forms.TextBox();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.pictureBoxLogoName = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.botonRedondo1 = new NavyBeats_C_.Controles.BotonRedondo();
+            this.botonRedondoIniciar = new NavyBeats_C_.Controles.BotonRedondo();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -43,8 +42,7 @@
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.White;
-            this.panel.Controls.Add(this.botonRedondo1);
-            this.panel.Controls.Add(this.buttonIniciar);
+            this.panel.Controls.Add(this.botonRedondoIniciar);
             this.panel.Controls.Add(this.textBoxContra);
             this.panel.Controls.Add(this.textBoxNombre);
             this.panel.Controls.Add(this.pictureBoxLogoName);
@@ -53,18 +51,6 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(850, 650);
             this.panel.TabIndex = 0;
-            // 
-            // buttonIniciar
-            // 
-            this.buttonIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.buttonIniciar.FlatAppearance.BorderSize = 0;
-            this.buttonIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIniciar.Location = new System.Drawing.Point(332, 529);
-            this.buttonIniciar.Name = "buttonIniciar";
-            this.buttonIniciar.Size = new System.Drawing.Size(200, 50);
-            this.buttonIniciar.TabIndex = 4;
-            this.buttonIniciar.Text = "Iniciar";
-            this.buttonIniciar.UseVisualStyleBackColor = false;
             // 
             // textBoxContra
             // 
@@ -109,18 +95,18 @@
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // botonRedondo1
+            // botonRedondoIniciar
             // 
-            this.botonRedondo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondo1.FlatAppearance.BorderSize = 0;
-            this.botonRedondo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(31)))));
-            this.botonRedondo1.Location = new System.Drawing.Point(520, 497);
-            this.botonRedondo1.Name = "botonRedondo1";
-            this.botonRedondo1.Size = new System.Drawing.Size(150, 40);
-            this.botonRedondo1.TabIndex = 5;
-            this.botonRedondo1.Text = "botonRedondo1";
-            this.botonRedondo1.UseVisualStyleBackColor = false;
+            this.botonRedondoIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.botonRedondoIniciar.FlatAppearance.BorderSize = 0;
+            this.botonRedondoIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonRedondoIniciar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.botonRedondoIniciar.Location = new System.Drawing.Point(332, 529);
+            this.botonRedondoIniciar.Name = "botonRedondoIniciar";
+            this.botonRedondoIniciar.Size = new System.Drawing.Size(200, 50);
+            this.botonRedondoIniciar.TabIndex = 5;
+            this.botonRedondoIniciar.Text = "Iniciar";
+            this.botonRedondoIniciar.UseVisualStyleBackColor = false;
             // 
             // FormLogin
             // 
@@ -147,10 +133,9 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.PictureBox pictureBoxLogoName;
-        private System.Windows.Forms.Button buttonIniciar;
         private System.Windows.Forms.TextBox textBoxContra;
         private System.Windows.Forms.TextBox textBoxNombre;
-        private Controles.BotonRedondo botonRedondo1;
+        private Controles.BotonRedondo botonRedondoIniciar;
     }
 }
 
