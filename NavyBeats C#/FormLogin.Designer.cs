@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
+
             this.pictureBoxLogoName = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.textBoxContra = new NavyBeats_C_.Controles.TextBox();
             this.textBoxNombre = new NavyBeats_C_.Controles.TextBox();
             this.botonRedondoIniciar = new NavyBeats_C_.Controles.BotonRedondo();
+
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -74,6 +76,7 @@
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
             // 
+
             // textBoxContra
             // 
             this.textBoxContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
@@ -121,6 +124,7 @@
             this.botonRedondoIniciar.Text = "Iniciar";
             this.botonRedondoIniciar.UseVisualStyleBackColor = false;
             // 
+
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
