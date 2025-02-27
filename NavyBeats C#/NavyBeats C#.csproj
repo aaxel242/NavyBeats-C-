@@ -101,6 +101,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,8 +121,18 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\imgGestionUsuario.png" />
+    <None Include="Resources\imgSoporte.png" />
+    <None Include="Resources\imgRegistro.png" />
+    <None Include="Resources\imgNotificaciones.png" />
+    <None Include="Resources\imgMapa.png" />
+    <None Include="Resources\imgInforme.png" />
+    <None Include="Resources\imgCambiarIdioma.png" />
+    <None Include="Resources\imgCalendario.png" />
+    <None Include="Resources\imgAtras.png" />
     <None Include="Resources\Nombre.png" />
     <None Include="Resources\Logo.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
