@@ -38,9 +38,10 @@
             this.textBoxBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxBase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBoxBase.Location = new System.Drawing.Point(7, 7);
+            this.textBoxBase.Location = new System.Drawing.Point(8, 8);
+            this.textBoxBase.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxBase.Name = "textBoxBase";
-            this.textBoxBase.Size = new System.Drawing.Size(238, 13);
+            this.textBoxBase.Size = new System.Drawing.Size(234, 13);
             this.textBoxBase.TabIndex = 0;
             // 
             // TextBox
@@ -51,10 +52,10 @@
             this.Controls.Add(this.textBoxBase);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.Margin = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "TextBox";
-            this.Padding = new System.Windows.Forms.Padding(7);
-            this.Size = new System.Drawing.Size(252, 32);
+            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Size = new System.Drawing.Size(250, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 
