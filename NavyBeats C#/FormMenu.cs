@@ -32,7 +32,7 @@ namespace NavyBeats_C_
 
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
-
+            
             PrivateFontCollection fonts = new PrivateFontCollection();
             fonts.AddFontFile("Resources\\Fonts\\Montserrat-Regular.ttf");
 
@@ -42,6 +42,9 @@ namespace NavyBeats_C_
             lblCalendario.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);
             lblInformesYEstadisticas.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);    
             lblMapa.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);
+            lblCambiarIdioma.Font = new Font(fonts.Families[0], 18, FontStyle.Bold); 
+            lblRegistro.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);
+            lblSoporteTecnico.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);       
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
