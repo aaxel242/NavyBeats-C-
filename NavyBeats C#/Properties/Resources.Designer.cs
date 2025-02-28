@@ -103,6 +103,16 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgFormulario {
+            get {
+                object obj = ResourceManager.GetObject("imgFormulario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgGestionUsuario {
             get {
                 object obj = ResourceManager.GetObject("imgGestionUsuario", resourceCulture);

@@ -36,6 +36,7 @@ namespace NavyBeats_C_
             PrivateFontCollection fonts = new PrivateFontCollection();
             fonts.AddFontFile("Resources\\Fonts\\Montserrat-Regular.ttf");
 
+            //Añadir fuente personalizada
             lblCerrarSesion.Font = new Font(fonts.Families[0], 8, FontStyle.Bold);
             lblGestionUsuarios.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);
             lblNotificaciones.Font = new Font(fonts.Families[0], 18, FontStyle.Bold);

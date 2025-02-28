@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomCheckBox.Designer.cs">
+      <DependentUpon>CustomCheckBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\BotonRedondo.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -121,6 +127,7 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\imgFormulario.png" />
     <None Include="Resources\imgGestionUsuario.png" />
     <None Include="Resources\imgSoporte.png" />
     <None Include="Resources\imgRegistro.png" />
