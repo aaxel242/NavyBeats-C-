@@ -6,17 +6,12 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MetroFramework.Drawing.MetroPaint;
 
 namespace NavyBeats_C_
 {
     public partial class FormSoporte : Form
     {
-        private CustomCheckBox myCheckBox; // Checkbox declarado a nivel de clase
-
         public FormSoporte()
         {
             InitializeComponent();
@@ -25,31 +20,46 @@ namespace NavyBeats_C_
         private void FormSoporte_Load(object sender, EventArgs e)
         {
             AplicarEsquinasRedondeadas(panelFormulario, 30);
-            ConfigurarCheckBox(); // Se llama al método para configurar el checkbox
-
-            // Aplicar fuente personalizada
-            PrivateFontCollection fonts = new PrivateFontCollection();
-            fonts.AddFontFile("Resources\\Fonts\\Montserrat-Regular.ttf");
-
-            lblFornSoporteTit.Font = new Font(fonts.Families[0], 20, FontStyle.Bold);
-            lblTipo.Font = new Font(fonts.Families[0], 14, FontStyle.Bold);
+            ajustarRadioButton();
+            txtBoxNombre.Size = new Size(300, 40);
+            txtBoxAsunto.Size = new Size(300, 40);
+            txtBoxNombre.Margin = new Padding(0, 5, 0, 0);
+            txtBoxAsunto.Margin = new Padding(0, 5, 0, 0);
         }
 
-        private void ConfigurarCheckBox()
+        private void ajustarRadioButton()
         {
-            myCheckBox = new CustomCheckBox()
-            {
-                Text = "Aceptar términos",
-                BaseCheckSize = 10,
-                CheckedColor = Color.Red,
-                Location = new Point(50, 50),
-                AutoSize = false,
-                Size = new Size(250, 40)
-            };
+            // Configurar el CheckBox existente
+            radioButtonTipo.Appearance = Appearance.Button;
+            radioButtonTipo.AutoSize = false;
+            radioButtonTipo.Size = new Size(30, 30);
 
-            this.Controls.Add(myCheckBox);
+            radioButtonTipo2.Appearance = Appearance.Button;
+            radioButtonTipo2.AutoSize = false;
+            radioButtonTipo2.Size = new Size(30, 30);
+
+            // Aplicar color inicial
+            radioButtonTipo.BackColor = radioButtonTipo.Checked
+                ? Color.FromArgb(229, 177, 129)
+                : Color.White;
+
+            radioButtonTipo2.BackColor = radioButtonTipo2.Checked
+                ? Color.FromArgb(229, 177, 129)
+                : Color.White;
+
+            radioButtonTipo.CheckedChanged += CheckBoxTipo_CheckedChanged;
+            radioButtonTipo2.CheckedChanged += CheckBoxTipo_CheckedChanged;
         }
-
+        private void CheckBoxTipo_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+            if (radioButton != null)
+            {
+                radioButton.BackColor = radioButton.Checked
+                    ? Color.FromArgb(229, 177, 129)
+                    : Color.White;
+            }
+        }
         private void AplicarEsquinasRedondeadas(Panel panel, int radio)
         {
             GraphicsPath path = new GraphicsPath();
@@ -84,6 +94,16 @@ namespace NavyBeats_C_
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
             this.Hide();
+        }
+
+        private void lblConsulta_Click(object sender, EventArgs e)
+        {
+            radioButtonTipo.Checked = true;
+        }
+
+        private void lblIncidencia_Click(object sender, EventArgs e)
+        {
+            radioButtonTipo2.Checked = true;    
         }
     }
 }
