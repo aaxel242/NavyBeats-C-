@@ -19,6 +19,23 @@ namespace NavyBeats_C_
 
         private void FormSoporte_Load(object sender, EventArgs e)
         {
+
+            // Centrar el formulario
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            int formWidth = this.Width;
+            int formHeight = this.Height;
+
+            int positionX = (screenWidth - formWidth) / 2;
+            int positionY = (screenHeight - formHeight) / 2;
+
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(positionX, positionY);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
+
             AplicarEsquinasRedondeadas(panelFormulario, 30);
             ajustarRadioButton();
             txtBoxNombre.Size = new Size(300, 40);
