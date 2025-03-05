@@ -130,6 +130,8 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\imgTextbox.png" />
+    <None Include="Resources\imgFormulario.png" />
     <None Include="Resources\imgGestionUsuario.png" />
     <None Include="Resources\imgSoporte.png" />
     <None Include="Resources\imgRegistro.png" />
