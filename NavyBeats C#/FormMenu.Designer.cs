@@ -90,88 +90,88 @@
             // lblSoporteTecnico
             // 
             this.lblSoporteTecnico.AutoSize = true;
-            this.lblSoporteTecnico.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoporteTecnico.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoporteTecnico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblSoporteTecnico.Location = new System.Drawing.Point(934, 564);
             this.lblSoporteTecnico.Name = "lblSoporteTecnico";
-            this.lblSoporteTecnico.Size = new System.Drawing.Size(70, 15);
+            this.lblSoporteTecnico.Size = new System.Drawing.Size(222, 38);
             this.lblSoporteTecnico.TabIndex = 18;
             this.lblSoporteTecnico.Text = "Soporte técnico";
             // 
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
-            this.lblRegistro.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblRegistro.Location = new System.Drawing.Point(691, 564);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(41, 15);
+            this.lblRegistro.Size = new System.Drawing.Size(125, 38);
             this.lblRegistro.TabIndex = 17;
             this.lblRegistro.Text = "Registro";
             // 
             // lblCambiarIdioma
             // 
             this.lblCambiarIdioma.AutoSize = true;
-            this.lblCambiarIdioma.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCambiarIdioma.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambiarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCambiarIdioma.Location = new System.Drawing.Point(353, 564);
             this.lblCambiarIdioma.Name = "lblCambiarIdioma";
-            this.lblCambiarIdioma.Size = new System.Drawing.Size(72, 15);
+            this.lblCambiarIdioma.Size = new System.Drawing.Size(222, 38);
             this.lblCambiarIdioma.TabIndex = 16;
             this.lblCambiarIdioma.Text = "Cambiar Idioma";
             // 
             // lblMapa
             // 
             this.lblMapa.AutoSize = true;
-            this.lblMapa.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMapa.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMapa.Location = new System.Drawing.Point(146, 564);
             this.lblMapa.Name = "lblMapa";
-            this.lblMapa.Size = new System.Drawing.Size(30, 15);
+            this.lblMapa.Size = new System.Drawing.Size(88, 38);
             this.lblMapa.TabIndex = 15;
             this.lblMapa.Text = "Mapa";
             // 
             // lblInformesYEstadisticas
             // 
             this.lblInformesYEstadisticas.AutoSize = true;
-            this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformesYEstadisticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblInformesYEstadisticas.Location = new System.Drawing.Point(891, 315);
             this.lblInformesYEstadisticas.Name = "lblInformesYEstadisticas";
-            this.lblInformesYEstadisticas.Size = new System.Drawing.Size(103, 15);
+            this.lblInformesYEstadisticas.Size = new System.Drawing.Size(314, 38);
             this.lblInformesYEstadisticas.TabIndex = 14;
             this.lblInformesYEstadisticas.Text = "Informes y Estadísticas";
             // 
             // lblCalendario
             // 
             this.lblCalendario.AutoSize = true;
-            this.lblCalendario.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendario.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCalendario.Location = new System.Drawing.Point(681, 315);
             this.lblCalendario.Name = "lblCalendario";
-            this.lblCalendario.Size = new System.Drawing.Size(51, 15);
+            this.lblCalendario.Size = new System.Drawing.Size(155, 38);
             this.lblCalendario.TabIndex = 13;
             this.lblCalendario.Text = "Calendario";
             // 
             // lblNotificaciones
             // 
             this.lblNotificaciones.AutoSize = true;
-            this.lblNotificaciones.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificaciones.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblNotificaciones.Location = new System.Drawing.Point(361, 315);
             this.lblNotificaciones.Name = "lblNotificaciones";
-            this.lblNotificaciones.Size = new System.Drawing.Size(64, 15);
+            this.lblNotificaciones.Size = new System.Drawing.Size(201, 38);
             this.lblNotificaciones.TabIndex = 12;
             this.lblNotificaciones.Text = "Notificaciones";
             // 
             // lblGestionUsuarios
             // 
             this.lblGestionUsuarios.AutoSize = true;
-            this.lblGestionUsuarios.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionUsuarios.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblGestionUsuarios.Location = new System.Drawing.Point(44, 315);
             this.lblGestionUsuarios.Name = "lblGestionUsuarios";
-            this.lblGestionUsuarios.Size = new System.Drawing.Size(91, 15);
+            this.lblGestionUsuarios.Size = new System.Drawing.Size(274, 38);
             this.lblGestionUsuarios.TabIndex = 11;
             this.lblGestionUsuarios.Text = "Gestión de Usuarios";
             // 
