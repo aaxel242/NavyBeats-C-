@@ -62,11 +62,12 @@
     <Compile Include="Controles\BotonRedondo.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controles\TextBox.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="FormCalendario.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controles\TextBox.Designer.cs">
-      <DependentUpon>TextBox.cs</DependentUpon>
+    <Compile Include="FormCalendario.Designer.cs">
+      <DependentUpon>FormCalendario.cs</DependentUpon>
+
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -85,11 +86,17 @@
     </Compile>
     <Compile Include="FormMenuGestion.Designer.cs">
       <DependentUpon>FormMenuGestion.cs</DependentUpon>
+    <Compile Include="FormSoporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSoporte.Designer.cs">
+      <DependentUpon>FormSoporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controles\TextBox.resx">
-      <DependentUpon>TextBox.cs</DependentUpon>
+    <EmbeddedResource Include="FormCalendario.resx">
+      <DependentUpon>FormCalendario.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -99,6 +106,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuGestion.resx">
       <DependentUpon>FormMenuGestion.cs</DependentUpon>
+    <EmbeddedResource Include="FormSoporte.resx">
+      <DependentUpon>FormSoporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,6 +141,10 @@
     <Content Include="Resources\Fondo.png" />
     <None Include="Resources\Local.png" />
     <None Include="Resources\imgArtista.png" />
+    <None Include="Resources\imgFlechaDerecha.png" />
+    <None Include="Resources\imgFlechaIzquierda.png" />
+    <None Include="Resources\imgTextbox.png" />
+    <None Include="Resources\imgFormulario.png" />
     <None Include="Resources\imgGestionUsuario.png" />
     <None Include="Resources\imgSoporte.png" />
     <None Include="Resources\imgRegistro.png" />

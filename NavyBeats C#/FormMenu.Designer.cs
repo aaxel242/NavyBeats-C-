@@ -29,37 +29,43 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSoporteTecnico = new System.Windows.Forms.Label();
+            this.lblRegistro = new System.Windows.Forms.Label();
+            this.lblCambiarIdioma = new System.Windows.Forms.Label();
+            this.lblMapa = new System.Windows.Forms.Label();
+            this.lblInformesYEstadisticas = new System.Windows.Forms.Label();
+            this.lblCalendario = new System.Windows.Forms.Label();
+            this.lblNotificaciones = new System.Windows.Forms.Label();
+            this.lblGestionUsuarios = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbAtras = new System.Windows.Forms.PictureBox();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.lblGestionUsuarios = new System.Windows.Forms.Label();
-            this.lblNotificaciones = new System.Windows.Forms.Label();
-            this.lblCalendario = new System.Windows.Forms.Label();
-            this.lblInformesYEstadisticas = new System.Windows.Forms.Label();
-            this.lblMapa = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblSoporteTecnico);
+            this.panel1.Controls.Add(this.lblRegistro);
+            this.panel1.Controls.Add(this.lblCambiarIdioma);
             this.panel1.Controls.Add(this.lblMapa);
             this.panel1.Controls.Add(this.lblInformesYEstadisticas);
             this.panel1.Controls.Add(this.lblCalendario);
@@ -80,6 +86,164 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1225, 650);
             this.panel1.TabIndex = 0;
+            // 
+            // lblSoporteTecnico
+            // 
+            this.lblSoporteTecnico.AutoSize = true;
+            this.lblSoporteTecnico.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoporteTecnico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblSoporteTecnico.Location = new System.Drawing.Point(934, 564);
+            this.lblSoporteTecnico.Name = "lblSoporteTecnico";
+            this.lblSoporteTecnico.Size = new System.Drawing.Size(222, 38);
+            this.lblSoporteTecnico.TabIndex = 18;
+            this.lblSoporteTecnico.Text = "Soporte técnico";
+            // 
+            // lblRegistro
+            // 
+            this.lblRegistro.AutoSize = true;
+            this.lblRegistro.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblRegistro.Location = new System.Drawing.Point(691, 564);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(125, 38);
+            this.lblRegistro.TabIndex = 17;
+            this.lblRegistro.Text = "Registro";
+            // 
+            // lblCambiarIdioma
+            // 
+            this.lblCambiarIdioma.AutoSize = true;
+            this.lblCambiarIdioma.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCambiarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblCambiarIdioma.Location = new System.Drawing.Point(353, 564);
+            this.lblCambiarIdioma.Name = "lblCambiarIdioma";
+            this.lblCambiarIdioma.Size = new System.Drawing.Size(222, 38);
+            this.lblCambiarIdioma.TabIndex = 16;
+            this.lblCambiarIdioma.Text = "Cambiar Idioma";
+            // 
+            // lblMapa
+            // 
+            this.lblMapa.AutoSize = true;
+            this.lblMapa.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblMapa.Location = new System.Drawing.Point(146, 564);
+            this.lblMapa.Name = "lblMapa";
+            this.lblMapa.Size = new System.Drawing.Size(88, 38);
+            this.lblMapa.TabIndex = 15;
+            this.lblMapa.Text = "Mapa";
+            // 
+            // lblInformesYEstadisticas
+            // 
+            this.lblInformesYEstadisticas.AutoSize = true;
+            this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformesYEstadisticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblInformesYEstadisticas.Location = new System.Drawing.Point(891, 315);
+            this.lblInformesYEstadisticas.Name = "lblInformesYEstadisticas";
+            this.lblInformesYEstadisticas.Size = new System.Drawing.Size(314, 38);
+            this.lblInformesYEstadisticas.TabIndex = 14;
+            this.lblInformesYEstadisticas.Text = "Informes y Estadísticas";
+            // 
+            // lblCalendario
+            // 
+            this.lblCalendario.AutoSize = true;
+            this.lblCalendario.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblCalendario.Location = new System.Drawing.Point(681, 315);
+            this.lblCalendario.Name = "lblCalendario";
+            this.lblCalendario.Size = new System.Drawing.Size(155, 38);
+            this.lblCalendario.TabIndex = 13;
+            this.lblCalendario.Text = "Calendario";
+            // 
+            // lblNotificaciones
+            // 
+            this.lblNotificaciones.AutoSize = true;
+            this.lblNotificaciones.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblNotificaciones.Location = new System.Drawing.Point(361, 315);
+            this.lblNotificaciones.Name = "lblNotificaciones";
+            this.lblNotificaciones.Size = new System.Drawing.Size(201, 38);
+            this.lblNotificaciones.TabIndex = 12;
+            this.lblNotificaciones.Text = "Notificaciones";
+            // 
+            // lblGestionUsuarios
+            // 
+            this.lblGestionUsuarios.AutoSize = true;
+            this.lblGestionUsuarios.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblGestionUsuarios.Location = new System.Drawing.Point(44, 315);
+            this.lblGestionUsuarios.Name = "lblGestionUsuarios";
+            this.lblGestionUsuarios.Size = new System.Drawing.Size(274, 38);
+            this.lblGestionUsuarios.TabIndex = 11;
+            this.lblGestionUsuarios.Text = "Gestión de Usuarios";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::NavyBeats_C_.Properties.Resources.imgSoporte;
+            this.pictureBox8.Location = new System.Drawing.Point(958, 381);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(166, 166);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox8.TabIndex = 10;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::NavyBeats_C_.Properties.Resources.imgRegistro;
+            this.pictureBox7.Location = new System.Drawing.Point(676, 381);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(166, 166);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox7.TabIndex = 9;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::NavyBeats_C_.Properties.Resources.imgCambiarIdioma;
+            this.pictureBox6.Location = new System.Drawing.Point(382, 381);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(166, 166);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::NavyBeats_C_.Properties.Resources.imgMapa;
+            this.pictureBox5.Location = new System.Drawing.Point(104, 381);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(166, 166);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::NavyBeats_C_.Properties.Resources.imgInforme;
+            this.pictureBox4.Location = new System.Drawing.Point(958, 127);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(166, 166);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::NavyBeats_C_.Properties.Resources.imgCalendario;
+            this.pictureBox3.Location = new System.Drawing.Point(676, 129);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(166, 166);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::NavyBeats_C_.Properties.Resources.imgNotificaciones;
+            this.pictureBox2.Location = new System.Drawing.Point(381, 127);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 167);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // pbAtras
             // 
@@ -122,131 +286,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::NavyBeats_C_.Properties.Resources.imgNotificaciones;
-            this.pictureBox2.Location = new System.Drawing.Point(381, 127);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(167, 167);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::NavyBeats_C_.Properties.Resources.imgCalendario;
-            this.pictureBox3.Location = new System.Drawing.Point(676, 129);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(166, 166);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::NavyBeats_C_.Properties.Resources.imgInforme;
-            this.pictureBox4.Location = new System.Drawing.Point(958, 127);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(166, 166);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 6;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::NavyBeats_C_.Properties.Resources.imgMapa;
-            this.pictureBox5.Location = new System.Drawing.Point(104, 381);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(166, 166);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::NavyBeats_C_.Properties.Resources.imgCambiarIdioma;
-            this.pictureBox6.Location = new System.Drawing.Point(382, 381);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(166, 166);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::NavyBeats_C_.Properties.Resources.imgRegistro;
-            this.pictureBox7.Location = new System.Drawing.Point(676, 381);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(166, 166);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox7.TabIndex = 9;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::NavyBeats_C_.Properties.Resources.imgSoporte;
-            this.pictureBox8.Location = new System.Drawing.Point(958, 381);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(166, 166);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox8.TabIndex = 10;
-            this.pictureBox8.TabStop = false;
-            // 
-            // lblGestionUsuarios
-            // 
-            this.lblGestionUsuarios.AutoSize = true;
-            this.lblGestionUsuarios.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblGestionUsuarios.Location = new System.Drawing.Point(57, 315);
-            this.lblGestionUsuarios.Name = "lblGestionUsuarios";
-            this.lblGestionUsuarios.Size = new System.Drawing.Size(91, 15);
-            this.lblGestionUsuarios.TabIndex = 11;
-            this.lblGestionUsuarios.Text = "Gestión de Usuarios";
-            // 
-            // lblNotificaciones
-            // 
-            this.lblNotificaciones.AutoSize = true;
-            this.lblNotificaciones.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblNotificaciones.Location = new System.Drawing.Point(378, 315);
-            this.lblNotificaciones.Name = "lblNotificaciones";
-            this.lblNotificaciones.Size = new System.Drawing.Size(64, 15);
-            this.lblNotificaciones.TabIndex = 12;
-            this.lblNotificaciones.Text = "Notificaciones";
-            // 
-            // lblCalendario
-            // 
-            this.lblCalendario.AutoSize = true;
-            this.lblCalendario.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblCalendario.Location = new System.Drawing.Point(691, 315);
-            this.lblCalendario.Name = "lblCalendario";
-            this.lblCalendario.Size = new System.Drawing.Size(51, 15);
-            this.lblCalendario.TabIndex = 13;
-            this.lblCalendario.Text = "Calendario";
-            // 
-            // lblInformesYEstadisticas
-            // 
-            this.lblInformesYEstadisticas.AutoSize = true;
-            this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformesYEstadisticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblInformesYEstadisticas.Location = new System.Drawing.Point(914, 315);
-            this.lblInformesYEstadisticas.Name = "lblInformesYEstadisticas";
-            this.lblInformesYEstadisticas.Size = new System.Drawing.Size(103, 15);
-            this.lblInformesYEstadisticas.TabIndex = 14;
-            this.lblInformesYEstadisticas.Text = "Informes y Estadísticas";
-            // 
-            // lblMapa
-            // 
-            this.lblMapa.AutoSize = true;
-            this.lblMapa.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMapa.Location = new System.Drawing.Point(146, 564);
-            this.lblMapa.Name = "lblMapa";
-            this.lblMapa.Size = new System.Drawing.Size(30, 15);
-            this.lblMapa.TabIndex = 15;
-            this.lblMapa.Text = "Mapa";
-            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,20 +294,20 @@
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panel1);
             this.Name = "FormMenu";
-            this.Text = "FormMenu";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAtras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +331,8 @@
         private System.Windows.Forms.Label lblCalendario;
         private System.Windows.Forms.Label lblInformesYEstadisticas;
         private System.Windows.Forms.Label lblMapa;
+        private System.Windows.Forms.Label lblCambiarIdioma;
+        private System.Windows.Forms.Label lblSoporteTecnico;
+        private System.Windows.Forms.Label lblRegistro;
     }
 }
