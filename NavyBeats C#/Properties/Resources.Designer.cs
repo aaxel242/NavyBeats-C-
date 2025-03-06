@@ -203,11 +203,7 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Local {
-            get {
-                object obj = ResourceManager.GetObject("Local", resourceCulture);
-            }
-        }
+      
         internal static System.Drawing.Bitmap imgTextbox {
             get {
                 object obj = ResourceManager.GetObject("imgTextbox", resourceCulture);
