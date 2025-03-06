@@ -80,6 +80,12 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuGestion.Designer.cs">
+      <DependentUpon>FormMenuGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controles\TextBox.resx">
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuGestion.resx">
+      <DependentUpon>FormMenuGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,6 +130,8 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\Local.png" />
+    <None Include="Resources\imgArtista.png" />
     <None Include="Resources\imgGestionUsuario.png" />
     <None Include="Resources\imgSoporte.png" />
     <None Include="Resources\imgRegistro.png" />
