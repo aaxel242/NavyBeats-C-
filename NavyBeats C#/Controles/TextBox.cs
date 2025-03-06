@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -10,8 +11,8 @@ namespace NavyBeats_C_.Controles
     {
         private Color borderColor = Color.FromArgb(229, 177, 129);
         private int borderSize = 2;
-
         private int borderRadius = 0;
+
         public bool Multiline
         {
             get { return textBoxBase.Multiline; }
@@ -67,7 +68,7 @@ namespace NavyBeats_C_.Controles
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     this.Region = new Region(pathBorderSmooth);
-                    if(borderRadius > 15) 
+                    if (borderRadius > 15)
                         SetTextBoxRoundedRegion();
                     g.SmoothingMode = SmoothingMode.AntiAlias;
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;

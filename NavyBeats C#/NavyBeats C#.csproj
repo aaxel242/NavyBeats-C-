@@ -81,6 +81,11 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMenuGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuGestion.Designer.cs">
+      <DependentUpon>FormMenuGestion.cs</DependentUpon>
     <Compile Include="FormSoporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +104,8 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuGestion.resx">
+      <DependentUpon>FormMenuGestion.cs</DependentUpon>
     <EmbeddedResource Include="FormSoporte.resx">
       <DependentUpon>FormSoporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +139,8 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\Local.png" />
+    <None Include="Resources\imgArtista.png" />
     <None Include="Resources\imgFlechaDerecha.png" />
     <None Include="Resources\imgFlechaIzquierda.png" />
     <None Include="Resources\imgTextbox.png" />
