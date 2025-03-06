@@ -30,6 +30,8 @@
         {
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.panelCalendario = new System.Windows.Forms.Panel();
+            this.dateTimePickerCalendario = new System.Windows.Forms.DateTimePicker();
+            this.panelDias = new System.Windows.Forms.TableLayoutPanel();
             this.lblDomingo = new System.Windows.Forms.Label();
             this.lblSabado = new System.Windows.Forms.Label();
             this.lblViernes = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.lblMes = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.panelDias = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimePickerCalendario = new System.Windows.Forms.DateTimePicker();
             this.panelSoporte.SuspendLayout();
             this.panelCalendario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFlechaDerecha)).BeginInit();
@@ -82,6 +82,27 @@
             this.panelCalendario.Name = "panelCalendario";
             this.panelCalendario.Size = new System.Drawing.Size(988, 573);
             this.panelCalendario.TabIndex = 5;
+            // 
+            // dateTimePickerCalendario
+            // 
+            this.dateTimePickerCalendario.Location = new System.Drawing.Point(404, 66);
+            this.dateTimePickerCalendario.Name = "dateTimePickerCalendario";
+            this.dateTimePickerCalendario.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerCalendario.TabIndex = 11;
+            this.dateTimePickerCalendario.Visible = false;
+            // 
+            // panelDias
+            // 
+            this.panelDias.ColumnCount = 2;
+            this.panelDias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDias.Location = new System.Drawing.Point(82, 162);
+            this.panelDias.Name = "panelDias";
+            this.panelDias.RowCount = 2;
+            this.panelDias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDias.Size = new System.Drawing.Size(792, 373);
+            this.panelDias.TabIndex = 10;
             // 
             // lblDomingo
             // 
@@ -211,27 +232,6 @@
             this.pboxAtras.Size = new System.Drawing.Size(61, 59);
             this.pboxAtras.TabIndex = 2;
             this.pboxAtras.TabStop = false;
-            // 
-            // panelDias
-            // 
-            this.panelDias.ColumnCount = 2;
-            this.panelDias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDias.Location = new System.Drawing.Point(82, 162);
-            this.panelDias.Name = "panelDias";
-            this.panelDias.RowCount = 2;
-            this.panelDias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDias.Size = new System.Drawing.Size(792, 373);
-            this.panelDias.TabIndex = 10;
-            // 
-            // dateTimePickerCalendario
-            // 
-            this.dateTimePickerCalendario.Location = new System.Drawing.Point(404, 66);
-            this.dateTimePickerCalendario.Name = "dateTimePickerCalendario";
-            this.dateTimePickerCalendario.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerCalendario.TabIndex = 11;
-            this.dateTimePickerCalendario.Visible = false;
             // 
             // FormCalendario
             // 
