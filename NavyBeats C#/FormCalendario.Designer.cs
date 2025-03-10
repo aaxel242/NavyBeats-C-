@@ -55,6 +55,7 @@
             // panelSoporte
             // 
             this.panelSoporte.AutoSize = true;
+            this.panelSoporte.BackColor = System.Drawing.Color.White;
             this.panelSoporte.Controls.Add(this.panelCalendario);
             this.panelSoporte.Controls.Add(this.pictureBox1);
             this.panelSoporte.Controls.Add(this.pboxAtras);
