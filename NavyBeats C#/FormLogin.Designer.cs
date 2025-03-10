@@ -3,14 +3,14 @@
     partial class FormLogin
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,149 +20,149 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
-            this.textBoxContra = new NavyBeats_C_.Controles.TextBox();
-            this.textBoxNombre = new NavyBeats_C_.Controles.TextBox();
-            this.botonRedondoIniciar = new NavyBeats_C_.Controles.BotonRedondo();
-            this.pictureBoxLogoName = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.labelNombre = new System.Windows.Forms.Label();
+            this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
+            this.labelCorreo = new System.Windows.Forms.Label();
             this.labelContra = new System.Windows.Forms.Label();
+            this.textBox2 = new NavyBeats_C_.Controles.TextBox();
+            this.botonRedondoLogin = new NavyBeats_C_.Controles.BotonRedondo();
+            this.textBox1 = new NavyBeats_C_.Controles.TextBox();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.White;
             this.panel.Controls.Add(this.labelContra);
-            this.panel.Controls.Add(this.labelNombre);
-            this.panel.Controls.Add(this.textBoxContra);
-            this.panel.Controls.Add(this.textBoxNombre);
-            this.panel.Controls.Add(this.botonRedondoIniciar);
-            this.panel.Controls.Add(this.pictureBoxLogoName);
+            this.panel.Controls.Add(this.labelCorreo);
+            this.panel.Controls.Add(this.pictureBoxNombre);
             this.panel.Controls.Add(this.pictureBoxLogo);
-            this.panel.Location = new System.Drawing.Point(217, 26);
+            this.panel.Controls.Add(this.textBox2);
+            this.panel.Controls.Add(this.botonRedondoLogin);
+            this.panel.Controls.Add(this.textBox1);
+            this.panel.Location = new System.Drawing.Point(217, 30);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(850, 650);
-            this.panel.TabIndex = 0;
-            // 
-            // textBoxContra
-            // 
-            this.textBoxContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.textBoxContra.BordeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.textBoxContra.BorderRadius = 13;
-            this.textBoxContra.BorderSize = 2;
-            this.textBoxContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBoxContra.Location = new System.Drawing.Point(152, 457);
-            this.textBoxContra.Margin = new System.Windows.Forms.Padding(8);
-            this.textBoxContra.Multiline = false;
-            this.textBoxContra.Name = "textBoxContra";
-            this.textBoxContra.Padding = new System.Windows.Forms.Padding(10);
-            this.textBoxContra.Size = new System.Drawing.Size(550, 40);
-            this.textBoxContra.TabIndex = 11;
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.textBoxNombre.BordeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.textBoxNombre.BorderRadius = 13;
-            this.textBoxNombre.BorderSize = 2;
-            this.textBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBoxNombre.Location = new System.Drawing.Point(152, 372);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(8);
-            this.textBoxNombre.Multiline = false;
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Padding = new System.Windows.Forms.Padding(10);
-            this.textBoxNombre.Size = new System.Drawing.Size(550, 40);
-            this.textBoxNombre.TabIndex = 10;
-            // 
-            // botonRedondoIniciar
-            // 
-            this.botonRedondoIniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondoIniciar.BorderRadius = 30;
-            this.botonRedondoIniciar.FlatAppearance.BorderSize = 0;
-            this.botonRedondoIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondoIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondoIniciar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.botonRedondoIniciar.Location = new System.Drawing.Point(332, 532);
-            this.botonRedondoIniciar.Name = "botonRedondoIniciar";
-            this.botonRedondoIniciar.Size = new System.Drawing.Size(200, 50);
-            this.botonRedondoIniciar.TabIndex = 5;
-            this.botonRedondoIniciar.Text = "Iniciar";
-            this.botonRedondoIniciar.UseVisualStyleBackColor = false;
-            // 
-            // pictureBoxLogoName
-            // 
-            this.pictureBoxLogoName.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxLogoName.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Nombre;
-            this.pictureBoxLogoName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogoName.Location = new System.Drawing.Point(188, 179);
-            this.pictureBoxLogoName.Name = "pictureBoxLogoName";
-            this.pictureBoxLogoName.Size = new System.Drawing.Size(500, 150);
-            this.pictureBoxLogoName.TabIndex = 1;
-            this.pictureBoxLogoName.TabStop = false;
+            this.panel.TabIndex = 2;
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogo.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Logo;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(364, 33);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(343, 30);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(140, 140);
-            this.pictureBoxLogo.TabIndex = 0;
+            this.pictureBoxLogo.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxLogo.TabIndex = 3;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // labelNombre
+            // pictureBoxNombre
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(159, 345);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(87, 25);
-            this.labelNombre.TabIndex = 12;
-            this.labelNombre.Text = "Nombre:";
+            this.pictureBoxNombre.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxNombre.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Nombre;
+            this.pictureBoxNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxNombre.Location = new System.Drawing.Point(191, 186);
+            this.pictureBoxNombre.Name = "pictureBoxNombre";
+            this.pictureBoxNombre.Size = new System.Drawing.Size(450, 120);
+            this.pictureBoxNombre.TabIndex = 4;
+            this.pictureBoxNombre.TabStop = false;
+            // 
+            // labelCorreo
+            // 
+            this.labelCorreo.AutoSize = true;
+            this.labelCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.labelCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.labelCorreo.Location = new System.Drawing.Point(205, 349);
+            this.labelCorreo.Name = "labelCorreo";
+            this.labelCorreo.Size = new System.Drawing.Size(72, 25);
+            this.labelCorreo.TabIndex = 5;
+            this.labelCorreo.Text = "Correo";
             // 
             // labelContra
             // 
             this.labelContra.AutoSize = true;
+            this.labelContra.BackColor = System.Drawing.Color.Transparent;
             this.labelContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContra.Location = new System.Drawing.Point(159, 430);
+            this.labelContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.labelContra.Location = new System.Drawing.Point(204, 435);
             this.labelContra.Name = "labelContra";
-            this.labelContra.Size = new System.Drawing.Size(120, 25);
-            this.labelContra.TabIndex = 13;
-            this.labelContra.Text = "Contraseña:";
+            this.labelContra.Size = new System.Drawing.Size(114, 25);
+            this.labelContra.TabIndex = 6;
+            this.labelContra.Text = "Contraseña";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.textBox2.BordeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.textBox2.BorderRadius = 15;
+            this.textBox2.BorderSize = 2;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBox2.Location = new System.Drawing.Point(191, 376);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(8);
+            this.textBox2.Multiline = false;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.textBox2.Size = new System.Drawing.Size(450, 40);
+            this.textBox2.TabIndex = 2;
+            // 
+            // botonRedondoLogin
+            // 
+            this.botonRedondoLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.botonRedondoLogin.BorderRadius = 20;
+            this.botonRedondoLogin.FlatAppearance.BorderSize = 0;
+            this.botonRedondoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonRedondoLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonRedondoLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.botonRedondoLogin.Location = new System.Drawing.Point(320, 551);
+            this.botonRedondoLogin.Name = "botonRedondoLogin";
+            this.botonRedondoLogin.Size = new System.Drawing.Size(200, 50);
+            this.botonRedondoLogin.TabIndex = 1;
+            this.botonRedondoLogin.Text = "Entrar";
+            this.botonRedondoLogin.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.textBox1.BordeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.textBox1.BorderRadius = 15;
+            this.textBox1.BorderSize = 2;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBox1.Location = new System.Drawing.Point(191, 462);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(8);
+            this.textBox1.Multiline = false;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.textBox1.Size = new System.Drawing.Size(450, 40);
+            this.textBox1.TabIndex = 0;
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panel);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.Text = "FormLogin";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogoName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,13 +170,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.PictureBox pictureBoxNombre;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.PictureBox pictureBoxLogoName;
-        private Controles.BotonRedondo botonRedondoIniciar;
-        private Controles.TextBox textBoxContra;
-        private Controles.TextBox textBoxNombre;
+        private Controles.TextBox textBox2;
+        private Controles.BotonRedondo botonRedondoLogin;
+        private Controles.TextBox textBox1;
+        private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelContra;
-        private System.Windows.Forms.Label labelNombre;
     }
 }
-

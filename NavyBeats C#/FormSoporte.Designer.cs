@@ -31,6 +31,7 @@
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.btnEnviarFormulario = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
@@ -46,7 +47,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.btnEnviarFormulario = new System.Windows.Forms.Button();
+            this.botonRedondo1 = new NavyBeats_C_.Controles.BotonRedondo();
             this.panelSoporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelFormulario.SuspendLayout();
@@ -79,6 +80,7 @@
             // panelFormulario
             // 
             this.panelFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panelFormulario.Controls.Add(this.botonRedondo1);
             this.panelFormulario.Controls.Add(this.btnEnviarFormulario);
             this.panelFormulario.Controls.Add(this.textBox3);
             this.panelFormulario.Controls.Add(this.label1);
@@ -97,6 +99,21 @@
             this.panelFormulario.Name = "panelFormulario";
             this.panelFormulario.Size = new System.Drawing.Size(599, 573);
             this.panelFormulario.TabIndex = 4;
+            // 
+            // btnEnviarFormulario
+            // 
+            this.btnEnviarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.btnEnviarFormulario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnviarFormulario.FlatAppearance.BorderSize = 0;
+            this.btnEnviarFormulario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarFormulario.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.btnEnviarFormulario.Location = new System.Drawing.Point(256, 521);
+            this.btnEnviarFormulario.Name = "btnEnviarFormulario";
+            this.btnEnviarFormulario.Size = new System.Drawing.Size(151, 34);
+            this.btnEnviarFormulario.TabIndex = 22;
+            this.btnEnviarFormulario.Text = "Enviar Formulario";
+            this.btnEnviarFormulario.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
@@ -129,7 +146,7 @@
             this.txtBoxAsunto.Location = new System.Drawing.Point(180, 211);
             this.txtBoxAsunto.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtBoxAsunto.Name = "txtBoxAsunto";
-            this.txtBoxAsunto.Size = new System.Drawing.Size(304, 30);
+            this.txtBoxAsunto.Size = new System.Drawing.Size(304, 19);
             this.txtBoxAsunto.TabIndex = 18;
             // 
             // lblAsunto
@@ -151,7 +168,7 @@
             this.txtBoxNombre.Location = new System.Drawing.Point(180, 150);
             this.txtBoxNombre.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtBoxNombre.Name = "txtBoxNombre";
-            this.txtBoxNombre.Size = new System.Drawing.Size(304, 30);
+            this.txtBoxNombre.Size = new System.Drawing.Size(304, 19);
             this.txtBoxNombre.TabIndex = 15;
             // 
             // lblNombre
@@ -260,20 +277,19 @@
             this.pboxAtras.TabIndex = 2;
             this.pboxAtras.TabStop = false;
             // 
-            // btnEnviarFormulario
+            // botonRedondo1
             // 
-            this.btnEnviarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.btnEnviarFormulario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnviarFormulario.FlatAppearance.BorderSize = 0;
-            this.btnEnviarFormulario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarFormulario.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.btnEnviarFormulario.Location = new System.Drawing.Point(256, 521);
-            this.btnEnviarFormulario.Name = "btnEnviarFormulario";
-            this.btnEnviarFormulario.Size = new System.Drawing.Size(151, 34);
-            this.btnEnviarFormulario.TabIndex = 22;
-            this.btnEnviarFormulario.Text = "Enviar Formulario";
-            this.btnEnviarFormulario.UseVisualStyleBackColor = false;
+            this.botonRedondo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.botonRedondo1.BorderRadius = 20;
+            this.botonRedondo1.FlatAppearance.BorderSize = 0;
+            this.botonRedondo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonRedondo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.botonRedondo1.Location = new System.Drawing.Point(435, 515);
+            this.botonRedondo1.Name = "botonRedondo1";
+            this.botonRedondo1.Size = new System.Drawing.Size(150, 40);
+            this.botonRedondo1.TabIndex = 23;
+            this.botonRedondo1.Text = "botonRedondo1";
+            this.botonRedondo1.UseVisualStyleBackColor = false;
             // 
             // FormSoporte
             // 
@@ -320,5 +336,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button btnEnviarFormulario;
+        private Controles.BotonRedondo botonRedondo1;
     }
 }
