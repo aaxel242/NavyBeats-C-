@@ -70,6 +70,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::NavyBeats_C_.Properties.Resources.imgFormulario;
             this.pictureBox3.Location = new System.Drawing.Point(210, 352);
             this.pictureBox3.Name = "pictureBox3";
@@ -244,6 +245,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(1152, 13);
             this.pictureBox1.Name = "pictureBox1";
@@ -254,6 +256,7 @@
             // 
             // pboxAtras
             // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
             this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
             this.pboxAtras.Location = new System.Drawing.Point(12, 13);
             this.pboxAtras.Name = "pboxAtras";

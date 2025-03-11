@@ -91,6 +91,7 @@
             // lblSoporteTecnico
             // 
             this.lblSoporteTecnico.AutoSize = true;
+            this.lblSoporteTecnico.BackColor = System.Drawing.Color.Transparent;
             this.lblSoporteTecnico.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoporteTecnico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblSoporteTecnico.Location = new System.Drawing.Point(934, 564);
@@ -102,6 +103,7 @@
             // lblRegistro
             // 
             this.lblRegistro.AutoSize = true;
+            this.lblRegistro.BackColor = System.Drawing.Color.Transparent;
             this.lblRegistro.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblRegistro.Location = new System.Drawing.Point(691, 564);
@@ -113,6 +115,7 @@
             // lblCambiarIdioma
             // 
             this.lblCambiarIdioma.AutoSize = true;
+            this.lblCambiarIdioma.BackColor = System.Drawing.Color.Transparent;
             this.lblCambiarIdioma.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambiarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCambiarIdioma.Location = new System.Drawing.Point(353, 564);
@@ -124,6 +127,7 @@
             // lblMapa
             // 
             this.lblMapa.AutoSize = true;
+            this.lblMapa.BackColor = System.Drawing.Color.Transparent;
             this.lblMapa.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMapa.Location = new System.Drawing.Point(146, 564);
@@ -135,6 +139,7 @@
             // lblInformesYEstadisticas
             // 
             this.lblInformesYEstadisticas.AutoSize = true;
+            this.lblInformesYEstadisticas.BackColor = System.Drawing.Color.Transparent;
             this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformesYEstadisticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblInformesYEstadisticas.Location = new System.Drawing.Point(891, 315);
@@ -146,6 +151,7 @@
             // lblCalendario
             // 
             this.lblCalendario.AutoSize = true;
+            this.lblCalendario.BackColor = System.Drawing.Color.Transparent;
             this.lblCalendario.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCalendario.Location = new System.Drawing.Point(681, 315);
@@ -157,6 +163,7 @@
             // lblNotificaciones
             // 
             this.lblNotificaciones.AutoSize = true;
+            this.lblNotificaciones.BackColor = System.Drawing.Color.Transparent;
             this.lblNotificaciones.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblNotificaciones.Location = new System.Drawing.Point(361, 315);
@@ -168,6 +175,7 @@
             // lblGestionUsuarios
             // 
             this.lblGestionUsuarios.AutoSize = true;
+            this.lblGestionUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.lblGestionUsuarios.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblGestionUsuarios.Location = new System.Drawing.Point(44, 315);
@@ -178,6 +186,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::NavyBeats_C_.Properties.Resources.imgSoporte;
             this.pictureBox8.Location = new System.Drawing.Point(958, 381);
             this.pictureBox8.Name = "pictureBox8";
@@ -188,6 +197,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::NavyBeats_C_.Properties.Resources.imgRegistro;
             this.pictureBox7.Location = new System.Drawing.Point(676, 381);
             this.pictureBox7.Name = "pictureBox7";
@@ -198,6 +208,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::NavyBeats_C_.Properties.Resources.imgCambiarIdioma;
             this.pictureBox6.Location = new System.Drawing.Point(382, 381);
             this.pictureBox6.Name = "pictureBox6";
@@ -208,6 +219,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::NavyBeats_C_.Properties.Resources.imgMapa;
             this.pictureBox5.Location = new System.Drawing.Point(104, 381);
             this.pictureBox5.Name = "pictureBox5";
@@ -218,6 +230,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::NavyBeats_C_.Properties.Resources.imgInforme;
             this.pictureBox4.Location = new System.Drawing.Point(958, 127);
             this.pictureBox4.Name = "pictureBox4";
@@ -228,6 +241,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::NavyBeats_C_.Properties.Resources.imgCalendario;
             this.pictureBox3.Location = new System.Drawing.Point(676, 129);
             this.pictureBox3.Name = "pictureBox3";
@@ -238,6 +252,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::NavyBeats_C_.Properties.Resources.imgNotificaciones;
             this.pictureBox2.Location = new System.Drawing.Point(381, 127);
             this.pictureBox2.Name = "pictureBox2";
@@ -248,6 +263,7 @@
             // 
             // pbAtras
             // 
+            this.pbAtras.BackColor = System.Drawing.Color.Transparent;
             this.pbAtras.Image = global::NavyBeats_C_.Properties.Resources.imgGestionUsuario;
             this.pbAtras.Location = new System.Drawing.Point(104, 129);
             this.pbAtras.Name = "pbAtras";
@@ -260,6 +276,7 @@
             // lblCerrarSesion
             // 
             this.lblCerrarSesion.AutoSize = true;
+            this.lblCerrarSesion.BackColor = System.Drawing.Color.Transparent;
             this.lblCerrarSesion.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCerrarSesion.Location = new System.Drawing.Point(8, 75);
@@ -270,6 +287,7 @@
             // 
             // pboxAtras
             // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
             this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
             this.pboxAtras.Location = new System.Drawing.Point(22, 13);
             this.pboxAtras.Name = "pboxAtras";
@@ -279,6 +297,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(1153, 13);
             this.pictureBox1.Name = "pictureBox1";
