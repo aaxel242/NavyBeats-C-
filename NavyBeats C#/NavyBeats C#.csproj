@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDatos\Bd.cs" />
     <Compile Include="Controles\BotonRedondo.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -63,6 +63,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.lblSoporteTecnico);
             this.panel1.Controls.Add(this.lblRegistro);
             this.panel1.Controls.Add(this.lblCambiarIdioma);
@@ -259,11 +260,11 @@
             // lblCerrarSesion
             // 
             this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblCerrarSesion.Location = new System.Drawing.Point(10, 75);
+            this.lblCerrarSesion.Location = new System.Drawing.Point(8, 75);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(64, 15);
+            this.lblCerrarSesion.Size = new System.Drawing.Size(93, 17);
             this.lblCerrarSesion.TabIndex = 2;
             this.lblCerrarSesion.Text = "Cerrar Sesión";
             // 

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NavyBeats_C_.BaseDatos;
 
 namespace NavyBeats_C_
 {
@@ -40,7 +43,10 @@ namespace NavyBeats_C_
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+
         }
+
+
 
         private void MostrarDias(int year, int month)
         {

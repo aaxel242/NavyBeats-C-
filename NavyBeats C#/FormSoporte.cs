@@ -19,6 +19,7 @@ namespace NavyBeats_C_
 
         private void FormSoporte_Load(object sender, EventArgs e)
         {
+            panelSoporte.BackColor = Color.FromArgb(216, 255, 255, 255);
 
             // Centrar el formulario
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
