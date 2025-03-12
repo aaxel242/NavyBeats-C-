@@ -93,6 +93,16 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgAtrasMarron {
+            get {
+                object obj = ResourceManager.GetObject("imgAtrasMarron", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgCalendario {
             get {
                 object obj = ResourceManager.GetObject("imgCalendario", resourceCulture);
@@ -163,6 +173,16 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgLocal {
+            get {
+                object obj = ResourceManager.GetObject("imgLocal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgMapa {
             get {
                 object obj = ResourceManager.GetObject("imgMapa", resourceCulture);
@@ -203,7 +223,6 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-      
         internal static System.Drawing.Bitmap imgTextbox {
             get {
                 object obj = ResourceManager.GetObject("imgTextbox", resourceCulture);
