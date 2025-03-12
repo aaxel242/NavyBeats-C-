@@ -169,6 +169,9 @@
   <data name="imgRegistro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgRegistro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgFlechaIzquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgFlechaIzquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgMapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgMapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -180,6 +183,9 @@
   </data>
   <data name="imgCalendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imgCalendario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgLocal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgLocal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Nombre" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nombre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
