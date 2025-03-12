@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
+            this.textBoxContra = new NavyBeats_C_.Controles.TextBox();
+            this.textBox1 = new NavyBeats_C_.Controles.TextBox();
             this.labelContra = new System.Windows.Forms.Label();
             this.labelCorreo = new System.Windows.Forms.Label();
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.botonRedondoLogin = new NavyBeats_C_.Controles.BotonRedondo();
-            this.textBox1 = new NavyBeats_C_.Controles.TextBox();
-            this.textBoxContra = new NavyBeats_C_.Controles.TextBox();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -55,6 +55,50 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(850, 650);
             this.panel.TabIndex = 2;
+            // 
+            // textBoxContra
+            // 
+            this.textBoxContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.textBoxContra.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.textBoxContra.BorderFocusColor = System.Drawing.Color.Black;
+            this.textBoxContra.BorderRadius = 15;
+            this.textBoxContra.BorderSize = 2;
+            this.textBoxContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBoxContra.Location = new System.Drawing.Point(191, 462);
+            this.textBoxContra.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxContra.Multiline = false;
+            this.textBoxContra.Name = "textBoxContra";
+            this.textBoxContra.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.textBoxContra.PasswordChar = true;
+            this.textBoxContra.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBoxContra.PlaceholderText = "";
+            this.textBoxContra.Size = new System.Drawing.Size(450, 42);
+            this.textBoxContra.TabIndex = 10;
+            this.textBoxContra.Texts = "";
+            this.textBoxContra.UnderlinedStyle = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.textBox1.BorderFocusColor = System.Drawing.Color.Black;
+            this.textBox1.BorderRadius = 15;
+            this.textBox1.BorderSize = 2;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBox1.Location = new System.Drawing.Point(191, 376);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox1.Multiline = false;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.textBox1.PasswordChar = false;
+            this.textBox1.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBox1.PlaceholderText = "";
+            this.textBox1.Size = new System.Drawing.Size(450, 42);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Texts = "";
+            this.textBox1.UnderlinedStyle = false;
             // 
             // labelContra
             // 
@@ -83,9 +127,9 @@
             this.pictureBoxNombre.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxNombre.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Nombre;
             this.pictureBoxNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxNombre.Location = new System.Drawing.Point(191, 186);
+            this.pictureBoxNombre.Location = new System.Drawing.Point(219, 186);
             this.pictureBoxNombre.Name = "pictureBoxNombre";
-            this.pictureBoxNombre.Size = new System.Drawing.Size(450, 120);
+            this.pictureBoxNombre.Size = new System.Drawing.Size(400, 120);
             this.pictureBoxNombre.TabIndex = 4;
             this.pictureBoxNombre.TabStop = false;
             // 
@@ -115,50 +159,6 @@
             this.botonRedondoLogin.Text = "Entrar";
             this.botonRedondoLogin.UseVisualStyleBackColor = false;
             this.botonRedondoLogin.Click += new System.EventHandler(this.botonRedondoLogin_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.textBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox1.BorderRadius = 15;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBox1.Location = new System.Drawing.Point(191, 376);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBox1.PlaceholderText = "";
-            this.textBox1.Size = new System.Drawing.Size(450, 42);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Texts = "";
-            this.textBox1.UnderlinedStyle = false;
-            // 
-            // textBoxContra
-            // 
-            this.textBoxContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.textBoxContra.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.textBoxContra.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBoxContra.BorderRadius = 15;
-            this.textBoxContra.BorderSize = 2;
-            this.textBoxContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBoxContra.Location = new System.Drawing.Point(191, 462);
-            this.textBoxContra.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBoxContra.Multiline = false;
-            this.textBoxContra.Name = "textBoxContra";
-            this.textBoxContra.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.textBoxContra.PasswordChar = true;
-            this.textBoxContra.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBoxContra.PlaceholderText = "";
-            this.textBoxContra.Size = new System.Drawing.Size(450, 42);
-            this.textBoxContra.TabIndex = 10;
-            this.textBoxContra.Texts = "";
-            this.textBoxContra.UnderlinedStyle = false;
             // 
             // FormLogin
             // 

@@ -31,6 +31,7 @@
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.btnEnviarForm = new NavyBeats_C_.Controles.BotonRedondo();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.btnEnviarForm = new NavyBeats_C_.Controles.BotonRedondo();
             this.panelSoporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelFormulario.SuspendLayout();
@@ -100,6 +100,21 @@
             this.panelFormulario.Size = new System.Drawing.Size(599, 573);
             this.panelFormulario.TabIndex = 4;
             // 
+            // btnEnviarForm
+            // 
+            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.btnEnviarForm.BorderRadius = 20;
+            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
+            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarForm.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.btnEnviarForm.Location = new System.Drawing.Point(254, 512);
+            this.btnEnviarForm.Name = "btnEnviarForm";
+            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
+            this.btnEnviarForm.TabIndex = 23;
+            this.btnEnviarForm.Text = "Enviar";
+            this.btnEnviarForm.UseVisualStyleBackColor = false;
+            // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
@@ -119,7 +134,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.label1.Location = new System.Drawing.Point(37, 257);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 30);
+            this.label1.Size = new System.Drawing.Size(136, 30);
             this.label1.TabIndex = 20;
             this.label1.Text = "Descripcion:";
             // 
@@ -141,7 +156,7 @@
             this.lblAsunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblAsunto.Location = new System.Drawing.Point(86, 208);
             this.lblAsunto.Name = "lblAsunto";
-            this.lblAsunto.Size = new System.Drawing.Size(99, 30);
+            this.lblAsunto.Size = new System.Drawing.Size(94, 30);
             this.lblAsunto.TabIndex = 17;
             this.lblAsunto.Text = "Asunto: ";
             // 
@@ -163,7 +178,7 @@
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblNombre.Location = new System.Drawing.Point(74, 147);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(103, 30);
+            this.lblNombre.Size = new System.Drawing.Size(98, 30);
             this.lblNombre.TabIndex = 14;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -174,7 +189,7 @@
             this.lblIncidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblIncidencia.Location = new System.Drawing.Point(384, 92);
             this.lblIncidencia.Name = "lblIncidencia";
-            this.lblIncidencia.Size = new System.Drawing.Size(122, 30);
+            this.lblIncidencia.Size = new System.Drawing.Size(116, 30);
             this.lblIncidencia.TabIndex = 13;
             this.lblIncidencia.Text = "Incidencia";
             this.lblIncidencia.Click += new System.EventHandler(this.lblIncidencia_Click);
@@ -206,7 +221,7 @@
             this.lblConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblConsulta.Location = new System.Drawing.Point(223, 92);
             this.lblConsulta.Name = "lblConsulta";
-            this.lblConsulta.Size = new System.Drawing.Size(105, 30);
+            this.lblConsulta.Size = new System.Drawing.Size(101, 30);
             this.lblConsulta.TabIndex = 9;
             this.lblConsulta.Text = "Consulta";
             this.lblConsulta.Click += new System.EventHandler(this.lblConsulta_Click);
@@ -218,7 +233,7 @@
             this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblTipo.Location = new System.Drawing.Point(114, 92);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(63, 30);
+            this.lblTipo.Size = new System.Drawing.Size(61, 30);
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "Tipo:";
             // 
@@ -229,7 +244,7 @@
             this.lblFornSoporteTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblFornSoporteTit.Location = new System.Drawing.Point(134, 18);
             this.lblFornSoporteTit.Name = "lblFornSoporteTit";
-            this.lblFornSoporteTit.Size = new System.Drawing.Size(339, 42);
+            this.lblFornSoporteTit.Size = new System.Drawing.Size(335, 42);
             this.lblFornSoporteTit.TabIndex = 6;
             this.lblFornSoporteTit.Text = "Formulario de soporte";
             // 
@@ -247,7 +262,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1152, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -263,21 +278,6 @@
             this.pboxAtras.Size = new System.Drawing.Size(61, 59);
             this.pboxAtras.TabIndex = 2;
             this.pboxAtras.TabStop = false;
-            // 
-            // btnEnviarForm
-            // 
-            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.btnEnviarForm.BorderRadius = 20;
-            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
-            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarForm.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.btnEnviarForm.Location = new System.Drawing.Point(254, 512);
-            this.btnEnviarForm.Name = "btnEnviarForm";
-            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
-            this.btnEnviarForm.TabIndex = 23;
-            this.btnEnviarForm.Text = "Enviar";
-            this.btnEnviarForm.UseVisualStyleBackColor = false;
             // 
             // FormSoporte
             // 
