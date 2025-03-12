@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelSoporte = new System.Windows.Forms.Panel();
+            this.panelCalendarioFondo = new System.Windows.Forms.Panel();
             this.panelCalendario = new System.Windows.Forms.Panel();
             this.dateTimePickerCalendario = new System.Windows.Forms.DateTimePicker();
             this.panelDias = new System.Windows.Forms.TableLayoutPanel();
@@ -44,7 +44,7 @@
             this.lblMes = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.panelSoporte.SuspendLayout();
+            this.panelCalendarioFondo.SuspendLayout();
             this.panelCalendario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFlechaDerecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFlechaIzquierda)).BeginInit();
@@ -52,17 +52,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelSoporte
+            // panelCalendarioFondo
             // 
-            this.panelSoporte.AutoSize = true;
-            this.panelSoporte.BackColor = System.Drawing.Color.White;
-            this.panelSoporte.Controls.Add(this.panelCalendario);
-            this.panelSoporte.Controls.Add(this.pictureBox1);
-            this.panelSoporte.Controls.Add(this.pboxAtras);
-            this.panelSoporte.Location = new System.Drawing.Point(35, 30);
-            this.panelSoporte.Name = "panelSoporte";
-            this.panelSoporte.Size = new System.Drawing.Size(1215, 650);
-            this.panelSoporte.TabIndex = 1;
+            this.panelCalendarioFondo.AutoSize = true;
+            this.panelCalendarioFondo.BackColor = System.Drawing.Color.White;
+            this.panelCalendarioFondo.Controls.Add(this.panelCalendario);
+            this.panelCalendarioFondo.Controls.Add(this.pictureBox1);
+            this.panelCalendarioFondo.Controls.Add(this.pboxAtras);
+            this.panelCalendarioFondo.Location = new System.Drawing.Point(35, 30);
+            this.panelCalendarioFondo.Name = "panelCalendarioFondo";
+            this.panelCalendarioFondo.Size = new System.Drawing.Size(1215, 650);
+            this.panelCalendarioFondo.TabIndex = 1;
             // 
             // panelCalendario
             // 
@@ -217,6 +217,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
             this.pictureBox1.Location = new System.Drawing.Point(1152, 13);
             this.pictureBox1.Name = "pictureBox1";
@@ -227,6 +228,7 @@
             // 
             // pboxAtras
             // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
             this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
             this.pboxAtras.Location = new System.Drawing.Point(12, 13);
             this.pboxAtras.Name = "pboxAtras";
@@ -240,11 +242,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
-            this.Controls.Add(this.panelSoporte);
+            this.Controls.Add(this.panelCalendarioFondo);
             this.Name = "FormCalendario";
             this.Text = "FormCalendario";
             this.Load += new System.EventHandler(this.FormCalendario_Load);
-            this.panelSoporte.ResumeLayout(false);
+            this.panelCalendarioFondo.ResumeLayout(false);
             this.panelCalendario.ResumeLayout(false);
             this.panelCalendario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFlechaDerecha)).EndInit();
@@ -258,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelSoporte;
+        private System.Windows.Forms.Panel panelCalendarioFondo;
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelCalendario;

@@ -20,6 +20,10 @@ namespace NavyBeats_C_
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
+
+            panel1.BackColor = Color.FromArgb(216, 255, 255, 255);
+
+
             // Centrar el formulario
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;

@@ -29,6 +29,9 @@ namespace NavyBeats_C_
 
         private void FormCalendario_Load(object sender, EventArgs e)
         {
+
+            panelCalendarioFondo.BackColor = Color.FromArgb(216, 255, 255, 255);
+
             // Centrar el formulario
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
