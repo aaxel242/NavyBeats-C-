@@ -16,5 +16,13 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
         }
+
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234" });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234" });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234" });
+        }
+
     }
 }
