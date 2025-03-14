@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelNotificaciones.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
@@ -42,6 +43,7 @@
             // panelNotificaciones
             // 
             this.panelNotificaciones.BackColor = System.Drawing.Color.White;
+            this.panelNotificaciones.Controls.Add(this.gMapControl1);
             this.panelNotificaciones.Controls.Add(this.panel1);
             this.panelNotificaciones.Controls.Add(this.pictureBox1);
             this.panelNotificaciones.Location = new System.Drawing.Point(30, 30);
@@ -80,6 +82,32 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // gMapControl1
+            // 
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(360, 91);
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Size = new System.Drawing.Size(798, 511);
+            this.gMapControl1.TabIndex = 3;
+            this.gMapControl1.Zoom = 0D;
+            // 
             // FormMapaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,6 +117,7 @@
             this.Controls.Add(this.panelNotificaciones);
             this.Name = "FormMapaMenu";
             this.Text = "FormMapaMenu";
+            this.Load += new System.EventHandler(this.FormMapaMenu_Load);
             this.panelNotificaciones.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -104,5 +133,6 @@
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }
