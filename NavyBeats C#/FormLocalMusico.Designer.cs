@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelCalendarioFondo = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,24 +41,24 @@
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.panelCalendarioFondo.SuspendLayout();
+            this.panel.SuspendLayout();
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelCalendarioFondo
+            // panel
             // 
-            this.panelCalendarioFondo.AutoSize = true;
-            this.panelCalendarioFondo.BackColor = System.Drawing.Color.White;
-            this.panelCalendarioFondo.Controls.Add(this.customPanel);
-            this.panelCalendarioFondo.Controls.Add(this.pictureBox1);
-            this.panelCalendarioFondo.Controls.Add(this.pboxAtras);
-            this.panelCalendarioFondo.Location = new System.Drawing.Point(35, 30);
-            this.panelCalendarioFondo.Name = "panelCalendarioFondo";
-            this.panelCalendarioFondo.Size = new System.Drawing.Size(1215, 650);
-            this.panelCalendarioFondo.TabIndex = 2;
+            this.panel.AutoSize = true;
+            this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.Controls.Add(this.customPanel);
+            this.panel.Controls.Add(this.pictureBox1);
+            this.panel.Controls.Add(this.pboxAtras);
+            this.panel.Location = new System.Drawing.Point(35, 30);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1215, 650);
+            this.panel.TabIndex = 2;
             // 
             // customPanel
             // 
@@ -182,13 +182,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
-            this.Controls.Add(this.panelCalendarioFondo);
+            this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormLocalMusico";
             this.Text = "FormLocalMusico";
             this.Load += new System.EventHandler(this.FormLocalMusico_Load);
-            this.panelCalendarioFondo.ResumeLayout(false);
+            this.panel.ResumeLayout(false);
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -200,7 +200,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelCalendarioFondo;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pboxAtras;
         private Controles.CustomPanel customPanel;
