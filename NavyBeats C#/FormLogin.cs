@@ -21,5 +21,14 @@ namespace NavyBeats_C_
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
+
+        private void botonRedondoLogin_Click(object sender, EventArgs e)
+        {
+            FormMenu menu = new FormMenu();
+            menu.Show();
+
+            menu.FormClosed += (s, args) => this.Show();
+            this.Hide();
+        }
     }
 }

@@ -108,77 +108,77 @@
             // lblDomingo
             // 
             this.lblDomingo.AutoSize = true;
-            this.lblDomingo.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDomingo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblDomingo.Location = new System.Drawing.Point(763, 100);
             this.lblDomingo.Name = "lblDomingo";
-            this.lblDomingo.Size = new System.Drawing.Size(111, 30);
+            this.lblDomingo.Size = new System.Drawing.Size(94, 24);
             this.lblDomingo.TabIndex = 9;
             this.lblDomingo.Text = "Domingo";
             // 
             // lblSabado
             // 
             this.lblSabado.AutoSize = true;
-            this.lblSabado.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSabado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblSabado.Location = new System.Drawing.Point(653, 100);
             this.lblSabado.Name = "lblSabado";
-            this.lblSabado.Size = new System.Drawing.Size(91, 30);
+            this.lblSabado.Size = new System.Drawing.Size(81, 24);
             this.lblSabado.TabIndex = 8;
             this.lblSabado.Text = "Sábado";
             // 
             // lblViernes
             // 
             this.lblViernes.AutoSize = true;
-            this.lblViernes.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViernes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblViernes.Location = new System.Drawing.Point(548, 100);
             this.lblViernes.Name = "lblViernes";
-            this.lblViernes.Size = new System.Drawing.Size(90, 30);
+            this.lblViernes.Size = new System.Drawing.Size(82, 24);
             this.lblViernes.TabIndex = 7;
             this.lblViernes.Text = "Viernes";
             // 
             // lblJueves
             // 
             this.lblJueves.AutoSize = true;
-            this.lblJueves.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJueves.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblJueves.Location = new System.Drawing.Point(443, 100);
             this.lblJueves.Name = "lblJueves";
-            this.lblJueves.Size = new System.Drawing.Size(83, 30);
+            this.lblJueves.Size = new System.Drawing.Size(76, 24);
             this.lblJueves.TabIndex = 6;
             this.lblJueves.Text = "Jueves";
             // 
             // lblMiercoles
             // 
             this.lblMiercoles.AutoSize = true;
-            this.lblMiercoles.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiercoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMiercoles.Location = new System.Drawing.Point(315, 100);
             this.lblMiercoles.Name = "lblMiercoles";
-            this.lblMiercoles.Size = new System.Drawing.Size(112, 30);
+            this.lblMiercoles.Size = new System.Drawing.Size(101, 24);
             this.lblMiercoles.TabIndex = 5;
             this.lblMiercoles.Text = "Miércoles";
             // 
             // lblMartes
             // 
             this.lblMartes.AutoSize = true;
-            this.lblMartes.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMartes.Location = new System.Drawing.Point(206, 100);
             this.lblMartes.Name = "lblMartes";
-            this.lblMartes.Size = new System.Drawing.Size(84, 30);
+            this.lblMartes.Size = new System.Drawing.Size(72, 24);
             this.lblMartes.TabIndex = 4;
             this.lblMartes.Text = "Martes";
             // 
             // lblLunes
             // 
             this.lblLunes.AutoSize = true;
-            this.lblLunes.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblLunes.Location = new System.Drawing.Point(110, 100);
             this.lblLunes.Name = "lblLunes";
-            this.lblLunes.Size = new System.Drawing.Size(75, 30);
+            this.lblLunes.Size = new System.Drawing.Size(67, 24);
             this.lblLunes.TabIndex = 3;
             this.lblLunes.Text = "Lunes";
             // 
@@ -206,7 +206,7 @@
             // 
             // lblMes
             // 
-            this.lblMes.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMes.Location = new System.Drawing.Point(399, 33);
             this.lblMes.Name = "lblMes";
@@ -219,7 +219,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1152, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(1136, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -243,6 +243,8 @@
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelCalendarioFondo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormCalendario";
             this.Text = "FormCalendario";
             this.Load += new System.EventHandler(this.FormCalendario_Load);

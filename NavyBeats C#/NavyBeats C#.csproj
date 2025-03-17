@@ -97,6 +97,9 @@
     <Compile Include="Controles\BotonRedondo.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\TextBoxNavyBeat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +117,18 @@
     </Compile>
     <Compile Include="FormIdiomas.Designer.cs">
       <DependentUpon>FormIdiomas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocalMusico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocalMusico.Designer.cs">
+      <DependentUpon>FormLocalMusico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocalMusicoSA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocalMusicoSA.Designer.cs">
+      <DependentUpon>FormLocalMusicoSA.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -157,13 +172,28 @@
     <Compile Include="FormSoporte.Designer.cs">
       <DependentUpon>FormSoporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controles\TextBoxNavyBeat.resx">
+      <DependentUpon>TextBoxNavyBeat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCalendario.resx">
       <DependentUpon>FormCalendario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIdiomas.resx">
       <DependentUpon>FormIdiomas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocalMusico.resx">
+      <DependentUpon>FormLocalMusico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocalMusicoSA.resx">
+      <DependentUpon>FormLocalMusicoSA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -185,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSoporte.resx">
       <DependentUpon>FormSoporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -216,8 +249,10 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
+
     <None Include="Resources\imgBuscar.png" />
-    <None Include="Resources\imgMicrofono2.png" />
+    <None Include="Resources\imgLocal.png" />
+
     <None Include="Resources\imgSalirDorado.png" />
     <None Include="Resources\imgIngles.png" />
     <None Include="Resources\imgEspañol.png" />

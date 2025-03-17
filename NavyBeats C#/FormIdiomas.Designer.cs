@@ -32,13 +32,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.panelIdiomas = new System.Windows.Forms.Panel();
+            this.lblEnglish = new System.Windows.Forms.Label();
+            this.lblEspañol = new System.Windows.Forms.Label();
             this.lblCatala = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblIdiomas = new System.Windows.Forms.Label();
-            this.lblEspañol = new System.Windows.Forms.Label();
-            this.lblEnglish = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.panelIdiomas.SuspendLayout();
@@ -85,15 +85,39 @@
             this.panelIdiomas.Size = new System.Drawing.Size(1225, 650);
             this.panelIdiomas.TabIndex = 1;
             // 
+            // lblEnglish
+            // 
+            this.lblEnglish.AutoSize = true;
+            this.lblEnglish.BackColor = System.Drawing.Color.Transparent;
+            this.lblEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnglish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblEnglish.Location = new System.Drawing.Point(919, 413);
+            this.lblEnglish.Name = "lblEnglish";
+            this.lblEnglish.Size = new System.Drawing.Size(80, 24);
+            this.lblEnglish.TabIndex = 18;
+            this.lblEnglish.Text = "English";
+            // 
+            // lblEspañol
+            // 
+            this.lblEspañol.AutoSize = true;
+            this.lblEspañol.BackColor = System.Drawing.Color.Transparent;
+            this.lblEspañol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspañol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblEspañol.Location = new System.Drawing.Point(566, 413);
+            this.lblEspañol.Name = "lblEspañol";
+            this.lblEspañol.Size = new System.Drawing.Size(86, 24);
+            this.lblEspañol.TabIndex = 17;
+            this.lblEspañol.Text = "Español";
+            // 
             // lblCatala
             // 
             this.lblCatala.AutoSize = true;
             this.lblCatala.BackColor = System.Drawing.Color.Transparent;
-            this.lblCatala.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCatala.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCatala.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCatala.Location = new System.Drawing.Point(226, 413);
             this.lblCatala.Name = "lblCatala";
-            this.lblCatala.Size = new System.Drawing.Size(78, 30);
+            this.lblCatala.Size = new System.Drawing.Size(67, 24);
             this.lblCatala.TabIndex = 16;
             this.lblCatala.Text = "Català";
             // 
@@ -134,37 +158,13 @@
             // 
             this.lblIdiomas.AutoSize = true;
             this.lblIdiomas.BackColor = System.Drawing.Color.Transparent;
-            this.lblIdiomas.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdiomas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdiomas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblIdiomas.Location = new System.Drawing.Point(470, 67);
             this.lblIdiomas.Name = "lblIdiomas";
-            this.lblIdiomas.Size = new System.Drawing.Size(292, 38);
+            this.lblIdiomas.Size = new System.Drawing.Size(264, 29);
             this.lblIdiomas.TabIndex = 12;
             this.lblIdiomas.Text = "Selecciona un Idioma";
-            // 
-            // lblEspañol
-            // 
-            this.lblEspañol.AutoSize = true;
-            this.lblEspañol.BackColor = System.Drawing.Color.Transparent;
-            this.lblEspañol.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspañol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblEspañol.Location = new System.Drawing.Point(566, 413);
-            this.lblEspañol.Name = "lblEspañol";
-            this.lblEspañol.Size = new System.Drawing.Size(96, 30);
-            this.lblEspañol.TabIndex = 17;
-            this.lblEspañol.Text = "Español";
-            // 
-            // lblEnglish
-            // 
-            this.lblEnglish.AutoSize = true;
-            this.lblEnglish.BackColor = System.Drawing.Color.Transparent;
-            this.lblEnglish.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnglish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblEnglish.Location = new System.Drawing.Point(919, 413);
-            this.lblEnglish.Name = "lblEnglish";
-            this.lblEnglish.Size = new System.Drawing.Size(91, 30);
-            this.lblEnglish.TabIndex = 18;
-            this.lblEnglish.Text = "English";
             // 
             // FormIdiomas
             // 
@@ -173,6 +173,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelIdiomas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormIdiomas";
             this.Text = "FormIdiomas";
             this.Load += new System.EventHandler(this.FormIdiomas_Load);
