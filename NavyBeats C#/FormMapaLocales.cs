@@ -1,52 +1,48 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using GMap.NET.MapProviders;
 using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsForms;
-using System.Collections.Generic; // Asegúrate de incluir esta directiva
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NavyBeats_C_
 {
-    public partial class FormMapaMenu : Form
+    public partial class FormMapaLocales: Form
     {
+
         // Limites de Cataluña
         private readonly double minLat = 40.5;  // Sur
         private readonly double maxLat = 42.9;  // Norte
         private readonly double minLng = 0.15;  // Oeste
         private readonly double maxLng = 3.33;  // Este
-
-        public FormMapaMenu()
+        public FormMapaLocales()
         {
             InitializeComponent();
         }
 
-        private void FormMapaMenu_Load(object sender, EventArgs e)
+        private void FormMapaLocales_Load(object sender, EventArgs e)
         {
             panelMapa.BackColor = Color.FromArgb(216, 255, 255, 255);
+            cBoxMunicipios.TabStop = false;     
 
             // Centrar el formulario
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
             int formWidth = this.Width;
             int formHeight = this.Height;
+
             int positionX = (screenWidth - formWidth) / 2;
             int positionY = (screenHeight - formHeight) / 2;
 
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-
-            // Configuración de imágenes
-            Image imgMusicoOriginal = Properties.Resources.imgArtista;
-            Image imgMusico = new Bitmap(imgMusicoOriginal, new Size(121, 140));
-            Image imgLocalOriginal = Properties.Resources.Local;
-            Image imgLocal = new Bitmap(imgLocalOriginal, new Size(127, 140));
-
-            btnMusicoMapa.Image = imgMusico;
-            btnLocalMapa.Image = imgLocal;
-
             // Configuración del mapa
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
@@ -66,26 +62,6 @@ namespace NavyBeats_C_
             gMapControl1.MinZoom = 6;
             gMapControl1.MaxZoom = 18;
             gMapControl1.Zoom = 8;
-
-            // Resaltar Badalona con un polígono
-            // NOTA: Las coordenadas aquí son aproximadas para ilustrar la zona de Badalona.
-            List<PointLatLng> puntosBadalona = new List<PointLatLng>
-            {
-                new PointLatLng(41.466, 2.230), // Esquina superior izquierda
-                new PointLatLng(41.466, 2.270), // Esquina superior derecha
-                new PointLatLng(41.430, 2.270), // Esquina inferior derecha
-                new PointLatLng(41.430, 2.230)  // Esquina inferior izquierda
-            };
-
-            GMapPolygon poligonoBadalona = new GMapPolygon(puntosBadalona, "Badalona")
-            {
-                Stroke = new Pen(Color.Red, 2),
-                Fill = new SolidBrush(Color.FromArgb(50, Color.Red))
-            };
-
-            GMapOverlay overlayPoligonos = new GMapOverlay("poligonos");
-            overlayPoligonos.Polygons.Add(poligonoBadalona);
-            gMapControl1.Overlays.Add(overlayPoligonos);
 
             // Manejar el evento para restringir el movimiento dentro de Cataluña
             gMapControl1.OnMapDrag += GMapControl1_OnMapDrag;
@@ -107,14 +83,9 @@ namespace NavyBeats_C_
             gMapControl1.Position = new PointLatLng(lat, lng);
         }
 
-        private void btnLocalMapa_Click(object sender, EventArgs e)
+        private void pboxAtras_Click(object sender, EventArgs e)
         {
-            using (FormMapaLocales formMapaLocales = new FormMapaLocales())
-            {
-                this.Hide();
-                formMapaLocales.ShowDialog();
-                this.Show();
-            }
+            this.Close(); 
         }
     }
 }
