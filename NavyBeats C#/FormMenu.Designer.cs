@@ -45,7 +45,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pbAtras = new System.Windows.Forms.PictureBox();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -80,7 +79,6 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pbAtras);
-            this.panel1.Controls.Add(this.lblCerrarSesion);
             this.panel1.Controls.Add(this.pboxAtras);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(30, 29);
@@ -92,11 +90,11 @@
             // 
             this.lblSoporteTecnico.AutoSize = true;
             this.lblSoporteTecnico.BackColor = System.Drawing.Color.Transparent;
-            this.lblSoporteTecnico.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoporteTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoporteTecnico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblSoporteTecnico.Location = new System.Drawing.Point(934, 564);
             this.lblSoporteTecnico.Name = "lblSoporteTecnico";
-            this.lblSoporteTecnico.Size = new System.Drawing.Size(222, 38);
+            this.lblSoporteTecnico.Size = new System.Drawing.Size(197, 29);
             this.lblSoporteTecnico.TabIndex = 18;
             this.lblSoporteTecnico.Text = "Soporte técnico";
             // 
@@ -104,11 +102,11 @@
             // 
             this.lblRegistro.AutoSize = true;
             this.lblRegistro.BackColor = System.Drawing.Color.Transparent;
-            this.lblRegistro.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblRegistro.Location = new System.Drawing.Point(691, 564);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(125, 38);
+            this.lblRegistro.Size = new System.Drawing.Size(112, 29);
             this.lblRegistro.TabIndex = 17;
             this.lblRegistro.Text = "Registro";
             // 
@@ -116,11 +114,11 @@
             // 
             this.lblCambiarIdioma.AutoSize = true;
             this.lblCambiarIdioma.BackColor = System.Drawing.Color.Transparent;
-            this.lblCambiarIdioma.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCambiarIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambiarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCambiarIdioma.Location = new System.Drawing.Point(353, 564);
             this.lblCambiarIdioma.Name = "lblCambiarIdioma";
-            this.lblCambiarIdioma.Size = new System.Drawing.Size(222, 38);
+            this.lblCambiarIdioma.Size = new System.Drawing.Size(197, 29);
             this.lblCambiarIdioma.TabIndex = 16;
             this.lblCambiarIdioma.Text = "Cambiar Idioma";
             // 
@@ -128,11 +126,11 @@
             // 
             this.lblMapa.AutoSize = true;
             this.lblMapa.BackColor = System.Drawing.Color.Transparent;
-            this.lblMapa.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMapa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMapa.Location = new System.Drawing.Point(146, 564);
             this.lblMapa.Name = "lblMapa";
-            this.lblMapa.Size = new System.Drawing.Size(88, 38);
+            this.lblMapa.Size = new System.Drawing.Size(77, 29);
             this.lblMapa.TabIndex = 15;
             this.lblMapa.Text = "Mapa";
             // 
@@ -140,11 +138,11 @@
             // 
             this.lblInformesYEstadisticas.AutoSize = true;
             this.lblInformesYEstadisticas.BackColor = System.Drawing.Color.Transparent;
-            this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformesYEstadisticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblInformesYEstadisticas.Location = new System.Drawing.Point(891, 315);
             this.lblInformesYEstadisticas.Name = "lblInformesYEstadisticas";
-            this.lblInformesYEstadisticas.Size = new System.Drawing.Size(314, 38);
+            this.lblInformesYEstadisticas.Size = new System.Drawing.Size(280, 29);
             this.lblInformesYEstadisticas.TabIndex = 14;
             this.lblInformesYEstadisticas.Text = "Informes y Estadísticas";
             // 
@@ -152,11 +150,11 @@
             // 
             this.lblCalendario.AutoSize = true;
             this.lblCalendario.BackColor = System.Drawing.Color.Transparent;
-            this.lblCalendario.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblCalendario.Location = new System.Drawing.Point(681, 315);
             this.lblCalendario.Name = "lblCalendario";
-            this.lblCalendario.Size = new System.Drawing.Size(155, 38);
+            this.lblCalendario.Size = new System.Drawing.Size(141, 29);
             this.lblCalendario.TabIndex = 13;
             this.lblCalendario.Text = "Calendario";
             // 
@@ -164,11 +162,11 @@
             // 
             this.lblNotificaciones.AutoSize = true;
             this.lblNotificaciones.BackColor = System.Drawing.Color.Transparent;
-            this.lblNotificaciones.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblNotificaciones.Location = new System.Drawing.Point(361, 315);
             this.lblNotificaciones.Name = "lblNotificaciones";
-            this.lblNotificaciones.Size = new System.Drawing.Size(201, 38);
+            this.lblNotificaciones.Size = new System.Drawing.Size(179, 29);
             this.lblNotificaciones.TabIndex = 12;
             this.lblNotificaciones.Text = "Notificaciones";
             // 
@@ -176,11 +174,11 @@
             // 
             this.lblGestionUsuarios.AutoSize = true;
             this.lblGestionUsuarios.BackColor = System.Drawing.Color.Transparent;
-            this.lblGestionUsuarios.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblGestionUsuarios.Location = new System.Drawing.Point(44, 315);
             this.lblGestionUsuarios.Name = "lblGestionUsuarios";
-            this.lblGestionUsuarios.Size = new System.Drawing.Size(274, 38);
+            this.lblGestionUsuarios.Size = new System.Drawing.Size(250, 29);
             this.lblGestionUsuarios.TabIndex = 11;
             this.lblGestionUsuarios.Text = "Gestión de Usuarios";
             // 
@@ -271,19 +269,6 @@
             this.pbAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbAtras.TabIndex = 3;
             this.pbAtras.TabStop = false;
-            this.pbAtras.Click += new System.EventHandler(this.pbAtras_Click);
-            // 
-            // lblCerrarSesion
-            // 
-            this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblCerrarSesion.Location = new System.Drawing.Point(8, 75);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(93, 17);
-            this.lblCerrarSesion.TabIndex = 2;
-            this.lblCerrarSesion.Text = "Cerrar Sesión";
             // 
             // pboxAtras
             // 
@@ -294,6 +279,7 @@
             this.pboxAtras.Size = new System.Drawing.Size(61, 59);
             this.pboxAtras.TabIndex = 1;
             this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
             // pictureBox1
             // 
@@ -313,6 +299,8 @@
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
@@ -336,7 +324,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblCerrarSesion;
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pbAtras;
         private System.Windows.Forms.PictureBox pictureBox8;

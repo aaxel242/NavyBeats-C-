@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNotificaciones));
             this.panelNotificaciones = new System.Windows.Forms.Panel();
-            this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNotificaciones2 = new System.Windows.Forms.Panel();
             this.lblNotificaciones = new System.Windows.Forms.Label();
+            this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelNotificaciones.SuspendLayout();
+            this.panelNotificaciones2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelNotificaciones2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelNotificaciones
@@ -50,6 +50,26 @@
             this.panelNotificaciones.Name = "panelNotificaciones";
             this.panelNotificaciones.Size = new System.Drawing.Size(1225, 650);
             this.panelNotificaciones.TabIndex = 2;
+            // 
+            // panelNotificaciones2
+            // 
+            this.panelNotificaciones2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panelNotificaciones2.Controls.Add(this.lblNotificaciones);
+            this.panelNotificaciones2.Location = new System.Drawing.Point(313, 39);
+            this.panelNotificaciones2.Name = "panelNotificaciones2";
+            this.panelNotificaciones2.Size = new System.Drawing.Size(599, 573);
+            this.panelNotificaciones2.TabIndex = 5;
+            // 
+            // lblNotificaciones
+            // 
+            this.lblNotificaciones.AutoSize = true;
+            this.lblNotificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblNotificaciones.Location = new System.Drawing.Point(197, 19);
+            this.lblNotificaciones.Name = "lblNotificaciones";
+            this.lblNotificaciones.Size = new System.Drawing.Size(199, 31);
+            this.lblNotificaciones.TabIndex = 6;
+            this.lblNotificaciones.Text = "Notificaciones";
             // 
             // pboxAtras
             // 
@@ -72,26 +92,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panelNotificaciones2
-            // 
-            this.panelNotificaciones2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.panelNotificaciones2.Controls.Add(this.lblNotificaciones);
-            this.panelNotificaciones2.Location = new System.Drawing.Point(313, 39);
-            this.panelNotificaciones2.Name = "panelNotificaciones2";
-            this.panelNotificaciones2.Size = new System.Drawing.Size(599, 573);
-            this.panelNotificaciones2.TabIndex = 5;
-            // 
-            // lblNotificaciones
-            // 
-            this.lblNotificaciones.AutoSize = true;
-            this.lblNotificaciones.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblNotificaciones.Location = new System.Drawing.Point(197, 19);
-            this.lblNotificaciones.Name = "lblNotificaciones";
-            this.lblNotificaciones.Size = new System.Drawing.Size(221, 42);
-            this.lblNotificaciones.TabIndex = 6;
-            this.lblNotificaciones.Text = "Notificaciones";
-            // 
             // FormNotificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,14 +99,16 @@
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelNotificaciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormNotificaciones";
             this.Text = "FormNotificaciones";
             this.Load += new System.EventHandler(this.FormNotificaciones_Load);
             this.panelNotificaciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelNotificaciones2.ResumeLayout(false);
             this.panelNotificaciones2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -193,11 +193,14 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imgLocal {
-            get {
+        internal static System.Drawing.Bitmap imgLocal
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("imgLocal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
+        }
             
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

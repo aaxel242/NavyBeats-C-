@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace NavyBeats_C_
 {
-    public partial class FormUsuarios: Form
+    public partial class FormLocalMusicoSA: Form
     {
-        public FormUsuarios()
+        public FormLocalMusicoSA()
         {
             InitializeComponent();
         }
 
-        private void FormUsuarios_Load(object sender, EventArgs e)
+        private void FormLocalMusicoSA_Load(object sender, EventArgs e)
         {
             dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 1 });
             dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 0 });

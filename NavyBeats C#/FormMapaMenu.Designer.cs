@@ -87,6 +87,8 @@
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelNotificaciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormMapaMenu";
             this.Text = "FormMapaMenu";
             this.panelNotificaciones.ResumeLayout(false);
