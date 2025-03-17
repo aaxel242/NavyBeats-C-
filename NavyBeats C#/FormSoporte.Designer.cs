@@ -106,7 +106,7 @@
             this.btnEnviarForm.BorderRadius = 20;
             this.btnEnviarForm.FlatAppearance.BorderSize = 0;
             this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarForm.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.btnEnviarForm.Location = new System.Drawing.Point(254, 512);
             this.btnEnviarForm.Name = "btnEnviarForm";
@@ -130,11 +130,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.label1.Location = new System.Drawing.Point(37, 257);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 30);
+            this.label1.Size = new System.Drawing.Size(127, 24);
             this.label1.TabIndex = 20;
             this.label1.Text = "Descripcion:";
             // 
@@ -152,11 +152,11 @@
             // lblAsunto
             // 
             this.lblAsunto.AutoSize = true;
-            this.lblAsunto.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAsunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblAsunto.Location = new System.Drawing.Point(86, 208);
             this.lblAsunto.Name = "lblAsunto";
-            this.lblAsunto.Size = new System.Drawing.Size(94, 30);
+            this.lblAsunto.Size = new System.Drawing.Size(87, 24);
             this.lblAsunto.TabIndex = 17;
             this.lblAsunto.Text = "Asunto: ";
             // 
@@ -174,22 +174,22 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblNombre.Location = new System.Drawing.Point(74, 147);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(98, 30);
+            this.lblNombre.Size = new System.Drawing.Size(91, 24);
             this.lblNombre.TabIndex = 14;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblIncidencia
             // 
             this.lblIncidencia.AutoSize = true;
-            this.lblIncidencia.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncidencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblIncidencia.Location = new System.Drawing.Point(384, 92);
             this.lblIncidencia.Name = "lblIncidencia";
-            this.lblIncidencia.Size = new System.Drawing.Size(116, 30);
+            this.lblIncidencia.Size = new System.Drawing.Size(106, 24);
             this.lblIncidencia.TabIndex = 13;
             this.lblIncidencia.Text = "Incidencia";
             this.lblIncidencia.Click += new System.EventHandler(this.lblIncidencia_Click);
@@ -217,11 +217,11 @@
             // lblConsulta
             // 
             this.lblConsulta.AutoSize = true;
-            this.lblConsulta.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblConsulta.Location = new System.Drawing.Point(223, 92);
             this.lblConsulta.Name = "lblConsulta";
-            this.lblConsulta.Size = new System.Drawing.Size(101, 30);
+            this.lblConsulta.Size = new System.Drawing.Size(91, 24);
             this.lblConsulta.TabIndex = 9;
             this.lblConsulta.Text = "Consulta";
             this.lblConsulta.Click += new System.EventHandler(this.lblConsulta_Click);
@@ -229,22 +229,22 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblTipo.Location = new System.Drawing.Point(114, 92);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(61, 30);
+            this.lblTipo.Size = new System.Drawing.Size(58, 24);
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "Tipo:";
             // 
             // lblFornSoporteTit
             // 
             this.lblFornSoporteTit.AutoSize = true;
-            this.lblFornSoporteTit.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFornSoporteTit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFornSoporteTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblFornSoporteTit.Location = new System.Drawing.Point(134, 18);
             this.lblFornSoporteTit.Name = "lblFornSoporteTit";
-            this.lblFornSoporteTit.Size = new System.Drawing.Size(335, 42);
+            this.lblFornSoporteTit.Size = new System.Drawing.Size(299, 31);
             this.lblFornSoporteTit.TabIndex = 6;
             this.lblFornSoporteTit.Text = "Formulario de soporte";
             // 
@@ -288,6 +288,8 @@
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelSoporte);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormSoporte";
             this.Text = "Soporte";
             this.Load += new System.EventHandler(this.FormSoporte_Load);

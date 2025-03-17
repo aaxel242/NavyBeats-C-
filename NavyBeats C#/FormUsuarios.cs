@@ -19,10 +19,9 @@ namespace NavyBeats_C_
 
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
-            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234" });
-            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234" });
-            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234" });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 1 });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 0 });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 1 });
         }
-
     }
 }
