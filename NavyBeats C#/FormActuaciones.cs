@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace NavyBeats_C_
 {
-    public partial class FormMenu : Form
+    public partial class FormActuaciones : Form
     {
-        public FormMenu()
+        public FormActuaciones()
         {
             InitializeComponent();
         }
 
-        private void FormMenu_Load(object sender, EventArgs e)
+        private void FormActuaciones_Load(object sender, EventArgs e)
         {
+            dataGridView.Rows.Add(new object[] { "Mohamed", "Bar los porrillos", "20:00-23:00", "50€" });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "Bar los porrillos", "20:00-23:00", "50€" });
+            dataGridView.Rows.Add(new object[] { "Mohamed", "Bar los porrillos", "20:00-23:00", "50€" });
 
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
 
@@ -36,11 +37,6 @@ namespace NavyBeats_C_
 
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
-        }
-
-        private void pboxAtras_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

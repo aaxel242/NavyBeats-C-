@@ -69,6 +69,7 @@
             this.pboxAtras.Size = new System.Drawing.Size(61, 59);
             this.pboxAtras.TabIndex = 8;
             this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
             // pictureBox2
             // 
@@ -83,6 +84,7 @@
             // labelArtista
             // 
             this.labelArtista.AutoSize = true;
+            this.labelArtista.BackColor = System.Drawing.Color.Transparent;
             this.labelArtista.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelArtista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.labelArtista.Location = new System.Drawing.Point(849, 422);
@@ -94,6 +96,7 @@
             // labelLocal
             // 
             this.labelLocal.AutoSize = true;
+            this.labelLocal.BackColor = System.Drawing.Color.Transparent;
             this.labelLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLocal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.labelLocal.Location = new System.Drawing.Point(549, 422);
@@ -105,6 +108,7 @@
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
+            this.labelUsuario.BackColor = System.Drawing.Color.Transparent;
             this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.labelUsuario.Location = new System.Drawing.Point(157, 422);
@@ -158,6 +162,7 @@
             this.MaximizeBox = false;
             this.Name = "FormMenuGestion";
             this.Text = "MenuGestion";
+            this.Load += new System.EventHandler(this.FormMenuGestion_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
