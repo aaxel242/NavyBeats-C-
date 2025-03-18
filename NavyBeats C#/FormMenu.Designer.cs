@@ -176,7 +176,7 @@
             this.lblGestionUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.lblGestionUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblGestionUsuarios.Location = new System.Drawing.Point(55, 315);
+            this.lblGestionUsuarios.Location = new System.Drawing.Point(57, 313);
             this.lblGestionUsuarios.Name = "lblGestionUsuarios";
             this.lblGestionUsuarios.Size = new System.Drawing.Size(250, 29);
             this.lblGestionUsuarios.TabIndex = 11;
