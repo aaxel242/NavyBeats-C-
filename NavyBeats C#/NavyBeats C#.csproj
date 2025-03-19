@@ -136,6 +136,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMapaArtistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMapaArtistas.Designer.cs">
+      <DependentUpon>FormMapaArtistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMapaLocales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMapaArtistas.resx">
+      <DependentUpon>FormMapaArtistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMapaLocales.resx">
       <DependentUpon>FormMapaLocales.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,10 +258,8 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="Resources\Fondo.png" />
-
     <None Include="Resources\imgBuscar.png" />
     <None Include="Resources\imgLocal.png" />
-
     <None Include="Resources\imgSalirDorado.png" />
     <None Include="Resources\imgIngles.png" />
     <None Include="Resources\imgEspañol.png" />

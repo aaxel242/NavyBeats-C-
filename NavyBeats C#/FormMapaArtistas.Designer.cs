@@ -1,6 +1,6 @@
 ﻿namespace NavyBeats_C_
 {
-    partial class FormMapaMenu
+    partial class FormMapaArtistas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMapaMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMapaArtistas));
             this.panelMapa = new System.Windows.Forms.Panel();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelMenuMapa = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnLocalMapa = new System.Windows.Forms.Button();
-            this.btnMusicoMapa = new System.Windows.Forms.Button();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMapa.SuspendLayout();
             this.panelMenuMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
@@ -53,7 +52,7 @@
             this.panelMapa.Location = new System.Drawing.Point(30, 30);
             this.panelMapa.Name = "panelMapa";
             this.panelMapa.Size = new System.Drawing.Size(1225, 650);
-            this.panelMapa.TabIndex = 3;
+            this.panelMapa.TabIndex = 4;
             // 
             // gMapControl1
             // 
@@ -84,63 +83,14 @@
             // panelMenuMapa
             // 
             this.panelMenuMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.panelMenuMapa.Controls.Add(this.label2);
             this.panelMenuMapa.Controls.Add(this.label1);
-            this.panelMenuMapa.Controls.Add(this.btnLocalMapa);
-            this.panelMenuMapa.Controls.Add(this.btnMusicoMapa);
+            this.panelMenuMapa.Controls.Add(this.textBox1);
+            this.panelMenuMapa.Controls.Add(this.button1);
             this.panelMenuMapa.Controls.Add(this.pboxAtras);
             this.panelMenuMapa.Location = new System.Drawing.Point(0, 0);
             this.panelMenuMapa.Name = "panelMenuMapa";
             this.panelMenuMapa.Size = new System.Drawing.Size(291, 650);
             this.panelMenuMapa.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.label2.Location = new System.Drawing.Point(21, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 30);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Disponibilidad Musico";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(46, 382);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Visualizar Locales";
-            // 
-            // btnLocalMapa
-            // 
-            this.btnLocalMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.btnLocalMapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLocalMapa.FlatAppearance.BorderSize = 0;
-            this.btnLocalMapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLocalMapa.Location = new System.Drawing.Point(44, 415);
-            this.btnLocalMapa.Name = "btnLocalMapa";
-            this.btnLocalMapa.Size = new System.Drawing.Size(200, 200);
-            this.btnLocalMapa.TabIndex = 3;
-            this.btnLocalMapa.UseVisualStyleBackColor = false;
-            this.btnLocalMapa.Click += new System.EventHandler(this.btnLocalMapa_Click);
-            // 
-            // btnMusicoMapa
-            // 
-            this.btnMusicoMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.btnMusicoMapa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMusicoMapa.FlatAppearance.BorderSize = 0;
-            this.btnMusicoMapa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMusicoMapa.Location = new System.Drawing.Point(44, 153);
-            this.btnMusicoMapa.Name = "btnMusicoMapa";
-            this.btnMusicoMapa.Size = new System.Drawing.Size(200, 200);
-            this.btnMusicoMapa.TabIndex = 2;
-            this.btnMusicoMapa.UseVisualStyleBackColor = false;
-            this.btnMusicoMapa.Click += new System.EventHandler(this.btnMusicoMapa_Click);
             // 
             // pboxAtras
             // 
@@ -152,6 +102,7 @@
             this.pboxAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pboxAtras.TabIndex = 1;
             this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
             // pictureBox1
             // 
@@ -164,16 +115,47 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // FormMapaMenu
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.button1.BackgroundImage = global::NavyBeats_C_.Properties.Resources.imgBuscar;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(250, 153);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(25, 154);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(219, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.label1.Location = new System.Drawing.Point(20, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 30);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nombre del musico";
+            // 
+            // FormMapaArtistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelMapa);
-            this.Name = "FormMapaMenu";
-            this.Text = "FormMapaMenu";
-            this.Load += new System.EventHandler(this.FormMapaMenu_Load);
+            this.Name = "FormMapaArtistas";
+            this.Text = "FormMapaArtistas";
+            this.Load += new System.EventHandler(this.FormMapaArtistas_Load);
             this.panelMapa.ResumeLayout(false);
             this.panelMenuMapa.ResumeLayout(false);
             this.panelMenuMapa.PerformLayout();
@@ -186,13 +168,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMapa;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.Panel panelMenuMapa;
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelMenuMapa;
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
-        private System.Windows.Forms.Button btnLocalMapa;
-        private System.Windows.Forms.Button btnMusicoMapa;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
