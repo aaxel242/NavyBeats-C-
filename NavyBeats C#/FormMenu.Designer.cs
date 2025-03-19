@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.lblSoporteTecnico = new System.Windows.Forms.Label();
             this.lblRegistro = new System.Windows.Forms.Label();
             this.lblCambiarIdioma = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.pbAtras = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -60,31 +60,31 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblSoporteTecnico);
-            this.panel1.Controls.Add(this.lblRegistro);
-            this.panel1.Controls.Add(this.lblCambiarIdioma);
-            this.panel1.Controls.Add(this.lblMapa);
-            this.panel1.Controls.Add(this.lblInformesYEstadisticas);
-            this.panel1.Controls.Add(this.lblCalendario);
-            this.panel1.Controls.Add(this.lblNotificaciones);
-            this.panel1.Controls.Add(this.lblGestionUsuarios);
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pbAtras);
-            this.panel1.Controls.Add(this.pboxAtras);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(30, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1225, 650);
-            this.panel1.TabIndex = 0;
+            this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.Controls.Add(this.lblSoporteTecnico);
+            this.panel.Controls.Add(this.lblRegistro);
+            this.panel.Controls.Add(this.lblCambiarIdioma);
+            this.panel.Controls.Add(this.lblMapa);
+            this.panel.Controls.Add(this.lblInformesYEstadisticas);
+            this.panel.Controls.Add(this.lblCalendario);
+            this.panel.Controls.Add(this.lblNotificaciones);
+            this.panel.Controls.Add(this.lblGestionUsuarios);
+            this.panel.Controls.Add(this.pictureBox8);
+            this.panel.Controls.Add(this.pictureBox7);
+            this.panel.Controls.Add(this.pictureBox6);
+            this.panel.Controls.Add(this.pictureBox5);
+            this.panel.Controls.Add(this.pictureBox4);
+            this.panel.Controls.Add(this.pictureBox3);
+            this.panel.Controls.Add(this.pictureBox2);
+            this.panel.Controls.Add(this.pbAtras);
+            this.panel.Controls.Add(this.pboxAtras);
+            this.panel.Controls.Add(this.pictureBox1);
+            this.panel.Location = new System.Drawing.Point(30, 29);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1225, 650);
+            this.panel.TabIndex = 0;
             // 
             // lblSoporteTecnico
             // 
@@ -92,7 +92,7 @@
             this.lblSoporteTecnico.BackColor = System.Drawing.Color.Transparent;
             this.lblSoporteTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoporteTecnico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblSoporteTecnico.Location = new System.Drawing.Point(934, 564);
+            this.lblSoporteTecnico.Location = new System.Drawing.Point(944, 564);
             this.lblSoporteTecnico.Name = "lblSoporteTecnico";
             this.lblSoporteTecnico.Size = new System.Drawing.Size(197, 29);
             this.lblSoporteTecnico.TabIndex = 18;
@@ -116,7 +116,7 @@
             this.lblCambiarIdioma.BackColor = System.Drawing.Color.Transparent;
             this.lblCambiarIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambiarIdioma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblCambiarIdioma.Location = new System.Drawing.Point(353, 564);
+            this.lblCambiarIdioma.Location = new System.Drawing.Point(361, 564);
             this.lblCambiarIdioma.Name = "lblCambiarIdioma";
             this.lblCambiarIdioma.Size = new System.Drawing.Size(197, 29);
             this.lblCambiarIdioma.TabIndex = 16;
@@ -140,7 +140,7 @@
             this.lblInformesYEstadisticas.BackColor = System.Drawing.Color.Transparent;
             this.lblInformesYEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInformesYEstadisticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblInformesYEstadisticas.Location = new System.Drawing.Point(891, 315);
+            this.lblInformesYEstadisticas.Location = new System.Drawing.Point(909, 315);
             this.lblInformesYEstadisticas.Name = "lblInformesYEstadisticas";
             this.lblInformesYEstadisticas.Size = new System.Drawing.Size(280, 29);
             this.lblInformesYEstadisticas.TabIndex = 14;
@@ -152,7 +152,7 @@
             this.lblCalendario.BackColor = System.Drawing.Color.Transparent;
             this.lblCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalendario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblCalendario.Location = new System.Drawing.Point(681, 315);
+            this.lblCalendario.Location = new System.Drawing.Point(691, 315);
             this.lblCalendario.Name = "lblCalendario";
             this.lblCalendario.Size = new System.Drawing.Size(141, 29);
             this.lblCalendario.TabIndex = 13;
@@ -164,7 +164,7 @@
             this.lblNotificaciones.BackColor = System.Drawing.Color.Transparent;
             this.lblNotificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblNotificaciones.Location = new System.Drawing.Point(361, 315);
+            this.lblNotificaciones.Location = new System.Drawing.Point(376, 315);
             this.lblNotificaciones.Name = "lblNotificaciones";
             this.lblNotificaciones.Size = new System.Drawing.Size(179, 29);
             this.lblNotificaciones.TabIndex = 12;
@@ -176,7 +176,7 @@
             this.lblGestionUsuarios.BackColor = System.Drawing.Color.Transparent;
             this.lblGestionUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblGestionUsuarios.Location = new System.Drawing.Point(44, 315);
+            this.lblGestionUsuarios.Location = new System.Drawing.Point(57, 313);
             this.lblGestionUsuarios.Name = "lblGestionUsuarios";
             this.lblGestionUsuarios.Size = new System.Drawing.Size(250, 29);
             this.lblGestionUsuarios.TabIndex = 11;
@@ -298,14 +298,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -322,7 +322,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pbAtras;

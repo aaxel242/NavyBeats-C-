@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelBlanco = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.checkBoxSuper = new System.Windows.Forms.CheckBox();
             this.checkBoxTodos = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelBlanco.SuspendLayout();
+            this.panel.SuspendLayout();
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).BeginInit();
@@ -56,18 +56,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelBlanco
+            // panel
             // 
-            this.panelBlanco.BackColor = System.Drawing.Color.White;
-            this.panelBlanco.Controls.Add(this.customPanel);
-            this.panelBlanco.Controls.Add(this.pictureBoxNombre);
-            this.panelBlanco.Controls.Add(this.botonRedondoEliminar);
-            this.panelBlanco.Controls.Add(this.botonRedondoCrear);
-            this.panelBlanco.Controls.Add(this.pictureBoxLogo);
-            this.panelBlanco.Location = new System.Drawing.Point(335, 29);
-            this.panelBlanco.Name = "panelBlanco";
-            this.panelBlanco.Size = new System.Drawing.Size(920, 650);
-            this.panelBlanco.TabIndex = 2;
+            this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.Controls.Add(this.customPanel);
+            this.panel.Controls.Add(this.pictureBoxNombre);
+            this.panel.Controls.Add(this.botonRedondoEliminar);
+            this.panel.Controls.Add(this.botonRedondoCrear);
+            this.panel.Controls.Add(this.pictureBoxLogo);
+            this.panel.Location = new System.Drawing.Point(335, 29);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(920, 650);
+            this.panel.TabIndex = 2;
             // 
             // customPanel
             // 
@@ -279,13 +279,13 @@
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelAzul);
-            this.Controls.Add(this.panelBlanco);
+            this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
-            this.panelBlanco.ResumeLayout(false);
+            this.panel.ResumeLayout(false);
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).EndInit();
@@ -299,7 +299,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelBlanco;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Panel panelAzul;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -1,6 +1,6 @@
 ﻿namespace NavyBeats_C_
 {
-    partial class FormLocalMusicoSA
+    partial class FormActuaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -31,121 +31,79 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelAzul = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.botonRedondoEliminar = new NavyBeats_C_.Controles.BotonRedondo();
-            this.botonRedondoCrear = new NavyBeats_C_.Controles.BotonRedondo();
             this.panel = new System.Windows.Forms.Panel();
-            this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.panelAzul.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelAzul
+            // panel
             // 
-            this.panelAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.panelAzul.Controls.Add(this.pictureBox1);
-            this.panelAzul.Controls.Add(this.botonRedondoEliminar);
-            this.panelAzul.Controls.Add(this.botonRedondoCrear);
-            this.panelAzul.Location = new System.Drawing.Point(30, 30);
-            this.panelAzul.Name = "panelAzul";
-            this.panelAzul.Size = new System.Drawing.Size(306, 650);
-            this.panelAzul.TabIndex = 10;
+            this.panel.AutoSize = true;
+            this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.Controls.Add(this.label1);
+            this.panel.Controls.Add(this.customPanel);
+            this.panel.Controls.Add(this.pictureBox1);
+            this.panel.Controls.Add(this.pboxAtras);
+            this.panel.Location = new System.Drawing.Point(35, 30);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1215, 650);
+            this.panel.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat Black", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.label1.Location = new System.Drawing.Point(102, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 31);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Dia seleccionado";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.imgSalirDorado;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 17);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 59);
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // botonRedondoEliminar
+            // pboxAtras
             // 
-            this.botonRedondoEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondoEliminar.BorderRadius = 20;
-            this.botonRedondoEliminar.FlatAppearance.BorderSize = 0;
-            this.botonRedondoEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondoEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondoEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.botonRedondoEliminar.Location = new System.Drawing.Point(81, 384);
-            this.botonRedondoEliminar.Name = "botonRedondoEliminar";
-            this.botonRedondoEliminar.Size = new System.Drawing.Size(150, 40);
-            this.botonRedondoEliminar.TabIndex = 9;
-            this.botonRedondoEliminar.Text = "Eliminar";
-            this.botonRedondoEliminar.UseVisualStyleBackColor = false;
-            // 
-            // botonRedondoCrear
-            // 
-            this.botonRedondoCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondoCrear.BorderRadius = 20;
-            this.botonRedondoCrear.FlatAppearance.BorderSize = 0;
-            this.botonRedondoCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondoCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondoCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.botonRedondoCrear.Location = new System.Drawing.Point(81, 269);
-            this.botonRedondoCrear.Name = "botonRedondoCrear";
-            this.botonRedondoCrear.Size = new System.Drawing.Size(150, 40);
-            this.botonRedondoCrear.TabIndex = 8;
-            this.botonRedondoCrear.Text = "Crear";
-            this.botonRedondoCrear.UseVisualStyleBackColor = false;
-            // 
-            // panel
-            // 
-            this.panel.BackColor = System.Drawing.Color.White;
-            this.panel.Controls.Add(this.pictureBoxNombre);
-            this.panel.Controls.Add(this.pictureBoxLogo);
-            this.panel.Location = new System.Drawing.Point(335, 30);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(920, 650);
-            this.panel.TabIndex = 9;
-            // 
-            // pictureBoxNombre
-            // 
-            this.pictureBoxNombre.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxNombre.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Nombre;
-            this.pictureBoxNombre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxNombre.Location = new System.Drawing.Point(229, 16);
-            this.pictureBoxNombre.Name = "pictureBoxNombre";
-            this.pictureBoxNombre.Size = new System.Drawing.Size(350, 100);
-            this.pictureBoxNombre.TabIndex = 10;
-            this.pictureBoxNombre.TabStop = false;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(835, 16);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(60, 60);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 7;
-            this.pictureBoxLogo.TabStop = false;
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
+            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
+            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
+            this.pboxAtras.Name = "pboxAtras";
+            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
+            this.pboxAtras.TabIndex = 2;
+            this.pboxAtras.TabStop = false;
             // 
             // customPanel
             // 
             this.customPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.customPanel.BorderRadius = 20;
             this.customPanel.Controls.Add(this.dataGridView);
-            this.customPanel.Location = new System.Drawing.Point(373, 182);
+            this.customPanel.Location = new System.Drawing.Point(89, 92);
             this.customPanel.Name = "customPanel";
             this.customPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.customPanel.Size = new System.Drawing.Size(857, 440);
-            this.customPanel.TabIndex = 14;
+            this.customPanel.Size = new System.Drawing.Size(1004, 518);
+            this.customPanel.TabIndex = 13;
             // 
             // dataGridView
             // 
@@ -159,7 +117,7 @@
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
@@ -171,11 +129,10 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5});
+            this.Column4});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(180)))), ((int)(((byte)(210)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
@@ -189,7 +146,7 @@
             this.dataGridView.Name = "dataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
@@ -198,80 +155,67 @@
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.RowTemplate.Height = 40;
-            this.dataGridView.Size = new System.Drawing.Size(837, 420);
+            this.dataGridView.Size = new System.Drawing.Size(984, 498);
             this.dataGridView.TabIndex = 0;
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Nombre";
+            this.Column1.HeaderText = "Músico";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Correo";
+            this.Column2.HeaderText = "Local";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Contraseña";
+            this.Column3.HeaderText = "Horario";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Fecha de creación";
+            this.Column4.HeaderText = "Pago";
             this.Column4.Name = "Column4";
             // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Eliminado";
-            this.Column5.Name = "Column5";
-            // 
-            // FormLocalMusicoSA
+            // FormActuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::NavyBeats_C_.Properties.Resources.Fondo;
             this.ClientSize = new System.Drawing.Size(1284, 711);
-            this.Controls.Add(this.customPanel);
-            this.Controls.Add(this.panelAzul);
             this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormLocalMusicoSA";
-            this.Text = "FormLocalMusico";
-            this.Load += new System.EventHandler(this.FormLocalMusicoSA_Load);
-            this.panelAzul.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Name = "FormActuaciones";
+            this.Text = "FormActuaciones";
+            this.Load += new System.EventHandler(this.FormActuaciones_Load);
             this.panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelAzul;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Controles.BotonRedondo botonRedondoEliminar;
-        private Controles.BotonRedondo botonRedondoCrear;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.PictureBox pictureBoxNombre;
-        private System.Windows.Forms.PictureBox pictureBoxLogo;
         private Controles.CustomPanel customPanel;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pboxAtras;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
     }
 }

@@ -67,6 +67,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -105,6 +107,12 @@
     </Compile>
     <Compile Include="Controles\TextBoxNavyBeat.Designer.cs">
       <DependentUpon>TextBoxNavyBeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormActuaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormActuaciones.Designer.cs">
+      <DependentUpon>FormActuaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCalendario.cs">
       <SubType>Form</SubType>
@@ -184,10 +192,79 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Chat.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comment_Restaurant_Publication.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Like_Restaurant_Publication.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Message.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelNavyBeats.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNavyBeats.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelNavyBeats.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelNavyBeats.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Municipality.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Musician.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Offer_dir.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Offer_In.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Publication.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Restaurant.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Style.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Super_User.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ticket.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\time.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Users.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Valorar.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controles\TextBoxNavyBeat.resx">
       <DependentUpon>TextBoxNavyBeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormActuaciones.resx">
+      <DependentUpon>FormActuaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCalendario.resx">
       <DependentUpon>FormCalendario.cs</DependentUpon>
@@ -241,6 +318,13 @@
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EntityDeploy Include="Models\ModelNavyBeats.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelNavyBeats.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ModelNavyBeats.edmx.diagram">
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -257,6 +341,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Models\ModelNavyBeats.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
+      <LastGenOutput>ModelNavyBeats.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelNavyBeats.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
+      <LastGenOutput>ModelNavyBeats.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\Fondo.png" />
     <None Include="Resources\imgBuscar.png" />
     <None Include="Resources\imgLocal.png" />
@@ -281,6 +375,9 @@
     <None Include="Resources\imgAtras.png" />
     <None Include="Resources\Nombre.png" />
     <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
