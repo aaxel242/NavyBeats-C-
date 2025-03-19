@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using GMap.NET.WindowsForms;
 using GMap.NET;
 using GMap.NET.MapProviders;
-using GMap.NET.WindowsForms;
-using System.Collections.Generic; // Asegúrate de incluir esta directiva
 
 namespace NavyBeats_C_
 {
-    public partial class FormMapaMenu : Form
+    public partial class FormMapaArtistas: Form
     {
         // Limites de Cataluña
         private readonly double minLat = 40.5;  // Sur
@@ -16,12 +21,12 @@ namespace NavyBeats_C_
         private readonly double minLng = 0.15;  // Oeste
         private readonly double maxLng = 3.33;  // Este
 
-        public FormMapaMenu()
+        public FormMapaArtistas()
         {
             InitializeComponent();
         }
 
-        private void FormMapaMenu_Load(object sender, EventArgs e)
+        private void FormMapaArtistas_Load(object sender, EventArgs e)
         {
             panelMapa.BackColor = Color.FromArgb(216, 255, 255, 255);
 
@@ -37,15 +42,6 @@ namespace NavyBeats_C_
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-
-            // Configuración de imágenes
-            Image imgMusicoOriginal = Properties.Resources.imgArtista;
-            Image imgMusico = new Bitmap(imgMusicoOriginal, new Size(121, 140));
-            Image imgLocalOriginal = Properties.Resources.Local;
-            Image imgLocal = new Bitmap(imgLocalOriginal, new Size(127, 140));
-
-            btnMusicoMapa.Image = imgMusico;
-            btnLocalMapa.Image = imgLocal;
 
             // Configuración del mapa
             gMapControl1.DragButton = MouseButtons.Left;
@@ -67,7 +63,28 @@ namespace NavyBeats_C_
             gMapControl1.MaxZoom = 18;
             gMapControl1.Zoom = 8;
 
-        
+            // Resaltar Badalona con un polígono
+            // NOTA: Las coordenadas aquí son aproximadas para ilustrar la zona de Badalona.
+            List<PointLatLng> puntosBadalona = new List<PointLatLng>
+            {
+                new PointLatLng(41.466, 2.230), // Esquina superior izquierda
+                new PointLatLng(41.466, 2.270), // Esquina superior derecha
+                new PointLatLng(41.430, 2.270), // Esquina inferior derecha
+                new PointLatLng(41.430, 2.230)  // Esquina inferior izquierda
+            };
+
+            GMapPolygon poligonoBadalona = new GMapPolygon(puntosBadalona, "Badalona")
+            {
+                Stroke = new Pen(Color.Red, 2),
+                Fill = new SolidBrush(Color.FromArgb(50, Color.Red))
+            };
+
+            GMapOverlay overlayPoligonos = new GMapOverlay("poligonos");
+            overlayPoligonos.Polygons.Add(poligonoBadalona);
+            gMapControl1.Overlays.Add(overlayPoligonos);
+
+            // Manejar el evento para restringir el movimiento dentro de Cataluña
+            gMapControl1.OnMapDrag += GMapControl1_OnMapDrag;
         }
 
         private void GMapControl1_OnMapDrag()
@@ -96,14 +113,9 @@ namespace NavyBeats_C_
             }
         }
 
-        private void btnMusicoMapa_Click(object sender, EventArgs e)
+        private void pboxAtras_Click(object sender, EventArgs e)
         {
-            using (FormMapaArtistas formMapaArtistas = new FormMapaArtistas())
-            {
-                this.Hide();
-                formMapaArtistas.ShowDialog();
-                this.Show();
-            }
+            this.Close();
         }
     }
 }
