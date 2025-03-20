@@ -109,9 +109,7 @@ namespace NavyBeats_C_
 
         private void pboxAtras_Click(object sender, EventArgs e)
         {
-            FormMenu formMenu = new FormMenu();
-            formMenu.Show();
-            this.Hide();
+            
         }
 
         private void lblConsulta_Click(object sender, EventArgs e)

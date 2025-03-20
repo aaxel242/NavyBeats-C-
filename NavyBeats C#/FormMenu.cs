@@ -1,46 +1,96 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
     public partial class FormMenu : Form
     {
-        public FormMenu()
+        Super_User userLogin;
+
+        public FormMenu(Super_User user)
         {
             InitializeComponent();
+
+            ClickControles(panelUsuarios);
+            ClickControles(panelNotificaciones);
+            ClickControles(panelCalendario);
+            ClickControles(panelMapa);
+            ClickControles(panelIdioma);
+            ClickControles(panelSoporte);
+
+            userLogin = user;
+        }
+
+        private void ClickControles(Panel panel)
+        {
+            foreach (Control c in panel.Controls)
+            {
+                c.Click += (o, ev) => panel_Click(panel, ev);
+            }
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
-
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
         }
 
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel_Click(object panel, EventArgs e)
+        {
+            if (panel == panelUsuarios)
+            {
+                FormMenuGestion menuGestion = new FormMenuGestion(userLogin);
+                menuGestion.Show();
+
+                menuGestion.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
+            else if (panel == panelNotificaciones)
+            {
+                FormNotificaciones notificaciones = new FormNotificaciones();
+                notificaciones.Show();
+
+                notificaciones.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
+            else if (panel == panelCalendario)
+            {
+                FormCalendario calendario = new FormCalendario();
+                calendario.Show();
+
+                calendario.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
+            else if (panel == panelMapa)
+            {
+                FormMapaMenu mapa = new FormMapaMenu();
+                mapa.Show();
+
+                mapa.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
+            else if (panel == panelIdioma)
+            {
+                FormIdiomas idiomas = new FormIdiomas();
+                idiomas.Show();
+
+                idiomas.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
+            else if (panel == panelSoporte)
+            {
+                FormSoporte soporte = new FormSoporte();
+                soporte.Show();
+
+                soporte.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
         }
     }
 }

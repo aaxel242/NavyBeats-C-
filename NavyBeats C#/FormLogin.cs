@@ -21,27 +21,18 @@ namespace NavyBeats_C_
         private void FormLogin_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
-
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
         }
 
         private void botonRedondoLogin_Click(object sender, EventArgs e)
-        {
-            Super_User userLogin = UsuarioEscritorioOrm.SelectLogin(textBoxContra.Texts, textBoxCorreo.Texts);
-            if (userLogin != null)
+        {       
+            Super_User user = UsuarioEscritorioOrm.SelectLogin("jcampsv2324@politecnics.barcelona", "1234");
+            //textBoxCorreo.Texts.Trim(), textBoxContra.Texts.Trim()
+            if (user != null)
             {
-                FormMenu menu = new FormMenu();
+                textBoxCorreo.Texts = "";
+                textBoxContra.Texts = "";
+
+                FormMenu menu = new FormMenu(user);
                 menu.Show();
 
                 menu.FormClosed += (s, args) => this.Show();
@@ -50,6 +41,7 @@ namespace NavyBeats_C_
             else
             {
                 MessageBox.Show("Usuario y/o contraseña incorrecto");
+                textBoxContra.Texts = "";
             }
         }
     }
