@@ -30,7 +30,7 @@
         {
             this.panel = new System.Windows.Forms.Panel();
             this.textBoxContra = new NavyBeats_C_.Controles.TextBox();
-            this.textBox1 = new NavyBeats_C_.Controles.TextBox();
+            this.textBoxCorreo = new NavyBeats_C_.Controles.TextBox();
             this.labelContra = new System.Windows.Forms.Label();
             this.labelCorreo = new System.Windows.Forms.Label();
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
@@ -45,7 +45,7 @@
             // 
             this.panel.BackColor = System.Drawing.Color.White;
             this.panel.Controls.Add(this.textBoxContra);
-            this.panel.Controls.Add(this.textBox1);
+            this.panel.Controls.Add(this.textBoxCorreo);
             this.panel.Controls.Add(this.labelContra);
             this.panel.Controls.Add(this.labelCorreo);
             this.panel.Controls.Add(this.pictureBoxNombre);
@@ -78,27 +78,27 @@
             this.textBoxContra.Texts = "";
             this.textBoxContra.UnderlinedStyle = false;
             // 
-            // textBox1
+            // textBoxCorreo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.textBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.textBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox1.BorderRadius = 15;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBox1.Location = new System.Drawing.Point(191, 376);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.textBox1.PlaceholderText = "";
-            this.textBox1.Size = new System.Drawing.Size(450, 42);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Texts = "";
-            this.textBox1.UnderlinedStyle = false;
+            this.textBoxCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.textBoxCorreo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.textBoxCorreo.BorderFocusColor = System.Drawing.Color.Black;
+            this.textBoxCorreo.BorderRadius = 15;
+            this.textBoxCorreo.BorderSize = 2;
+            this.textBoxCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBoxCorreo.Location = new System.Drawing.Point(191, 376);
+            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxCorreo.Multiline = false;
+            this.textBoxCorreo.Name = "textBoxCorreo";
+            this.textBoxCorreo.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.textBoxCorreo.PasswordChar = false;
+            this.textBoxCorreo.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.textBoxCorreo.PlaceholderText = "";
+            this.textBoxCorreo.Size = new System.Drawing.Size(450, 42);
+            this.textBoxCorreo.TabIndex = 9;
+            this.textBoxCorreo.Texts = "";
+            this.textBoxCorreo.UnderlinedStyle = false;
             // 
             // labelContra
             // 
@@ -170,6 +170,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel.ResumeLayout(false);
@@ -187,7 +188,7 @@
         private Controles.BotonRedondo botonRedondoLogin;
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelContra;
-        private Controles.TextBox textBox1;
+        private Controles.TextBox textBoxCorreo;
         private Controles.TextBox textBoxContra;
     }
 }
