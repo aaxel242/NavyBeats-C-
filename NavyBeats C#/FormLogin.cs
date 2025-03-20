@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
@@ -37,11 +38,19 @@ namespace NavyBeats_C_
 
         private void botonRedondoLogin_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu();
-            menu.Show();
+            Super_User userLogin = UsuarioEscritorioOrm.SelectLogin(textBoxContra.Texts, textBoxCorreo.Texts);
+            if (userLogin != null)
+            {
+                FormMenu menu = new FormMenu();
+                menu.Show();
 
-            menu.FormClosed += (s, args) => this.Show();
-            this.Hide();
+                menu.FormClosed += (s, args) => this.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o contraseña incorrecto");
+            }
         }
     }
 }
