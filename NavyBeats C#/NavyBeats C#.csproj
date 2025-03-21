@@ -193,6 +193,7 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CalendarioOrm.cs" />
     <Compile Include="Models\Chat.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>

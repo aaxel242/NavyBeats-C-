@@ -47,6 +47,7 @@ namespace NavyBeats_C_
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
+            Models.CalendarioOrm.InsertOffers();
         }
 
 
