@@ -48,13 +48,7 @@ namespace NavyBeats_C_
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            Models.CalendarioOrm.InsertDummyOffers();
-
-            var ofertas = Models.CalendarioOrm.GetOffers();
-
-            ResaltarDiasConEvento(ofertas);
-
-
+            Models.CalendarioOrm.InsertOffers();
         }
 
 
