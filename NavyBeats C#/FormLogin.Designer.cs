@@ -35,7 +35,7 @@
             this.labelCorreo = new System.Windows.Forms.Label();
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.botonRedondoLogin = new NavyBeats_C_.Controles.BotonRedondo();
+            this.botonRedondoLogin = new NavyBeats_C_.Controles.CustomBoton();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -185,7 +185,7 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pictureBoxNombre;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private Controles.BotonRedondo botonRedondoLogin;
+        private Controles.CustomBoton botonRedondoLogin;
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelContra;
         private Controles.TextBox textBoxCorreo;

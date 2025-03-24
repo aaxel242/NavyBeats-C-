@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
@@ -15,14 +16,11 @@ namespace NavyBeats_C_
         public FormUsuarios()
         {
             InitializeComponent();
+            bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
         }
 
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
-            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 1 });
-            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 0 });
-            dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 1 });
-
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
 
             // Centrar el formulario
@@ -37,6 +35,17 @@ namespace NavyBeats_C_
 
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
+        }
+
+        private void pbSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void botonRedondoCrear_Click(object sender, EventArgs e)
+        {
+            FormCrearUsusario crear = new FormCrearUsusario();
+            crear.Show();
         }
     }
 }

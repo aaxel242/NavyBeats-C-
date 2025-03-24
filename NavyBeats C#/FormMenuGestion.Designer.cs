@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
-            this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelArtista = new System.Windows.Forms.Panel();
-            this.panelLocal = new System.Windows.Forms.Panel();
-            this.panelSistema = new System.Windows.Forms.Panel();
             this.labelArtista = new System.Windows.Forms.Label();
             this.pictureBoxArtista = new System.Windows.Forms.PictureBox();
+            this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.panelLocal = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelLocal = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelSistema = new System.Windows.Forms.Panel();
             this.pictureBoxUsuario = new System.Windows.Forms.PictureBox();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelArtista.SuspendLayout();
-            this.panelLocal.SuspendLayout();
-            this.panelSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
+            this.panelLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,28 +64,6 @@
             this.panel.Size = new System.Drawing.Size(1225, 650);
             this.panel.TabIndex = 1;
             // 
-            // pboxAtras
-            // 
-            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
-            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
-            this.pboxAtras.Location = new System.Drawing.Point(18, 20);
-            this.pboxAtras.Name = "pboxAtras";
-            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
-            this.pboxAtras.TabIndex = 8;
-            this.pboxAtras.TabStop = false;
-            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(1149, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // panelArtista
             // 
             this.panelArtista.BackColor = System.Drawing.Color.Transparent;
@@ -95,26 +73,7 @@
             this.panelArtista.Name = "panelArtista";
             this.panelArtista.Size = new System.Drawing.Size(261, 253);
             this.panelArtista.TabIndex = 24;
-            // 
-            // panelLocal
-            // 
-            this.panelLocal.BackColor = System.Drawing.Color.Transparent;
-            this.panelLocal.Controls.Add(this.pictureBox1);
-            this.panelLocal.Controls.Add(this.labelLocal);
-            this.panelLocal.Location = new System.Drawing.Point(458, 218);
-            this.panelLocal.Name = "panelLocal";
-            this.panelLocal.Size = new System.Drawing.Size(261, 253);
-            this.panelLocal.TabIndex = 23;
-            // 
-            // panelSistema
-            // 
-            this.panelSistema.BackColor = System.Drawing.Color.Transparent;
-            this.panelSistema.Controls.Add(this.pictureBoxUsuario);
-            this.panelSistema.Controls.Add(this.labelUsuario);
-            this.panelSistema.Location = new System.Drawing.Point(175, 218);
-            this.panelSistema.Name = "panelSistema";
-            this.panelSistema.Size = new System.Drawing.Size(261, 253);
-            this.panelSistema.TabIndex = 22;
+            this.panelArtista.Click += new System.EventHandler(this.panel_Click);
             // 
             // labelArtista
             // 
@@ -139,6 +98,28 @@
             this.pictureBoxArtista.TabIndex = 35;
             this.pictureBoxArtista.TabStop = false;
             // 
+            // pboxAtras
+            // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
+            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
+            this.pboxAtras.Location = new System.Drawing.Point(18, 20);
+            this.pboxAtras.Name = "pboxAtras";
+            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
+            this.pboxAtras.TabIndex = 8;
+            this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
+            // 
+            // panelLocal
+            // 
+            this.panelLocal.BackColor = System.Drawing.Color.Transparent;
+            this.panelLocal.Controls.Add(this.pictureBox1);
+            this.panelLocal.Controls.Add(this.labelLocal);
+            this.panelLocal.Location = new System.Drawing.Point(458, 218);
+            this.panelLocal.Name = "panelLocal";
+            this.panelLocal.Size = new System.Drawing.Size(261, 253);
+            this.panelLocal.TabIndex = 23;
+            this.panelLocal.Click += new System.EventHandler(this.panel_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -162,6 +143,28 @@
             this.labelLocal.Size = new System.Drawing.Size(64, 25);
             this.labelLocal.TabIndex = 31;
             this.labelLocal.Text = "Local";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::NavyBeats_C_.Properties.Resources.Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(1149, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panelSistema
+            // 
+            this.panelSistema.BackColor = System.Drawing.Color.Transparent;
+            this.panelSistema.Controls.Add(this.pictureBoxUsuario);
+            this.panelSistema.Controls.Add(this.labelUsuario);
+            this.panelSistema.Location = new System.Drawing.Point(175, 218);
+            this.panelSistema.Name = "panelSistema";
+            this.panelSistema.Size = new System.Drawing.Size(261, 253);
+            this.panelSistema.TabIndex = 22;
+            this.panelSistema.Click += new System.EventHandler(this.panel_Click);
             // 
             // pictureBoxUsuario
             // 
@@ -200,16 +203,16 @@
             this.Text = "MenuGestion";
             this.Load += new System.EventHandler(this.FormMenuGestion_Load);
             this.panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelArtista.ResumeLayout(false);
             this.panelArtista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             this.panelLocal.ResumeLayout(false);
             this.panelLocal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSistema.ResumeLayout(false);
             this.panelSistema.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArtista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).EndInit();
             this.ResumeLayout(false);
 

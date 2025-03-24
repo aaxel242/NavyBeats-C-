@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelAzul = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.botonRedondoEliminar = new NavyBeats_C_.Controles.BotonRedondo();
-            this.botonRedondoCrear = new NavyBeats_C_.Controles.BotonRedondo();
+            this.botonRedondoEliminar = new NavyBeats_C_.Controles.CustomBoton();
+            this.botonRedondoCrear = new NavyBeats_C_.Controles.CustomBoton();
             this.panel = new System.Windows.Forms.Panel();
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -128,6 +128,7 @@
             // 
             // pictureBoxLogo
             // 
+            this.pictureBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogo.Image = global::NavyBeats_C_.Properties.Resources.Logo;
             this.pictureBoxLogo.Location = new System.Drawing.Point(835, 16);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
@@ -261,8 +262,8 @@
 
         private System.Windows.Forms.Panel panelAzul;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Controles.BotonRedondo botonRedondoEliminar;
-        private Controles.BotonRedondo botonRedondoCrear;
+        private Controles.CustomBoton botonRedondoEliminar;
+        private Controles.CustomBoton botonRedondoCrear;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pictureBoxNombre;
         private System.Windows.Forms.PictureBox pictureBoxLogo;

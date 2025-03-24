@@ -18,5 +18,20 @@ namespace NavyBeats_C_.Models
 
             return _user;
         }
+
+        public static List<Super_User>SelectUsers()
+        {
+            List<Super_User> _users =
+                (from user in Orm.bd.Super_User
+                 select user).ToList();
+
+            return _users;
+        }
+
+        public static void Insert(Super_User _user)
+        {
+            Orm.bd.Super_User.Add(_user);
+            Orm.bd.SaveChanges();
+        }
     }
 }
