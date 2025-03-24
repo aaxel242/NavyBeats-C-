@@ -26,6 +26,7 @@ namespace NavyBeats_C_
         private void botonRedondoLogin_Click(object sender, EventArgs e)
         {       
             Super_User user = UsuarioEscritorioOrm.SelectLogin("jcampsv2324@politecnics.barcelona", "1234");
+            //"jcampsv2324@politecnics.barcelona", "1234"
             //textBoxCorreo.Texts.Trim(), textBoxContra.Texts.Trim()
             if (user != null)
             {

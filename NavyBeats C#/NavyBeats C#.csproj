@@ -97,17 +97,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDatos\Bd.cs" />
-    <Compile Include="Controles\BotonRedondo.cs">
+    <Compile Include="Controles\CustomBoton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\CustomComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\CustomComboBox.Designer.cs">
+      <DependentUpon>CustomComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Controles\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controles\TextBoxNavyBeat.cs">
+    <Compile Include="Controles\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controles\TextBoxNavyBeat.Designer.cs">
-      <DependentUpon>TextBoxNavyBeat.cs</DependentUpon>
+    <Compile Include="Controles\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="FormActuaciones.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="FormCalendario.Designer.cs">
       <DependentUpon>FormCalendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCrearUsusario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCrearUsusario.Designer.cs">
+      <DependentUpon>FormCrearUsusario.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIdiomas.cs">
       <SubType>Form</SubType>
@@ -263,14 +275,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controles\TextBoxNavyBeat.resx">
-      <DependentUpon>TextBoxNavyBeat.cs</DependentUpon>
+    <EmbeddedResource Include="Controles\CustomComboBox.resx">
+      <DependentUpon>CustomComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\CustomTextBox.resx">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormActuaciones.resx">
       <DependentUpon>FormActuaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCalendario.resx">
       <DependentUpon>FormCalendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCrearUsusario.resx">
+      <DependentUpon>FormCrearUsusario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIdiomas.resx">
       <DependentUpon>FormIdiomas.cs</DependentUpon>
@@ -329,6 +347,26 @@
       <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Chat.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.City.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Comment_Restaurant_Publication.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.dam04Entities.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Like_Restaurant_Publication.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Message.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Municipality.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Musician.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_dir.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_In.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Orm.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Publication.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Restaurant.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Style.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Super_User.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Ticket.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.time.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Users.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.UsuarioEscritorioOrm.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Valorar.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
