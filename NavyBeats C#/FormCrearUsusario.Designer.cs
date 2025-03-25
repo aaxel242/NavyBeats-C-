@@ -120,6 +120,7 @@
             this.botonRedondoEntrar.TabIndex = 22;
             this.botonRedondoEntrar.Text = "Entrar";
             this.botonRedondoEntrar.UseVisualStyleBackColor = false;
+            this.botonRedondoEntrar.Click += new System.EventHandler(this.botonRedondoEntrar_Click);
             // 
             // textBoxConfirmar
             // 
@@ -135,7 +136,7 @@
             this.textBoxConfirmar.Multiline = false;
             this.textBoxConfirmar.Name = "textBoxConfirmar";
             this.textBoxConfirmar.Padding = new System.Windows.Forms.Padding(10);
-            this.textBoxConfirmar.PasswordChar = false;
+            this.textBoxConfirmar.PasswordChar = true;
             this.textBoxConfirmar.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.textBoxConfirmar.PlaceholderText = "";
             this.textBoxConfirmar.Size = new System.Drawing.Size(250, 46);
@@ -157,7 +158,7 @@
             this.textBoxContra.Multiline = false;
             this.textBoxContra.Name = "textBoxContra";
             this.textBoxContra.Padding = new System.Windows.Forms.Padding(10);
-            this.textBoxContra.PasswordChar = false;
+            this.textBoxContra.PasswordChar = true;
             this.textBoxContra.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.textBoxContra.PlaceholderText = "";
             this.textBoxContra.Size = new System.Drawing.Size(250, 46);
