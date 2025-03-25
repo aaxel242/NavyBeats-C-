@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NavyBeats_C_.BaseDatos;
+using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
@@ -46,6 +47,13 @@ namespace NavyBeats_C_
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+
+            Models.CalendarioOrm.InsertDummyOffers();
+
+            var ofertas = Models.CalendarioOrm.GetOffers();
+
+            ResaltarDiasConEvento(ofertas);
+
 
         }
 
@@ -100,6 +108,29 @@ namespace NavyBeats_C_
 
             lblMes.Text = $"{ObtenerNombreMes(month)} {year}";
         }
+
+        private void ResaltarDiasConEvento(List<Offer_dir> ofertas)
+        {
+            // Recorre cada oferta y resalta el día correspondiente en tu panelDias.
+            foreach (var oferta in ofertas)
+            {
+                DateTime fechaEvento = oferta.event_date;
+
+                // Busca el botón correspondiente a ese día en el TableLayoutPanel 'panelDias'
+                foreach (Control control in panelDias.Controls)
+                {
+                    if (control is Button btn && btn.Tag is DateTime fechaBoton)
+                    {
+                        // Si el día coincide, cambia el color (ejemplo: Amarillo)
+                        if (fechaBoton.Date == fechaEvento.Date)
+                        {
+                            btn.BackColor = Color.Yellow;
+                        }
+                    }
+                }
+            }
+        }
+
 
 
         private void BtnDia_Click(object sender, EventArgs e)
