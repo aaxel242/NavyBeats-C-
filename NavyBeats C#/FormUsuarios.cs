@@ -1,40 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
-    public partial class FormUsuarios: Form
+    public partial class FormUsuarios : Form
     {
+        private Timer filterTimer;
+
         public FormUsuarios()
         {
             InitializeComponent();
             bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+
+            filterTimer = new Timer();
+            filterTimer.Interval = 100;
+            filterTimer.Tick += FilterTimer_Tick;
         }
 
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
-
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
         }
 
         private void pbSalir_Click(object sender, EventArgs e)
@@ -45,7 +35,57 @@ namespace NavyBeats_C_
         private void botonRedondoCrear_Click(object sender, EventArgs e)
         {
             FormCrearUsusario crear = new FormCrearUsusario();
-            crear.Show();
+
+            if (crear.ShowDialog() == DialogResult.OK)
+            {
+                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+            }
+        }
+
+        private void botonRedondoEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Estas seguro de eliminar al usuario?", "Confirmar", MessageBoxButtons.YesNo);
+            bool delete = false;
+
+            if (confirm == DialogResult.Yes)
+            {
+                int rowSelected = dataGridView.CurrentCell.RowIndex;
+                int id = (int)dataGridView.Rows[rowSelected].Cells["useridadminDataGridViewTextBoxColumn"].Value;
+                delete = UsuarioEscritorioOrm.Delete(id);
+            }
+
+            if (delete)
+            {
+                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+            }
+        }
+
+        private void checkedListBoxUsuarios_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            filterTimer.Stop();
+            filterTimer.Start();
+        }
+
+        private void FilterTimer_Tick(object sender, EventArgs e)
+        {
+            filterTimer.Stop();
+            var users = UsuarioEscritorioOrm.SelectUsers();
+            var selectedRole = checkedListBoxUsuarios.CheckedItems.Cast<string>().ToList();
+
+            if (selectedRole.Count == 0)
+            {
+                bindingSourceUsuarios.DataSource = users;
+            }
+            else
+            {
+                filter(users, selectedRole);
+            }
+        }
+
+        private void filter(List<Super_User> users, List<string> selectedRole)
+        {
+            var filteredItems = users.Where(item => selectedRole.Contains(item.role)).ToList();
+            bindingSourceUsuarios.DataSource = filteredItems;
         }
     }
 }

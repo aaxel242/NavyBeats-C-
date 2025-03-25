@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelAzul = new System.Windows.Forms.Panel();
-            this.checkBoxMantenimiento = new System.Windows.Forms.CheckBox();
-            this.checkBoxAdmin = new System.Windows.Forms.CheckBox();
-            this.checkBoxSuper = new System.Windows.Forms.CheckBox();
-            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
+            this.checkedListBoxUsuarios = new System.Windows.Forms.CheckedListBox();
             this.pbSalir = new System.Windows.Forms.PictureBox();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -48,7 +45,6 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceUsuarios = new System.Windows.Forms.BindingSource(this.components);
             this.botonRedondoEliminar = new NavyBeats_C_.Controles.CustomBoton();
             this.botonRedondoCrear = new NavyBeats_C_.Controles.CustomBoton();
@@ -100,63 +96,29 @@
             // panelAzul
             // 
             this.panelAzul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.panelAzul.Controls.Add(this.checkBoxMantenimiento);
-            this.panelAzul.Controls.Add(this.checkBoxAdmin);
-            this.panelAzul.Controls.Add(this.checkBoxSuper);
-            this.panelAzul.Controls.Add(this.checkBoxTodos);
+            this.panelAzul.Controls.Add(this.checkedListBoxUsuarios);
             this.panelAzul.Controls.Add(this.pbSalir);
             this.panelAzul.Location = new System.Drawing.Point(30, 29);
             this.panelAzul.Name = "panelAzul";
             this.panelAzul.Size = new System.Drawing.Size(306, 650);
             this.panelAzul.TabIndex = 8;
             // 
-            // checkBoxMantenimiento
+            // checkedListBoxUsuarios
             // 
-            this.checkBoxMantenimiento.AutoSize = true;
-            this.checkBoxMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.checkBoxMantenimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.checkBoxMantenimiento.Location = new System.Drawing.Point(18, 398);
-            this.checkBoxMantenimiento.Name = "checkBoxMantenimiento";
-            this.checkBoxMantenimiento.Size = new System.Drawing.Size(223, 35);
-            this.checkBoxMantenimiento.TabIndex = 13;
-            this.checkBoxMantenimiento.Text = "Mantenimiento";
-            this.checkBoxMantenimiento.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxAdmin
-            // 
-            this.checkBoxAdmin.AutoSize = true;
-            this.checkBoxAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.checkBoxAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.checkBoxAdmin.Location = new System.Drawing.Point(18, 367);
-            this.checkBoxAdmin.Name = "checkBoxAdmin";
-            this.checkBoxAdmin.Size = new System.Drawing.Size(244, 35);
-            this.checkBoxAdmin.TabIndex = 12;
-            this.checkBoxAdmin.Text = "Administradores";
-            this.checkBoxAdmin.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxSuper
-            // 
-            this.checkBoxSuper.AutoSize = true;
-            this.checkBoxSuper.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.checkBoxSuper.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.checkBoxSuper.Location = new System.Drawing.Point(18, 336);
-            this.checkBoxSuper.Name = "checkBoxSuper";
-            this.checkBoxSuper.Size = new System.Drawing.Size(221, 35);
-            this.checkBoxSuper.TabIndex = 11;
-            this.checkBoxSuper.Text = "Superusuarios";
-            this.checkBoxSuper.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTodos
-            // 
-            this.checkBoxTodos.AutoSize = true;
-            this.checkBoxTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.checkBoxTodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.checkBoxTodos.Location = new System.Drawing.Point(18, 240);
-            this.checkBoxTodos.Name = "checkBoxTodos";
-            this.checkBoxTodos.Size = new System.Drawing.Size(114, 35);
-            this.checkBoxTodos.TabIndex = 10;
-            this.checkBoxTodos.Text = "Todos";
-            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            this.checkedListBoxUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.checkedListBoxUsuarios.CheckOnClick = true;
+            this.checkedListBoxUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.checkedListBoxUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.checkedListBoxUsuarios.FormattingEnabled = true;
+            this.checkedListBoxUsuarios.Items.AddRange(new object[] {
+            "Super",
+            "Admin",
+            "Mantenimiento"});
+            this.checkedListBoxUsuarios.Location = new System.Drawing.Point(18, 277);
+            this.checkedListBoxUsuarios.Name = "checkedListBoxUsuarios";
+            this.checkedListBoxUsuarios.Size = new System.Drawing.Size(278, 103);
+            this.checkedListBoxUsuarios.TabIndex = 14;
+            this.checkedListBoxUsuarios.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxUsuarios_ItemCheck);
             // 
             // pbSalir
             // 
@@ -192,14 +154,14 @@
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeight = 35;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -207,31 +169,30 @@
             this.nameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
-            this.roleDataGridViewTextBoxColumn,
-            this.ticketDataGridViewTextBoxColumn});
+            this.roleDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.bindingSourceUsuarios;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(180)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(180)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.dataGridView.Location = new System.Drawing.Point(10, 10);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.RowTemplate.Height = 40;
@@ -268,12 +229,6 @@
             this.roleDataGridViewTextBoxColumn.HeaderText = "Rol";
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             // 
-            // ticketDataGridViewTextBoxColumn
-            // 
-            this.ticketDataGridViewTextBoxColumn.DataPropertyName = "Ticket";
-            this.ticketDataGridViewTextBoxColumn.HeaderText = "Ticket";
-            this.ticketDataGridViewTextBoxColumn.Name = "ticketDataGridViewTextBoxColumn";
-            // 
             // bindingSourceUsuarios
             // 
             this.bindingSourceUsuarios.DataSource = typeof(NavyBeats_C_.Models.Super_User);
@@ -292,6 +247,7 @@
             this.botonRedondoEliminar.TabIndex = 9;
             this.botonRedondoEliminar.Text = "Eliminar";
             this.botonRedondoEliminar.UseVisualStyleBackColor = false;
+            this.botonRedondoEliminar.Click += new System.EventHandler(this.botonRedondoEliminar_Click);
             // 
             // botonRedondoCrear
             // 
@@ -326,7 +282,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelAzul.ResumeLayout(false);
-            this.panelAzul.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -344,18 +299,14 @@
         private Controles.CustomBoton botonRedondoEliminar;
         private Controles.CustomBoton botonRedondoCrear;
         private System.Windows.Forms.PictureBox pictureBoxNombre;
-        private System.Windows.Forms.CheckBox checkBoxTodos;
         private Controles.CustomPanel customPanel;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.CheckBox checkBoxMantenimiento;
-        private System.Windows.Forms.CheckBox checkBoxAdmin;
-        private System.Windows.Forms.CheckBox checkBoxSuper;
+        private System.Windows.Forms.BindingSource bindingSourceUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn useridadminDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ticketDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bindingSourceUsuarios;
+        private System.Windows.Forms.CheckedListBox checkedListBoxUsuarios;
     }
 }
