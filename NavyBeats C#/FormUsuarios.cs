@@ -11,6 +11,7 @@ namespace NavyBeats_C_
     public partial class FormUsuarios : Form
     {
         private Timer filterTimer;
+        bool created;
 
         public FormUsuarios()
         {
@@ -34,9 +35,25 @@ namespace NavyBeats_C_
 
         private void botonRedondoCrear_Click(object sender, EventArgs e)
         {
-            FormCrearUsusario crear = new FormCrearUsusario();
+            Super_User user = usuarioSeleccionado();
+            created = true;
+
+            FormInfoUsusario crear = new FormInfoUsusario(user, created);
 
             if (crear.ShowDialog() == DialogResult.OK)
+            {
+                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+            }
+        }
+
+        private void customBotonModificar_Click(object sender, EventArgs e)
+        {
+            Super_User user = usuarioSeleccionado();
+            created = false;
+
+            FormInfoUsusario modificar = new FormInfoUsusario(user, created);
+
+            if (modificar.ShowDialog() == DialogResult.OK)
             {
                 bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
             }
@@ -49,9 +66,9 @@ namespace NavyBeats_C_
 
             if (confirm == DialogResult.Yes)
             {
-                int rowSelected = dataGridView.CurrentCell.RowIndex;
-                int id = (int)dataGridView.Rows[rowSelected].Cells["useridadminDataGridViewTextBoxColumn"].Value;
-                delete = UsuarioEscritorioOrm.Delete(id);
+                Super_User user = usuarioSeleccionado();
+
+                delete = UsuarioEscritorioOrm.Delete(user);
             }
 
             if (delete)
@@ -64,6 +81,15 @@ namespace NavyBeats_C_
         {
             filterTimer.Stop();
             filterTimer.Start();
+        }
+
+        private Super_User usuarioSeleccionado()
+        {
+            int rowSelected = dataGridView.CurrentCell.RowIndex;
+            int id = (int)dataGridView.Rows[rowSelected].Cells["useridadminDataGridViewTextBoxColumn"].Value;
+            Super_User user = UsuarioEscritorioOrm.selectById(id);
+
+            return user;
         }
 
         private void FilterTimer_Tick(object sender, EventArgs e)
