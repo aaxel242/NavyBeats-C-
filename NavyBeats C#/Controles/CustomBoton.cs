@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace NavyBeats_C_.Controles
 {
-    public class BotonRedondo : Button
+    public class CustomBoton : Button
     {
         private int borderSize = 0;
         private int borderRadius = 20;
@@ -13,7 +13,7 @@ namespace NavyBeats_C_.Controles
 
         public int BorderRadius { get => borderRadius; set => borderRadius = value; }
 
-        public BotonRedondo()
+        public CustomBoton()
         {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;

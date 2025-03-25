@@ -31,7 +31,7 @@
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
-            this.btnEnviarForm = new NavyBeats_C_.Controles.BotonRedondo();
+            this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
@@ -325,6 +325,6 @@
         private System.Windows.Forms.TextBox txtBoxAsunto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
-        private Controles.BotonRedondo btnEnviarForm;
+        private Controles.CustomBoton btnEnviarForm;
     }
 }
