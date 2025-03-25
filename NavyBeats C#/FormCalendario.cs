@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NavyBeats_C_.BaseDatos;
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
 using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
@@ -30,47 +26,39 @@ namespace NavyBeats_C_
 
         private void FormCalendario_Load(object sender, EventArgs e)
         {
-
             panelCalendarioFondo.BackColor = Color.FromArgb(216, 255, 255, 255);
 
             // Centrar el formulario
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
             int formWidth = this.Width;
             int formHeight = this.Height;
-
             int positionX = (screenWidth - formWidth) / 2;
             int positionY = (screenHeight - formHeight) / 2;
-
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            Models.CalendarioOrm.InsertDummyOffers();
-
-            var ofertas = Models.CalendarioOrm.GetOffers();
-
-            ResaltarDiasConEvento(ofertas);
+            // Aquí se podría llamar a InsertOffers si es necesario para insertar datos de prueba
+            //Models.CalendarioOrm.InsertOffers();
 
 
+            // Luego se mostrarán los días y se resaltarán los días con eventos
+            MostrarDias(currentYear, currentMonth);
         }
-
-
 
         private void MostrarDias(int year, int month)
         {
             panelDias.Controls.Clear();
             panelDias.ColumnStyles.Clear();
             panelDias.RowStyles.Clear();
-            panelDias.ColumnCount = 7; 
-            panelDias.RowCount = 6;    
+            panelDias.ColumnCount = 7;
+            panelDias.RowCount = 6;
 
             // Hacemos que cada columna y fila ocupe el mismo espacio proporcionalmente
             for (int i = 0; i < 7; i++)
                 panelDias.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / 7));
-
             for (int i = 0; i < 6; i++)
                 panelDias.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / 6));
 
@@ -100,47 +88,61 @@ namespace NavyBeats_C_
 
                 if (esMesActual && day == diaActual)
                 {
-                    btnDay.BackColor = Color.LightBlue; 
+                    btnDay.BackColor = Color.LightBlue;
                 }
 
                 panelDias.Controls.Add(btnDay, col, row);
             }
 
+            // Llama al método que resalta los días con eventos
+            ResaltarDiasConEventos();
+
             lblMes.Text = $"{ObtenerNombreMes(month)} {year}";
         }
 
-        private void ResaltarDiasConEvento(List<Offer_dir> ofertas)
+        private void ResaltarDiasConEventos()
         {
-            // Recorre cada oferta y resalta el día correspondiente en tu panelDias.
-            foreach (var oferta in ofertas)
+            // Se consultan las ofertas activas de ambas tablas según los criterios definidos
+            using (var context = new dam04Entities())
             {
-                DateTime fechaEvento = oferta.event_date;
+                // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
+                var offerDirDates = context.Offer_dir
+                    .Where(o => o.agreement == 1 && o.done == 0)
+                    .Select(o => o.event_date.Value)
+                    .ToList();
 
-                // Busca el botón correspondiente a ese día en el TableLayoutPanel 'panelDias'
-                foreach (Control control in panelDias.Controls)
+                // Obtener las fechas de los eventos de Offer_In (music_id_final no es nulo)
+                var offerInDates = context.Offer_In
+                    .Where(o => o.music_id_final != null)
+                    .Select(o => o.event_date.Value)
+                    .ToList();
+
+                // Combina ambas listas y elimina duplicados
+                var eventDates = offerDirDates.Union(offerInDates).ToList();
+
+                // Recorrer los botones en panelDias y resaltar aquellos cuyo Tag (fecha) coincide con algún evento
+                foreach (Control ctrl in panelDias.Controls)
                 {
-                    if (control is Button btn && btn.Tag is DateTime fechaBoton)
+                    if (ctrl is Button btn && btn.Tag is DateTime btnDate)
                     {
-                        // Si el día coincide, cambia el color (ejemplo: Amarillo)
-                        if (fechaBoton.Date == fechaEvento.Date)
+                        // Compara solo la parte de la fecha
+                        if (eventDates.Any(ev => ev.Date == btnDate.Date))
                         {
-                            btn.BackColor = Color.Yellow;
+                            // Resalta la celda (por ejemplo, en color amarillo)
+
+                            //poner color rgb 229, 177,129 en lugar de amarillo
+                            btn.BackColor = Color.FromArgb(229, 177, 129);
                         }
                     }
                 }
             }
         }
 
-
-
         private void BtnDia_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if (btn != null && btn.Tag is DateTime)
+            if (btn != null && btn.Tag is DateTime fecha)
             {
-                DateTime fecha = (DateTime)btn.Tag;
-                // Enviar luego a otro formulario.
-               
                 MessageBox.Show("Día seleccionado: " + fecha.ToShortDateString());
             }
         }
@@ -148,7 +150,7 @@ namespace NavyBeats_C_
         private string ObtenerNombreMes(int mes)
         {
             string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                           "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+                               "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
             return meses[mes - 1];
         }
 
@@ -178,24 +180,17 @@ namespace NavyBeats_C_
         {
             // Posicionar el DateTimePicker justo debajo del label
             dateTimePickerCalendario.Location = new Point(lblMes.Left, lblMes.Bottom);
-            // Asigna el valor actual del calendario
             dateTimePickerCalendario.Value = new DateTime(currentYear, currentMonth, 1);
-            // Mostrar el control y darle foco
             dateTimePickerCalendario.Visible = true;
             dateTimePickerCalendario.Focus();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            // Actualiza el año y mes a partir del valor seleccionado
             currentYear = dateTimePickerCalendario.Value.Year;
             currentMonth = dateTimePickerCalendario.Value.Month;
-            // Actualiza el calendario
             MostrarDias(currentYear, currentMonth);
-            // Oculta el DateTimePicker
             dateTimePickerCalendario.Visible = false;
         }
-
-
     }
 }
