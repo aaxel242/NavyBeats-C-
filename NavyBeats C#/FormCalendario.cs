@@ -43,6 +43,7 @@ namespace NavyBeats_C_
             // Aquí se podría llamar a InsertOffers si es necesario para insertar datos de prueba
             //Models.CalendarioOrm.InsertOffers();
 
+
             // Luego se mostrarán los días y se resaltarán los días con eventos
             MostrarDias(currentYear, currentMonth);
         }

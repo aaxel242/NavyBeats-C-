@@ -130,6 +130,7 @@
           <Property Name="email" Type="varchar" MaxLength="100" />
           <Property Name="password" Type="varchar" MaxLength="100" />
           <Property Name="role" Type="varchar" MaxLength="100" />
+          <Property Name="delete_at" Type="date" />
         </EntityType>
         <EntityType Name="Ticket">
           <Key>
@@ -193,7 +194,7 @@
           <Property Name="appraiser_id" Type="int" Nullable="false" />
           <Property Name="valued_id" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Chat__musician_i__6E01572D">
+        <Association Name="FK__Chat__musician_i__5BE2A6F2">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -205,7 +206,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Chat__restaurant__6EF57B66">
+        <Association Name="FK__Chat__restaurant__5CD6CB2B">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -217,7 +218,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comment_R__publi__6FE99F9F">
+        <Association Name="FK__Comment_R__publi__5DCAEF64">
           <End Role="Publication" Type="Self.Publication" Multiplicity="0..1" />
           <End Role="Comment_Restaurant_Publication" Type="Self.Comment_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,7 +230,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comment_R__user___70DDC3D8">
+        <Association Name="FK__Comment_R__user___5EBF139D">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Comment_Restaurant_Publication" Type="Self.Comment_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -241,7 +242,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Follow__musician__71D1E811">
+        <Association Name="FK__Follow__musician__5FB337D6">
           <End Role="Musician" Type="Self.Musician" Multiplicity="1" />
           <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
           <ReferentialConstraint>
@@ -253,7 +254,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Follow__restaura__72C60C4A">
+        <Association Name="FK__Follow__restaura__60A75C0F">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
           <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
           <ReferentialConstraint>
@@ -265,7 +266,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Like_Rest__publi__73BA3083">
+        <Association Name="FK__Like_Rest__publi__619B8048">
           <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
           <End Role="Like_Restaurant_Publication" Type="Self.Like_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -277,7 +278,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Like_Rest__resta__74AE54BC">
+        <Association Name="FK__Like_Rest__resta__628FA481">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
           <End Role="Like_Restaurant_Publication" Type="Self.Like_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -289,7 +290,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Message__chat_id__75A278F5">
+        <Association Name="FK__Message__chat_id__6383C8BA">
           <End Role="Chat" Type="Self.Chat" Multiplicity="0..1" />
           <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
@@ -301,7 +302,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Message__user_id__76969D2E">
+        <Association Name="FK__Message__user_id__6477ECF3">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
@@ -313,7 +314,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Musician__user_i__787EE5A0">
+        <Association Name="FK__Musician__user_i__66603565">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -325,7 +326,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_dir__music__797309D9">
+        <Association Name="FK__Offer_dir__music__6754599E">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Offer_dir" Type="Self.Offer_dir" Multiplicity="*" />
           <ReferentialConstraint>
@@ -337,7 +338,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_dir__resta__7A672E12">
+        <Association Name="FK__Offer_dir__resta__68487DD7">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Offer_dir" Type="Self.Offer_dir" Multiplicity="*" />
           <ReferentialConstraint>
@@ -349,7 +350,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_In__music___7B5B524B">
+        <Association Name="FK__Offer_In__music___693CA210">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Offer_In" Type="Self.Offer_In" Multiplicity="*" />
           <ReferentialConstraint>
@@ -361,7 +362,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_In__restau__7C4F7684">
+        <Association Name="FK__Offer_In__restau__6A30C649">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Offer_In" Type="Self.Offer_In" Multiplicity="*" />
           <ReferentialConstraint>
@@ -373,7 +374,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Publicati__user___7D439ABD">
+        <Association Name="FK__Publicati__user___6B24EA82">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -385,7 +386,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Restauran__user___7E37BEF6">
+        <Association Name="FK__Restauran__user___6C190EBB">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -397,7 +398,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ticket__user_id___7F2BE32F">
+        <Association Name="FK__Ticket__user_id___6D0D32F4">
           <End Role="Super_User" Type="Self.Super_User" Multiplicity="0..1" />
           <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
@@ -409,7 +410,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ticket__user_id__00200768">
+        <Association Name="FK__Ticket__user_id__6E01572D">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
@@ -421,7 +422,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User_Styl__style__01142BA1">
+        <Association Name="FK__User_Styl__style__6EF57B66">
           <End Role="Style" Type="Self.Style" Multiplicity="1" />
           <End Role="User_Style" Type="Self.User_Style" Multiplicity="*" />
           <ReferentialConstraint>
@@ -433,7 +434,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User_Time__time___02FC7413">
+        <Association Name="FK__User_Time__time___70DDC3D8">
           <End Role="time" Type="Self.time" Multiplicity="1" />
           <End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,7 +446,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__User_Time__user___03F0984C">
+        <Association Name="FK__User_Time__user___71D1E811">
           <End Role="Musician" Type="Self.Musician" Multiplicity="1" />
           <End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
           <ReferentialConstraint>
@@ -457,7 +458,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valorar__apprais__05D8E0BE">
+        <Association Name="FK__Valorar__apprais__73BA3083">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Valorar" Type="Self.Valorar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -469,7 +470,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valorar__valued___06CD04F7">
+        <Association Name="FK__Valorar__valued___74AE54BC">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Valorar" Type="Self.Valorar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -540,99 +541,99 @@
           <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valorar" EntityType="Self.Valorar" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Chat__musician_i__6E01572D" Association="Self.FK__Chat__musician_i__6E01572D">
+          <AssociationSet Name="FK__Chat__musician_i__5BE2A6F2" Association="Self.FK__Chat__musician_i__5BE2A6F2">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Chat" EntitySet="Chat" />
           </AssociationSet>
-          <AssociationSet Name="FK__Chat__restaurant__6EF57B66" Association="Self.FK__Chat__restaurant__6EF57B66">
+          <AssociationSet Name="FK__Chat__restaurant__5CD6CB2B" Association="Self.FK__Chat__restaurant__5CD6CB2B">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Chat" EntitySet="Chat" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comment_R__publi__6FE99F9F" Association="Self.FK__Comment_R__publi__6FE99F9F">
+          <AssociationSet Name="FK__Comment_R__publi__5DCAEF64" Association="Self.FK__Comment_R__publi__5DCAEF64">
             <End Role="Publication" EntitySet="Publication" />
             <End Role="Comment_Restaurant_Publication" EntitySet="Comment_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comment_R__user___70DDC3D8" Association="Self.FK__Comment_R__user___70DDC3D8">
+          <AssociationSet Name="FK__Comment_R__user___5EBF139D" Association="Self.FK__Comment_R__user___5EBF139D">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Comment_Restaurant_Publication" EntitySet="Comment_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Follow__musician__71D1E811" Association="Self.FK__Follow__musician__71D1E811">
+          <AssociationSet Name="FK__Follow__musician__5FB337D6" Association="Self.FK__Follow__musician__5FB337D6">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Follow" EntitySet="Follow" />
           </AssociationSet>
-          <AssociationSet Name="FK__Follow__restaura__72C60C4A" Association="Self.FK__Follow__restaura__72C60C4A">
+          <AssociationSet Name="FK__Follow__restaura__60A75C0F" Association="Self.FK__Follow__restaura__60A75C0F">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Follow" EntitySet="Follow" />
           </AssociationSet>
-          <AssociationSet Name="FK__Like_Rest__publi__73BA3083" Association="Self.FK__Like_Rest__publi__73BA3083">
+          <AssociationSet Name="FK__Like_Rest__publi__619B8048" Association="Self.FK__Like_Rest__publi__619B8048">
             <End Role="Publication" EntitySet="Publication" />
             <End Role="Like_Restaurant_Publication" EntitySet="Like_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Like_Rest__resta__74AE54BC" Association="Self.FK__Like_Rest__resta__74AE54BC">
+          <AssociationSet Name="FK__Like_Rest__resta__628FA481" Association="Self.FK__Like_Rest__resta__628FA481">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Like_Restaurant_Publication" EntitySet="Like_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Message__chat_id__75A278F5" Association="Self.FK__Message__chat_id__75A278F5">
+          <AssociationSet Name="FK__Message__chat_id__6383C8BA" Association="Self.FK__Message__chat_id__6383C8BA">
             <End Role="Chat" EntitySet="Chat" />
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
-          <AssociationSet Name="FK__Message__user_id__76969D2E" Association="Self.FK__Message__user_id__76969D2E">
+          <AssociationSet Name="FK__Message__user_id__6477ECF3" Association="Self.FK__Message__user_id__6477ECF3">
             <End Role="Users" EntitySet="Users" />
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
-          <AssociationSet Name="FK__Musician__user_i__787EE5A0" Association="Self.FK__Musician__user_i__787EE5A0">
+          <AssociationSet Name="FK__Musician__user_i__66603565" Association="Self.FK__Musician__user_i__66603565">
             <End Role="Users" EntitySet="Users" />
             <End Role="Musician" EntitySet="Musician" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_dir__music__797309D9" Association="Self.FK__Offer_dir__music__797309D9">
+          <AssociationSet Name="FK__Offer_dir__music__6754599E" Association="Self.FK__Offer_dir__music__6754599E">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Offer_dir" EntitySet="Offer_dir" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_dir__resta__7A672E12" Association="Self.FK__Offer_dir__resta__7A672E12">
+          <AssociationSet Name="FK__Offer_dir__resta__68487DD7" Association="Self.FK__Offer_dir__resta__68487DD7">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Offer_dir" EntitySet="Offer_dir" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_In__music___7B5B524B" Association="Self.FK__Offer_In__music___7B5B524B">
+          <AssociationSet Name="FK__Offer_In__music___693CA210" Association="Self.FK__Offer_In__music___693CA210">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Offer_In" EntitySet="Offer_In" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_In__restau__7C4F7684" Association="Self.FK__Offer_In__restau__7C4F7684">
+          <AssociationSet Name="FK__Offer_In__restau__6A30C649" Association="Self.FK__Offer_In__restau__6A30C649">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Offer_In" EntitySet="Offer_In" />
           </AssociationSet>
-          <AssociationSet Name="FK__Publicati__user___7D439ABD" Association="Self.FK__Publicati__user___7D439ABD">
+          <AssociationSet Name="FK__Publicati__user___6B24EA82" Association="Self.FK__Publicati__user___6B24EA82">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Publication" EntitySet="Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Restauran__user___7E37BEF6" Association="Self.FK__Restauran__user___7E37BEF6">
+          <AssociationSet Name="FK__Restauran__user___6C190EBB" Association="Self.FK__Restauran__user___6C190EBB">
             <End Role="Users" EntitySet="Users" />
             <End Role="Restaurant" EntitySet="Restaurant" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ticket__user_id___7F2BE32F" Association="Self.FK__Ticket__user_id___7F2BE32F">
+          <AssociationSet Name="FK__Ticket__user_id___6D0D32F4" Association="Self.FK__Ticket__user_id___6D0D32F4">
             <End Role="Super_User" EntitySet="Super_User" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ticket__user_id__00200768" Association="Self.FK__Ticket__user_id__00200768">
+          <AssociationSet Name="FK__Ticket__user_id__6E01572D" Association="Self.FK__Ticket__user_id__6E01572D">
             <End Role="Users" EntitySet="Users" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
-          <AssociationSet Name="FK__User_Styl__style__01142BA1" Association="Self.FK__User_Styl__style__01142BA1">
+          <AssociationSet Name="FK__User_Styl__style__6EF57B66" Association="Self.FK__User_Styl__style__6EF57B66">
             <End Role="Style" EntitySet="Style" />
             <End Role="User_Style" EntitySet="User_Style" />
           </AssociationSet>
-          <AssociationSet Name="FK__User_Time__time___02FC7413" Association="Self.FK__User_Time__time___02FC7413">
+          <AssociationSet Name="FK__User_Time__time___70DDC3D8" Association="Self.FK__User_Time__time___70DDC3D8">
             <End Role="time" EntitySet="time" />
             <End Role="User_Time" EntitySet="User_Time" />
           </AssociationSet>
-          <AssociationSet Name="FK__User_Time__user___03F0984C" Association="Self.FK__User_Time__user___03F0984C">
+          <AssociationSet Name="FK__User_Time__user___71D1E811" Association="Self.FK__User_Time__user___71D1E811">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="User_Time" EntitySet="User_Time" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valorar__apprais__05D8E0BE" Association="Self.FK__Valorar__apprais__05D8E0BE">
+          <AssociationSet Name="FK__Valorar__apprais__73BA3083" Association="Self.FK__Valorar__apprais__73BA3083">
             <End Role="Users" EntitySet="Users" />
             <End Role="Valorar" EntitySet="Valorar" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valorar__valued___06CD04F7" Association="Self.FK__Valorar__valued___06CD04F7">
+          <AssociationSet Name="FK__Valorar__valued___74AE54BC" Association="Self.FK__Valorar__valued___74AE54BC">
             <End Role="Users" EntitySet="Users" />
             <End Role="Valorar" EntitySet="Valorar" />
           </AssociationSet>
@@ -662,9 +663,9 @@
           <Property Name="creation_date" Type="DateTime" Precision="0" />
           <Property Name="restaurant_id" Type="Int32" />
           <Property Name="musician_id" Type="Int32" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Chat__musician_i__6E01572D" FromRole="Chat" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Chat__restaurant__6EF57B66" FromRole="Chat" ToRole="Restaurant" />
-          <NavigationProperty Name="Message" Relationship="Self.FK__Message__chat_id__75A278F5" FromRole="Chat" ToRole="Message" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Chat__musician_i__5BE2A6F2" FromRole="Chat" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Chat__restaurant__5CD6CB2B" FromRole="Chat" ToRole="Restaurant" />
+          <NavigationProperty Name="Message" Relationship="Self.FK__Message__chat_id__6383C8BA" FromRole="Chat" ToRole="Message" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -682,8 +683,8 @@
           <Property Name="content" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="publication_id" Type="Int32" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Publication" Relationship="Self.FK__Comment_R__publi__6FE99F9F" FromRole="Comment_Restaurant_Publication" ToRole="Publication" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Comment_R__user___70DDC3D8" FromRole="Comment_Restaurant_Publication" ToRole="Restaurant" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK__Comment_R__publi__5DCAEF64" FromRole="Comment_Restaurant_Publication" ToRole="Publication" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Comment_R__user___5EBF139D" FromRole="Comment_Restaurant_Publication" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Like_Restaurant_Publication">
           <Key>
@@ -693,8 +694,8 @@
           <Property Name="publish_date" Type="DateTime" Precision="0" />
           <Property Name="restaurant_id" Type="Int32" Nullable="false" />
           <Property Name="publication_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Publication" Relationship="Self.FK__Like_Rest__publi__73BA3083" FromRole="Like_Restaurant_Publication" ToRole="Publication" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Like_Rest__resta__74AE54BC" FromRole="Like_Restaurant_Publication" ToRole="Restaurant" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK__Like_Rest__publi__619B8048" FromRole="Like_Restaurant_Publication" ToRole="Publication" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Like_Rest__resta__628FA481" FromRole="Like_Restaurant_Publication" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -706,8 +707,8 @@
           <Property Name="reading_date" Type="DateTime" Precision="0" />
           <Property Name="chat_id" Type="Int32" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Chat" Relationship="Self.FK__Message__chat_id__75A278F5" FromRole="Message" ToRole="Chat" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Message__user_id__76969D2E" FromRole="Message" ToRole="Users" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK__Message__chat_id__6383C8BA" FromRole="Message" ToRole="Chat" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Message__user_id__6477ECF3" FromRole="Message" ToRole="Users" />
         </EntityType>
         <EntityType Name="Municipality">
           <Key>
@@ -724,11 +725,11 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__musician_i__6E01572D" FromRole="Musician" ToRole="Chat" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Musician__user_i__787EE5A0" FromRole="Musician" ToRole="Users" />
-          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__music__797309D9" FromRole="Musician" ToRole="Offer_dir" />
-          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__music___7B5B524B" FromRole="Musician" ToRole="Offer_In" />
-          <NavigationProperty Name="Publication" Relationship="Self.FK__Publicati__user___7D439ABD" FromRole="Musician" ToRole="Publication" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__musician_i__5BE2A6F2" FromRole="Musician" ToRole="Chat" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Musician__user_i__66603565" FromRole="Musician" ToRole="Users" />
+          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__music__6754599E" FromRole="Musician" ToRole="Offer_dir" />
+          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__music___693CA210" FromRole="Musician" ToRole="Offer_In" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK__Publicati__user___6B24EA82" FromRole="Musician" ToRole="Publication" />
           <NavigationProperty Name="Restaurant" Relationship="Self.Follow" FromRole="Musician" ToRole="Restaurant" />
           <NavigationProperty Name="Style" Relationship="Self.User_Style" FromRole="Musician" ToRole="Style" />
           <NavigationProperty Name="time" Relationship="Self.User_Time" FromRole="Musician" ToRole="time" />
@@ -745,8 +746,8 @@
           <Property Name="done" Type="Byte" />
           <Property Name="restaurant_id" Type="Int32" />
           <Property Name="musician_id" Type="Int32" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_dir__music__797309D9" FromRole="Offer_dir" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_dir__resta__7A672E12" FromRole="Offer_dir" ToRole="Restaurant" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_dir__music__6754599E" FromRole="Offer_dir" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_dir__resta__68487DD7" FromRole="Offer_dir" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Offer_In">
           <Key>
@@ -758,8 +759,8 @@
           <Property Name="event_date" Type="DateTime" Precision="0" />
           <Property Name="music_id_final" Type="Int32" />
           <Property Name="restaurant_id" Type="Int32" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_In__music___7B5B524B" FromRole="Offer_In" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_In__restau__7C4F7684" FromRole="Offer_In" ToRole="Restaurant" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_In__music___693CA210" FromRole="Offer_In" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_In__restau__6A30C649" FromRole="Offer_In" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Publication">
           <Key>
@@ -770,9 +771,9 @@
           <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="multimedia_content" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__publi__6FE99F9F" FromRole="Publication" ToRole="Comment_Restaurant_Publication" />
-          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__publi__73BA3083" FromRole="Publication" ToRole="Like_Restaurant_Publication" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Publicati__user___7D439ABD" FromRole="Publication" ToRole="Musician" />
+          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__publi__5DCAEF64" FromRole="Publication" ToRole="Comment_Restaurant_Publication" />
+          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__publi__619B8048" FromRole="Publication" ToRole="Like_Restaurant_Publication" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Publicati__user___6B24EA82" FromRole="Publication" ToRole="Musician" />
         </EntityType>
         <EntityType Name="Restaurant">
           <Key>
@@ -781,12 +782,12 @@
           <Property Name="opening_time" Type="Time" Nullable="false" Precision="7" />
           <Property Name="closing_time" Type="Time" Nullable="false" Precision="7" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__restaurant__6EF57B66" FromRole="Restaurant" ToRole="Chat" />
-          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__user___70DDC3D8" FromRole="Restaurant" ToRole="Comment_Restaurant_Publication" />
-          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__resta__74AE54BC" FromRole="Restaurant" ToRole="Like_Restaurant_Publication" />
-          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__resta__7A672E12" FromRole="Restaurant" ToRole="Offer_dir" />
-          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__restau__7C4F7684" FromRole="Restaurant" ToRole="Offer_In" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Restauran__user___7E37BEF6" FromRole="Restaurant" ToRole="Users" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__restaurant__5CD6CB2B" FromRole="Restaurant" ToRole="Chat" />
+          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__user___5EBF139D" FromRole="Restaurant" ToRole="Comment_Restaurant_Publication" />
+          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__resta__628FA481" FromRole="Restaurant" ToRole="Like_Restaurant_Publication" />
+          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__resta__68487DD7" FromRole="Restaurant" ToRole="Offer_dir" />
+          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__restau__6A30C649" FromRole="Restaurant" ToRole="Offer_In" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Restauran__user___6C190EBB" FromRole="Restaurant" ToRole="Users" />
           <NavigationProperty Name="Musician" Relationship="Self.Follow" FromRole="Restaurant" ToRole="Musician" />
         </EntityType>
         <EntityType Name="Style">
@@ -806,7 +807,8 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id___7F2BE32F" FromRole="Super_User" ToRole="Ticket" />
+          <Property Name="delete_at" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id___6D0D32F4" FromRole="Super_User" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="Ticket">
           <Key>
@@ -819,8 +821,8 @@
           <Property Name="closing_date" Type="DateTime" Precision="0" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="user_id_admin" Type="Int32" />
-          <NavigationProperty Name="Super_User" Relationship="Self.FK__Ticket__user_id___7F2BE32F" FromRole="Ticket" ToRole="Super_User" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Ticket__user_id__00200768" FromRole="Ticket" ToRole="Users" />
+          <NavigationProperty Name="Super_User" Relationship="Self.FK__Ticket__user_id___6D0D32F4" FromRole="Ticket" ToRole="Super_User" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Ticket__user_id__6E01572D" FromRole="Ticket" ToRole="Users" />
         </EntityType>
         <EntityType Name="time">
           <Key>
@@ -846,13 +848,13 @@
           <Property Name="municipality_id" Type="Int32" />
           <Property Name="latitud" Type="Decimal" Precision="10" Scale="8" />
           <Property Name="longitud" Type="Decimal" Precision="11" Scale="8" />
-          <NavigationProperty Name="Message" Relationship="Self.FK__Message__user_id__76969D2E" FromRole="Users" ToRole="Message" />
+          <NavigationProperty Name="Message" Relationship="Self.FK__Message__user_id__6477ECF3" FromRole="Users" ToRole="Message" />
           <NavigationProperty Name="Municipality" Relationship="Self.fk_users_municipality" FromRole="Users" ToRole="Municipality" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Musician__user_i__787EE5A0" FromRole="Users" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Restauran__user___7E37BEF6" FromRole="Users" ToRole="Restaurant" />
-          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id__00200768" FromRole="Users" ToRole="Ticket" />
-          <NavigationProperty Name="Valorar" Relationship="Self.FK__Valorar__apprais__05D8E0BE" FromRole="Users" ToRole="Valorar" />
-          <NavigationProperty Name="Valorar1" Relationship="Self.FK__Valorar__valued___06CD04F7" FromRole="Users" ToRole="Valorar" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Musician__user_i__66603565" FromRole="Users" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Restauran__user___6C190EBB" FromRole="Users" ToRole="Restaurant" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id__6E01572D" FromRole="Users" ToRole="Ticket" />
+          <NavigationProperty Name="Valorar" Relationship="Self.FK__Valorar__apprais__73BA3083" FromRole="Users" ToRole="Valorar" />
+          <NavigationProperty Name="Valorar1" Relationship="Self.FK__Valorar__valued___74AE54BC" FromRole="Users" ToRole="Valorar" />
         </EntityType>
         <EntityType Name="Valorar">
           <Key>
@@ -863,10 +865,10 @@
           <Property Name="comment" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="appraiser_id" Type="Int32" Nullable="false" />
           <Property Name="valued_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Valorar__apprais__05D8E0BE" FromRole="Valorar" ToRole="Users" />
-          <NavigationProperty Name="Users1" Relationship="Self.FK__Valorar__valued___06CD04F7" FromRole="Valorar" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Valorar__apprais__73BA3083" FromRole="Valorar" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK__Valorar__valued___74AE54BC" FromRole="Valorar" ToRole="Users" />
         </EntityType>
-        <Association Name="FK__Chat__musician_i__6E01572D">
+        <Association Name="FK__Chat__musician_i__5BE2A6F2">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -878,7 +880,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Chat__restaurant__6EF57B66">
+        <Association Name="FK__Chat__restaurant__5CD6CB2B">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -890,7 +892,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Message__chat_id__75A278F5">
+        <Association Name="FK__Message__chat_id__6383C8BA">
           <End Role="Chat" Type="Self.Chat" Multiplicity="0..1" />
           <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
@@ -914,7 +916,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comment_R__publi__6FE99F9F">
+        <Association Name="FK__Comment_R__publi__5DCAEF64">
           <End Role="Publication" Type="Self.Publication" Multiplicity="0..1" />
           <End Role="Comment_Restaurant_Publication" Type="Self.Comment_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -926,7 +928,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comment_R__user___70DDC3D8">
+        <Association Name="FK__Comment_R__user___5EBF139D">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Comment_Restaurant_Publication" Type="Self.Comment_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -938,7 +940,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Like_Rest__publi__73BA3083">
+        <Association Name="FK__Like_Rest__publi__619B8048">
           <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
           <End Role="Like_Restaurant_Publication" Type="Self.Like_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -950,7 +952,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Like_Rest__resta__74AE54BC">
+        <Association Name="FK__Like_Rest__resta__628FA481">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
           <End Role="Like_Restaurant_Publication" Type="Self.Like_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -962,7 +964,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Message__user_id__76969D2E">
+        <Association Name="FK__Message__user_id__6477ECF3">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
@@ -986,7 +988,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Musician__user_i__787EE5A0">
+        <Association Name="FK__Musician__user_i__66603565">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -998,7 +1000,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_dir__music__797309D9">
+        <Association Name="FK__Offer_dir__music__6754599E">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Offer_dir" Type="Self.Offer_dir" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1010,7 +1012,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_In__music___7B5B524B">
+        <Association Name="FK__Offer_In__music___693CA210">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Offer_In" Type="Self.Offer_In" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1022,7 +1024,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Publicati__user___7D439ABD">
+        <Association Name="FK__Publicati__user___6B24EA82">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1034,7 +1036,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_dir__resta__7A672E12">
+        <Association Name="FK__Offer_dir__resta__68487DD7">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Offer_dir" Type="Self.Offer_dir" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1046,7 +1048,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_In__restau__7C4F7684">
+        <Association Name="FK__Offer_In__restau__6A30C649">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Offer_In" Type="Self.Offer_In" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1058,7 +1060,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Restauran__user___7E37BEF6">
+        <Association Name="FK__Restauran__user___6C190EBB">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1070,7 +1072,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ticket__user_id___7F2BE32F">
+        <Association Name="FK__Ticket__user_id___6D0D32F4">
           <End Role="Super_User" Type="Self.Super_User" Multiplicity="0..1" />
           <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1082,7 +1084,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ticket__user_id__00200768">
+        <Association Name="FK__Ticket__user_id__6E01572D">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1094,7 +1096,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valorar__apprais__05D8E0BE">
+        <Association Name="FK__Valorar__apprais__73BA3083">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Valorar" Type="Self.Valorar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1106,7 +1108,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valorar__valued___06CD04F7">
+        <Association Name="FK__Valorar__valued___74AE54BC">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Valorar" Type="Self.Valorar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1148,15 +1150,15 @@
           <EntitySet Name="time" EntityType="Self.time" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="Valorar" EntityType="Self.Valorar" />
-          <AssociationSet Name="FK__Chat__musician_i__6E01572D" Association="Self.FK__Chat__musician_i__6E01572D">
+          <AssociationSet Name="FK__Chat__musician_i__5BE2A6F2" Association="Self.FK__Chat__musician_i__5BE2A6F2">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Chat" EntitySet="Chat" />
           </AssociationSet>
-          <AssociationSet Name="FK__Chat__restaurant__6EF57B66" Association="Self.FK__Chat__restaurant__6EF57B66">
+          <AssociationSet Name="FK__Chat__restaurant__5CD6CB2B" Association="Self.FK__Chat__restaurant__5CD6CB2B">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Chat" EntitySet="Chat" />
           </AssociationSet>
-          <AssociationSet Name="FK__Message__chat_id__75A278F5" Association="Self.FK__Message__chat_id__75A278F5">
+          <AssociationSet Name="FK__Message__chat_id__6383C8BA" Association="Self.FK__Message__chat_id__6383C8BA">
             <End Role="Chat" EntitySet="Chat" />
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
@@ -1164,23 +1166,23 @@
             <End Role="City" EntitySet="City" />
             <End Role="Municipality" EntitySet="Municipality" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comment_R__publi__6FE99F9F" Association="Self.FK__Comment_R__publi__6FE99F9F">
+          <AssociationSet Name="FK__Comment_R__publi__5DCAEF64" Association="Self.FK__Comment_R__publi__5DCAEF64">
             <End Role="Publication" EntitySet="Publication" />
             <End Role="Comment_Restaurant_Publication" EntitySet="Comment_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comment_R__user___70DDC3D8" Association="Self.FK__Comment_R__user___70DDC3D8">
+          <AssociationSet Name="FK__Comment_R__user___5EBF139D" Association="Self.FK__Comment_R__user___5EBF139D">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Comment_Restaurant_Publication" EntitySet="Comment_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Like_Rest__publi__73BA3083" Association="Self.FK__Like_Rest__publi__73BA3083">
+          <AssociationSet Name="FK__Like_Rest__publi__619B8048" Association="Self.FK__Like_Rest__publi__619B8048">
             <End Role="Publication" EntitySet="Publication" />
             <End Role="Like_Restaurant_Publication" EntitySet="Like_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Like_Rest__resta__74AE54BC" Association="Self.FK__Like_Rest__resta__74AE54BC">
+          <AssociationSet Name="FK__Like_Rest__resta__628FA481" Association="Self.FK__Like_Rest__resta__628FA481">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Like_Restaurant_Publication" EntitySet="Like_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Message__user_id__76969D2E" Association="Self.FK__Message__user_id__76969D2E">
+          <AssociationSet Name="FK__Message__user_id__6477ECF3" Association="Self.FK__Message__user_id__6477ECF3">
             <End Role="Users" EntitySet="Users" />
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
@@ -1188,47 +1190,47 @@
             <End Role="Municipality" EntitySet="Municipality" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__Musician__user_i__787EE5A0" Association="Self.FK__Musician__user_i__787EE5A0">
+          <AssociationSet Name="FK__Musician__user_i__66603565" Association="Self.FK__Musician__user_i__66603565">
             <End Role="Users" EntitySet="Users" />
             <End Role="Musician" EntitySet="Musician" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_dir__music__797309D9" Association="Self.FK__Offer_dir__music__797309D9">
+          <AssociationSet Name="FK__Offer_dir__music__6754599E" Association="Self.FK__Offer_dir__music__6754599E">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Offer_dir" EntitySet="Offer_dir" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_In__music___7B5B524B" Association="Self.FK__Offer_In__music___7B5B524B">
+          <AssociationSet Name="FK__Offer_In__music___693CA210" Association="Self.FK__Offer_In__music___693CA210">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Offer_In" EntitySet="Offer_In" />
           </AssociationSet>
-          <AssociationSet Name="FK__Publicati__user___7D439ABD" Association="Self.FK__Publicati__user___7D439ABD">
+          <AssociationSet Name="FK__Publicati__user___6B24EA82" Association="Self.FK__Publicati__user___6B24EA82">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Publication" EntitySet="Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_dir__resta__7A672E12" Association="Self.FK__Offer_dir__resta__7A672E12">
+          <AssociationSet Name="FK__Offer_dir__resta__68487DD7" Association="Self.FK__Offer_dir__resta__68487DD7">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Offer_dir" EntitySet="Offer_dir" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_In__restau__7C4F7684" Association="Self.FK__Offer_In__restau__7C4F7684">
+          <AssociationSet Name="FK__Offer_In__restau__6A30C649" Association="Self.FK__Offer_In__restau__6A30C649">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Offer_In" EntitySet="Offer_In" />
           </AssociationSet>
-          <AssociationSet Name="FK__Restauran__user___7E37BEF6" Association="Self.FK__Restauran__user___7E37BEF6">
+          <AssociationSet Name="FK__Restauran__user___6C190EBB" Association="Self.FK__Restauran__user___6C190EBB">
             <End Role="Users" EntitySet="Users" />
             <End Role="Restaurant" EntitySet="Restaurant" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ticket__user_id___7F2BE32F" Association="Self.FK__Ticket__user_id___7F2BE32F">
+          <AssociationSet Name="FK__Ticket__user_id___6D0D32F4" Association="Self.FK__Ticket__user_id___6D0D32F4">
             <End Role="Super_User" EntitySet="Super_User" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ticket__user_id__00200768" Association="Self.FK__Ticket__user_id__00200768">
+          <AssociationSet Name="FK__Ticket__user_id__6E01572D" Association="Self.FK__Ticket__user_id__6E01572D">
             <End Role="Users" EntitySet="Users" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valorar__apprais__05D8E0BE" Association="Self.FK__Valorar__apprais__05D8E0BE">
+          <AssociationSet Name="FK__Valorar__apprais__73BA3083" Association="Self.FK__Valorar__apprais__73BA3083">
             <End Role="Users" EntitySet="Users" />
             <End Role="Valorar" EntitySet="Valorar" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valorar__valued___06CD04F7" Association="Self.FK__Valorar__valued___06CD04F7">
+          <AssociationSet Name="FK__Valorar__valued___74AE54BC" Association="Self.FK__Valorar__valued___74AE54BC">
             <End Role="Users" EntitySet="Users" />
             <End Role="Valorar" EntitySet="Valorar" />
           </AssociationSet>
@@ -1378,6 +1380,7 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="delete_at" ColumnName="delete_at" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
