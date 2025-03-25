@@ -30,7 +30,12 @@
         {
             this.panelCalendarioFondo = new System.Windows.Forms.Panel();
             this.panelCalendario = new System.Windows.Forms.Panel();
-            this.dateTimePickerCalendario = new System.Windows.Forms.DateTimePicker();
+            this.btnAvanzar = new System.Windows.Forms.Button();
+            this.btnRetroceder = new System.Windows.Forms.Button();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblHorario = new System.Windows.Forms.Label();
+            this.lblLocal = new System.Windows.Forms.Label();
+            this.lblMusico = new System.Windows.Forms.Label();
             this.panelDias = new System.Windows.Forms.TableLayoutPanel();
             this.lblDomingo = new System.Windows.Forms.Label();
             this.lblSabado = new System.Windows.Forms.Label();
@@ -44,6 +49,10 @@
             this.lblMes = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.lblMusicoSelect = new System.Windows.Forms.Label();
+            this.lblLocalSelect = new System.Windows.Forms.Label();
+            this.lblHorarioSelect = new System.Windows.Forms.Label();
+            this.lblPrecioSelect = new System.Windows.Forms.Label();
             this.panelCalendarioFondo.SuspendLayout();
             this.panelCalendario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFlechaDerecha)).BeginInit();
@@ -59,6 +68,7 @@
             this.panelCalendarioFondo.Controls.Add(this.panelCalendario);
             this.panelCalendarioFondo.Controls.Add(this.pictureBox1);
             this.panelCalendarioFondo.Controls.Add(this.pboxAtras);
+            this.panelCalendarioFondo.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelCalendarioFondo.Location = new System.Drawing.Point(35, 30);
             this.panelCalendarioFondo.Name = "panelCalendarioFondo";
             this.panelCalendarioFondo.Size = new System.Drawing.Size(1215, 650);
@@ -67,7 +77,16 @@
             // panelCalendario
             // 
             this.panelCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
-            this.panelCalendario.Controls.Add(this.dateTimePickerCalendario);
+            this.panelCalendario.Controls.Add(this.lblPrecioSelect);
+            this.panelCalendario.Controls.Add(this.lblHorarioSelect);
+            this.panelCalendario.Controls.Add(this.lblLocalSelect);
+            this.panelCalendario.Controls.Add(this.lblMusicoSelect);
+            this.panelCalendario.Controls.Add(this.btnAvanzar);
+            this.panelCalendario.Controls.Add(this.btnRetroceder);
+            this.panelCalendario.Controls.Add(this.lblPrecio);
+            this.panelCalendario.Controls.Add(this.lblHorario);
+            this.panelCalendario.Controls.Add(this.lblLocal);
+            this.panelCalendario.Controls.Add(this.lblMusico);
             this.panelCalendario.Controls.Add(this.panelDias);
             this.panelCalendario.Controls.Add(this.lblDomingo);
             this.panelCalendario.Controls.Add(this.lblSabado);
@@ -84,13 +103,73 @@
             this.panelCalendario.Size = new System.Drawing.Size(988, 573);
             this.panelCalendario.TabIndex = 5;
             // 
-            // dateTimePickerCalendario
+            // btnAvanzar
             // 
-            this.dateTimePickerCalendario.Location = new System.Drawing.Point(404, 66);
-            this.dateTimePickerCalendario.Name = "dateTimePickerCalendario";
-            this.dateTimePickerCalendario.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerCalendario.TabIndex = 11;
-            this.dateTimePickerCalendario.Visible = false;
+            this.btnAvanzar.FlatAppearance.BorderSize = 0;
+            this.btnAvanzar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvanzar.Location = new System.Drawing.Point(873, 501);
+            this.btnAvanzar.Name = "btnAvanzar";
+            this.btnAvanzar.Size = new System.Drawing.Size(32, 32);
+            this.btnAvanzar.TabIndex = 17;
+            this.btnAvanzar.UseVisualStyleBackColor = true;
+            // 
+            // btnRetroceder
+            // 
+            this.btnRetroceder.FlatAppearance.BorderSize = 0;
+            this.btnRetroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetroceder.Location = new System.Drawing.Point(829, 501);
+            this.btnRetroceder.Name = "btnRetroceder";
+            this.btnRetroceder.Size = new System.Drawing.Size(32, 32);
+            this.btnRetroceder.TabIndex = 16;
+            this.btnRetroceder.UseVisualStyleBackColor = true;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblPrecio.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.lblPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblPrecio.Location = new System.Drawing.Point(781, 430);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(80, 30);
+            this.lblPrecio.TabIndex = 15;
+            this.lblPrecio.Text = "Precio";
+            // 
+            // lblHorario
+            // 
+            this.lblHorario.AutoSize = true;
+            this.lblHorario.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblHorario.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.lblHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblHorario.Location = new System.Drawing.Point(781, 342);
+            this.lblHorario.Name = "lblHorario";
+            this.lblHorario.Size = new System.Drawing.Size(90, 30);
+            this.lblHorario.TabIndex = 14;
+            this.lblHorario.Text = "Horario";
+            // 
+            // lblLocal
+            // 
+            this.lblLocal.AutoSize = true;
+            this.lblLocal.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblLocal.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.lblLocal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblLocal.Location = new System.Drawing.Point(781, 253);
+            this.lblLocal.Name = "lblLocal";
+            this.lblLocal.Size = new System.Drawing.Size(68, 30);
+            this.lblLocal.TabIndex = 13;
+            this.lblLocal.Text = "Local";
+            // 
+            // lblMusico
+            // 
+            this.lblMusico.AutoSize = true;
+            this.lblMusico.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblMusico.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
+            this.lblMusico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblMusico.Location = new System.Drawing.Point(781, 170);
+            this.lblMusico.Name = "lblMusico";
+            this.lblMusico.Size = new System.Drawing.Size(87, 30);
+            this.lblMusico.TabIndex = 12;
+            this.lblMusico.Text = "Músico";
             // 
             // panelDias
             // 
@@ -102,7 +181,7 @@
             this.panelDias.RowCount = 2;
             this.panelDias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelDias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDias.Size = new System.Drawing.Size(792, 373);
+            this.panelDias.Size = new System.Drawing.Size(670, 362);
             this.panelDias.TabIndex = 10;
             // 
             // lblDomingo
@@ -110,7 +189,7 @@
             this.lblDomingo.AutoSize = true;
             this.lblDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDomingo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblDomingo.Location = new System.Drawing.Point(763, 100);
+            this.lblDomingo.Location = new System.Drawing.Point(656, 101);
             this.lblDomingo.Name = "lblDomingo";
             this.lblDomingo.Size = new System.Drawing.Size(94, 24);
             this.lblDomingo.TabIndex = 9;
@@ -121,7 +200,7 @@
             this.lblSabado.AutoSize = true;
             this.lblSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSabado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblSabado.Location = new System.Drawing.Point(653, 100);
+            this.lblSabado.Location = new System.Drawing.Point(563, 101);
             this.lblSabado.Name = "lblSabado";
             this.lblSabado.Size = new System.Drawing.Size(81, 24);
             this.lblSabado.TabIndex = 8;
@@ -132,7 +211,7 @@
             this.lblViernes.AutoSize = true;
             this.lblViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblViernes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblViernes.Location = new System.Drawing.Point(548, 100);
+            this.lblViernes.Location = new System.Drawing.Point(469, 101);
             this.lblViernes.Name = "lblViernes";
             this.lblViernes.Size = new System.Drawing.Size(82, 24);
             this.lblViernes.TabIndex = 7;
@@ -143,7 +222,7 @@
             this.lblJueves.AutoSize = true;
             this.lblJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJueves.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblJueves.Location = new System.Drawing.Point(443, 100);
+            this.lblJueves.Location = new System.Drawing.Point(378, 102);
             this.lblJueves.Name = "lblJueves";
             this.lblJueves.Size = new System.Drawing.Size(76, 24);
             this.lblJueves.TabIndex = 6;
@@ -154,7 +233,7 @@
             this.lblMiercoles.AutoSize = true;
             this.lblMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMiercoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMiercoles.Location = new System.Drawing.Point(315, 100);
+            this.lblMiercoles.Location = new System.Drawing.Point(269, 101);
             this.lblMiercoles.Name = "lblMiercoles";
             this.lblMiercoles.Size = new System.Drawing.Size(101, 24);
             this.lblMiercoles.TabIndex = 5;
@@ -165,7 +244,7 @@
             this.lblMartes.AutoSize = true;
             this.lblMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMartes.Location = new System.Drawing.Point(206, 100);
+            this.lblMartes.Location = new System.Drawing.Point(188, 101);
             this.lblMartes.Name = "lblMartes";
             this.lblMartes.Size = new System.Drawing.Size(72, 24);
             this.lblMartes.TabIndex = 4;
@@ -176,7 +255,7 @@
             this.lblLunes.AutoSize = true;
             this.lblLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblLunes.Location = new System.Drawing.Point(110, 100);
+            this.lblLunes.Location = new System.Drawing.Point(94, 101);
             this.lblLunes.Name = "lblLunes";
             this.lblLunes.Size = new System.Drawing.Size(67, 24);
             this.lblLunes.TabIndex = 3;
@@ -236,6 +315,54 @@
             this.pboxAtras.TabIndex = 2;
             this.pboxAtras.TabStop = false;
             // 
+            // lblMusicoSelect
+            // 
+            this.lblMusicoSelect.AutoSize = true;
+            this.lblMusicoSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblMusicoSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusicoSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblMusicoSelect.Location = new System.Drawing.Point(781, 200);
+            this.lblMusicoSelect.Name = "lblMusicoSelect";
+            this.lblMusicoSelect.Size = new System.Drawing.Size(81, 25);
+            this.lblMusicoSelect.TabIndex = 18;
+            this.lblMusicoSelect.Text = "(musico)";
+            // 
+            // lblLocalSelect
+            // 
+            this.lblLocalSelect.AutoSize = true;
+            this.lblLocalSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblLocalSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblLocalSelect.Location = new System.Drawing.Point(780, 283);
+            this.lblLocalSelect.Name = "lblLocalSelect";
+            this.lblLocalSelect.Size = new System.Drawing.Size(58, 25);
+            this.lblLocalSelect.TabIndex = 19;
+            this.lblLocalSelect.Text = "(local)";
+            // 
+            // lblHorarioSelect
+            // 
+            this.lblHorarioSelect.AutoSize = true;
+            this.lblHorarioSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblHorarioSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorarioSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblHorarioSelect.Location = new System.Drawing.Point(781, 372);
+            this.lblHorarioSelect.Name = "lblHorarioSelect";
+            this.lblHorarioSelect.Size = new System.Drawing.Size(77, 25);
+            this.lblHorarioSelect.TabIndex = 20;
+            this.lblHorarioSelect.Text = "(horario)";
+            // 
+            // lblPrecioSelect
+            // 
+            this.lblPrecioSelect.AutoSize = true;
+            this.lblPrecioSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblPrecioSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblPrecioSelect.Location = new System.Drawing.Point(780, 460);
+            this.lblPrecioSelect.Name = "lblPrecioSelect";
+            this.lblPrecioSelect.Size = new System.Drawing.Size(72, 25);
+            this.lblPrecioSelect.TabIndex = 21;
+            this.lblPrecioSelect.Text = "(precio)";
+            // 
             // FormCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +404,15 @@
         private System.Windows.Forms.Label lblSabado;
         private System.Windows.Forms.Label lblViernes;
         private System.Windows.Forms.TableLayoutPanel panelDias;
-        private System.Windows.Forms.DateTimePicker dateTimePickerCalendario;
+        private System.Windows.Forms.Label lblMusico;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblHorario;
+        private System.Windows.Forms.Label lblLocal;
+        private System.Windows.Forms.Button btnRetroceder;
+        private System.Windows.Forms.Button btnAvanzar;
+        private System.Windows.Forms.Label lblLocalSelect;
+        private System.Windows.Forms.Label lblMusicoSelect;
+        private System.Windows.Forms.Label lblPrecioSelect;
+        private System.Windows.Forms.Label lblHorarioSelect;
     }
 }
