@@ -18,7 +18,6 @@ namespace NavyBeats_C_
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new FormCalendario());
-
         }
     }
 }
