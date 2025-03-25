@@ -1,6 +1,6 @@
 ﻿namespace NavyBeats_C_
 {
-    partial class FormCrearUsusario
+    partial class FormInfoUsusario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearUsusario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoUsusario));
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelCorreo = new System.Windows.Forms.Label();
             this.labelContra = new System.Windows.Forms.Label();
             this.labelConf = new System.Windows.Forms.Label();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.botonRedondoEntrar = new NavyBeats_C_.Controles.CustomBoton();
+            this.botonRedondoGuardar = new NavyBeats_C_.Controles.CustomBoton();
             this.textBoxConfirmar = new NavyBeats_C_.Controles.TextBox();
             this.textBoxContra = new NavyBeats_C_.Controles.TextBox();
             this.textBoxCorreo = new NavyBeats_C_.Controles.TextBox();
@@ -106,21 +106,21 @@
             this.pboxAtras.TabIndex = 23;
             this.pboxAtras.TabStop = false;
             // 
-            // botonRedondoEntrar
+            // botonRedondoGuardar
             // 
-            this.botonRedondoEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondoEntrar.BorderRadius = 20;
-            this.botonRedondoEntrar.FlatAppearance.BorderSize = 0;
-            this.botonRedondoEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondoEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondoEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.botonRedondoEntrar.Location = new System.Drawing.Point(116, 509);
-            this.botonRedondoEntrar.Name = "botonRedondoEntrar";
-            this.botonRedondoEntrar.Size = new System.Drawing.Size(250, 46);
-            this.botonRedondoEntrar.TabIndex = 22;
-            this.botonRedondoEntrar.Text = "Entrar";
-            this.botonRedondoEntrar.UseVisualStyleBackColor = false;
-            this.botonRedondoEntrar.Click += new System.EventHandler(this.botonRedondoEntrar_Click);
+            this.botonRedondoGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.botonRedondoGuardar.BorderRadius = 20;
+            this.botonRedondoGuardar.FlatAppearance.BorderSize = 0;
+            this.botonRedondoGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonRedondoGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonRedondoGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.botonRedondoGuardar.Location = new System.Drawing.Point(116, 509);
+            this.botonRedondoGuardar.Name = "botonRedondoGuardar";
+            this.botonRedondoGuardar.Size = new System.Drawing.Size(250, 46);
+            this.botonRedondoGuardar.TabIndex = 22;
+            this.botonRedondoGuardar.Text = "Guardar";
+            this.botonRedondoGuardar.UseVisualStyleBackColor = false;
+            this.botonRedondoGuardar.Click += new System.EventHandler(this.botonRedondoGuardar_Click);
             // 
             // textBoxConfirmar
             // 
@@ -223,6 +223,10 @@
             this.customComboBoxRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.customComboBoxRol.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.customComboBoxRol.IconColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.customComboBoxRol.Items.AddRange(new object[] {
+            "Super",
+            "Admin",
+            "Mantenimiento"});
             this.customComboBoxRol.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.customComboBoxRol.ListBackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.customComboBoxRol.ListTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
@@ -235,7 +239,7 @@
             this.customComboBoxRol.TabIndex = 24;
             this.customComboBoxRol.Texts = "Rol";
             // 
-            // FormCrearUsusario
+            // FormInfoUsusario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,7 +247,7 @@
             this.ClientSize = new System.Drawing.Size(484, 591);
             this.Controls.Add(this.customComboBoxRol);
             this.Controls.Add(this.pboxAtras);
-            this.Controls.Add(this.botonRedondoEntrar);
+            this.Controls.Add(this.botonRedondoGuardar);
             this.Controls.Add(this.textBoxConfirmar);
             this.Controls.Add(this.textBoxContra);
             this.Controls.Add(this.textBoxCorreo);
@@ -255,10 +259,9 @@
             this.Controls.Add(this.pictureBoxNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormCrearUsusario";
+            this.Name = "FormInfoUsusario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCrear";
-            this.Load += new System.EventHandler(this.FormCrear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             this.ResumeLayout(false);
@@ -277,7 +280,7 @@
         private Controles.TextBox textBoxCorreo;
         private Controles.TextBox textBoxConfirmar;
         private Controles.TextBox textBoxContra;
-        private Controles.CustomBoton botonRedondoEntrar;
+        private Controles.CustomBoton botonRedondoGuardar;
         private System.Windows.Forms.PictureBox pboxAtras;
         private Controles.CustomComboBox customComboBoxRol;
     }

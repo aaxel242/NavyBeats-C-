@@ -30,6 +30,16 @@ namespace NavyBeats_C_.Models
             return _users;
         }
 
+        public static Super_User selectById(int _id)
+        {
+            Super_User _user =
+                (Super_User)(from user in Orm.bd.Super_User
+                             where user.user_id_admin == _id
+                             select user).FirstOrDefault();
+
+            return _user;
+        }
+
         public static bool Insert(Super_User _user)
         {
             bool insert;
@@ -42,11 +52,9 @@ namespace NavyBeats_C_.Models
             return insert;
         }
 
-        public static bool Delete(int _id)
+        public static bool Delete(Super_User user)
         {
             bool delete;
-
-            var user = selectById(_id);
 
             if (user != null)
             {
@@ -60,14 +68,23 @@ namespace NavyBeats_C_.Models
             return delete;
         }
 
-        public static Super_User selectById (int _id)
+        public static bool Upadate(Super_User user, Super_User newUser)
         {
-            Super_User _user =
-                (Super_User) (from user in Orm.bd.Super_User
-                    where user.user_id_admin == _id
-                    select user).FirstOrDefault();
+            bool update;
 
-            return _user;
+            if (user != null)
+            {
+                user.name = newUser.name;
+                user.password = newUser.password;
+                user.email = newUser.email;
+                user.role = newUser.role;
+
+                Orm.bd.SaveChanges();
+            }
+
+            update = true;
+
+            return update;
         }
     }
 }
