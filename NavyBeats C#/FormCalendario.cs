@@ -40,10 +40,12 @@ namespace NavyBeats_C_
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            // Aquí se podría llamar a InsertOffers si es necesario para insertar datos de prueba
-            //Models.CalendarioOrm.InsertOffers();
+            btnRetroceder.BackgroundImage = Properties.Resources.imgFlechaRetroceder;
+            btnRetroceder.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAvanzar.BackgroundImage = Properties.Resources.imgFlechaAvanzar;
+            btnAvanzar.BackgroundImageLayout = ImageLayout.Stretch;
 
-            // Luego se mostrarán los días y se resaltarán los días con eventos
+            //Models.CalendarioOrm.InsertOffers();
             MostrarDias(currentYear, currentMonth);
         }
 
@@ -127,9 +129,6 @@ namespace NavyBeats_C_
                         // Compara solo la parte de la fecha
                         if (eventDates.Any(ev => ev.Date == btnDate.Date))
                         {
-                            // Resalta la celda (por ejemplo, en color amarillo)
-
-                            //poner color rgb 229, 177,129 en lugar de amarillo
                             btn.BackColor = Color.FromArgb(229, 177, 129);
                         }
                     }
@@ -173,23 +172,6 @@ namespace NavyBeats_C_
                 currentYear--;
             }
             MostrarDias(currentYear, currentMonth);
-        }
-
-        private void lblMes_Click(object sender, EventArgs e)
-        {
-            // Posicionar el DateTimePicker justo debajo del label
-            dateTimePickerCalendario.Location = new Point(lblMes.Left, lblMes.Bottom);
-            dateTimePickerCalendario.Value = new DateTime(currentYear, currentMonth, 1);
-            dateTimePickerCalendario.Visible = true;
-            dateTimePickerCalendario.Focus();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            currentYear = dateTimePickerCalendario.Value.Year;
-            currentMonth = dateTimePickerCalendario.Value.Month;
-            MostrarDias(currentYear, currentMonth);
-            dateTimePickerCalendario.Visible = false;
         }
     }
 }

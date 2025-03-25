@@ -32,27 +32,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.lblDiaSeleccionado = new System.Windows.Forms.Label();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
             // 
             this.panel.AutoSize = true;
             this.panel.BackColor = System.Drawing.Color.White;
-            this.panel.Controls.Add(this.label1);
+            this.panel.Controls.Add(this.lblDiaSeleccionado);
             this.panel.Controls.Add(this.customPanel);
             this.panel.Controls.Add(this.pictureBox1);
             this.panel.Controls.Add(this.pboxAtras);
@@ -61,38 +61,17 @@
             this.panel.Size = new System.Drawing.Size(1215, 650);
             this.panel.TabIndex = 3;
             // 
-            // label1
+            // lblDiaSeleccionado
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Black", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.label1.Location = new System.Drawing.Point(102, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 31);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Dia seleccionado";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pboxAtras
-            // 
-            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
-            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
-            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
-            this.pboxAtras.Name = "pboxAtras";
-            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
-            this.pboxAtras.TabIndex = 2;
-            this.pboxAtras.TabStop = false;
+            this.lblDiaSeleccionado.AutoSize = true;
+            this.lblDiaSeleccionado.BackColor = System.Drawing.Color.Transparent;
+            this.lblDiaSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaSeleccionado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblDiaSeleccionado.Location = new System.Drawing.Point(102, 58);
+            this.lblDiaSeleccionado.Name = "lblDiaSeleccionado";
+            this.lblDiaSeleccionado.Size = new System.Drawing.Size(177, 25);
+            this.lblDiaSeleccionado.TabIndex = 14;
+            this.lblDiaSeleccionado.Text = "Dia seleccionado";
             // 
             // customPanel
             // 
@@ -182,6 +161,27 @@
             this.Column4.HeaderText = "Pago";
             this.Column4.Name = "Column4";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pboxAtras
+            // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
+            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
+            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
+            this.pboxAtras.Name = "pboxAtras";
+            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
+            this.pboxAtras.TabIndex = 2;
+            this.pboxAtras.TabStop = false;
+            // 
             // FormActuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,10 +196,10 @@
             this.Load += new System.EventHandler(this.FormActuaciones_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,7 +212,7 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pboxAtras;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDiaSeleccionado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

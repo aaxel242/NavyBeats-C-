@@ -103,5 +103,45 @@ namespace NavyBeats_C_.Models
                 return offerDirDates.Concat(offerInDates).ToList();
             }
         }
+
+
+        private List<string> ObtenerEventosDelDia(DateTime fecha)
+        {
+            List<string> eventos = new List<string>();
+
+            using (var context = new dam04Entities())
+            {
+                var eventosDir = context.Offer_dir
+                    .Where(o => o.event_date.Value.Date == fecha.Date && o.agreement == 1 && o.done == 0)
+                    .Select(o => new
+                    {
+                        Musico = o.Musician.name,
+                        Local = o.Local.name,
+                        Horario = o.event_date,
+                        Salario = o.salary
+                    }).ToList();
+
+                var eventosIn = context.Offer_In
+                    .Where(o => o.event_date.Value.Date == fecha.Date && o.music_id_final != null)
+                    .Select(o => new
+                    {
+                        Musico = o.Musician.name,
+                        Local = o.Local.name,
+                        Horario = o.event_date,
+                        Salario = o.salary
+                    }).ToList();
+
+                // Combinar ambas listas en una sola
+                foreach (var evento in eventosDir.Concat(eventosIn))
+                {
+                    eventos.Add($"Músico: {evento.Musico}\n" +
+                                $"Local: {evento.Local}\n" +
+                                $"Horario: {evento.Horario.Value.ToString("HH:mm")}\n" +
+                                $"Salario: {evento.Salario}€");
+                }
+            }
+
+            return eventos;
+        }
     }
 }
