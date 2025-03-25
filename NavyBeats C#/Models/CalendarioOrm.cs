@@ -131,7 +131,7 @@ namespace NavyBeats_C_.Models
                         Salario = o.salary
                     }).ToList();
 
-                // Combinar ambas listas en una sola
+                // Combinar ambas listas en una sola WSFGSJK
                 foreach (var evento in eventosDir.Concat(eventosIn))
                 {
                     eventos.Add($"Músico: {evento.Musico}\n" +
