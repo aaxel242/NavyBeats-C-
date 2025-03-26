@@ -24,19 +24,11 @@ namespace NavyBeats_C_
             dataGridView.Rows.Add(new object[] { "Mohamed", "example@gmail.com", "1234", "12/04/2005", 1 });
 
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
+        }
 
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

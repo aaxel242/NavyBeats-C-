@@ -218,6 +218,7 @@
     <Compile Include="Models\Like_Restaurant_Publication.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LocalMusico.cs" />
     <Compile Include="Models\Message.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
@@ -242,6 +243,7 @@
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MusicoOrm.cs" />
     <Compile Include="Models\Offer_dir.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
@@ -271,6 +273,7 @@
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioEscritorioOrm.cs" />
+    <Compile Include="Models\UsuarioMovilOrm.cs" />
     <Compile Include="Models\Valorar.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
