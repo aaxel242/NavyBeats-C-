@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using GMap.NET.WindowsForms;
 using GMap.NET;
 using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
 
 namespace NavyBeats_C_
 {
-    public partial class FormMapaArtistas: Form
+    public partial class FormMapaArtistas : Form
     {
-        // Limites de Cataluña
-        private readonly double minLat = 40.5;  // Sur
-        private readonly double maxLat = 42.9;  // Norte
-        private readonly double minLng = 0.15;  // Oeste
-        private readonly double maxLng = 3.33;  // Este
+        // Límites para restringir el movimiento del mapa (Cataluña)
+        private readonly double minLat = 40.5;
+        private readonly double maxLat = 42.9;
+        private readonly double minLng = 0.15;
+        private readonly double maxLng = 3.33;
 
         public FormMapaArtistas()
         {
@@ -37,7 +32,6 @@ namespace NavyBeats_C_
             int formHeight = this.Height;
             int positionX = (screenWidth - formWidth) / 2;
             int positionY = (screenHeight - formHeight) / 2;
-
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -50,56 +44,110 @@ namespace NavyBeats_C_
             gMapControl1.IgnoreMarkerOnMouseWheel = false;
             gMapControl1.MouseWheelZoomEnabled = true;
             gMapControl1.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
-
-            // Seleccionar Google Maps como proveedor
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
             GMaps.Instance.Mode = AccessMode.ServerOnly;
 
             // Posición inicial en el centro de Barcelona
-            gMapControl1.Position = new PointLatLng(41.3851, 2.1734);
-
-            // Configuración de zoom
+            PointLatLng centroBarcelona = new PointLatLng(41.3851, 2.1734);
+            gMapControl1.Position = centroBarcelona;
             gMapControl1.MinZoom = 6;
             gMapControl1.MaxZoom = 18;
             gMapControl1.Zoom = 8;
 
-            // Resaltar Badalona con un polígono
-            // NOTA: Las coordenadas aquí son aproximadas para ilustrar la zona de Badalona.
-            List<PointLatLng> puntosBadalona = new List<PointLatLng>
-            {
-                new PointLatLng(41.466, 2.230), // Esquina superior izquierda
-                new PointLatLng(41.466, 2.270), // Esquina superior derecha
-                new PointLatLng(41.430, 2.270), // Esquina inferior derecha
-                new PointLatLng(41.430, 2.230)  // Esquina inferior izquierda
-            };
+            // Crear un overlay para zonas
+            GMapOverlay overlayZonas = new GMapOverlay("zonas");
 
-            GMapPolygon poligonoBadalona = new GMapPolygon(puntosBadalona, "Badalona")
-            {
-                Stroke = new Pen(Color.Red, 2),
-                Fill = new SolidBrush(Color.FromArgb(50, Color.Red))
-            };
+            // Llamar a métodos para agregar cada zona
+            AgregarZonaBarcelona(overlayZonas);
+            AgregarZonaTarragona(overlayZonas);
+            AgregarZonaLleida(overlayZonas);
+            AgregarZonaGirona(overlayZonas);
 
-            GMapOverlay overlayPoligonos = new GMapOverlay("poligonos");
-            overlayPoligonos.Polygons.Add(poligonoBadalona);
-            gMapControl1.Overlays.Add(overlayPoligonos);
+            // Agregar el overlay al mapa
+            gMapControl1.Overlays.Add(overlayZonas);
 
             // Manejar el evento para restringir el movimiento dentro de Cataluña
             gMapControl1.OnMapDrag += GMapControl1_OnMapDrag;
         }
 
+        // Método para generar un círculo (lista de puntos)
+        public static List<PointLatLng> CrearCirculo(PointLatLng centro, double radioKm, int segmentos)
+        {
+            List<PointLatLng> puntos = new List<PointLatLng>();
+            double radioEnGrados = radioKm / 111.0; // Aproximación: 1 grado ≈ 111 km
+
+            for (int i = 0; i <= segmentos; i++)
+            {
+                double theta = i * 2 * Math.PI / segmentos;
+                double lat = centro.Lat + radioEnGrados * Math.Cos(theta);
+                double lng = centro.Lng + radioEnGrados * Math.Sin(theta) / Math.Cos(centro.Lat * Math.PI / 180);
+                puntos.Add(new PointLatLng(lat, lng));
+            }
+            return puntos;
+        }
+
+        // Método para agregar el círculo de Barcelona
+        private void AgregarZonaBarcelona(GMapOverlay overlay)
+        {
+            PointLatLng centroBarcelona = new PointLatLng(41.3851, 2.1734);
+            List<PointLatLng> puntos = CrearCirculo(centroBarcelona, 20, 100);
+            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Barcelona")
+            {
+                Stroke = new Pen(Color.Blue, 2),
+                Fill = new SolidBrush(Color.FromArgb(50, Color.Blue))
+            };
+            overlay.Polygons.Add(circulo);
+        }
+
+        // Método para agregar el círculo de Tarragona
+        private void AgregarZonaTarragona(GMapOverlay overlay)
+        {
+            PointLatLng centroTarragona = new PointLatLng(41.1189, 1.2445);
+            List<PointLatLng> puntos = CrearCirculo(centroTarragona, 20, 100);
+            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Tarragona")
+            {
+                Stroke = new Pen(Color.Green, 2),
+                Fill = new SolidBrush(Color.FromArgb(50, Color.Green))
+            };
+            overlay.Polygons.Add(circulo);
+        }
+
+        // Método para agregar el círculo de Lleida
+        private void AgregarZonaLleida(GMapOverlay overlay)
+        {
+            PointLatLng centroLleida = new PointLatLng(41.6176, 0.6200);
+            List<PointLatLng> puntos = CrearCirculo(centroLleida, 20, 100);
+            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Lleida")
+            {
+                Stroke = new Pen(Color.Orange, 2),
+                Fill = new SolidBrush(Color.FromArgb(50, Color.Orange))
+            };
+            overlay.Polygons.Add(circulo);
+        }
+
+        // Método para agregar el círculo de Girona
+        private void AgregarZonaGirona(GMapOverlay overlay)
+        {
+            PointLatLng centroGirona = new PointLatLng(41.9833, 2.8167);
+            List<PointLatLng> puntos = CrearCirculo(centroGirona, 20, 100);
+            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Girona")
+            {
+                Stroke = new Pen(Color.Red, 2),
+                Fill = new SolidBrush(Color.FromArgb(50, Color.Red))
+            };
+            overlay.Polygons.Add(circulo);
+        }
+
         private void GMapControl1_OnMapDrag()
         {
-            // Obtener la posición actual
             double lat = gMapControl1.Position.Lat;
             double lng = gMapControl1.Position.Lng;
 
-            // Verificar si está fuera de los límites y corregir
-            if (lat < minLat) lat = minLat;
-            if (lat > maxLat) lat = maxLat;
-            if (lng < minLng) lng = minLng;
-            if (lng > maxLng) lng = maxLng;
+            if (lat < 40.5) lat = 40.5;
+            if (lat > 42.9) lat = 42.9;
+            if (lng < 0.15) lng = 0.15;
+            if (lng > 3.33) lng = 3.33;
 
-            // Aplicar la nueva posición si es necesario
             gMapControl1.Position = new PointLatLng(lat, lng);
         }
 
