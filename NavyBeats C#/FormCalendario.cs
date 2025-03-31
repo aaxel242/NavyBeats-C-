@@ -14,6 +14,9 @@ namespace NavyBeats_C_
     {
         private int currentYear;
         private int currentMonth;
+        private List<Models.EventoInfo> eventosDelDia = new List<Models.EventoInfo>();
+        private int eventoActualIndex = 0;
+
 
         public FormCalendario()
         {
@@ -164,9 +167,49 @@ namespace NavyBeats_C_
             Button btn = sender as Button;
             if (btn != null && btn.Tag is DateTime fecha)
             {
-                MessageBox.Show("Día seleccionado: " + fecha.ToShortDateString());
+                eventosDelDia = Models.CalendarioOrm.ObtenerEventosConPosicion(fecha);
+                eventoActualIndex = 0;
+                MostrarEventoActual();
             }
         }
+
+        private void MostrarEventoActual()
+        {
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                btnAvanzar.Visible = true;
+                btnRetroceder.Visible = true;
+                lblNumEventos.Visible = true;
+                lblMusico.Visible = true;
+                lblMusico.Text = "Músico";
+                lblLocal.Visible = true;
+                lblHorario.Visible = true;
+                lblPrecio.Visible = true;
+                var evt = eventosDelDia[eventoActualIndex];
+                lblMusicoSelect.Text = evt.Musico;
+                lblLocalSelect.Text = evt.Local;
+                lblHorarioSelect.Text = evt.Horario.ToString("HH:mm");
+                lblPrecioSelect.Text = evt.Salario.ToString("C");  // "C" formato moneda
+
+                lblNumEventos.Text = $"{eventoActualIndex + 1}/{eventosDelDia.Count}";
+            }
+            else
+            {
+                btnAvanzar.Visible = false;
+                btnRetroceder.Visible = false;
+                lblNumEventos.Visible = false;
+                lblMusico.Visible = true;
+                lblMusico.Text = "Sin Eventos";
+                lblLocal.Visible = false;
+                lblHorario.Visible = false;
+                lblPrecio.Visible = false;
+                lblMusicoSelect.Text = "";
+                lblLocalSelect.Text = "";
+                lblHorarioSelect.Text = "";
+                lblPrecioSelect.Text = "";
+            }
+        }
+
 
         private string ObtenerNombreMes(int mes)
         {
@@ -195,6 +238,24 @@ namespace NavyBeats_C_
                 currentYear--;
             }
             MostrarDias(currentYear, currentMonth);
+        }
+
+        private void btnAvanzar_Click_1(object sender, EventArgs e)
+        {
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                eventoActualIndex = (eventoActualIndex + 1) % eventosDelDia.Count;
+                MostrarEventoActual();
+            }
+        }
+
+        private void btnRetroceder_Click_1(object sender, EventArgs e)
+        {
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                eventoActualIndex = (eventoActualIndex - 1 + eventosDelDia.Count) % eventosDelDia.Count;
+                MostrarEventoActual();
+            }
         }
     }
 }
