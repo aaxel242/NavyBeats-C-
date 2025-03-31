@@ -215,6 +215,7 @@
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\EventoInfo.cs" />
     <Compile Include="Models\Like_Restaurant_Publication.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
@@ -394,6 +395,9 @@
       <LastGenOutput>ModelNavyBeats.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\imgFlechaRetroceder.png" />
+    <None Include="Resources\imgFlechaAvanzar.png" />
+    <None Include="Resources\imgFlechaRetrozeder.png" />
     <None Include="Resources\imgBuscar.png" />
     <None Include="Resources\imgLocal.png" />
     <None Include="Resources\imgSalirDorado.png" />

@@ -93,24 +93,9 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap imgBuscar
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("imgBuscar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-
-
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap imgAtrasMarron {
+        internal static System.Drawing.Bitmap imgBuscar {
             get {
-                object obj = ResourceManager.GetObject("imgAtrasMarron", resourceCulture);
-
+                object obj = ResourceManager.GetObject("imgBuscar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -158,6 +143,16 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgFlechaAvanzar {
+            get {
+                object obj = ResourceManager.GetObject("imgFlechaAvanzar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgFlechaDerecha {
             get {
                 object obj = ResourceManager.GetObject("imgFlechaDerecha", resourceCulture);
@@ -171,6 +166,16 @@ namespace NavyBeats_C_.Properties {
         internal static System.Drawing.Bitmap imgFlechaIzquierda {
             get {
                 object obj = ResourceManager.GetObject("imgFlechaIzquierda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgFlechaRetroceder {
+            get {
+                object obj = ResourceManager.GetObject("imgFlechaRetroceder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -208,21 +213,19 @@ namespace NavyBeats_C_.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap imgLocal
-        {
-            get
-            {
-                object obj = ResourceManager.GetObject("imgLocal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-            
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap imgIngles {
             get {
                 object obj = ResourceManager.GetObject("imgIngles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgLocal {
+            get {
+                object obj = ResourceManager.GetObject("imgLocal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

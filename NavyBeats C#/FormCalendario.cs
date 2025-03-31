@@ -14,6 +14,9 @@ namespace NavyBeats_C_
     {
         private int currentYear;
         private int currentMonth;
+        private List<Models.EventoInfo> eventosDelDia = new List<Models.EventoInfo>();
+        private int eventoActualIndex = 0;
+
 
         public FormCalendario()
         {
@@ -40,11 +43,12 @@ namespace NavyBeats_C_
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            // Aquí se podría llamar a InsertOffers si es necesario para insertar datos de prueba
+            btnRetroceder.BackgroundImage = Properties.Resources.imgFlechaRetroceder;
+            btnRetroceder.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAvanzar.BackgroundImage = Properties.Resources.imgFlechaAvanzar;
+            btnAvanzar.BackgroundImageLayout = ImageLayout.Stretch;
+
             //Models.CalendarioOrm.InsertOffers();
-
-
-            // Luego se mostrarán los días y se resaltarán los días con eventos
             MostrarDias(currentYear, currentMonth);
         }
 
@@ -128,9 +132,6 @@ namespace NavyBeats_C_
                         // Compara solo la parte de la fecha
                         if (eventDates.Any(ev => ev.Date == btnDate.Date))
                         {
-                            // Resalta la celda (por ejemplo, en color amarillo)
-
-                            //poner color rgb 229, 177,129 en lugar de amarillo
                             btn.BackColor = Color.FromArgb(229, 177, 129);
                         }
                     }
@@ -143,9 +144,49 @@ namespace NavyBeats_C_
             Button btn = sender as Button;
             if (btn != null && btn.Tag is DateTime fecha)
             {
-                MessageBox.Show("Día seleccionado: " + fecha.ToShortDateString());
+                eventosDelDia = Models.CalendarioOrm.ObtenerEventosConPosicion(fecha);
+                eventoActualIndex = 0;
+                MostrarEventoActual();
             }
         }
+
+        private void MostrarEventoActual()
+        {
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                btnAvanzar.Visible = true;
+                btnRetroceder.Visible = true;
+                lblNumEventos.Visible = true;
+                lblMusico.Visible = true;
+                lblMusico.Text = "Músico";
+                lblLocal.Visible = true;
+                lblHorario.Visible = true;
+                lblPrecio.Visible = true;
+                var evt = eventosDelDia[eventoActualIndex];
+                lblMusicoSelect.Text = evt.Musico;
+                lblLocalSelect.Text = evt.Local;
+                lblHorarioSelect.Text = evt.Horario.ToString("HH:mm");
+                lblPrecioSelect.Text = evt.Salario.ToString("C");  // "C" formato moneda
+
+                lblNumEventos.Text = $"{eventoActualIndex + 1}/{eventosDelDia.Count}";
+            }
+            else
+            {
+                btnAvanzar.Visible = false;
+                btnRetroceder.Visible = false;
+                lblNumEventos.Visible = false;
+                lblMusico.Visible = true;
+                lblMusico.Text = "Sin Eventos";
+                lblLocal.Visible = false;
+                lblHorario.Visible = false;
+                lblPrecio.Visible = false;
+                lblMusicoSelect.Text = "";
+                lblLocalSelect.Text = "";
+                lblHorarioSelect.Text = "";
+                lblPrecioSelect.Text = "";
+            }
+        }
+
 
         private string ObtenerNombreMes(int mes)
         {
@@ -176,21 +217,22 @@ namespace NavyBeats_C_
             MostrarDias(currentYear, currentMonth);
         }
 
-        private void lblMes_Click(object sender, EventArgs e)
+        private void btnAvanzar_Click_1(object sender, EventArgs e)
         {
-            // Posicionar el DateTimePicker justo debajo del label
-            dateTimePickerCalendario.Location = new Point(lblMes.Left, lblMes.Bottom);
-            dateTimePickerCalendario.Value = new DateTime(currentYear, currentMonth, 1);
-            dateTimePickerCalendario.Visible = true;
-            dateTimePickerCalendario.Focus();
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                eventoActualIndex = (eventoActualIndex + 1) % eventosDelDia.Count;
+                MostrarEventoActual();
+            }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void btnRetroceder_Click_1(object sender, EventArgs e)
         {
-            currentYear = dateTimePickerCalendario.Value.Year;
-            currentMonth = dateTimePickerCalendario.Value.Month;
-            MostrarDias(currentYear, currentMonth);
-            dateTimePickerCalendario.Visible = false;
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                eventoActualIndex = (eventoActualIndex - 1 + eventosDelDia.Count) % eventosDelDia.Count;
+                MostrarEventoActual();
+            }
         }
     }
 }

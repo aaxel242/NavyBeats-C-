@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace NavyBeats_C_.Models
@@ -103,5 +104,58 @@ namespace NavyBeats_C_.Models
                 return offerDirDates.Concat(offerInDates).ToList();
             }
         }
+
+
+        /// <summary>
+        /// Obtiene la lista de eventos para la fecha especificada.
+        /// Se consideran eventos en Offer_dir (agreement = 1 y done = 0) y Offer_In (donde music_id_final no es nulo).
+        /// </summary>
+        /// <param name="fecha">La fecha a consultar.</param>
+        /// <returns>Lista de EventoInfo con los datos de cada evento.</returns>
+        public static List<EventoInfo> ObtenerEventosConPosicion(DateTime fecha)
+        {
+            DateTime fechaSinHora = fecha.Date;
+            List<EventoInfo> eventos = new List<EventoInfo>();
+
+            using (var context = new dam04Entities())
+            {
+                // Eventos de Offer_dir
+                var eventosDir = (from o in context.Offer_dir
+                                  join mu in context.Users on o.musician_id equals mu.user_id
+                                  join ru in context.Users on o.restaurant_id equals ru.user_id
+                                  where DbFunctions.TruncateTime(o.event_date) == fechaSinHora &&
+                                        o.agreement == 1 && o.done == 0
+                                  select new EventoInfo
+                                  {
+                                      Musico = mu.name,
+                                      Local = ru.name,
+                                      Horario = o.event_date.Value,
+                                      Salario = (int)o.salary
+                                  }).ToList();
+
+                // Eventos de Offer_In
+                var eventosIn = (from o in context.Offer_In
+                                 join mu in context.Users on o.music_id_final equals mu.user_id
+                                 join ru in context.Users on o.restaurant_id equals ru.user_id
+                                 where DbFunctions.TruncateTime(o.event_date) == fechaSinHora &&
+                                       o.music_id_final != null
+                                 select new EventoInfo
+                                 {
+                                     Musico = mu.name,
+                                     Local = ru.name,
+                                     Horario = o.event_date.Value,
+                                     Salario = (int)o.salary
+                                 }).ToList();
+
+                // Combinar ambas listas y ordenar, por ejemplo, por horario
+                eventos = eventosDir.Concat(eventosIn)
+                                     .OrderBy(e => e.Horario)
+                                     .ToList();
+            }
+
+            return eventos;
+        }
+
+
     }
 }
