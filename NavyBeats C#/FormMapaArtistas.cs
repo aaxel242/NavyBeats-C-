@@ -15,6 +15,8 @@ namespace NavyBeats_C_
         private readonly double maxLat = 42.9;
         private readonly double minLng = 0.15;
         private readonly double maxLng = 3.33;
+        private GMapOverlay overlayMusico = new GMapOverlay("zonasMusico");
+
 
         public FormMapaArtistas()
         {
@@ -23,6 +25,12 @@ namespace NavyBeats_C_
 
         private void FormMapaArtistas_Load(object sender, EventArgs e)
         {
+
+            var musicians = Models.MusicianOrm.GetMusicians();
+            cboxMusicos.DataSource = musicians;
+            cboxMusicos.DisplayMember = "name";  
+            cboxMusicos.ValueMember = "user_id";
+
             panelMapa.BackColor = Color.FromArgb(216, 255, 255, 255);
 
             // Centrar el formulario
@@ -57,12 +65,6 @@ namespace NavyBeats_C_
             // Crear un overlay para zonas
             GMapOverlay overlayZonas = new GMapOverlay("zonas");
 
-            // Llamar a métodos para agregar cada zona
-            AgregarZonaBarcelona(overlayZonas);
-            AgregarZonaTarragona(overlayZonas);
-            AgregarZonaLleida(overlayZonas);
-            AgregarZonaGirona(overlayZonas);
-
             // Agregar el overlay al mapa
             gMapControl1.Overlays.Add(overlayZonas);
 
@@ -86,59 +88,7 @@ namespace NavyBeats_C_
             return puntos;
         }
 
-        // Método para agregar el círculo de Barcelona
-        private void AgregarZonaBarcelona(GMapOverlay overlay)
-        {
-            PointLatLng centroBarcelona = new PointLatLng(41.3851, 2.1734);
-            List<PointLatLng> puntos = CrearCirculo(centroBarcelona, 20, 100);
-            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Barcelona")
-            {
-                Stroke = new Pen(Color.Blue, 2),
-                Fill = new SolidBrush(Color.FromArgb(50, Color.Blue))
-            };
-            overlay.Polygons.Add(circulo);
-        }
-
-        // Método para agregar el círculo de Tarragona
-        private void AgregarZonaTarragona(GMapOverlay overlay)
-        {
-            PointLatLng centroTarragona = new PointLatLng(41.1189, 1.2445);
-            List<PointLatLng> puntos = CrearCirculo(centroTarragona, 20, 100);
-            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Tarragona")
-            {
-                Stroke = new Pen(Color.Green, 2),
-                Fill = new SolidBrush(Color.FromArgb(50, Color.Green))
-            };
-            overlay.Polygons.Add(circulo);
-        }
-
-        // Método para agregar el círculo de Lleida
-        private void AgregarZonaLleida(GMapOverlay overlay)
-        {
-            PointLatLng centroLleida = new PointLatLng(41.6176, 0.6200);
-            List<PointLatLng> puntos = CrearCirculo(centroLleida, 20, 100);
-            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Lleida")
-            {
-                Stroke = new Pen(Color.Orange, 2),
-                Fill = new SolidBrush(Color.FromArgb(50, Color.Orange))
-            };
-            overlay.Polygons.Add(circulo);
-        }
-
-        // Método para agregar el círculo de Girona
-        private void AgregarZonaGirona(GMapOverlay overlay)
-        {
-            PointLatLng centroGirona = new PointLatLng(41.9833, 2.8167);
-            List<PointLatLng> puntos = CrearCirculo(centroGirona, 20, 100);
-            GMapPolygon circulo = new GMapPolygon(puntos, "Zona Girona")
-            {
-                Stroke = new Pen(Color.Red, 2),
-                Fill = new SolidBrush(Color.FromArgb(50, Color.Red))
-            };
-            overlay.Polygons.Add(circulo);
-        }
-
-        private void GMapControl1_OnMapDrag()
+        private void GMapControl1_OnMapDrag()   
         {
             double lat = gMapControl1.Position.Lat;
             double lng = gMapControl1.Position.Lng;
@@ -165,5 +115,51 @@ namespace NavyBeats_C_
         {
             this.Close();
         }
+
+        private void cboxMusicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboxMusicos.SelectedValue is int selectedUserId)
+            {
+                // Obtener el usuario que es músico con su latitud/longitud
+                var musico = Models.MusicianOrm.GetMusicianById(selectedUserId);
+
+                if (musico != null && musico.latitud.HasValue && musico.longitud.HasValue)
+                {
+                    // Convertir de decimal a double antes de crear el punto en el mapa
+                    double lat = Convert.ToDouble(musico.latitud.Value);
+                    double lng = Convert.ToDouble(musico.longitud.Value);
+                    PointLatLng centroMusico = new PointLatLng(lat, lng);
+
+                    // si hay un circulo previo, Eliminarlo
+                    if (overlayMusico.Polygons.Count > 0)
+                    {
+                        gMapControl1.Overlays.Remove(overlayMusico);
+                        overlayMusico.Polygons.Clear();
+                    }
+
+                    // Crear un nuevo círculo en el mapa
+                    List<PointLatLng> puntos = CrearCirculo(centroMusico, 10, 100);
+                    GMapPolygon circulo = new GMapPolygon(puntos, "Zona Músico")
+                    {
+                        Stroke = new Pen(Color.Red, 4),
+                        //Color de relleno en rojo transparente
+                        Fill = new SolidBrush(Color.FromArgb(128, 255, 0, 0))
+
+                    };
+
+                    // Agregar el nuevo círculo al overlay
+                    overlayMusico.Polygons.Add(circulo);
+                    gMapControl1.Overlays.Add(overlayMusico);
+
+                    // Refrescar el mapa para reflejar los cambios
+                    gMapControl1.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron coordenadas para este músico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
     }
 }

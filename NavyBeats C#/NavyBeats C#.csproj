@@ -243,6 +243,7 @@
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MusicianOrm.cs" />
     <Compile Include="Models\Offer_dir.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
