@@ -30,6 +30,11 @@
         {
             this.panelCalendarioFondo = new System.Windows.Forms.Panel();
             this.panelCalendario = new System.Windows.Forms.Panel();
+            this.lblNumEventos = new System.Windows.Forms.Label();
+            this.lblPrecioSelect = new System.Windows.Forms.Label();
+            this.lblHorarioSelect = new System.Windows.Forms.Label();
+            this.lblLocalSelect = new System.Windows.Forms.Label();
+            this.lblMusicoSelect = new System.Windows.Forms.Label();
             this.btnAvanzar = new System.Windows.Forms.Button();
             this.btnRetroceder = new System.Windows.Forms.Button();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -49,10 +54,6 @@
             this.lblMes = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.lblMusicoSelect = new System.Windows.Forms.Label();
-            this.lblLocalSelect = new System.Windows.Forms.Label();
-            this.lblHorarioSelect = new System.Windows.Forms.Label();
-            this.lblPrecioSelect = new System.Windows.Forms.Label();
             this.panelCalendarioFondo.SuspendLayout();
             this.panelCalendario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxFlechaDerecha)).BeginInit();
@@ -77,6 +78,7 @@
             // panelCalendario
             // 
             this.panelCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panelCalendario.Controls.Add(this.lblNumEventos);
             this.panelCalendario.Controls.Add(this.lblPrecioSelect);
             this.panelCalendario.Controls.Add(this.lblHorarioSelect);
             this.panelCalendario.Controls.Add(this.lblLocalSelect);
@@ -103,25 +105,86 @@
             this.panelCalendario.Size = new System.Drawing.Size(988, 573);
             this.panelCalendario.TabIndex = 5;
             // 
+            // lblNumEventos
+            // 
+            this.lblNumEventos.AutoSize = true;
+            this.lblNumEventos.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblNumEventos.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumEventos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblNumEventos.Location = new System.Drawing.Point(815, 532);
+            this.lblNumEventos.Name = "lblNumEventos";
+            this.lblNumEventos.Size = new System.Drawing.Size(29, 25);
+            this.lblNumEventos.TabIndex = 22;
+            this.lblNumEventos.Text = "1/1";
+            this.lblNumEventos.Visible = false;
+            // 
+            // lblPrecioSelect
+            // 
+            this.lblPrecioSelect.AutoSize = true;
+            this.lblPrecioSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblPrecioSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblPrecioSelect.Location = new System.Drawing.Point(780, 452);
+            this.lblPrecioSelect.Name = "lblPrecioSelect";
+            this.lblPrecioSelect.Size = new System.Drawing.Size(0, 25);
+            this.lblPrecioSelect.TabIndex = 21;
+            // 
+            // lblHorarioSelect
+            // 
+            this.lblHorarioSelect.AutoSize = true;
+            this.lblHorarioSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblHorarioSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorarioSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblHorarioSelect.Location = new System.Drawing.Point(781, 364);
+            this.lblHorarioSelect.Name = "lblHorarioSelect";
+            this.lblHorarioSelect.Size = new System.Drawing.Size(0, 25);
+            this.lblHorarioSelect.TabIndex = 20;
+            // 
+            // lblLocalSelect
+            // 
+            this.lblLocalSelect.AutoSize = true;
+            this.lblLocalSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblLocalSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblLocalSelect.Location = new System.Drawing.Point(780, 275);
+            this.lblLocalSelect.Name = "lblLocalSelect";
+            this.lblLocalSelect.Size = new System.Drawing.Size(0, 25);
+            this.lblLocalSelect.TabIndex = 19;
+            // 
+            // lblMusicoSelect
+            // 
+            this.lblMusicoSelect.AutoSize = true;
+            this.lblMusicoSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblMusicoSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMusicoSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblMusicoSelect.Location = new System.Drawing.Point(781, 192);
+            this.lblMusicoSelect.Name = "lblMusicoSelect";
+            this.lblMusicoSelect.Size = new System.Drawing.Size(0, 25);
+            this.lblMusicoSelect.TabIndex = 18;
+            // 
             // btnAvanzar
             // 
             this.btnAvanzar.FlatAppearance.BorderSize = 0;
             this.btnAvanzar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAvanzar.Location = new System.Drawing.Point(873, 501);
+            this.btnAvanzar.Location = new System.Drawing.Point(829, 497);
             this.btnAvanzar.Name = "btnAvanzar";
             this.btnAvanzar.Size = new System.Drawing.Size(32, 32);
             this.btnAvanzar.TabIndex = 17;
             this.btnAvanzar.UseVisualStyleBackColor = true;
+            this.btnAvanzar.Visible = false;
+            this.btnAvanzar.Click += new System.EventHandler(this.btnAvanzar_Click_1);
             // 
             // btnRetroceder
             // 
             this.btnRetroceder.FlatAppearance.BorderSize = 0;
             this.btnRetroceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRetroceder.Location = new System.Drawing.Point(829, 501);
+            this.btnRetroceder.Location = new System.Drawing.Point(785, 497);
             this.btnRetroceder.Name = "btnRetroceder";
             this.btnRetroceder.Size = new System.Drawing.Size(32, 32);
             this.btnRetroceder.TabIndex = 16;
             this.btnRetroceder.UseVisualStyleBackColor = true;
+            this.btnRetroceder.Visible = false;
+            this.btnRetroceder.Click += new System.EventHandler(this.btnRetroceder_Click_1);
             // 
             // lblPrecio
             // 
@@ -129,11 +192,12 @@
             this.lblPrecio.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblPrecio.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblPrecio.Location = new System.Drawing.Point(781, 430);
+            this.lblPrecio.Location = new System.Drawing.Point(781, 422);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(80, 30);
             this.lblPrecio.TabIndex = 15;
             this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Visible = false;
             // 
             // lblHorario
             // 
@@ -141,11 +205,12 @@
             this.lblHorario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblHorario.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblHorario.Location = new System.Drawing.Point(781, 342);
+            this.lblHorario.Location = new System.Drawing.Point(781, 334);
             this.lblHorario.Name = "lblHorario";
             this.lblHorario.Size = new System.Drawing.Size(90, 30);
             this.lblHorario.TabIndex = 14;
             this.lblHorario.Text = "Horario";
+            this.lblHorario.Visible = false;
             // 
             // lblLocal
             // 
@@ -153,11 +218,12 @@
             this.lblLocal.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblLocal.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblLocal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblLocal.Location = new System.Drawing.Point(781, 253);
+            this.lblLocal.Location = new System.Drawing.Point(781, 245);
             this.lblLocal.Name = "lblLocal";
             this.lblLocal.Size = new System.Drawing.Size(68, 30);
             this.lblLocal.TabIndex = 13;
             this.lblLocal.Text = "Local";
+            this.lblLocal.Visible = false;
             // 
             // lblMusico
             // 
@@ -165,11 +231,12 @@
             this.lblMusico.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMusico.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold);
             this.lblMusico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMusico.Location = new System.Drawing.Point(781, 170);
+            this.lblMusico.Location = new System.Drawing.Point(781, 162);
             this.lblMusico.Name = "lblMusico";
             this.lblMusico.Size = new System.Drawing.Size(87, 30);
             this.lblMusico.TabIndex = 12;
             this.lblMusico.Text = "Músico";
+            this.lblMusico.Visible = false;
             // 
             // panelDias
             // 
@@ -315,54 +382,6 @@
             this.pboxAtras.TabIndex = 2;
             this.pboxAtras.TabStop = false;
             // 
-            // lblMusicoSelect
-            // 
-            this.lblMusicoSelect.AutoSize = true;
-            this.lblMusicoSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblMusicoSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMusicoSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMusicoSelect.Location = new System.Drawing.Point(781, 200);
-            this.lblMusicoSelect.Name = "lblMusicoSelect";
-            this.lblMusicoSelect.Size = new System.Drawing.Size(81, 25);
-            this.lblMusicoSelect.TabIndex = 18;
-            this.lblMusicoSelect.Text = "(musico)";
-            // 
-            // lblLocalSelect
-            // 
-            this.lblLocalSelect.AutoSize = true;
-            this.lblLocalSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblLocalSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblLocalSelect.Location = new System.Drawing.Point(780, 283);
-            this.lblLocalSelect.Name = "lblLocalSelect";
-            this.lblLocalSelect.Size = new System.Drawing.Size(58, 25);
-            this.lblLocalSelect.TabIndex = 19;
-            this.lblLocalSelect.Text = "(local)";
-            // 
-            // lblHorarioSelect
-            // 
-            this.lblHorarioSelect.AutoSize = true;
-            this.lblHorarioSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblHorarioSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorarioSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblHorarioSelect.Location = new System.Drawing.Point(781, 372);
-            this.lblHorarioSelect.Name = "lblHorarioSelect";
-            this.lblHorarioSelect.Size = new System.Drawing.Size(77, 25);
-            this.lblHorarioSelect.TabIndex = 20;
-            this.lblHorarioSelect.Text = "(horario)";
-            // 
-            // lblPrecioSelect
-            // 
-            this.lblPrecioSelect.AutoSize = true;
-            this.lblPrecioSelect.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.lblPrecioSelect.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblPrecioSelect.Location = new System.Drawing.Point(780, 460);
-            this.lblPrecioSelect.Name = "lblPrecioSelect";
-            this.lblPrecioSelect.Size = new System.Drawing.Size(72, 25);
-            this.lblPrecioSelect.TabIndex = 21;
-            this.lblPrecioSelect.Text = "(precio)";
-            // 
             // FormCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,5 +433,6 @@
         private System.Windows.Forms.Label lblMusicoSelect;
         private System.Windows.Forms.Label lblPrecioSelect;
         private System.Windows.Forms.Label lblHorarioSelect;
+        private System.Windows.Forms.Label lblNumEventos;
     }
 }
