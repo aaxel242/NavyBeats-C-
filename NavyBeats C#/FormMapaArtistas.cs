@@ -15,7 +15,7 @@ namespace NavyBeats_C_
         private readonly double maxLat = 42.9;
         private readonly double minLng = 0.15;
         private readonly double maxLng = 3.33;
-        // Overlay para el círculo del músico seleccionado
+
         private GMapOverlay overlayMusico = new GMapOverlay("zonasMusico");
 
         public FormMapaArtistas()
@@ -77,6 +77,7 @@ namespace NavyBeats_C_
             {
                 MostrarCirculosEnMapa();
             }
+
             MostrarCirculosEnMapa();
 
         }
