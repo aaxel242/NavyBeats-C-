@@ -32,11 +32,10 @@
             this.panelMapa = new System.Windows.Forms.Panel();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelMenuMapa = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.cBoxMunicipios = new System.Windows.Forms.ComboBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanelLocales = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMapa.SuspendLayout();
             this.panelMenuMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
@@ -84,8 +83,7 @@
             // panelMenuMapa
             // 
             this.panelMenuMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.panelMenuMapa.Controls.Add(this.tableLayoutPanel1);
-            this.panelMenuMapa.Controls.Add(this.button1);
+            this.panelMenuMapa.Controls.Add(this.flowLayoutPanelLocales);
             this.panelMenuMapa.Controls.Add(this.cBoxMunicipios);
             this.panelMenuMapa.Controls.Add(this.pboxAtras);
             this.panelMenuMapa.Location = new System.Drawing.Point(0, 0);
@@ -93,18 +91,6 @@
             this.panelMenuMapa.Size = new System.Drawing.Size(291, 650);
             this.panelMenuMapa.TabIndex = 2;
             this.panelMenuMapa.TabStop = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.button1.BackgroundImage = global::NavyBeats_C_.Properties.Resources.imgBuscar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(250, 153);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // cBoxMunicipios
             // 
@@ -114,8 +100,9 @@
             this.cBoxMunicipios.FormattingEnabled = true;
             this.cBoxMunicipios.Location = new System.Drawing.Point(23, 153);
             this.cBoxMunicipios.Name = "cBoxMunicipios";
-            this.cBoxMunicipios.Size = new System.Drawing.Size(221, 21);
+            this.cBoxMunicipios.Size = new System.Drawing.Size(250, 21);
             this.cBoxMunicipios.TabIndex = 4;
+            this.cBoxMunicipios.SelectedIndexChanged += new System.EventHandler(this.cBoxMunicipios_SelectedIndexChanged_1);
             // 
             // pboxAtras
             // 
@@ -140,18 +127,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // flowLayoutPanelLocales
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(23, 197);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 426);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanelLocales.AutoScroll = true;
+            this.flowLayoutPanelLocales.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelLocales.Location = new System.Drawing.Point(23, 195);
+            this.flowLayoutPanelLocales.Name = "flowLayoutPanelLocales";
+            this.flowLayoutPanelLocales.Size = new System.Drawing.Size(250, 407);
+            this.flowLayoutPanelLocales.TabIndex = 5;
+            this.flowLayoutPanelLocales.WrapContents = false;
             // 
             // FormMapaLocales
             // 
@@ -180,7 +164,6 @@
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cBoxMunicipios;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLocales;
     }
 }

@@ -258,6 +258,8 @@
     <Compile Include="Models\Restaurant.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RestaurantInfo.cs" />
+    <Compile Include="Models\RestaurantsOrm.cs" />
     <Compile Include="Models\Style.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
