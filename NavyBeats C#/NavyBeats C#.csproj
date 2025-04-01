@@ -243,6 +243,7 @@
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MusicianInfo.cs" />
     <Compile Include="Models\MusicianOrm.cs" />
     <Compile Include="Models\Offer_dir.cs">
       <DependentUpon>ModelNavyBeats.tt</DependentUpon>
@@ -358,6 +359,7 @@
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Message.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Municipality.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Musician.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.MusicianOrm.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_dir.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_In.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Orm.datasource" />

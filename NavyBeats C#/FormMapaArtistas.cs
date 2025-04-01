@@ -15,8 +15,8 @@ namespace NavyBeats_C_
         private readonly double maxLat = 42.9;
         private readonly double minLng = 0.15;
         private readonly double maxLng = 3.33;
+        // Overlay para el círculo del músico seleccionado
         private GMapOverlay overlayMusico = new GMapOverlay("zonasMusico");
-
 
         public FormMapaArtistas()
         {
@@ -25,11 +25,14 @@ namespace NavyBeats_C_
 
         private void FormMapaArtistas_Load(object sender, EventArgs e)
         {
-
+            // Cargar músicos en el ComboBox (esto se hace una sola vez)
             var musicians = Models.MusicianOrm.GetMusicians();
             cboxMusicos.DataSource = musicians;
-            cboxMusicos.DisplayMember = "name";  
+            cboxMusicos.DisplayMember = "name";
             cboxMusicos.ValueMember = "user_id";
+
+            // Configurar el FlowLayoutPanel (una sola vez)
+            ConfiguracionFlowLayoutPanel(flowLayoutPanelMusicos);
 
             panelMapa.BackColor = Color.FromArgb(216, 255, 255, 255);
 
@@ -62,14 +65,20 @@ namespace NavyBeats_C_
             gMapControl1.MaxZoom = 18;
             gMapControl1.Zoom = 8;
 
-            // Crear un overlay para zonas
+            // Crear un overlay para otras zonas (si es necesario)
             GMapOverlay overlayZonas = new GMapOverlay("zonas");
-
-            // Agregar el overlay al mapa
             gMapControl1.Overlays.Add(overlayZonas);
 
             // Manejar el evento para restringir el movimiento dentro de Cataluña
             gMapControl1.OnMapDrag += GMapControl1_OnMapDrag;
+
+            // (Opcional) Forzar la carga inicial del círculo si hay un músico seleccionado por defecto:
+            if (cboxMusicos.SelectedValue is int selectedUserId)
+            {
+                MostrarCirculosEnMapa();
+            }
+            MostrarCirculosEnMapa();
+
         }
 
         // Método para generar un círculo (lista de puntos)
@@ -88,7 +97,7 @@ namespace NavyBeats_C_
             return puntos;
         }
 
-        private void GMapControl1_OnMapDrag()   
+        private void GMapControl1_OnMapDrag()
         {
             double lat = gMapControl1.Position.Lat;
             double lng = gMapControl1.Position.Lng;
@@ -99,6 +108,93 @@ namespace NavyBeats_C_
             if (lng > 3.33) lng = 3.33;
 
             gMapControl1.Position = new PointLatLng(lat, lng);
+        }
+
+        private void ConfiguracionFlowLayoutPanel(FlowLayoutPanel flowLayoutPanel)
+        {
+            // Cargar los músicos en el panel solo una vez
+            flowLayoutPanel.Controls.Clear();
+
+            var musicianList = Models.MusicianOrm.GetMusicianInfoList();
+
+            foreach (var musician in musicianList)
+            {
+                Panel panelMusico = new Panel();
+                panelMusico.Size = new Size(220, 70);
+                panelMusico.BackColor = Color.FromArgb(134, 187, 216);
+                panelMusico.Margin = new Padding(5);
+
+                Label lblNombre = new Label();
+                lblNombre.Text = musician.Name;
+                lblNombre.Font = new Font("Montserrat", 10, FontStyle.Bold);
+                lblNombre.Location = new Point(10, 10);
+                lblNombre.AutoSize = true;
+
+                Label lblEmail = new Label();
+                lblEmail.Text = musician.Email;
+                lblEmail.Font = new Font("Montserrat", 9, FontStyle.Regular);
+                lblEmail.Location = new Point(10, 30);
+                lblEmail.AutoSize = true;
+
+                Label lblMunicipio = new Label();
+                lblMunicipio.Text = musician.Municipality;
+                lblMunicipio.Font = new Font("Montserrat", 9, FontStyle.Regular);
+                lblMunicipio.Location = new Point(10, 50);
+                lblMunicipio.AutoSize = true;
+
+                panelMusico.Controls.Add(lblNombre);
+                panelMusico.Controls.Add(lblEmail);
+                panelMusico.Controls.Add(lblMunicipio);
+
+                flowLayoutPanel.Controls.Add(panelMusico);
+            }
+        }
+
+        private void MostrarCirculosEnMapa()
+        {
+            if (cboxMusicos.SelectedValue is int selectedUserId)
+            {
+                var musico = Models.MusicianOrm.GetMusicianById(selectedUserId);
+
+                if (musico != null && musico.latitud.HasValue && musico.longitud.HasValue)
+                {
+                    double lat = Convert.ToDouble(musico.latitud.Value);
+                    double lng = Convert.ToDouble(musico.longitud.Value);
+                    PointLatLng centroMusico = new PointLatLng(lat, lng);
+
+                    // Eliminar el overlay anterior si existe
+                    if (overlayMusico.Polygons.Count > 0)
+                    {
+                        gMapControl1.Overlays.Remove(overlayMusico);
+                        overlayMusico.Polygons.Clear();
+                    }
+
+                    // Crear el círculo
+                    List<PointLatLng> puntos = CrearCirculo(centroMusico, 10, 100);
+                    GMapPolygon circulo = new GMapPolygon(puntos, "Zona Músico")
+                    {
+                        Stroke = new Pen(Color.Red, 4),
+                        Fill = new SolidBrush(Color.FromArgb(128, 255, 0, 0)) // 50% transparente
+                    };
+
+                    overlayMusico.Polygons.Add(circulo);
+                    gMapControl1.Overlays.Add(overlayMusico);
+
+                    // Forzar actualización del mapa
+                    gMapControl1.Refresh();
+                    gMapControl1.Invalidate();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron coordenadas para este músico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void cboxMusicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Actualizar el círculo sin recargar el FlowLayoutPanel (ya cargado en Load)
+            MostrarCirculosEnMapa();
         }
 
         private void btnLocalMapa_Click(object sender, EventArgs e)
@@ -115,51 +211,5 @@ namespace NavyBeats_C_
         {
             this.Close();
         }
-
-        private void cboxMusicos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboxMusicos.SelectedValue is int selectedUserId)
-            {
-                // Obtener el usuario que es músico con su latitud/longitud
-                var musico = Models.MusicianOrm.GetMusicianById(selectedUserId);
-
-                if (musico != null && musico.latitud.HasValue && musico.longitud.HasValue)
-                {
-                    // Convertir de decimal a double antes de crear el punto en el mapa
-                    double lat = Convert.ToDouble(musico.latitud.Value);
-                    double lng = Convert.ToDouble(musico.longitud.Value);
-                    PointLatLng centroMusico = new PointLatLng(lat, lng);
-
-                    // si hay un circulo previo, Eliminarlo
-                    if (overlayMusico.Polygons.Count > 0)
-                    {
-                        gMapControl1.Overlays.Remove(overlayMusico);
-                        overlayMusico.Polygons.Clear();
-                    }
-
-                    // Crear un nuevo círculo en el mapa
-                    List<PointLatLng> puntos = CrearCirculo(centroMusico, 10, 100);
-                    GMapPolygon circulo = new GMapPolygon(puntos, "Zona Músico")
-                    {
-                        Stroke = new Pen(Color.Red, 4),
-                        //Color de relleno en rojo transparente
-                        Fill = new SolidBrush(Color.FromArgb(128, 255, 0, 0))
-
-                    };
-
-                    // Agregar el nuevo círculo al overlay
-                    overlayMusico.Polygons.Add(circulo);
-                    gMapControl1.Overlays.Add(overlayMusico);
-
-                    // Refrescar el mapa para reflejar los cambios
-                    gMapControl1.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show("No se encontraron coordenadas para este músico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-        }
-
     }
 }
