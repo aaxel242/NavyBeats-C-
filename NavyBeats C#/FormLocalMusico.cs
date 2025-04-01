@@ -12,7 +12,7 @@ namespace NavyBeats_C_
 {
     public partial class FormLocalMusico: Form
     {
-        public FormLocalMusico()
+        public FormLocalMusico(bool local)
         {
             InitializeComponent();
         }

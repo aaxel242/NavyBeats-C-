@@ -10,11 +10,8 @@ namespace NavyBeats_C_.Models
     {
         public static Musician SelectMusician()
         {
-            Users movilUsers = UsuarioMovilOrm.SelectUsers();
-
             Musician _user =
                 (Musician)(from user in Orm.bd.Musician
-                    where movilUsers.user_id == user.user_id
                     select user).FirstOrDefault();
 
             return _user;

@@ -63,9 +63,16 @@ namespace NavyBeats_C_
             }
             else
             {
+                bool local = true;
+
+                if (panel == panelArtista)
+                {
+                    local = false;
+                }
+
                 if (userLogin.role.Equals("Mantenimiento"))
                 {
-                    FormLocalMusico localMusico = new FormLocalMusico();
+                    FormLocalMusico localMusico = new FormLocalMusico(local);
                     localMusico.Show();
 
                     localMusico.FormClosed += (s, args) => this.Show();
@@ -73,7 +80,7 @@ namespace NavyBeats_C_
                 }
                 else
                 {
-                    FormLocalMusicoSA localMusico = new FormLocalMusicoSA();
+                    FormLocalMusicoSA localMusico = new FormLocalMusicoSA(local);
                     localMusico.Show();
 
                     localMusico.FormClosed += (s, args) => this.Show();

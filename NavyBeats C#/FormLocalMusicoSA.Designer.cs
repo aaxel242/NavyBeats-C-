@@ -42,13 +42,14 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.bindingSourceMusicos = new System.Windows.Forms.BindingSource(this.components);
             this.useridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.municipalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSourceMusicos = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceLocales = new System.Windows.Forms.BindingSource(this.components);
             this.panelAzul.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel.SuspendLayout();
@@ -57,6 +58,7 @@
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAzul
@@ -229,6 +231,10 @@
             this.dataGridView.Size = new System.Drawing.Size(837, 420);
             this.dataGridView.TabIndex = 0;
             // 
+            // bindingSourceMusicos
+            // 
+            this.bindingSourceMusicos.DataSource = typeof(NavyBeats_C_.Models.Users);
+            // 
             // useridDataGridViewTextBoxColumn
             // 
             this.useridDataGridViewTextBoxColumn.DataPropertyName = "user_id";
@@ -271,9 +277,9 @@
             this.municipalityDataGridViewTextBoxColumn.Name = "municipalityDataGridViewTextBoxColumn";
             this.municipalityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // bindingSourceMusicos
+            // bindingSourceLocales
             // 
-            this.bindingSourceMusicos.DataSource = typeof(NavyBeats_C_.Models.Users);
+            this.bindingSourceLocales.DataSource = typeof(NavyBeats_C_.Models.Users);
             // 
             // FormLocalMusicoSA
             // 
@@ -299,6 +305,7 @@
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,5 +329,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phonenumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn municipalityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bindingSourceLocales;
     }
 }

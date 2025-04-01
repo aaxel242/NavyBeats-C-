@@ -21,9 +21,9 @@ namespace NavyBeats_C_.Models
             this.Offer_dir = new HashSet<Offer_dir>();
             this.Offer_In = new HashSet<Offer_In>();
             this.Publication = new HashSet<Publication>();
+            this.User_Time = new HashSet<User_Time>();
+            this.User_Style = new HashSet<User_Style>();
             this.Restaurant = new HashSet<Restaurant>();
-            this.Style = new HashSet<Style>();
-            this.time = new HashSet<time>();
         }
     
         public int user_id { get; set; }
@@ -38,10 +38,10 @@ namespace NavyBeats_C_.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Publication> Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User_Time> User_Time { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User_Style> User_Style { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Restaurant> Restaurant { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Style> Style { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<time> time { get; set; }
     }
 }

@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace NavyBeats_C_.Models
 {
-    public static class LocalMusico
+    public static class RestauranteOrm
     {
         public static Restaurant SelectRestaurant()
         {
-            Users movilUsers = UsuarioMovilOrm.SelectUsers();
-
             Restaurant _user =
-                (Restaurant)(from user in Orm.bd.Restaurant
-                    where movilUsers.user_id == user.user_id
+                (from user in Orm.bd.Restaurant
                     select user).FirstOrDefault();
 
             return _user;
