@@ -254,8 +254,6 @@
     <Compile Include="Models\Restaurant.cs">
       <DependentUpon>ModelNavyBeat.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RestauranteOrm.cs" />
-    <Compile Include="Models\MusicoOrm.cs" />
     <Compile Include="Models\Orm.cs" />
     <Compile Include="Models\Style.cs">
       <DependentUpon>ModelNavyBeat.tt</DependentUpon>
