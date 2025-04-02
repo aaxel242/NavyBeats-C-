@@ -363,11 +363,13 @@
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Message.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Municipality.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Musician.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Musico.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_dir.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_In.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Orm.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Publication.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Restaurant.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Restaurante.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Style.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Super_User.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Ticket.datasource" />

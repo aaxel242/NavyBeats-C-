@@ -13,7 +13,35 @@ namespace NavyBeats_C_
 
             if (local)
             {
-                bindingSourceMusicos.DataSource = MusicoOrm.SelectMusician();
+                dataGridView.DataSource = bindingSourceLocales;
+                bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
+
+                dataGridView.Columns["user_id"].HeaderText = "Id";
+                dataGridView.Columns["name"].HeaderText = "Nombre";
+                dataGridView.Columns["email"].HeaderText = "Correo";
+                dataGridView.Columns["password"].HeaderText = "Contraseña";
+                dataGridView.Columns["phone_number"].HeaderText = "Tel.";
+                dataGridView.Columns["municipality"].HeaderText = "Municipio";
+                dataGridView.Columns["latitud"].HeaderText = "Latitud";
+                dataGridView.Columns["longitud"].HeaderText = "Longitud";
+                dataGridView.Columns["opening_time"].HeaderText = "Apertura";
+                dataGridView.Columns["closing_time"].HeaderText = "Cierre";
+
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            }
+            else
+            {
+                dataGridView.DataSource = bindingSourceMusicos;
+                bindingSourceMusicos.DataSource = UsuarioMovilOrm.SelectMusician();
+
+                dataGridView.Columns["user_id"].HeaderText = "Id";
+                dataGridView.Columns["name"].HeaderText = "Nombre";
+                dataGridView.Columns["email"].HeaderText = "Correo";
+                dataGridView.Columns["password"].HeaderText = "Contraseña";
+                dataGridView.Columns["phone_number"].HeaderText = "Tel.";
+                dataGridView.Columns["municipality"].HeaderText = "Municipio";
+
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
 

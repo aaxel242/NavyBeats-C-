@@ -17,7 +17,7 @@ namespace NavyBeats_C_
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new FormLocalMusicoSA(true));
+            Application.Run(new FormLogin());
         }
     }
 }

@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="68cb5d36d5684dc9bb4e172fa3426d08" Name="Diagram1">
+      <Diagram DiagramId="68cb5d36d5684dc9bb4e172fa3426d08" Name="Diagram1" ZoomLevel="112">
         <EntityTypeShape EntityType="dam04Model.Chat" Width="1.5" PointX="9.75" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.City" Width="1.5" PointX="0.75" PointY="18.625" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Comment_Restaurant_Publication" Width="1.5" PointX="12" PointY="30.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Like_Restaurant_Publication" Width="1.5" PointX="12" PointY="27.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dam04Model.Message" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Message" Width="1.5" PointX="15" PointY="18.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Municipality" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dam04Model.Musician" Width="1.5" PointX="7.5" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Musician" Width="1.5" PointX="7.125" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Offer_dir" Width="1.5" PointX="12.75" PointY="19.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="dam04Model.Offer_In" Width="1.5" PointX="9.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Offer_In" Width="1.5" PointX="12.5" PointY="15.625" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Publication" Width="1.5" PointX="9.75" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dam04Model.Restaurant" Width="1.5" PointX="12.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Restaurant" Width="1.5" PointX="7.5" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Style" Width="1.5" PointX="7.5" PointY="23.5" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Super_User" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dam04Model.Ticket" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />

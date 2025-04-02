@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,11 +42,15 @@
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.bindingSourceMusicos = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceLocales = new System.Windows.Forms.BindingSource(this.components);
             this.panel.SuspendLayout();
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -176,6 +181,14 @@
             this.pboxAtras.TabIndex = 2;
             this.pboxAtras.TabStop = false;
             // 
+            // bindingSourceMusicos
+            // 
+            this.bindingSourceMusicos.DataSource = typeof(NavyBeats_C_.Models.Musico);
+            // 
+            // bindingSourceLocales
+            // 
+            this.bindingSourceLocales.DataSource = typeof(NavyBeats_C_.Models.Restaurante);
+            // 
             // FormLocalMusico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormLocalMusico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLocalMusico";
             this.Load += new System.EventHandler(this.FormLocalMusico_Load);
             this.panel.ResumeLayout(false);
@@ -193,6 +207,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +226,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
+        private System.Windows.Forms.BindingSource bindingSourceMusicos;
+        private System.Windows.Forms.BindingSource bindingSourceLocales;
     }
 }
