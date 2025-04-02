@@ -27,8 +27,8 @@ namespace NavyBeats_C_.Models
         public string municipality { get; set; }
         public Nullable<decimal> latitud { get; set; }
         public Nullable<decimal> longitud { get; set; }
-        public System.TimeSpan opening_time { get; set; }
-        public System.TimeSpan closing_time { get; set; }
+        public string opening_time { get; set; }
+        public string closing_time { get; set; }
     }
 
     public static class UsuarioMovilOrm
@@ -68,7 +68,9 @@ namespace NavyBeats_C_.Models
                                           phone_number = user.phone_number,
                                           municipality = municipality != null ? municipality.name : "Sin ciudad",
                                           latitud = user.latitud,
-                                          longitud = user.longitud
+                                          longitud = user.longitud,
+                                          opening_time = res.opening_time,
+                                          closing_time = res.closing_time
                                       })
                              .ToList();
 

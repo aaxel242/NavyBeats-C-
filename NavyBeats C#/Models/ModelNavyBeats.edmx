@@ -110,8 +110,8 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="opening_time" Type="time" Precision="7" Nullable="false" />
-          <Property Name="closing_time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="opening_time" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="closing_time" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Style">
@@ -781,8 +781,8 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="opening_time" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="closing_time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="opening_time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="closing_time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__restaurant__1EA48E88" FromRole="Restaurant" ToRole="Chat" />
           <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__user___208CD6FA" FromRole="Restaurant" ToRole="Comment_Restaurant_Publication" />

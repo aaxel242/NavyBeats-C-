@@ -207,79 +207,79 @@
     </Compile>
     <Compile Include="Models\CalendarioOrm.cs" />
     <Compile Include="Models\Chat.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Like_Restaurant_Publication.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Message.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelNavyBeat.Context.cs">
+    <Compile Include="Models\ModelNavyBeats.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelNavyBeat.Context.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelNavyBeat.cs">
+    <Compile Include="Models\ModelNavyBeats.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelNavyBeat.Designer.cs">
+    <Compile Include="Models\ModelNavyBeats.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelNavyBeat.edmx</DependentUpon>
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Municipality.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Musician.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Offer_dir.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Offer_In.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Publication.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Restaurant.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Orm.cs" />
+    <Compile Include="Models\Publication.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Restaurant.cs">
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Style.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Super_User.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ticket.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\time.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User_Style.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User_Time.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UsuarioEscritorioOrm.cs" />
     <Compile Include="Models\UsuarioMovilOrm.cs" />
     <Compile Include="Models\Valorar.cs">
-      <DependentUpon>ModelNavyBeat.tt</DependentUpon>
+      <DependentUpon>ModelNavyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -347,12 +347,12 @@
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\ModelNavyBeat.edmx">
+    <EntityDeploy Include="Models\ModelNavyBeats.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelNavyBeat.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelNavyBeats.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\ModelNavyBeat.edmx.diagram">
-      <DependentUpon>ModelNavyBeat.edmx</DependentUpon>
+    <None Include="Models\ModelNavyBeats.edmx.diagram">
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Chat.datasource" />
@@ -392,15 +392,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
-    <Content Include="Models\ModelNavyBeat.Context.tt">
+    <Content Include="Models\ModelNavyBeats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelNavyBeat.edmx</DependentUpon>
-      <LastGenOutput>ModelNavyBeat.Context.cs</LastGenOutput>
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
+      <LastGenOutput>ModelNavyBeats.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ModelNavyBeat.tt">
+    <Content Include="Models\ModelNavyBeats.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelNavyBeat.edmx</DependentUpon>
-      <LastGenOutput>ModelNavyBeat.cs</LastGenOutput>
+      <DependentUpon>ModelNavyBeats.edmx</DependentUpon>
+      <LastGenOutput>ModelNavyBeats.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\Fondo.png" />
     <None Include="Resources\imgBuscar.png" />

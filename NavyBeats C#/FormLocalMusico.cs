@@ -55,5 +55,10 @@ namespace NavyBeats_C_
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
+
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
