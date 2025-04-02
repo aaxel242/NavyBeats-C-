@@ -57,5 +57,9 @@ namespace NavyBeats_C_
             panel.Region = new Region(path);
         }
 
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
