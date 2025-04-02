@@ -105,5 +105,10 @@ namespace NavyBeats_C_
                 this.Show();
             }
         }
+
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
