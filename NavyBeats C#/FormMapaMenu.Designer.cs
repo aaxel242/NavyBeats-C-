@@ -152,6 +152,7 @@
             this.pboxAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pboxAtras.TabIndex = 1;
             this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
             // pictureBox1
             // 
