@@ -72,7 +72,7 @@ namespace NavyBeats_C_
                     }
                     else
                     {
-                        save = UsuarioEscritorioOrm.Upadate(_user, newUser);
+                        save = UsuarioEscritorioOrm.Update(_user, newUser);
 
                         if (save)
                         {

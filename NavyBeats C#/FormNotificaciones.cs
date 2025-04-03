@@ -1,65 +1,122 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
-    public partial class FormNotificaciones: Form
+    public partial class FormNotificaciones : Form
     {
-        public FormNotificaciones()
+        private int logedUserId;
+
+        public FormNotificaciones(int userId)
         {
             InitializeComponent();
+            logedUserId = userId;
+        }
+
+        public FormNotificaciones()
+        {
         }
 
         private void FormNotificaciones_Load(object sender, EventArgs e)
         {
             panelNotificaciones.BackColor = Color.FromArgb(216, 255, 255, 255);
-            AplicarEsquinasRedondeadas(panelNotificaciones2, 30);
 
+            // Centrar el formulario en la pantalla
+            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            int formWidth = this.Width;
+            int formHeight = this.Height;
+            int positionX = (screenWidth - formWidth) / 2;
+            int positionY = (screenHeight - formHeight) / 2;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(positionX, positionY);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
+
+
+            // Cargar las notificaciones del usuario logeado
+            CargarNotificaciones();
         }
 
-        private void AplicarEsquinasRedondeadas(Panel panel, int radio)
+        private void CargarNotificaciones()
         {
-            GraphicsPath path = new GraphicsPath();
+            // Obtener las notificaciones desde el ORM (basado en el estado y el usuario logueado)
+            List<TicketInfo> ticketsPendientes = TicketOrm.GetTicketsPendientes();
 
-            // Esquina superior izquierda (redondeada)
-            path.AddArc(0, 0, radio * 2, radio * 2, 180, 90);
+            // Limpiar el FlowLayoutPanel antes de agregar nuevos controles
+            flowLayoutPanelTickets.Controls.Clear();
 
-            // Línea superior
-            path.AddLine(radio, 0, panel.Width - radio, 0);
+            // Mostrar las notificaciones en el FlowLayoutPanel
+            foreach (var ticket in ticketsPendientes)
+            {
+                // Crear un panel para cada notificación
+                Panel panelTicket = new Panel
+                {
+                    Size = new Size(flowLayoutPanelTickets.Width - 20, 100), // Ajustar el tamaño del panel
+                    Padding = new Padding(5),
+                    Margin = new Padding(5),
+                    BackColor = Color.White,
+                    BorderStyle = BorderStyle.FixedSingle
+                };
 
-            // Esquina superior derecha (redondeada)
-            path.AddArc(panel.Width - radio * 2, 0, radio * 2, radio * 2, 270, 90);
+                // Etiqueta para mostrar información del ticket
+                Label lblTicketInfo = new Label
+                {
+                    Text = $"ID: {ticket.TicketId} | Tipo: {ticket.QueryType} | Asunto: {ticket.Subject} | Fecha: {ticket.CreationDate.ToString("dd/MM/yyyy HH:mm")}",
+                    AutoSize = true,
+                    Font = new Font("Arial", 10, FontStyle.Regular),
+                    ForeColor = Color.Black,
+                    Location = new Point(10, 10)
+                };
 
-            // Línea derecha
-            path.AddLine(panel.Width, radio, panel.Width, panel.Height - radio);
+                // Botón para ver más detalles
+                Button btnVerDetalles = new Button
+                {
+                    Text = "Ver Detalles",
+                    Size = new Size(100, 30),
+                    Location = new Point(panelTicket.Width - 110, 60),
+                    BackColor = Color.FromArgb(229, 177, 129),
+                    ForeColor = Color.White
+                };
+                btnVerDetalles.Click += (s, e) => MostrarDetalles(ticket);
 
-            // Esquina inferior derecha (redondeada)
-            path.AddArc(panel.Width - radio * 2, panel.Height - radio * 2, radio * 2, radio * 2, 0, 90);
+                // Agregar los controles al panel
+                panelTicket.Controls.Add(lblTicketInfo);
+                panelTicket.Controls.Add(btnVerDetalles);
 
-            // Línea inferior
-            path.AddLine(panel.Width - radio, panel.Height, radio, panel.Height);
+                // Agregar el panel al FlowLayoutPanel
+                flowLayoutPanelTickets.Controls.Add(panelTicket);
+            }
+        }
 
-            // Esquina inferior izquierda (redondeada)
-            path.AddArc(0, panel.Height - radio * 2, radio * 2, radio * 2, 90, 90);
+        private void MostrarDetalles(TicketInfo ticket)
+        {
+            // Mostrar los detalles del ticket en algún panel o control adecuado
+            // Ejemplo: Puedes abrir un formulario de detalles o mostrarlo en un Panel en la misma ventana
 
-            // Línea izquierda
-            path.AddLine(0, panel.Height - radio, 0, radio);
+            MessageBox.Show($"Detalles del Ticket:\n\n" +
+                $"ID: {ticket.TicketId}\n" +
+                $"Tipo: {ticket.QueryType}\n" +
+                $"Asunto: {ticket.Subject}\n" +
+                $"Descripción: {ticket.Description}\n" +
+                $"Estado: {(ticket.Status ? "Resuelto" : "Pendiente")}\n" +
+                $"Fecha de Creación: {ticket.CreationDate.ToString("dd/MM/yyyy HH:mm")}\n" +
+                $"Fecha de Cierre: {(ticket.ClosingDate.HasValue ? ticket.ClosingDate.Value.ToString("dd/MM/yyyy HH:mm") : "N/A")}");
+        }
 
-            path.CloseFigure();
-            panel.Region = new Region(path);
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void pboxAtras_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }
