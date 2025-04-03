@@ -6,7 +6,7 @@ namespace NavyBeats_C_.Models
 {
     public static class RestaurantsOrm
     {
-        // Obtiene todos los restaurantes (usuarios que son locales)
+        // Método para obtener todos los restaurantes
         public static List<Users> GetRestaurants()
         {
             using (var context = new dam04Entities())
@@ -19,7 +19,7 @@ namespace NavyBeats_C_.Models
             }
         }
 
-        // Obtiene un restaurante por su ID
+        // Método para obtener un restaurante por su ID
         public static Users GetRestaurantById(int userId)
         {
             using (var context = new dam04Entities())
@@ -32,7 +32,7 @@ namespace NavyBeats_C_.Models
             }
         }
 
-        // Obtiene la información detallada de los restaurantes
+        // Método para obtener la información detallada de los restaurantes
         public static List<RestaurantInfo> GetRestaurantInfoList()
         {
             using (var context = new dam04Entities())
@@ -47,9 +47,8 @@ namespace NavyBeats_C_.Models
                                 Name = u.name,
                                 Municipality = mun.name,
                                 Email = u.email,
-                                // Dado que en la BD se almacenan como varchar, se obtienen directamente
-                                OpeningTime = r.opening_time,
-                                ClosingTime = r.closing_time,
+                                OpeningTime = r.opening_time.HasValue ? r.opening_time.Value : (TimeSpan?)null,
+                                ClosingTime = r.closing_time.HasValue ? r.closing_time.Value : (TimeSpan?)null,
                                 Latitud = (double?)u.latitud,
                                 Longitud = (double?)u.longitud
                             };

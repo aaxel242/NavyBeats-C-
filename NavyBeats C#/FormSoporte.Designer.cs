@@ -31,6 +31,7 @@
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
             this.txtBoxDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
@@ -98,14 +99,30 @@
             // 
             // txtBoxDescripcion
             // 
+            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.btnEnviarForm.BorderRadius = 20;
+            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
+            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.btnEnviarForm.Location = new System.Drawing.Point(254, 512);
+            this.btnEnviarForm.Name = "btnEnviarForm";
+            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
+            this.btnEnviarForm.TabIndex = 23;
+            this.btnEnviarForm.Text = "Enviar";
+            this.btnEnviarForm.UseVisualStyleBackColor = false;
+            this.btnEnviarForm.Click += new System.EventHandler(this.btnEnviarForm_Click);
+            // 
+            // txtBoxDescripcion
+            // 
             this.txtBoxDescripcion.BackColor = System.Drawing.Color.White;
             this.txtBoxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxDescripcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDescripcion.Location = new System.Drawing.Point(185, 196);
+            this.txtBoxDescripcion.Location = new System.Drawing.Point(180, 265);
             this.txtBoxDescripcion.MinimumSize = new System.Drawing.Size(4, 20);
             this.txtBoxDescripcion.Multiline = true;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
-            this.txtBoxDescripcion.Size = new System.Drawing.Size(306, 299);
+            this.txtBoxDescripcion.Size = new System.Drawing.Size(306, 241);
             this.txtBoxDescripcion.TabIndex = 21;
             // 
             // label1

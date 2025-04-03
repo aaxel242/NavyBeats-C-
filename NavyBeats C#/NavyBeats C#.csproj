@@ -274,6 +274,8 @@
     <Compile Include="Models\Ticket.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TicketInfo.cs" />
+    <Compile Include="Models\TicketOrm.cs" />
     <Compile Include="Models\time.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>

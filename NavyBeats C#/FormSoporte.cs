@@ -8,12 +8,12 @@ namespace NavyBeats_C_
 {
     public partial class FormSoporte : Form
     {
-        private int loggedUserId;
+        private int logedUserId;
 
         public FormSoporte(Super_User user)
         {
             InitializeComponent();
-            loggedUserId = user.user_id_admin; // Se usa user_id_admin para identificar al usuario logueado
+            logedUserId = user.user_id_admin;
         }
 
         public FormSoporte() { }
@@ -22,7 +22,7 @@ namespace NavyBeats_C_
         {
             panelSoporte.BackColor = Color.FromArgb(216, 255, 255, 255);
 
-            // Center the form on the screen
+            // Centrar el formulario en la pantalla
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
             int formWidth = this.Width;
@@ -34,17 +34,18 @@ namespace NavyBeats_C_
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            ApplyRoundedCorners(panelFormulario, 30);
-            AdjustRadioButtons();
+            AplicarEsquinasRedondeadas(panelFormulario, 30);
+            AjustarRadioButtons();
 
-            // Set sizes and margins for the TextBoxes
+            // Ajuste de tamaño y márgenes de los TextBox
+            txtBoxNombre.Size = new Size(300, 40);
             txtBoxAsunto.Size = new Size(300, 40);
             txtBoxAsunto.Margin = new Padding(0, 5, 0, 0);
         }
 
-        private void AdjustRadioButtons()
+        private void AjustarRadioButtons()
         {
-            // Configure the RadioButtons to appear as buttons
+            // Configuración de los RadioButton para simular botones
             radioButtonTipo.Appearance = Appearance.Button;
             radioButtonTipo.AutoSize = false;
             radioButtonTipo.Size = new Size(30, 30);
@@ -53,7 +54,7 @@ namespace NavyBeats_C_
             radioButtonTipo2.AutoSize = false;
             radioButtonTipo2.Size = new Size(30, 30);
 
-            // Set initial colors based on checked state
+            // Aplicar color inicial dependiendo del estado
             radioButtonTipo.BackColor = radioButtonTipo.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
             radioButtonTipo2.BackColor = radioButtonTipo2.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
 
@@ -69,23 +70,23 @@ namespace NavyBeats_C_
             }
         }
 
-        private void ApplyRoundedCorners(Panel panel, int radius)
+        private void AplicarEsquinasRedondeadas(Panel panel, int radio)
         {
             GraphicsPath path = new GraphicsPath();
-            // Top-left arc
-            path.AddArc(0, 0, radius * 2, radius * 2, 180, 90);
-            // Top line
-            path.AddLine(radius, 0, panel.Width - radius, 0);
-            // Top-right arc
-            path.AddArc(panel.Width - radius * 2, 0, radius * 2, radius * 2, 270, 90);
-            // Right line
-            path.AddLine(panel.Width, radius, panel.Width, panel.Height - radius);
-            // Bottom-right arc
-            path.AddArc(panel.Width - radius * 2, panel.Height - radius * 2, radius * 2, radius * 2, 0, 90);
-            // Bottom line
-            path.AddLine(panel.Width - radius, panel.Height, 0, panel.Height);
-            // Left line
-            path.AddLine(0, panel.Height, 0, radius);
+            // Esquina superior izquierda
+            path.AddArc(0, 0, radio * 2, radio * 2, 180, 90);
+            // Línea superior
+            path.AddLine(radio, 0, panel.Width - radio, 0);
+            // Esquina superior derecha
+            path.AddArc(panel.Width - radio * 2, 0, radio * 2, radio * 2, 270, 90);
+            // Línea derecha
+            path.AddLine(panel.Width, radio, panel.Width, panel.Height - radio);
+            // Esquina inferior derecha
+            path.AddArc(panel.Width - radio * 2, panel.Height - radio * 2, radio * 2, radio * 2, 0, 90);
+            // Línea inferior
+            path.AddLine(panel.Width - radio, panel.Height, 0, panel.Height);
+            // Línea izquierda
+            path.AddLine(0, panel.Height, 0, radio);
             path.CloseFigure();
             panel.Region = new Region(path);
         }
@@ -107,48 +108,42 @@ namespace NavyBeats_C_
 
         private void btnEnviarForm_Click(object sender, EventArgs e)
         {
-            try
+            // Seleccionar el tipo de consulta basado en el radio button seleccionado
+            string tipoConsulta = radioButtonTipo.Checked ? "Consulta" : (radioButtonTipo2.Checked ? "Incidencia" : "");
+            string nombreTicket = txtBoxNombre.Text.Trim();
+            string asunto = txtBoxAsunto.Text.Trim();
+            string descripcion = txtBoxDescripcion.Text.Trim();
+
+            // Validación de campos obligatorios
+            if (string.IsNullOrEmpty(tipoConsulta) || string.IsNullOrEmpty(nombreTicket) || string.IsNullOrEmpty(asunto))
             {
-                // Determine query type based on the selected RadioButton
-                string queryType = radioButtonTipo.Checked ? "Consulta" : (radioButtonTipo2.Checked ? "Incidencia" : "");
-                string subject = txtBoxAsunto.Text.Trim();
-                string description = txtBoxDescripcion.Text.Trim();
-
-                // Validate required fields
-                if (string.IsNullOrEmpty(queryType) || string.IsNullOrEmpty(subject))
-                {
-                    MessageBox.Show("Completa tots els camps.");
-                }
-
-                // Map the form data to a TicketInfo object.
-                TicketInfo ticket = new TicketInfo
-                {
-                    QueryType = queryType,
-                    Subject = subject,
-                    Description = description,
-                    CreatedBySuperUserId = loggedUserId, // Usamos el ID del Super_User logueado
-                    Status = false,
-                    CreationDate = DateTime.Now
-                };
-
-                // Insert the ticket into the database using TicketOrm
-                bool inserted = TicketOrm.InsertTicket(ticket);
-                if (inserted)
-                {
-                    MessageBox.Show("Ticket enviat correctament.");
-                    // Clear the fields after sending the ticket
-                    txtBoxAsunto.Text = "";
-                    txtBoxDescripcion.Text = "";
-                }   
-                else
-                {
-                    MessageBox.Show("Error al enviar ticket.");
-                }
+                MessageBox.Show("Por favor, completa todos los campos requeridos.");
+                return;
             }
-            catch (Exception ex)
+
+            // Mapeo de los datos del formulario al objeto TicketInfo
+            // Se asume que 'nombreTicket' representa el título del ticket.
+            // Se combina el 'asunto' y la 'descripcion' en el campo Description.
+            TicketInfo ticket = new TicketInfo
             {
-                MessageBox.Show("Error inserting ticket: " + ex.Message +
-                                "\nInner Exception: " + ex.InnerException?.Message);
+                QueryType = tipoConsulta,
+                Subject = nombreTicket,
+                Description = "Asunto: " + asunto + "\nDescripción: " + descripcion,
+                UserId = logedUserId,
+                Status = false,
+                CreationDate = DateTime.Now,
+                ClosingDate = null
+            };
+
+            // Insertar el ticket en la base de datos mediante TicketOrm
+            bool insertado = TicketOrm.InsertTicket(ticket);
+            if (insertado)
+            {
+                MessageBox.Show("Ticket enviado correctamente.");
+                // Limpiar los campos después de enviar el ticket
+                txtBoxNombre.Text = "";
+                txtBoxAsunto.Text = "";
+                txtBoxDescripcion.Text = "";
             }
         }
     }
