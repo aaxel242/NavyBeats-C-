@@ -25,8 +25,8 @@ namespace NavyBeats_C_.Models
             this.Musician = new HashSet<Musician>();
         }
     
-        public System.TimeSpan opening_time { get; set; }
-        public System.TimeSpan closing_time { get; set; }
+        public Nullable<System.TimeSpan> opening_time { get; set; }
+        public Nullable<System.TimeSpan> closing_time { get; set; }
         public int user_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
