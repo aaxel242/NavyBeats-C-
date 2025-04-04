@@ -35,7 +35,7 @@ namespace NavyBeats_C_
 
         private void botonRedondoCrear_Click(object sender, EventArgs e)
         {
-            Super_User user = usuarioSeleccionado();
+            Super_User user = new Super_User();
             created = true;
 
             FormInfoUsusario crear = new FormInfoUsusario(user, created);

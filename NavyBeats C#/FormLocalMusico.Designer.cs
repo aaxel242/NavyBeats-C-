@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,6 +53,7 @@
             // 
             this.panel.AutoSize = true;
             this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.customPanel);
             this.panel.Controls.Add(this.pictureBox1);
             this.panel.Controls.Add(this.pboxAtras);
@@ -59,6 +61,16 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1215, 650);
             this.panel.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label1.Location = new System.Drawing.Point(396, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(368, 39);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "falta la opcion de editar";
             // 
             // customPanel
             // 
@@ -105,6 +117,7 @@
             this.dataGridView.Location = new System.Drawing.Point(10, 10);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,6 +176,7 @@
             this.Text = "FormLocalMusico";
             this.Load += new System.EventHandler(this.FormLocalMusico_Load);
             this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -183,5 +197,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.BindingSource bindingSourceMusicos;
         private System.Windows.Forms.BindingSource bindingSourceLocales;
+        private System.Windows.Forms.Label label1;
     }
 }

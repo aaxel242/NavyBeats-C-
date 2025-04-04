@@ -79,19 +79,9 @@ namespace NavyBeats_C_
                             this.DialogResult = DialogResult.OK;
                         }
                     }
-                    clearInfo();
                     this.Close();
                 }
             }
-        }
-
-        private void clearInfo()
-        {
-            textBoxNombre.Texts = "";
-            textBoxCorreo.Texts = "";
-            textBoxContra.Texts = "";
-            textBoxConfirmar.Texts = "";
-            customComboBoxRol.Texts = "Rol";
         }
     }
 }

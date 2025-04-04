@@ -7,9 +7,14 @@ namespace NavyBeats_C_
 {
     public partial class FormLocalMusicoSA: Form
     {
-        public FormLocalMusicoSA(bool local)
+        bool local;
+        bool created;
+
+        public FormLocalMusicoSA(bool _local)
         {
             InitializeComponent();
+
+            local = _local;
 
             if (local)
             {
@@ -54,5 +59,114 @@ namespace NavyBeats_C_
         {
             this.Close();
         }
+
+        private void botonRedondoCrear_Click(object sender, EventArgs e)
+        {
+            if (local)
+            {
+                /*Restaurant user = new Restaurant();
+                created = true;
+
+                FormInfoLocal crear = new FormInfoLocal(user, created);
+
+                if (crear.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
+                }*/
+            }
+            else
+            {
+                Musician user = new Musician();
+                created = true;
+
+                FormInfoMusico crear = new FormInfoMusico(user, created);
+
+                if (crear.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceMusicos.DataSource = UsuarioMovilOrm.SelectMusician();
+                }
+            }
+        }
+
+        private void customBotonModificar_Click(object sender, EventArgs e)
+        {
+            if (local)
+            {
+                /*Restaurant user = usuarioSeleccionado();
+                created = false;
+
+                FormInfoLocal modificar = new FormInfoLocal(user, created);
+
+                if (modificar.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
+                }*/
+            }
+            else
+                {
+                Musician user = musicoSeleccionado();
+                created = false;
+
+                FormInfoMusico modificar = new FormInfoMusico(user, created);
+
+                if (modificar.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceMusicos.DataSource = UsuarioMovilOrm.SelectMusician();
+                }
+            }
+        }
+
+        private void botonRedondoEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult confirm = MessageBox.Show("Estas seguro de eliminar al usuario?", "Confirmar", MessageBoxButtons.YesNo);
+            bool delete = false;
+
+            if (confirm == DialogResult.Yes)
+            {
+                Users user = usuarioSeleccionado();
+
+                delete = UsuarioMovilOrm.Delete(user);
+            }
+
+            if (delete)
+            {
+                if (local)
+                {
+                    bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
+
+                }
+                else
+                {
+                    bindingSourceMusicos.DataSource = UsuarioMovilOrm.SelectMusician();
+                }
+            }
+        }
+
+        private Users usuarioSeleccionado()
+        {
+            int rowSelected = dataGridView.CurrentCell.RowIndex;
+            int id = (int)dataGridView.Rows[rowSelected].Cells[0].Value;
+            Users user = UsuarioMovilOrm.SelectUserById(id);
+
+            return user;
+        }
+
+        private Musician musicoSeleccionado()
+        {
+            int rowSelected = dataGridView.CurrentCell.RowIndex;
+            int id = (int)dataGridView.Rows[rowSelected].Cells[0].Value;
+            Musician user = UsuarioMovilOrm.SelectMusicianById(id);
+
+            return user;
+        }
+
+        /*private Restaurant restauranteSeleccionado()
+        {
+            int rowSelected = dataGridView.CurrentCell.RowIndex;
+            int id = (int)dataGridView.Rows[rowSelected].Cells["useridDataGridViewTextBoxColumn"].Value;
+            Restaurant user = UsuarioMovilOrm.restaurantSelectById(id);
+
+            return user;
+        }*/
     }
 }

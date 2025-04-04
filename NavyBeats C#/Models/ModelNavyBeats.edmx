@@ -110,8 +110,8 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="opening_time" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="closing_time" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="opening_time" Type="time" Precision="7" />
+          <Property Name="closing_time" Type="time" Precision="7" />
           <Property Name="user_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Style">
@@ -143,6 +143,8 @@
           <Property Name="closing_date" Type="date" />
           <Property Name="user_id" Type="int" />
           <Property Name="user_id_admin" Type="int" />
+          <Property Name="subject" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="time">
           <Key>
@@ -781,8 +783,8 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="opening_time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="closing_time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opening_time" Type="Time" Precision="7" />
+          <Property Name="closing_time" Type="Time" Precision="7" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__restaurant__1EA48E88" FromRole="Restaurant" ToRole="Chat" />
           <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__user___208CD6FA" FromRole="Restaurant" ToRole="Comment_Restaurant_Publication" />
@@ -823,6 +825,8 @@
           <Property Name="closing_date" Type="DateTime" Precision="0" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="user_id_admin" Type="Int32" />
+          <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Super_User" Relationship="Self.FK__Ticket__user_id___2EDAF651" FromRole="Ticket" ToRole="Super_User" />
           <NavigationProperty Name="Users" Relationship="Self.FK__Ticket__user_id__2FCF1A8A" FromRole="Ticket" ToRole="Users" />
         </EntityType>
@@ -1470,6 +1474,8 @@
                 <ScalarProperty Name="closing_date" ColumnName="closing_date" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="user_id_admin" ColumnName="user_id_admin" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
