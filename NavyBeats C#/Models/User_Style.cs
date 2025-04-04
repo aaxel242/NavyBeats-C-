@@ -12,18 +12,13 @@ namespace NavyBeats_C_.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Style
+    public partial class User_Style
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Style()
-        {
-            this.User_Style = new HashSet<User_Style>();
-        }
-    
+        public int user_id { get; set; }
         public int style_id { get; set; }
-        public string name { get; set; }
+        public System.DateTime creation_date { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User_Style> User_Style { get; set; }
+        public virtual Musician Musician { get; set; }
+        public virtual Style Style { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace NavyBeats_C_.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dam04Entities : DbContext
+    public partial class NavyBeatsEntities : DbContext
     {
-        public dam04Entities()
-            : base("name=dam04Entities")
+        public NavyBeatsEntities()
+            : base("name=NavyBeatsEntities")
         {
         }
     
@@ -40,6 +40,8 @@ namespace NavyBeats_C_.Models
         public virtual DbSet<Super_User> Super_User { get; set; }
         public virtual DbSet<Ticket> Ticket { get; set; }
         public virtual DbSet<time> time { get; set; }
+        public virtual DbSet<User_Style> User_Style { get; set; }
+        public virtual DbSet<User_Time> User_Time { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Valorar> Valorar { get; set; }
     }

@@ -17,14 +17,13 @@ namespace NavyBeats_C_.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public time()
         {
-            this.Musician = new HashSet<Musician>();
+            this.User_Time = new HashSet<User_Time>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
-        public System.DateTime creation_date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Musician> Musician { get; set; }
+        public virtual ICollection<User_Time> User_Time { get; set; }
     }
 }
