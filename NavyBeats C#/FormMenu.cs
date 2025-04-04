@@ -53,7 +53,7 @@ namespace NavyBeats_C_
             }
             else if (panel == panelNotificaciones)
             {
-                FormNotificaciones notificaciones = new FormNotificaciones();
+                FormNotificaciones notificaciones = new FormNotificaciones(userLogin.user_id_admin);
                 notificaciones.Show();
 
                 notificaciones.FormClosed += (s, args) => this.Show();
@@ -85,7 +85,7 @@ namespace NavyBeats_C_
             }
             else if (panel == panelSoporte)
             {
-                FormSoporte soporte = new FormSoporte();
+                FormSoporte soporte = new FormSoporte(userLogin);
                 soporte.Show();
 
                 soporte.FormClosed += (s, args) => this.Show();
