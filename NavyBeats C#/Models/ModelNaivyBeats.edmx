@@ -126,12 +126,13 @@
           <Property Name="user_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Style">
-          <Key>
+          <Key>  
             <PropertyRef Name="style_id" />
           </Key>
           <Property Name="style_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="100" />
-        </EntityType>
+	      <Property Name="creation_date" Type="datetime" Nullable="false" />
+		</EntityType>
         <EntityType Name="Super_User">
           <Key>
             <PropertyRef Name="user_id_admin" />
@@ -163,26 +164,28 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
-        <EntityType Name="User_Style">
-          <Key>
-            <PropertyRef Name="user_id" />
-            <PropertyRef Name="style_id" />
-          </Key>
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="style_id" Type="int" Nullable="false" />
-          <Property Name="creation_date" Type="date" Nullable="false" />
-        </EntityType>
-        <EntityType Name="User_Time">
-          <Key>
-            <PropertyRef Name="user_id" />
-            <PropertyRef Name="time_id" />
-          </Key>
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="time_id" Type="int" Nullable="false" />
-          <Property Name="creation_date" Type="date" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Users">
+	      <Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+		</EntityType>
+		<EntityType Name="User_Style">
+			<Key>
+				<PropertyRef Name="user_id" />
+				<PropertyRef Name="style_id" />
+			</Key>
+			<Property Name="user_id" Type="int" Nullable="false" />
+			<Property Name="style_id" Type="int" Nullable="false" />
+			<Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+		</EntityType>
+
+		<EntityType Name="User_Time">
+			<Key>
+				<PropertyRef Name="user_id" />
+				<PropertyRef Name="time_id" />
+			</Key>
+			<Property Name="user_id" Type="int" Nullable="false" />
+			<Property Name="time_id" Type="int" Nullable="false" />
+			<Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+		</EntityType>
+		<EntityType Name="Users">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
@@ -536,7 +539,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_users_municipality">
+		<Association Name="FK_User_Time_Musician">
+			<End Role="Musician" Type="Self.Musician" Multiplicity="1">
+				<OnDelete Action="Cascade" />
+			</End>
+			<End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
+			<ReferentialConstraint>
+				<Principal Role="Musician">
+					<PropertyRef Name="user_id" />
+				</Principal>
+				<Dependent Role="User_Time">
+					<PropertyRef Name="user_id" />
+				</Dependent>
+			</ReferentialConstraint>
+		</Association>
+		<Association Name="fk_users_municipality">
           <End Role="Municipality" Type="Self.Municipality" Multiplicity="0..1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -556,8 +573,8 @@
           <EntitySet Name="Like_Restaurant_Publication" EntityType="Self.Like_Restaurant_Publication" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Municipality" EntityType="Self.Municipality" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Musician" EntityType="Self.Musician" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Offer_dir" EntityType="Self.Offer_dir" Schema="dbo" store:Type="Tables" />
+		  <EntitySet Name="Musician" EntityType="Self.Musician" store:Type="Tables" Schema="dbo" />
+		  <EntitySet Name="Offer_dir" EntityType="Self.Offer_dir" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offer_In" EntityType="Self.Offer_In" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offer_in_Styles" EntityType="Self.Offer_in_Styles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
@@ -565,10 +582,10 @@
           <EntitySet Name="Style" EntityType="Self.Style" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Super_User" EntityType="Self.Super_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="time" EntityType="Self.time" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User_Style" EntityType="Self.User_Style" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+		  <EntitySet Name="time" EntityType="Self.time" store:Type="Tables" Schema="dbo" />
+		  <EntitySet Name="User_Style" EntityType="Self.User_Style" Schema="dbo" store:Type="Tables" />
+		  <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
+		  <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valorar" EntityType="Self.Valorar" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Chat__musician_i__4E1E9780" Association="Self.FK__Chat__musician_i__4E1E9780">
             <End Role="Musician" EntitySet="Musician" />
@@ -1519,7 +1536,8 @@
               <MappingFragment StoreEntitySet="Style">
                 <ScalarProperty Name="style_id" ColumnName="style_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
+				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
+			  </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Super_User">
@@ -1556,7 +1574,8 @@
               <MappingFragment StoreEntitySet="time">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
+				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
+			  </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Style">

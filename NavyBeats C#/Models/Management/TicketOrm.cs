@@ -18,13 +18,13 @@ namespace NavyBeats_C_.Models
                 {
                     var ticket = new Ticket
                     {
-                        type = ticketInfo.QueryType,
-                        subject = ticketInfo.Subject,
-                        description = ticketInfo.Description,
-                        created_by_super_user_id = ticketInfo.CreatedBySuperUserId, // Campo actualizado
-                        status = ticketInfo.Status,
-                        creation_date = ticketInfo.CreationDate.ToString("yyyy-MM-dd HH:mm:ss"),
-                        closing_date = ticketInfo.ClosingDate?.ToString("yyyy-MM-dd HH:mm:ss")
+                        type = ticketInfo.QueryType,  // Mapea 'QueryType' a 'type'
+                        subject = ticketInfo.Subject,          // Mapea 'Subject' a 'subject'
+                        description = ticketInfo.Description,  // Mapea 'Description' a 'description'
+                        user_id = ticketInfo.UserId,           // Mapea 'UserId' a 'user_id'
+                        status = ticketInfo.Status,            // Mapea 'Status' a 'status'
+                        creation_date = ticketInfo.CreationDate,  // Mapea 'CreationDate' a 'creation_date'
+                        closing_date = ticketInfo.ClosingDate // Mapea 'ClosingDate' a 'closing_date'
                     };
 
                     context.Ticket.Add(ticket);
@@ -34,7 +34,7 @@ namespace NavyBeats_C_.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error inserting ticket: " + ex.Message);
+                MessageBox.Show("Error al insertar el ticket: " + ex.Message);
                 return false;
             }
         }
@@ -47,40 +47,25 @@ namespace NavyBeats_C_.Models
         {
             using (var context = new dam04Entities())
             {
-                var query = (from t in context.Ticket
-                             join su in context.Super_User
-                                 on t.created_by_super_user_id equals su.user_id_admin // Join con Super_User
-                             where t.status == false
-                             orderby t.creation_date descending
-                             select new
-                             {
-                                 TicketId = t.ticket_id,
-                                 QueryType = t.type,
-                                 Subject = t.subject,
-                                 Description = t.description,
-                                 CreatedBySuperUserId = t.created_by_super_user_id,
-                                 Status = t.status,
-                                 CreationDateStr = t.creation_date,
-                                 ClosingDateStr = t.closing_date,
-                                 Username = su.name // Nombre del Super_User
-                             });
-
-                var tickets = query.AsEnumerable().Select(x => new TicketInfo
-                {
-                    TicketId = x.TicketId,
-                    QueryType = x.QueryType,
-                    Subject = x.Subject,
-                    Description = x.Description,
-                    CreatedBySuperUserId = x.CreatedBySuperUserId, // Mapeo correcto
-                    Status = x.Status,
-                    CreationDate = DateTime.Parse(x.CreationDateStr),
-                    ClosingDate = x.ClosingDateStr != null ? (DateTime?)DateTime.Parse(x.ClosingDateStr) : null,
-                    Username = x.Username
-                }).ToList();
+                var tickets = (from t in context.Ticket
+                               where t.status == false  // Filtra por tickets no resueltos (status = false)
+                               orderby t.creation_date descending
+                               select new TicketInfo
+                               {
+                                   TicketId = t.ticket_id,            // Mapea 'ticket_id'
+                                   QueryType = t.type,                // Mapea 'type'
+                                   Subject = t.subject,               // Mapea 'subject'
+                                   Description = t.description,       // Mapea 'description'
+                                   UserId = (int)t.user_id,                // Mapea 'user_id'
+                                   Status = t.status,                 // Mapea 'status'
+                                   CreationDate = (DateTime)t.creation_date,    // Mapea 'creation_date'
+                                   ClosingDate = t.closing_date       // Mapea 'closing_date'
+                               }).ToList();
 
                 return tickets;
             }
         }
+
         /// <summary>
         /// Obtiene todos los tickets registrados.
         /// Se realiza la conversión de las fechas en memoria.
@@ -89,46 +74,28 @@ namespace NavyBeats_C_.Models
         {
             using (var context = new dam04Entities())
             {
-                var query = (from t in context.Ticket
-                             join su in context.Super_User
-                                 on t.created_by_super_user_id equals su.user_id_admin 
-                             orderby t.creation_date descending
-                             select new
-                             {
-                                 TicketId = t.ticket_id,
-                                 QueryType = t.type,
-                                 Subject = t.subject,
-                                 Description = t.description,
-                                 CreatedBySuperUserId = t.created_by_super_user_id,
-                                 Status = t.status,
-                                 CreationDateStr = t.creation_date,
-                                 ClosingDateStr = t.closing_date,
-                                 Username = su.name, 
-                                 ClosedBySuperUserId = t.closed_by_super_user_id 
-                             });
-
-                var tickets = query.AsEnumerable().Select(x => new TicketInfo
-                {
-                    TicketId = x.TicketId,
-                    QueryType = x.QueryType,
-                    Subject = x.Subject,
-                    Description = x.Description,
-                    CreatedBySuperUserId = x.CreatedBySuperUserId, // Mapeo correcto
-                    Status = x.Status,
-                    CreationDate = DateTime.Parse(x.CreationDateStr),
-                    ClosingDate = x.ClosingDateStr != null ? (DateTime?)DateTime.Parse(x.ClosingDateStr) : null,
-                    Username = x.Username,
-                    ClosedBySuperUserId = x.ClosedBySuperUserId // Si tu modelo lo requiere
-                }).ToList();
+                return (from t in context.Ticket
+                        orderby t.creation_date descending
+                        select new TicketInfo
+                        {
+                            TicketId = t.ticket_id,            // Mapea 'ticket_id'
+                            QueryType = t.type,                // Mapea 'type'
+                            Subject = t.subject,               // Mapea 'subject'
+                            Description = t.description,       // Mapea 'description'
+                            UserId = (int)t.user_id,                // Mapea 'user_id'
+                            Status = t.status,                 // Mapea 'status'
+                            CreationDate = (DateTime)t.creation_date,    // Mapea 'creation_date'
+                            ClosingDate = t.closing_date       // Mapea 'closing_date'
+                        }).ToList();
 
                 return tickets;
             }
         }
 
         /// <summary>
-        /// Marca un ticket como resuelto (cambia el status a true, asigna la fecha de cierre y registra el admin).
+        /// Marca un ticket como resuelto (cambia el status a true y establece la fecha de cierre).
         /// </summary>
-        public static bool MarkTicketAsResolved(int ticketId, int adminUserId)
+        public static bool MarcarTicketComoResuelto(int ticketId, int adminUserId)
         {
             try
             {
@@ -137,9 +104,9 @@ namespace NavyBeats_C_.Models
                     var ticket = context.Ticket.FirstOrDefault(t => t.ticket_id == ticketId);
                     if (ticket != null)
                     {
-                        ticket.status = true;
-                        ticket.closing_date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                        ticket.closed_by_super_user_id = adminUserId; // Campo actualizado
+                        ticket.status = true;  // Marcar como resuelto (status = true)
+                        ticket.closing_date = DateTime.Now;  // Asignar la fecha de cierre
+                        ticket.user_id_admin = adminUserId;  // Asignar el id del superusuario que resuelve el ticket
                         context.SaveChanges();
                         return true;
                     }
@@ -148,7 +115,7 @@ namespace NavyBeats_C_.Models
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error marking ticket as resolved: " + ex.Message);
+                MessageBox.Show("Error al marcar el ticket como resuelto: " + ex.Message);
                 return false;
             }
         }

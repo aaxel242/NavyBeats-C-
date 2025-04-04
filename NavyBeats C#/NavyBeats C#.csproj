@@ -204,6 +204,10 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Management\CalendarioOrm.cs" />
+>>>>>>> pre fix
     <Compile Include="Models\Chat.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -213,6 +217,10 @@
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Management\EventoInfo.cs" />
+>>>>>>> pre fix
     <Compile Include="Models\Like_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -250,6 +258,11 @@
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Management\MusicianInfo.cs" />
+    <Compile Include="Models\Management\MusicianOrm.cs" />
+>>>>>>> pre fix
     <Compile Include="Models\Offer_dir.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -259,12 +272,21 @@
     <Compile Include="Models\Offer_in_Styles.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Management\Orm.cs" />
+>>>>>>> pre fix
     <Compile Include="Models\Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Restaurant.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Management\RestaurantInfo.cs" />
+    <Compile Include="Models\Management\RestaurantsOrm.cs" />
+>>>>>>> pre fix
     <Compile Include="Models\Style.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -274,8 +296,8 @@
     <Compile Include="Models\Ticket.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TicketInfo.cs" />
-    <Compile Include="Models\TicketOrm.cs" />
+    <Compile Include="Models\Management\TicketInfo.cs" />
+    <Compile Include="Models\Management\TicketOrm.cs" />
     <Compile Include="Models\time.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -288,6 +310,10 @@
     <Compile Include="Models\User_Time.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Management\UsuarioEscritorioOrm.cs" />
+>>>>>>> pre fix
     <Compile Include="Models\Valorar.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
