@@ -19,5 +19,6 @@ namespace NavyBeats_C_.Models
         public System.DateTime creation_date { get; set; }
     
         public virtual Musician Musician { get; set; }
+        public virtual Style Style { get; set; }
     }
 }

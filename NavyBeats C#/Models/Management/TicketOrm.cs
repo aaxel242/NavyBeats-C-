@@ -14,7 +14,7 @@ namespace NavyBeats_C_.Models
         {
             try
             {
-                using (var context = new dam04Entities())
+                using (var context = new NavyBeatsEntities())
                 {
                     var ticket = new Ticket
                     {
@@ -45,7 +45,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static List<TicketInfo> GetTicketsPendientes()
         {
-            using (var context = new dam04Entities())
+            using (var context = new NavyBeatsEntities())
             {
                 var tickets = (from t in context.Ticket
                                where t.status == false  // Filtra por tickets no resueltos (status = false)
@@ -72,7 +72,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static List<TicketInfo> GetAllTickets()
         {
-            using (var context = new dam04Entities())
+            using (var context = new NavyBeatsEntities())
             {
                 return (from t in context.Ticket
                         orderby t.creation_date descending
@@ -99,7 +99,7 @@ namespace NavyBeats_C_.Models
         {
             try
             {
-                using (var context = new dam04Entities())
+                using (var context = new NavyBeatsEntities())
                 {
                     var ticket = context.Ticket.FirstOrDefault(t => t.ticket_id == ticketId);
                     if (ticket != null)
