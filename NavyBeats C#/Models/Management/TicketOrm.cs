@@ -48,23 +48,27 @@ namespace NavyBeats_C_.Models
             using (var context = new NavyBeatsEntities())
             {
                 var tickets = (from t in context.Ticket
-                               where t.status == false  // Filtra por tickets no resueltos (status = false)
+                               join u in context.Super_User on t.user_id equals u.user_id_admin
+                               where t.status == false
                                orderby t.creation_date descending
                                select new TicketInfo
                                {
-                                   TicketId = t.ticket_id,            // Mapea 'ticket_id'
-                                   QueryType = t.type,                // Mapea 'type'
-                                   Subject = t.subject,               // Mapea 'subject'
-                                   Description = t.description,       // Mapea 'description'
-                                   UserId = (int)t.user_id,                // Mapea 'user_id'
-                                   Status = t.status,                 // Mapea 'status'
-                                   CreationDate = (DateTime)t.creation_date,    // Mapea 'creation_date'
-                                   ClosingDate = t.closing_date       // Mapea 'closing_date'
+                                   TicketId = t.ticket_id,
+                                   QueryType = t.type,
+                                   Subject = t.subject,
+                                   Description = t.description,
+                                   UserId = (int)t.user_id,
+                                   Status = t.status,
+                                   CreationDate = (DateTime)t.creation_date,
+                                   ClosingDate = t.closing_date,
+                                   Username = u.name
                                }).ToList();
 
                 return tickets;
             }
         }
+
+
 
         /// <summary>
         /// Obtiene todos los tickets registrados.

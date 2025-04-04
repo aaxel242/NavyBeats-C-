@@ -67,7 +67,7 @@ namespace NavyBeats_C_
                 // Etiqueta para mostrar información del ticket
                 Label lblTicketInfo = new Label
                 {
-                    Text = $"ID: {ticket.TicketId} | Tipo: {ticket.QueryType} | Asunto: {ticket.Subject} | Fecha: {ticket.CreationDate.ToString("dd/MM/yyyy HH:mm")}",
+                    Text = $"Usuario: {ticket.Username} | Tipo: {ticket.QueryType} | Asunto: {ticket.Subject} | Fecha: {ticket.CreationDate:dd/MM/yyyy HH:mm}",
                     AutoSize = true,
                     Font = new Font("Arial", 10, FontStyle.Regular),
                     ForeColor = Color.Black,

@@ -12,5 +12,6 @@ namespace NavyBeats_C_.Models
         public bool Status { get; set; }               // Estado del ticket (false = pending, true = resolved)
         public DateTime CreationDate { get; set; }     // Fecha de creación del ticket
         public DateTime? ClosingDate { get; set; }     // Fecha de cierre del ticket (si está resuelto)
+        public string Username { get; set; }           // Nombre del usuario que envía el ticket (opcional)
     }
 }
