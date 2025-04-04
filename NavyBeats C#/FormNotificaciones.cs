@@ -116,7 +116,7 @@ namespace NavyBeats_C_
 
         private void pboxAtras_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
