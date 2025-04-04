@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dam04Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="NavyBeatsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Chat">
           <Key>
             <PropertyRef Name="chat_id" />
@@ -115,13 +115,12 @@
           <Property Name="user_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Style">
-          <Key>  
+          <Key>
             <PropertyRef Name="style_id" />
           </Key>
           <Property Name="style_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="100" />
-	      <Property Name="creation_date" Type="datetime" Nullable="false" />
-		</EntityType>
+        </EntityType>
         <EntityType Name="Super_User">
           <Key>
             <PropertyRef Name="user_id_admin" />
@@ -153,28 +152,26 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
-	      <Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
-		</EntityType>
-		<EntityType Name="User_Style">
-			<Key>
-				<PropertyRef Name="user_id" />
-				<PropertyRef Name="style_id" />
-			</Key>
-			<Property Name="user_id" Type="int" Nullable="false" />
-			<Property Name="style_id" Type="int" Nullable="false" />
-			<Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
-		</EntityType>
-
-		<EntityType Name="User_Time">
-			<Key>
-				<PropertyRef Name="user_id" />
-				<PropertyRef Name="time_id" />
-			</Key>
-			<Property Name="user_id" Type="int" Nullable="false" />
-			<Property Name="time_id" Type="int" Nullable="false" />
-			<Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
-		</EntityType>
-		<EntityType Name="Users">
+        </EntityType>
+        <EntityType Name="User_Style">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="style_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="style_id" Type="int" Nullable="false" />
+          <Property Name="creation_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Time">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="time_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="time_id" Type="int" Nullable="false" />
+          <Property Name="creation_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
@@ -441,19 +438,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-		<Association Name="FK__User_Time__time___32AB8735">
-			<End Role="time" Type="Self.time" Multiplicity="1" />
-			<End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
-			<ReferentialConstraint>
-				<Principal Role="time">
-					<PropertyRef Name="id" />
-				</Principal>
-				<Dependent Role="User_Time">
-					<PropertyRef Name="time_id" />
-				</Dependent>
-			</ReferentialConstraint>
-		</Association>
-		<Association Name="FK__User_Time__user___339FAB6E">
+        <Association Name="FK__User_Time__time___32AB8735">
+          <End Role="time" Type="Self.time" Multiplicity="1" />
+          <End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="time">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User_Time">
+              <PropertyRef Name="time_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Time__user___339FAB6E">
           <End Role="Musician" Type="Self.Musician" Multiplicity="1" />
           <End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
           <ReferentialConstraint>
@@ -515,21 +512,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-		<Association Name="FK_User_Time_Musician">
-			<End Role="Musician" Type="Self.Musician" Multiplicity="1">
-				<OnDelete Action="Cascade" />
-			</End>
-			<End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
-			<ReferentialConstraint>
-				<Principal Role="Musician">
-					<PropertyRef Name="user_id" />
-				</Principal>
-				<Dependent Role="User_Time">
-					<PropertyRef Name="user_id" />
-				</Dependent>
-			</ReferentialConstraint>
-		</Association>
-		<Association Name="fk_users_municipality">
+        <Association Name="fk_users_municipality">
           <End Role="Municipality" Type="Self.Municipality" Multiplicity="0..1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -541,7 +524,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dam04ModelStoreContainer">
+        <EntityContainer Name="NavyBeatsModelStoreContainer">
           <EntitySet Name="Chat" EntityType="Self.Chat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Comment_Restaurant_Publication" EntityType="Self.Comment_Restaurant_Publication" Schema="dbo" store:Type="Tables" />
@@ -549,18 +532,18 @@
           <EntitySet Name="Like_Restaurant_Publication" EntityType="Self.Like_Restaurant_Publication" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Municipality" EntityType="Self.Municipality" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="Musician" EntityType="Self.Musician" store:Type="Tables" Schema="dbo" />
-		  <EntitySet Name="Offer_dir" EntityType="Self.Offer_dir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musician" EntityType="Self.Musician" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offer_dir" EntityType="Self.Offer_dir" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offer_In" EntityType="Self.Offer_In" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Style" EntityType="Self.Style" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Super_User" EntityType="Self.Super_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="time" EntityType="Self.time" store:Type="Tables" Schema="dbo" />
-		  <EntitySet Name="User_Style" EntityType="Self.User_Style" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="time" EntityType="Self.time" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Style" EntityType="Self.User_Style" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valorar" EntityType="Self.Valorar" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Chat__musician_i__1DB06A4F" Association="Self.FK__Chat__musician_i__1DB06A4F">
             <End Role="Musician" EntitySet="Musician" />
@@ -671,10 +654,11 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="dam04Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="NavyBeatsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Chat">
           <Key>
             <PropertyRef Name="chat_id" />
@@ -683,9 +667,9 @@
           <Property Name="creation_date" Type="DateTime" Precision="0" />
           <Property Name="restaurant_id" Type="Int32" />
           <Property Name="musician_id" Type="Int32" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Chat__musician_i__5BE2A6F2" FromRole="Chat" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Chat__restaurant__5CD6CB2B" FromRole="Chat" ToRole="Restaurant" />
-          <NavigationProperty Name="Message" Relationship="Self.FK__Message__chat_id__6383C8BA" FromRole="Chat" ToRole="Message" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Chat__musician_i__1DB06A4F" FromRole="Chat" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Chat__restaurant__1EA48E88" FromRole="Chat" ToRole="Restaurant" />
+          <NavigationProperty Name="Message" Relationship="Self.FK__Message__chat_id__25518C17" FromRole="Chat" ToRole="Message" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -703,8 +687,8 @@
           <Property Name="content" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="publication_id" Type="Int32" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Publication" Relationship="Self.FK__Comment_R__publi__5DCAEF64" FromRole="Comment_Restaurant_Publication" ToRole="Publication" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Comment_R__user___5EBF139D" FromRole="Comment_Restaurant_Publication" ToRole="Restaurant" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK__Comment_R__publi__1F98B2C1" FromRole="Comment_Restaurant_Publication" ToRole="Publication" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Comment_R__user___208CD6FA" FromRole="Comment_Restaurant_Publication" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Like_Restaurant_Publication">
           <Key>
@@ -714,8 +698,8 @@
           <Property Name="publish_date" Type="DateTime" Precision="0" />
           <Property Name="restaurant_id" Type="Int32" Nullable="false" />
           <Property Name="publication_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Publication" Relationship="Self.FK__Like_Rest__publi__619B8048" FromRole="Like_Restaurant_Publication" ToRole="Publication" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Like_Rest__resta__628FA481" FromRole="Like_Restaurant_Publication" ToRole="Restaurant" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK__Like_Rest__publi__236943A5" FromRole="Like_Restaurant_Publication" ToRole="Publication" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Like_Rest__resta__245D67DE" FromRole="Like_Restaurant_Publication" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -727,8 +711,8 @@
           <Property Name="reading_date" Type="DateTime" Precision="0" />
           <Property Name="chat_id" Type="Int32" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Chat" Relationship="Self.FK__Message__chat_id__6383C8BA" FromRole="Message" ToRole="Chat" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Message__user_id__6477ECF3" FromRole="Message" ToRole="Users" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK__Message__chat_id__25518C17" FromRole="Message" ToRole="Chat" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Message__user_id__2645B050" FromRole="Message" ToRole="Users" />
         </EntityType>
         <EntityType Name="Municipality">
           <Key>
@@ -745,14 +729,14 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__musician_i__5BE2A6F2" FromRole="Musician" ToRole="Chat" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Musician__user_i__66603565" FromRole="Musician" ToRole="Users" />
-          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__music__6754599E" FromRole="Musician" ToRole="Offer_dir" />
-          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__music___693CA210" FromRole="Musician" ToRole="Offer_In" />
-          <NavigationProperty Name="Publication" Relationship="Self.FK__Publicati__user___6B24EA82" FromRole="Musician" ToRole="Publication" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__musician_i__1DB06A4F" FromRole="Musician" ToRole="Chat" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Musician__user_i__282DF8C2" FromRole="Musician" ToRole="Users" />
+          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__music__29221CFB" FromRole="Musician" ToRole="Offer_dir" />
+          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__music___2B0A656D" FromRole="Musician" ToRole="Offer_In" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK__Publicati__user___2CF2ADDF" FromRole="Musician" ToRole="Publication" />
+          <NavigationProperty Name="User_Time" Relationship="Self.FK__User_Time__user___339FAB6E" FromRole="Musician" ToRole="User_Time" />
+          <NavigationProperty Name="User_Style" Relationship="Self.FK_User_Style_Musician" FromRole="Musician" ToRole="User_Style" />
           <NavigationProperty Name="Restaurant" Relationship="Self.Follow" FromRole="Musician" ToRole="Restaurant" />
-          <NavigationProperty Name="Style" Relationship="Self.User_Style" FromRole="Musician" ToRole="Style" />
-          <NavigationProperty Name="time" Relationship="Self.User_Time" FromRole="Musician" ToRole="time" />
         </EntityType>
         <EntityType Name="Offer_dir">
           <Key>
@@ -766,8 +750,8 @@
           <Property Name="done" Type="Byte" />
           <Property Name="restaurant_id" Type="Int32" />
           <Property Name="musician_id" Type="Int32" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_dir__music__6754599E" FromRole="Offer_dir" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_dir__resta__68487DD7" FromRole="Offer_dir" ToRole="Restaurant" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_dir__music__29221CFB" FromRole="Offer_dir" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_dir__resta__2A164134" FromRole="Offer_dir" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Offer_In">
           <Key>
@@ -779,8 +763,8 @@
           <Property Name="event_date" Type="DateTime" Precision="3" />
           <Property Name="music_id_final" Type="Int32" />
           <Property Name="restaurant_id" Type="Int32" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_In__music___693CA210" FromRole="Offer_In" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_In__restau__6A30C649" FromRole="Offer_In" ToRole="Restaurant" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Offer_In__music___2B0A656D" FromRole="Offer_In" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Offer_In__restau__2BFE89A6" FromRole="Offer_In" ToRole="Restaurant" />
         </EntityType>
         <EntityType Name="Publication">
           <Key>
@@ -791,9 +775,9 @@
           <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="multimedia_content" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="user_id" Type="Int32" />
-          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__publi__5DCAEF64" FromRole="Publication" ToRole="Comment_Restaurant_Publication" />
-          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__publi__619B8048" FromRole="Publication" ToRole="Like_Restaurant_Publication" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Publicati__user___6B24EA82" FromRole="Publication" ToRole="Musician" />
+          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__publi__1F98B2C1" FromRole="Publication" ToRole="Comment_Restaurant_Publication" />
+          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__publi__236943A5" FromRole="Publication" ToRole="Like_Restaurant_Publication" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Publicati__user___2CF2ADDF" FromRole="Publication" ToRole="Musician" />
         </EntityType>
         <EntityType Name="Restaurant">
           <Key>
@@ -802,12 +786,12 @@
           <Property Name="opening_time" Type="Time" Precision="7" />
           <Property Name="closing_time" Type="Time" Precision="7" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__restaurant__5CD6CB2B" FromRole="Restaurant" ToRole="Chat" />
-          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__user___5EBF139D" FromRole="Restaurant" ToRole="Comment_Restaurant_Publication" />
-          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__resta__628FA481" FromRole="Restaurant" ToRole="Like_Restaurant_Publication" />
-          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__resta__68487DD7" FromRole="Restaurant" ToRole="Offer_dir" />
-          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__restau__6A30C649" FromRole="Restaurant" ToRole="Offer_In" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Restauran__user___6C190EBB" FromRole="Restaurant" ToRole="Users" />
+          <NavigationProperty Name="Chat" Relationship="Self.FK__Chat__restaurant__1EA48E88" FromRole="Restaurant" ToRole="Chat" />
+          <NavigationProperty Name="Comment_Restaurant_Publication" Relationship="Self.FK__Comment_R__user___208CD6FA" FromRole="Restaurant" ToRole="Comment_Restaurant_Publication" />
+          <NavigationProperty Name="Like_Restaurant_Publication" Relationship="Self.FK__Like_Rest__resta__245D67DE" FromRole="Restaurant" ToRole="Like_Restaurant_Publication" />
+          <NavigationProperty Name="Offer_dir" Relationship="Self.FK__Offer_dir__resta__2A164134" FromRole="Restaurant" ToRole="Offer_dir" />
+          <NavigationProperty Name="Offer_In" Relationship="Self.FK__Offer_In__restau__2BFE89A6" FromRole="Restaurant" ToRole="Offer_In" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Restauran__user___2DE6D218" FromRole="Restaurant" ToRole="Users" />
           <NavigationProperty Name="Musician" Relationship="Self.Follow" FromRole="Restaurant" ToRole="Musician" />
         </EntityType>
         <EntityType Name="Style">
@@ -816,8 +800,7 @@
           </Key>
           <Property Name="style_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-		  <Property Name="creation_date" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Musician" Relationship="Self.User_Style" FromRole="Style" ToRole="Musician" />
+          <NavigationProperty Name="User_Style" Relationship="Self.FK__User_Styl__style__30C33EC3" FromRole="Style" ToRole="User_Style" />
         </EntityType>
         <EntityType Name="Super_User">
           <Key>
@@ -829,7 +812,7 @@
           <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="delete_at" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id___6D0D32F4" FromRole="Super_User" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id___2EDAF651" FromRole="Super_User" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="Ticket">
           <Key>
@@ -842,10 +825,10 @@
           <Property Name="closing_date" Type="DateTime" Precision="0" />
           <Property Name="user_id" Type="Int32" />
           <Property Name="user_id_admin" Type="Int32" />
-          <NavigationProperty Name="Super_User" Relationship="Self.FK__Ticket__user_id___6D0D32F4" FromRole="Ticket" ToRole="Super_User" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Ticket__user_id__6E01572D" FromRole="Ticket" ToRole="Users" />
-          <Property Name="subject" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="subject" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Super_User" Relationship="Self.FK__Ticket__user_id___2EDAF651" FromRole="Ticket" ToRole="Super_User" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Ticket__user_id__2FCF1A8A" FromRole="Ticket" ToRole="Users" />
         </EntityType>
         <EntityType Name="time">
           <Key>
@@ -853,14 +836,35 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-		  <Property Name="creation_date" Type="DateTime" Nullable="false" />
-			<NavigationProperty Name="Musician" Relationship="Self.User_Time" FromRole="time" ToRole="Musician" />
+          <NavigationProperty Name="User_Time" Relationship="Self.FK__User_Time__time___32AB8735" FromRole="time" ToRole="User_Time" />
+        </EntityType>
+        <EntityType Name="User_Style">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="style_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="style_id" Type="Int32" Nullable="false" />
+          <Property Name="creation_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK_User_Style_Musician" FromRole="User_Style" ToRole="Musician" />
+          <NavigationProperty Name="Style" Relationship="Self.FK__User_Styl__style__30C33EC3" FromRole="User_Style" ToRole="Style" />
+        </EntityType>
+        <EntityType Name="User_Time">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="time_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="time_id" Type="Int32" Nullable="false" />
+          <Property Name="creation_date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__User_Time__user___339FAB6E" FromRole="User_Time" ToRole="Musician" />
+          <NavigationProperty Name="time" Relationship="Self.FK__User_Time__time___32AB8735" FromRole="User_Time" ToRole="time" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="photo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -872,13 +876,13 @@
           <Property Name="municipality_id" Type="Int32" />
           <Property Name="latitud" Type="Decimal" Precision="10" Scale="8" />
           <Property Name="longitud" Type="Decimal" Precision="11" Scale="8" />
-          <NavigationProperty Name="Message" Relationship="Self.FK__Message__user_id__6477ECF3" FromRole="Users" ToRole="Message" />
+          <NavigationProperty Name="Message" Relationship="Self.FK__Message__user_id__2645B050" FromRole="Users" ToRole="Message" />
           <NavigationProperty Name="Municipality" Relationship="Self.fk_users_municipality" FromRole="Users" ToRole="Municipality" />
-          <NavigationProperty Name="Musician" Relationship="Self.FK__Musician__user_i__66603565" FromRole="Users" ToRole="Musician" />
-          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Restauran__user___6C190EBB" FromRole="Users" ToRole="Restaurant" />
-          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id__6E01572D" FromRole="Users" ToRole="Ticket" />
-          <NavigationProperty Name="Valorar" Relationship="Self.FK__Valorar__apprais__73BA3083" FromRole="Users" ToRole="Valorar" />
-          <NavigationProperty Name="Valorar1" Relationship="Self.FK__Valorar__valued___74AE54BC" FromRole="Users" ToRole="Valorar" />
+          <NavigationProperty Name="Musician" Relationship="Self.FK__Musician__user_i__282DF8C2" FromRole="Users" ToRole="Musician" />
+          <NavigationProperty Name="Restaurant" Relationship="Self.FK__Restauran__user___2DE6D218" FromRole="Users" ToRole="Restaurant" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK__Ticket__user_id__2FCF1A8A" FromRole="Users" ToRole="Ticket" />
+          <NavigationProperty Name="Valorar" Relationship="Self.FK__Valorar__apprais__3587F3E0" FromRole="Users" ToRole="Valorar" />
+          <NavigationProperty Name="Valorar1" Relationship="Self.FK__Valorar__valued___367C1819" FromRole="Users" ToRole="Valorar" />
         </EntityType>
         <EntityType Name="Valorar">
           <Key>
@@ -889,10 +893,10 @@
           <Property Name="comment" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="appraiser_id" Type="Int32" Nullable="false" />
           <Property Name="valued_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Valorar__apprais__73BA3083" FromRole="Valorar" ToRole="Users" />
-          <NavigationProperty Name="Users1" Relationship="Self.FK__Valorar__valued___74AE54BC" FromRole="Valorar" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Valorar__apprais__3587F3E0" FromRole="Valorar" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="Self.FK__Valorar__valued___367C1819" FromRole="Valorar" ToRole="Users" />
         </EntityType>
-        <Association Name="FK__Chat__musician_i__5BE2A6F2">
+        <Association Name="FK__Chat__musician_i__1DB06A4F">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -904,7 +908,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Chat__restaurant__5CD6CB2B">
+        <Association Name="FK__Chat__restaurant__1EA48E88">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Chat" Type="Self.Chat" Multiplicity="*" />
           <ReferentialConstraint>
@@ -916,7 +920,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Message__chat_id__6383C8BA">
+        <Association Name="FK__Message__chat_id__25518C17">
           <End Role="Chat" Type="Self.Chat" Multiplicity="0..1" />
           <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
@@ -940,7 +944,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comment_R__publi__5DCAEF64">
+        <Association Name="FK__Comment_R__publi__1F98B2C1">
           <End Role="Publication" Type="Self.Publication" Multiplicity="0..1" />
           <End Role="Comment_Restaurant_Publication" Type="Self.Comment_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -952,7 +956,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Comment_R__user___5EBF139D">
+        <Association Name="FK__Comment_R__user___208CD6FA">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Comment_Restaurant_Publication" Type="Self.Comment_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -964,7 +968,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Like_Rest__publi__619B8048">
+        <Association Name="FK__Like_Rest__publi__236943A5">
           <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
           <End Role="Like_Restaurant_Publication" Type="Self.Like_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -976,7 +980,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Like_Rest__resta__628FA481">
+        <Association Name="FK__Like_Rest__resta__245D67DE">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
           <End Role="Like_Restaurant_Publication" Type="Self.Like_Restaurant_Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -988,7 +992,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Message__user_id__6477ECF3">
+        <Association Name="FK__Message__user_id__2645B050">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1012,7 +1016,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Musician__user_i__66603565">
+        <Association Name="FK__Musician__user_i__282DF8C2">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1024,7 +1028,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_dir__music__6754599E">
+        <Association Name="FK__Offer_dir__music__29221CFB">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Offer_dir" Type="Self.Offer_dir" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1036,7 +1040,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_In__music___693CA210">
+        <Association Name="FK__Offer_In__music___2B0A656D">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Offer_In" Type="Self.Offer_In" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1048,7 +1052,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Publicati__user___6B24EA82">
+        <Association Name="FK__Publicati__user___2CF2ADDF">
           <End Role="Musician" Type="Self.Musician" Multiplicity="0..1" />
           <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1060,7 +1064,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_dir__resta__68487DD7">
+        <Association Name="FK__User_Time__user___339FAB6E">
+          <End Role="Musician" Type="Self.Musician" Multiplicity="1" />
+          <End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musician">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="User_Time">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Style_Musician">
+          <End Role="Musician" Type="Self.Musician" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="User_Style" Type="Self.User_Style" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musician">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="User_Style">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Offer_dir__resta__2A164134">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Offer_dir" Type="Self.Offer_dir" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1072,7 +1102,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Offer_In__restau__6A30C649">
+        <Association Name="FK__Offer_In__restau__2BFE89A6">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <End Role="Offer_In" Type="Self.Offer_In" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1084,7 +1114,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Restauran__user___6C190EBB">
+        <Association Name="FK__Restauran__user___2DE6D218">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="0..1" />
           <ReferentialConstraint>
@@ -1096,7 +1126,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ticket__user_id___6D0D32F4">
+        <Association Name="FK__User_Styl__style__30C33EC3">
+          <End Role="Style" Type="Self.Style" Multiplicity="1" />
+          <End Role="User_Style" Type="Self.User_Style" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Style">
+              <PropertyRef Name="style_id" />
+            </Principal>
+            <Dependent Role="User_Style">
+              <PropertyRef Name="style_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ticket__user_id___2EDAF651">
           <End Role="Super_User" Type="Self.Super_User" Multiplicity="0..1" />
           <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1108,7 +1150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ticket__user_id__6E01572D">
+        <Association Name="FK__Ticket__user_id__2FCF1A8A">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1120,7 +1162,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valorar__apprais__73BA3083">
+        <Association Name="FK__User_Time__time___32AB8735">
+          <End Role="time" Type="Self.time" Multiplicity="1" />
+          <End Role="User_Time" Type="Self.User_Time" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="time">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="User_Time">
+              <PropertyRef Name="time_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Valorar__apprais__3587F3E0">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Valorar" Type="Self.Valorar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1132,7 +1186,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Valorar__valued___74AE54BC">
+        <Association Name="FK__Valorar__valued___367C1819">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Valorar" Type="Self.Valorar" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1148,15 +1202,7 @@
           <End Role="Musician" Type="Self.Musician" Multiplicity="*" />
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="*" />
         </Association>
-        <Association Name="User_Style">
-          <End Role="Style" Type="Self.Style" Multiplicity="*" />
-          <End Role="Musician" Type="Self.Musician" Multiplicity="*" />
-        </Association>
-		  <Association Name="User_Time">
-			  <End Role="time" Type="Self.time" Multiplicity="*" />
-			  <End Role="Musician" Type="Self.Musician" Multiplicity="*" />
-		  </Association>
-		  <EntityContainer Name="dam04Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NavyBeatsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Chat" EntityType="Self.Chat" />
           <EntitySet Name="City" EntityType="Self.City" />
           <EntitySet Name="Comment_Restaurant_Publication" EntityType="Self.Comment_Restaurant_Publication" />
@@ -1172,17 +1218,19 @@
           <EntitySet Name="Super_User" EntityType="Self.Super_User" />
           <EntitySet Name="Ticket" EntityType="Self.Ticket" />
           <EntitySet Name="time" EntityType="Self.time" />
+          <EntitySet Name="User_Style" EntityType="Self.User_Style" />
+          <EntitySet Name="User_Time" EntityType="Self.User_Time" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="Valorar" EntityType="Self.Valorar" />
-          <AssociationSet Name="FK__Chat__musician_i__5BE2A6F2" Association="Self.FK__Chat__musician_i__5BE2A6F2">
+          <AssociationSet Name="FK__Chat__musician_i__1DB06A4F" Association="Self.FK__Chat__musician_i__1DB06A4F">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Chat" EntitySet="Chat" />
           </AssociationSet>
-          <AssociationSet Name="FK__Chat__restaurant__5CD6CB2B" Association="Self.FK__Chat__restaurant__5CD6CB2B">
+          <AssociationSet Name="FK__Chat__restaurant__1EA48E88" Association="Self.FK__Chat__restaurant__1EA48E88">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Chat" EntitySet="Chat" />
           </AssociationSet>
-          <AssociationSet Name="FK__Message__chat_id__6383C8BA" Association="Self.FK__Message__chat_id__6383C8BA">
+          <AssociationSet Name="FK__Message__chat_id__25518C17" Association="Self.FK__Message__chat_id__25518C17">
             <End Role="Chat" EntitySet="Chat" />
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
@@ -1190,23 +1238,23 @@
             <End Role="City" EntitySet="City" />
             <End Role="Municipality" EntitySet="Municipality" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comment_R__publi__5DCAEF64" Association="Self.FK__Comment_R__publi__5DCAEF64">
+          <AssociationSet Name="FK__Comment_R__publi__1F98B2C1" Association="Self.FK__Comment_R__publi__1F98B2C1">
             <End Role="Publication" EntitySet="Publication" />
             <End Role="Comment_Restaurant_Publication" EntitySet="Comment_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Comment_R__user___5EBF139D" Association="Self.FK__Comment_R__user___5EBF139D">
+          <AssociationSet Name="FK__Comment_R__user___208CD6FA" Association="Self.FK__Comment_R__user___208CD6FA">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Comment_Restaurant_Publication" EntitySet="Comment_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Like_Rest__publi__619B8048" Association="Self.FK__Like_Rest__publi__619B8048">
+          <AssociationSet Name="FK__Like_Rest__publi__236943A5" Association="Self.FK__Like_Rest__publi__236943A5">
             <End Role="Publication" EntitySet="Publication" />
             <End Role="Like_Restaurant_Publication" EntitySet="Like_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Like_Rest__resta__628FA481" Association="Self.FK__Like_Rest__resta__628FA481">
+          <AssociationSet Name="FK__Like_Rest__resta__245D67DE" Association="Self.FK__Like_Rest__resta__245D67DE">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Like_Restaurant_Publication" EntitySet="Like_Restaurant_Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Message__user_id__6477ECF3" Association="Self.FK__Message__user_id__6477ECF3">
+          <AssociationSet Name="FK__Message__user_id__2645B050" Association="Self.FK__Message__user_id__2645B050">
             <End Role="Users" EntitySet="Users" />
             <End Role="Message" EntitySet="Message" />
           </AssociationSet>
@@ -1214,47 +1262,63 @@
             <End Role="Municipality" EntitySet="Municipality" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK__Musician__user_i__66603565" Association="Self.FK__Musician__user_i__66603565">
+          <AssociationSet Name="FK__Musician__user_i__282DF8C2" Association="Self.FK__Musician__user_i__282DF8C2">
             <End Role="Users" EntitySet="Users" />
             <End Role="Musician" EntitySet="Musician" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_dir__music__6754599E" Association="Self.FK__Offer_dir__music__6754599E">
+          <AssociationSet Name="FK__Offer_dir__music__29221CFB" Association="Self.FK__Offer_dir__music__29221CFB">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Offer_dir" EntitySet="Offer_dir" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_In__music___693CA210" Association="Self.FK__Offer_In__music___693CA210">
+          <AssociationSet Name="FK__Offer_In__music___2B0A656D" Association="Self.FK__Offer_In__music___2B0A656D">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Offer_In" EntitySet="Offer_In" />
           </AssociationSet>
-          <AssociationSet Name="FK__Publicati__user___6B24EA82" Association="Self.FK__Publicati__user___6B24EA82">
+          <AssociationSet Name="FK__Publicati__user___2CF2ADDF" Association="Self.FK__Publicati__user___2CF2ADDF">
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Publication" EntitySet="Publication" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_dir__resta__68487DD7" Association="Self.FK__Offer_dir__resta__68487DD7">
+          <AssociationSet Name="FK__User_Time__user___339FAB6E" Association="Self.FK__User_Time__user___339FAB6E">
+            <End Role="Musician" EntitySet="Musician" />
+            <End Role="User_Time" EntitySet="User_Time" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Style_Musician" Association="Self.FK_User_Style_Musician">
+            <End Role="Musician" EntitySet="Musician" />
+            <End Role="User_Style" EntitySet="User_Style" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Offer_dir__resta__2A164134" Association="Self.FK__Offer_dir__resta__2A164134">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Offer_dir" EntitySet="Offer_dir" />
           </AssociationSet>
-          <AssociationSet Name="FK__Offer_In__restau__6A30C649" Association="Self.FK__Offer_In__restau__6A30C649">
+          <AssociationSet Name="FK__Offer_In__restau__2BFE89A6" Association="Self.FK__Offer_In__restau__2BFE89A6">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Offer_In" EntitySet="Offer_In" />
           </AssociationSet>
-          <AssociationSet Name="FK__Restauran__user___6C190EBB" Association="Self.FK__Restauran__user___6C190EBB">
+          <AssociationSet Name="FK__Restauran__user___2DE6D218" Association="Self.FK__Restauran__user___2DE6D218">
             <End Role="Users" EntitySet="Users" />
             <End Role="Restaurant" EntitySet="Restaurant" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ticket__user_id___6D0D32F4" Association="Self.FK__Ticket__user_id___6D0D32F4">
+          <AssociationSet Name="FK__User_Styl__style__30C33EC3" Association="Self.FK__User_Styl__style__30C33EC3">
+            <End Role="Style" EntitySet="Style" />
+            <End Role="User_Style" EntitySet="User_Style" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ticket__user_id___2EDAF651" Association="Self.FK__Ticket__user_id___2EDAF651">
             <End Role="Super_User" EntitySet="Super_User" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ticket__user_id__6E01572D" Association="Self.FK__Ticket__user_id__6E01572D">
+          <AssociationSet Name="FK__Ticket__user_id__2FCF1A8A" Association="Self.FK__Ticket__user_id__2FCF1A8A">
             <End Role="Users" EntitySet="Users" />
             <End Role="Ticket" EntitySet="Ticket" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valorar__apprais__73BA3083" Association="Self.FK__Valorar__apprais__73BA3083">
+          <AssociationSet Name="FK__User_Time__time___32AB8735" Association="Self.FK__User_Time__time___32AB8735">
+            <End Role="time" EntitySet="time" />
+            <End Role="User_Time" EntitySet="User_Time" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Valorar__apprais__3587F3E0" Association="Self.FK__Valorar__apprais__3587F3E0">
             <End Role="Users" EntitySet="Users" />
             <End Role="Valorar" EntitySet="Valorar" />
           </AssociationSet>
-          <AssociationSet Name="FK__Valorar__valued___74AE54BC" Association="Self.FK__Valorar__valued___74AE54BC">
+          <AssociationSet Name="FK__Valorar__valued___367C1819" Association="Self.FK__Valorar__valued___367C1819">
             <End Role="Users" EntitySet="Users" />
             <End Role="Valorar" EntitySet="Valorar" />
           </AssociationSet>
@@ -1262,24 +1326,15 @@
             <End Role="Musician" EntitySet="Musician" />
             <End Role="Restaurant" EntitySet="Restaurant" />
           </AssociationSet>
-          <AssociationSet Name="User_Style" Association="Self.User_Style">
-            <End Role="Style" EntitySet="Style" />
-            <End Role="Musician" EntitySet="Musician" />
-          </AssociationSet>
-			  <AssociationSet Name="User_Time" Association="Self.User_Time">
-				  <End Role="time" EntitySet="time" />
-				  <End Role="Musician" EntitySet="Musician" />
-			  </AssociationSet>
-
-		  </EntityContainer>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dam04ModelStoreContainer" CdmEntityContainer="dam04Entities">
+        <EntityContainerMapping StorageEntityContainer="NavyBeatsModelStoreContainer" CdmEntityContainer="NavyBeatsEntities">
           <EntitySetMapping Name="Chat">
-            <EntityTypeMapping TypeName="dam04Model.Chat">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Chat">
               <MappingFragment StoreEntitySet="Chat">
                 <ScalarProperty Name="chat_id" ColumnName="chat_id" />
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
@@ -1289,7 +1344,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="City">
-            <EntityTypeMapping TypeName="dam04Model.City">
+            <EntityTypeMapping TypeName="NavyBeatsModel.City">
               <MappingFragment StoreEntitySet="City">
                 <ScalarProperty Name="city_id" ColumnName="city_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1297,7 +1352,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Comment_Restaurant_Publication">
-            <EntityTypeMapping TypeName="dam04Model.Comment_Restaurant_Publication">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Comment_Restaurant_Publication">
               <MappingFragment StoreEntitySet="Comment_Restaurant_Publication">
                 <ScalarProperty Name="comment_id" ColumnName="comment_id" />
                 <ScalarProperty Name="content" ColumnName="content" />
@@ -1307,7 +1362,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Like_Restaurant_Publication">
-            <EntityTypeMapping TypeName="dam04Model.Like_Restaurant_Publication">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Like_Restaurant_Publication">
               <MappingFragment StoreEntitySet="Like_Restaurant_Publication">
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
                 <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
@@ -1316,7 +1371,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Message">
-            <EntityTypeMapping TypeName="dam04Model.Message">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Message">
               <MappingFragment StoreEntitySet="Message">
                 <ScalarProperty Name="message_id" ColumnName="message_id" />
                 <ScalarProperty Name="text" ColumnName="text" />
@@ -1328,7 +1383,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Municipality">
-            <EntityTypeMapping TypeName="dam04Model.Municipality">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Municipality">
               <MappingFragment StoreEntitySet="Municipality">
                 <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1337,14 +1392,14 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Musician">
-            <EntityTypeMapping TypeName="dam04Model.Musician">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Musician">
               <MappingFragment StoreEntitySet="Musician">
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Offer_dir">
-            <EntityTypeMapping TypeName="dam04Model.Offer_dir">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Offer_dir">
               <MappingFragment StoreEntitySet="Offer_dir">
                 <ScalarProperty Name="offer_id" ColumnName="offer_id" />
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
@@ -1358,7 +1413,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Offer_In">
-            <EntityTypeMapping TypeName="dam04Model.Offer_In">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Offer_In">
               <MappingFragment StoreEntitySet="Offer_In">
                 <ScalarProperty Name="offer_in_id" ColumnName="offer_in_id" />
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
@@ -1370,7 +1425,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Publication">
-            <EntityTypeMapping TypeName="dam04Model.Publication">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Publication">
               <MappingFragment StoreEntitySet="Publication">
                 <ScalarProperty Name="publication_id" ColumnName="publication_id" />
                 <ScalarProperty Name="publication_date" ColumnName="publication_date" />
@@ -1381,7 +1436,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Restaurant">
-            <EntityTypeMapping TypeName="dam04Model.Restaurant">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Restaurant">
               <MappingFragment StoreEntitySet="Restaurant">
                 <ScalarProperty Name="opening_time" ColumnName="opening_time" />
                 <ScalarProperty Name="closing_time" ColumnName="closing_time" />
@@ -1390,16 +1445,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Style">
-            <EntityTypeMapping TypeName="dam04Model.Style">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Style">
               <MappingFragment StoreEntitySet="Style">
                 <ScalarProperty Name="style_id" ColumnName="style_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
-			  </MappingFragment>
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Super_User">
-            <EntityTypeMapping TypeName="dam04Model.Super_User">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Super_User">
               <MappingFragment StoreEntitySet="Super_User">
                 <ScalarProperty Name="user_id_admin" ColumnName="user_id_admin" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1411,10 +1465,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Ticket">
-            <EntityTypeMapping TypeName="dam04Model.Ticket">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Ticket">
               <MappingFragment StoreEntitySet="Ticket">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="subject" ColumnName="subject" />
                 <ScalarProperty Name="ticket_id" ColumnName="ticket_id" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="type" ColumnName="type" />
@@ -1422,20 +1474,39 @@
                 <ScalarProperty Name="closing_date" ColumnName="closing_date" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="user_id_admin" ColumnName="user_id_admin" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="time">
-            <EntityTypeMapping TypeName="dam04Model.time">
+            <EntityTypeMapping TypeName="NavyBeatsModel.time">
               <MappingFragment StoreEntitySet="time">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
-			  </MappingFragment>
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Style">
+            <EntityTypeMapping TypeName="NavyBeatsModel.User_Style">
+              <MappingFragment StoreEntitySet="User_Style">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="style_id" ColumnName="style_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Time">
+            <EntityTypeMapping TypeName="NavyBeatsModel.User_Time">
+              <MappingFragment StoreEntitySet="User_Time">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="time_id" ColumnName="time_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="dam04Model.Users">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Users">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1453,7 +1524,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Valorar">
-            <EntityTypeMapping TypeName="dam04Model.Valorar">
+            <EntityTypeMapping TypeName="NavyBeatsModel.Valorar">
               <MappingFragment StoreEntitySet="Valorar">
                 <ScalarProperty Name="puntuation" ColumnName="puntuation" />
                 <ScalarProperty Name="comment" ColumnName="comment" />
@@ -1462,7 +1533,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Follow" TypeName="dam04Model.Follow" StoreEntitySet="Follow">
+          <AssociationSetMapping Name="Follow" TypeName="NavyBeatsModel.Follow" StoreEntitySet="Follow">
             <EndProperty Name="Musician">
               <ScalarProperty Name="user_id" ColumnName="musician_id" />
             </EndProperty>
@@ -1470,23 +1541,7 @@
               <ScalarProperty Name="user_id" ColumnName="restaurant_id" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="User_Style" TypeName="dam04Model.User_Style" StoreEntitySet="User_Style">
-            <EndProperty Name="Style">
-              <ScalarProperty Name="style_id" ColumnName="style_id" />
-            </EndProperty>
-            <EndProperty Name="Musician">
-              <ScalarProperty Name="user_id" ColumnName="user_id" />
-            </EndProperty>
-          </AssociationSetMapping>
-			<AssociationSetMapping Name="User_Time" TypeName="Self.User_Time" StoreEntitySet="User_Time">
-				<EndProperty Name="time">
-					<ScalarProperty Name="time_id" ColumnName="time_id" />
-				</EndProperty>
-				<EndProperty Name="Musician">
-					<ScalarProperty Name="user_id" ColumnName="user_id" />
-				</EndProperty>
-			</AssociationSetMapping>
-		</EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -11,7 +11,7 @@ namespace NavyBeats_C_.Models
         // Método para obtener todos los restaurantes
         public static List<Users> GetRestaurants()
         {
-            using (var context = new dam04Entities())
+            using (var context = new NavyBeatsEntities())
             {
                 var restaurants = (from r in context.Restaurant
                                    join u in context.Users on r.user_id equals u.user_id
@@ -24,7 +24,7 @@ namespace NavyBeats_C_.Models
         // Método para obtener un restaurante por su ID
         public static Users GetRestaurantById(int userId)
         {
-            using (var context = new dam04Entities())
+            using (var context = new NavyBeatsEntities())
             {
                 var restaurant = (from r in context.Restaurant
                                   join u in context.Users on r.user_id equals u.user_id
@@ -37,7 +37,7 @@ namespace NavyBeats_C_.Models
         // Método para obtener la información detallada de los restaurantes
         public static List<RestaurantInfo> GetRestaurantInfoList()
         {
-            using (var context = new dam04Entities())
+            using (var context = new NavyBeatsEntities())
             {
                 var query = from r in context.Restaurant
                             join u in context.Users on r.user_id equals u.user_id
