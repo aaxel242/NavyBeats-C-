@@ -22,10 +22,11 @@ namespace NavyBeats_C_.Models
         }
     
         public int publication_id { get; set; }
-        public Nullable<System.DateTime> publication_date { get; set; }
+        public string publication_date { get; set; }
         public string description { get; set; }
         public string multimedia_content { get; set; }
         public Nullable<int> user_id { get; set; }
+        public string titulo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment_Restaurant_Publication> Comment_Restaurant_Publication { get; set; }

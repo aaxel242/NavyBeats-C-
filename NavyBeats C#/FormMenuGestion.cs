@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
@@ -50,7 +44,7 @@ namespace NavyBeats_C_
             {
                 if (userLogin.role.Equals("Super"))
                 {
-                    FormUsuarios usuarios = new FormUsuarios();
+                    FormUsuarios usuarios = new FormUsuarios(userLogin);
                     usuarios.Show();
 
                     usuarios.FormClosed += (s, args) => this.Show();
@@ -63,9 +57,16 @@ namespace NavyBeats_C_
             }
             else
             {
+                bool local = true;
+
+                if (panel == panelArtista)
+                {
+                    local = false;
+                }
+
                 if (userLogin.role.Equals("Mantenimiento"))
                 {
-                    FormLocalMusico localMusico = new FormLocalMusico();
+                    FormLocalMusico localMusico = new FormLocalMusico(local);
                     localMusico.Show();
 
                     localMusico.FormClosed += (s, args) => this.Show();
@@ -73,7 +74,7 @@ namespace NavyBeats_C_
                 }
                 else
                 {
-                    FormLocalMusicoSA localMusico = new FormLocalMusicoSA();
+                    FormLocalMusicoSA localMusico = new FormLocalMusicoSA(local);
                     localMusico.Show();
 
                     localMusico.FormClosed += (s, args) => this.Show();

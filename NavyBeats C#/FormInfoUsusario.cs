@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
@@ -79,19 +72,9 @@ namespace NavyBeats_C_
                             this.DialogResult = DialogResult.OK;
                         }
                     }
-                    clearInfo();
                     this.Close();
                 }
             }
-        }
-
-        private void clearInfo()
-        {
-            textBoxNombre.Texts = "";
-            textBoxCorreo.Texts = "";
-            textBoxContra.Texts = "";
-            textBoxConfirmar.Texts = "";
-            customComboBoxRol.Texts = "Rol";
         }
     }
 }

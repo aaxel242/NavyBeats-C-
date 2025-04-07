@@ -17,13 +17,16 @@ namespace NavyBeats_C_.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Style()
         {
-            this.Musician = new HashSet<Musician>();
+            this.Offer_in_Styles = new HashSet<Offer_in_Styles>();
+            this.User_Style = new HashSet<User_Style>();
         }
     
         public int style_id { get; set; }
         public string name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Musician> Musician { get; set; }
+        public virtual ICollection<Offer_in_Styles> Offer_in_Styles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User_Style> User_Style { get; set; }
     }
 }

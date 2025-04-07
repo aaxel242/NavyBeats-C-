@@ -12,19 +12,13 @@ namespace NavyBeats_C_.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Ticket
+    public partial class User_Style
     {
-        public int ticket_id { get; set; }
-        public string description { get; set; }
-        public string type { get; set; }
-        public string creation_date { get; set; }
-        public string closing_date { get; set; }
-        public Nullable<int> user_id { get; set; }
-        public Nullable<int> user_id_admin { get; set; }
-        public string subject { get; set; }
-        public bool status { get; set; }
+        public int user_id { get; set; }
+        public int style_id { get; set; }
+        public System.DateTime creation_date { get; set; }
     
-        public virtual Super_User Super_User { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Musician Musician { get; set; }
+        public virtual Style Style { get; set; }
     }
 }
