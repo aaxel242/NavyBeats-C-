@@ -129,19 +129,25 @@ namespace NavyBeats_C_
         private void ResaltarDiasConEventos()
         {
             // Se consultan las ofertas activas de ambas tablas según los criterios definidos
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
                 var offerDirDates = context.Offer_dir
-                    .Where(o => o.agreement == 1 && o.done == 0)
-                    .Select(o => o.event_date.Value)
+                    .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
+                    .Select(o => o.event_date)
+                    .AsEnumerable() // Cambia a LINQ to Objects para usar DateTime.Parse
+                    .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
+                    .Where(dt => dt != DateTime.MinValue)
                     .ToList();
 
                 // Obtener las fechas de los eventos de Offer_In (music_id_final no es nulo)
                 var offerInDates = context.Offer_In
-                    .Where(o => o.music_id_final != null)
-                    .Select(o => o.event_date.Value)
-                    .ToList();
+                      .Where(o => o.music_id_final != null && o.event_date != null)
+                      .Select(o => o.event_date)
+                      .AsEnumerable()
+                      .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
+                      .Where(dt => dt != DateTime.MinValue)
+                      .ToList();
 
                 // Combina ambas listas y elimina duplicados
                 var eventDates = offerDirDates.Union(offerInDates).ToList();
@@ -185,11 +191,23 @@ namespace NavyBeats_C_
                 lblLocal.Visible = true;
                 lblHorario.Visible = true;
                 lblPrecio.Visible = true;
+
                 var evt = eventosDelDia[eventoActualIndex];
+
                 lblMusicoSelect.Text = evt.Musico;
                 lblLocalSelect.Text = evt.Local;
-                lblHorarioSelect.Text = evt.Horario.ToString("HH:mm");
-                lblPrecioSelect.Text = evt.Salario.ToString("C");  // "C" formato moneda
+
+                // Convertir evt.Horario (string) a DateTime y luego formatear a "HH:mm"
+                if (DateTime.TryParse(evt.Horario, out DateTime dtHorario))
+                {
+                    lblHorarioSelect.Text = dtHorario.ToString("HH:mm");
+                }
+                else
+                {
+                    lblHorarioSelect.Text = evt.Horario;
+                }
+
+                lblPrecioSelect.Text = evt.Salario.ToString("C");
 
                 lblNumEventos.Text = $"{eventoActualIndex + 1}/{eventosDelDia.Count}";
             }
@@ -211,6 +229,7 @@ namespace NavyBeats_C_
         }
 
 
+
         private string ObtenerNombreMes(int mes)
         {
             string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -229,7 +248,7 @@ namespace NavyBeats_C_
             MostrarDias(currentYear, currentMonth);
         }
 
-        private void pBoxFlechaIzquierda_Click(object sender, EventArgs e)
+        private void pBoxFlechaIzquierda_Click(object sender, EventArgs e)  
         {
             currentMonth--;
             if (currentMonth < 1)

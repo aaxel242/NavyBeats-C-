@@ -14,14 +14,23 @@ namespace NavyBeats_C_.Models
     
     public partial class Offer_In
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Offer_In()
+        {
+            this.Offer_in_Styles = new HashSet<Offer_in_Styles>();
+        }
+    
         public int offer_in_id { get; set; }
-        public Nullable<System.DateTime> publish_date { get; set; }
+        public string publish_date { get; set; }
         public Nullable<int> salary { get; set; }
-        public Nullable<System.DateTime> event_date { get; set; }
+        public string event_date { get; set; }
         public Nullable<int> music_id_final { get; set; }
         public Nullable<int> restaurant_id { get; set; }
+        public string description { get; set; }
     
         public virtual Musician Musician { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Offer_in_Styles> Offer_in_Styles { get; set; }
         public virtual Restaurant Restaurant { get; set; }
     }
 }

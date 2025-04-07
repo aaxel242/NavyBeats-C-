@@ -28,13 +28,14 @@ namespace NavyBeats_C_.Models
         public string photo { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public int phone_number { get; set; }
-        public Nullable<System.DateTime> creation_date { get; set; }
-        public Nullable<System.DateTime> edition_date { get; set; }
-        public Nullable<System.DateTime> deleted_at { get; set; }
+        public string phone_number { get; set; }
+        public string creation_date { get; set; }
+        public string edition_date { get; set; }
+        public string deleted_at { get; set; }
         public Nullable<int> municipality_id { get; set; }
         public Nullable<decimal> latitud { get; set; }
         public Nullable<decimal> longitud { get; set; }
+        public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Message { get; set; }

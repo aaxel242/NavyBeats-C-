@@ -25,7 +25,7 @@ namespace NavyBeats_C_.Models
         public string email { get; set; }
         public string password { get; set; }
         public string role { get; set; }
-        public Nullable<System.DateTime> delete_at { get; set; }
+        public string delete_at { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ticket> Ticket { get; set; }
