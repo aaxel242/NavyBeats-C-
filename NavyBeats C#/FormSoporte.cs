@@ -102,10 +102,7 @@ namespace NavyBeats_C_
             panel.Region = new Region(path);
         }
 
-        private void pboxAtras_Click(object sender, EventArgs e)
-        {
-            
-        }
+     
 
         private void lblConsulta_Click(object sender, EventArgs e)
         {
@@ -115,6 +112,11 @@ namespace NavyBeats_C_
         private void lblIncidencia_Click(object sender, EventArgs e)
         {
             radioButtonTipo2.Checked = true;    
+        }
+
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

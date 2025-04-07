@@ -257,6 +257,8 @@
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MusicianInfo.cs" />
+    <Compile Include="Models\MusicianOrm.cs" />
     <Compile Include="Models\Offer_dir.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -273,6 +275,8 @@
     <Compile Include="Models\Restaurant.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RestaurantInfo.cs" />
+    <Compile Include="Models\RestaurantsOrm.cs" />
     <Compile Include="Models\Style.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -427,6 +431,9 @@
       <LastGenOutput>ModelNaivyBeats.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\Fondo.png" />
+    <None Include="Resources\imgFlechaRetroceder.png" />
+    <None Include="Resources\imgFlechaAvanzar.png" />
+    <None Include="Resources\imgFlechaRetrozeder.png" />
     <None Include="Resources\imgBuscar.png" />
     <None Include="Resources\imgLocal.png" />
     <None Include="Resources\imgSalirDorado.png" />

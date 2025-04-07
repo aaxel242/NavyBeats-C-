@@ -9,5 +9,4 @@ namespace NavyBeats_C_.Models
         public string Horario { get; set; }
         public int Salario { get; set; }
     }
-
 }

@@ -92,9 +92,11 @@ namespace NavyBeats_C_.Models
         }
 
         /// <summary>
-        /// Obtiene la lista de eventos para una fecha específica.
-        /// Convierte el event_date (string) a DateTime para su comparación y formateo.
+        /// Obtiene la lista de eventos para la fecha especificada.
+        /// Se consideran eventos en Offer_dir (agreement = 1 y done = 0) y Offer_In (donde music_id_final no es nulo).
         /// </summary>
+        /// <param name="fecha">La fecha a consultar.</param>
+        /// <returns>Lista de EventoInfo con los datos de cada evento.</returns>
         public static List<EventoInfo> ObtenerEventosConPosicion(DateTime fecha)
         {
             DateTime fechaSinHora = fecha.Date;

@@ -33,6 +33,11 @@ namespace NavyBeats_C_
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
+            btnRetroceder.BackgroundImage = Properties.Resources.imgFlechaRetroceder;
+            btnRetroceder.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAvanzar.BackgroundImage = Properties.Resources.imgFlechaAvanzar;
+            btnAvanzar.BackgroundImageLayout = ImageLayout.Stretch;
+
             //Models.CalendarioOrm.InsertOffers();
             MostrarDias(currentYear, currentMonth);
         }
@@ -142,10 +147,41 @@ namespace NavyBeats_C_
         }
 
         private void MostrarEventoActual()
-        {
-            
-        }
+        {            
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                btnAvanzar.Visible = true;
+                btnRetroceder.Visible = true;
+                lblNumEventos.Visible = true;
+                lblMusico.Visible = true;
+                lblMusico.Text = "Músico";
+                lblLocal.Visible = true;
+                lblHorario.Visible = true;
+                lblPrecio.Visible = true;
+                var evt = eventosDelDia[eventoActualIndex];
+                lblMusicoSelect.Text = evt.Musico;
+                lblLocalSelect.Text = evt.Local;
+                lblHorarioSelect.Text = evt.Horario.ToString("HH:mm");
+                lblPrecioSelect.Text = evt.Salario.ToString("C");  // "C" formato moneda
 
+                lblNumEventos.Text = $"{eventoActualIndex + 1}/{eventosDelDia.Count}";
+            }
+            else
+            {
+                btnAvanzar.Visible = false;
+                btnRetroceder.Visible = false;
+                lblNumEventos.Visible = false;
+                lblMusico.Visible = true;
+                lblMusico.Text = "Sin Eventos";
+                lblLocal.Visible = false;
+                lblHorario.Visible = false;
+                lblPrecio.Visible = false;
+                lblMusicoSelect.Text = "";
+                lblLocalSelect.Text = "";
+                lblHorarioSelect.Text = "";
+                lblPrecioSelect.Text = "";
+            }
+        }
 
 
         private string ObtenerNombreMes(int mes)
