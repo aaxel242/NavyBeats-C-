@@ -15,7 +15,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static void InsertOffers()
         {
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 if (context.Offer_dir.Any() || context.Offer_In.Any())
                     return;
@@ -73,7 +73,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static List<DateTime> GetEventDates()
         {
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 var offerDirDates = context.Offer_dir
                     .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
@@ -100,7 +100,7 @@ namespace NavyBeats_C_.Models
             DateTime fechaSinHora = fecha.Date;
             List<EventoInfo> eventos = new List<EventoInfo>();
 
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 // Eventos de Offer_dir
                 var eventosDir = (from o in context.Offer_dir

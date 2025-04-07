@@ -8,6 +8,6 @@ namespace NavyBeats_C_.Models
 {
     public static class Orm
     {
-        public static NavyBeatsEntities bd = new NavyBeatsEntities();
+        public static NaivyBeatsEntities bd = new NaivyBeatsEntities();
     }
 }

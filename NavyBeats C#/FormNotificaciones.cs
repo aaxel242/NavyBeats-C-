@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
@@ -9,23 +9,25 @@ namespace NavyBeats_C_
 {
     public partial class FormNotificaciones : Form
     {
-        private int logedUserId;
-
+        private int loggedUserId;
         public FormNotificaciones(int userId)
         {
             InitializeComponent();
-            logedUserId = userId;
+            loggedUserId = userId;
         }
 
-        public FormNotificaciones()
-        {
-        }
+        public FormNotificaciones() { }
 
         private void FormNotificaciones_Load(object sender, EventArgs e)
         {
             panelNotificaciones.BackColor = Color.FromArgb(216, 255, 255, 255);
+            ApplyRoundedCorners(panelNotificaciones2, 30);
+            CenterForm();
+            LoadNotifications();
+        }
 
-            // Centrar el formulario en la pantalla
+        private void CenterForm()
+        {
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
             int formWidth = this.Width;
@@ -36,80 +38,78 @@ namespace NavyBeats_C_
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-
-
-
-            // Cargar las notificaciones del usuario logeado
-            CargarNotificaciones();
         }
 
-        private void CargarNotificaciones()
+        private void ApplyRoundedCorners(Panel panel, int radius)
         {
-            // Obtener las notificaciones desde el ORM (basado en el estado y el usuario logueado)
-            List<TicketInfo> ticketsPendientes = TicketOrm.GetTicketsPendientes();
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius * 2, radius * 2, 180, 90);
+            path.AddLine(radius, 0, panel.Width - radius, 0);
+            path.AddArc(panel.Width - radius * 2, 0, radius * 2, radius * 2, 270, 90);
+            path.AddLine(panel.Width, radius, panel.Width, panel.Height - radius);
+            path.AddArc(panel.Width - radius * 2, panel.Height - radius * 2, radius * 2, radius * 2, 0, 90);
+            path.AddLine(panel.Width - radius, panel.Height, 0, panel.Height);
+            path.AddLine(0, panel.Height, 0, radius);
+            path.CloseFigure();
+            panel.Region = new Region(path);
+        }
 
-            // Limpiar el FlowLayoutPanel antes de agregar nuevos controles
+        private void LoadNotifications()
+        {
+            List<TicketInfo> pendingTickets = TicketOrm.GetTicketsPendientes();
             flowLayoutPanelTickets.Controls.Clear();
 
-            // Mostrar las notificaciones en el FlowLayoutPanel
-            foreach (var ticket in ticketsPendientes)
+            foreach (var ticket in pendingTickets)
             {
-                // Crear un panel para cada notificación
                 Panel panelTicket = new Panel
                 {
-                    Size = new Size(flowLayoutPanelTickets.Width - 20, 100), // Ajustar el tamaño del panel
+                    Size = new Size(flowLayoutPanelTickets.Width - 20, 100),
                     Padding = new Padding(5),
                     Margin = new Padding(5),
                     BackColor = Color.White,
                     BorderStyle = BorderStyle.FixedSingle
                 };
 
-                // Etiqueta para mostrar información del ticket
                 Label lblTicketInfo = new Label
                 {
-                    Text = $"Usuario: {ticket.Username} | Tipo: {ticket.QueryType} | Asunto: {ticket.Subject} | Fecha: {ticket.CreationDate:dd/MM/yyyy HH:mm}",
+                    Text = $"User: {ticket.Username} | Type: {ticket.QueryType} | Subject: {ticket.Subject} | Date: {ticket.CreationDate:dd/MM/yyyy HH:mm}",
                     AutoSize = true,
                     Font = new Font("Arial", 10, FontStyle.Regular),
                     ForeColor = Color.Black,
                     Location = new Point(10, 10)
                 };
 
-                // Botón para ver más detalles
-                Button btnVerDetalles = new Button
+                Button btnResolve = new Button
                 {
-                    Text = "Ver Detalles",
+                    Text = "Resolve Ticket",
                     Size = new Size(100, 30),
                     Location = new Point(panelTicket.Width - 110, 60),
                     BackColor = Color.FromArgb(229, 177, 129),
                     ForeColor = Color.White
                 };
-                btnVerDetalles.Click += (s, e) => MostrarDetalles(ticket);
+                btnResolve.Click += (s, e) => MarkTicketResolved(ticket.TicketId);
 
-                // Agregar los controles al panel
                 panelTicket.Controls.Add(lblTicketInfo);
-                panelTicket.Controls.Add(btnVerDetalles);
-
-                // Agregar el panel al FlowLayoutPanel
+                panelTicket.Controls.Add(btnResolve);
                 flowLayoutPanelTickets.Controls.Add(panelTicket);
             }
         }
 
-        private void MostrarDetalles(TicketInfo ticket)
+        private void MarkTicketResolved(int ticketId)
         {
-            // Mostrar los detalles del ticket en algún panel o control adecuado
-            // Ejemplo: Puedes abrir un formulario de detalles o mostrarlo en un Panel en la misma ventana
-
-            MessageBox.Show($"Detalles del Ticket:\n\n" +
-                $"ID: {ticket.TicketId}\n" +
-                $"Tipo: {ticket.QueryType}\n" +
-                $"Asunto: {ticket.Subject}\n" +
-                $"Descripción: {ticket.Description}\n" +
-                $"Estado: {(ticket.Status ? "Resuelto" : "Pendiente")}\n" +
-                $"Fecha de Creación: {ticket.CreationDate.ToString("dd/MM/yyyy HH:mm")}\n" +
-                $"Fecha de Cierre: {(ticket.ClosingDate.HasValue ? ticket.ClosingDate.Value.ToString("dd/MM/yyyy HH:mm") : "N/A")}");
+            bool resolved = TicketOrm.MarkTicketAsResolved(ticketId, loggedUserId);
+            if (resolved)
+            {
+                MessageBox.Show("Ticket marked as resolved.");
+                LoadNotifications();
+            }
+            else
+            {
+                MessageBox.Show("Failed to mark ticket as resolved.");
+            }
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

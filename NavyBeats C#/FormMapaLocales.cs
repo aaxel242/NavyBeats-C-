@@ -121,11 +121,8 @@ namespace NavyBeats_C_
 
                 // Label para el horario (apertura y cierre)
                 Label lblHorario = new Label();
-
-                // Asegúrate de que OpeningTime y ClosingTime no sean nulos antes de intentar formatearlos
-                string openingTime = restaurant.OpeningTime.HasValue ? restaurant.OpeningTime.Value.ToString(@"hh\:mm") : "No disponible";
-                string closingTime = restaurant.ClosingTime.HasValue ? restaurant.ClosingTime.Value.ToString(@"hh\:mm") : "No disponible";
-
+                string openingTime = !string.IsNullOrEmpty(restaurant.OpeningTime) ? restaurant.OpeningTime : "No disponible";
+                string closingTime = !string.IsNullOrEmpty(restaurant.ClosingTime) ? restaurant.ClosingTime : "No disponible";
                 lblHorario.Text = $"Apertura: {openingTime} - Cierre: {closingTime}";
                 lblHorario.Font = new Font("Montserrat", 8, FontStyle.Regular);
                 lblHorario.Location = new Point(10, 65);
@@ -187,8 +184,8 @@ namespace NavyBeats_C_
                     GMapMarker marker = new GMarkerGoogle(punto, GMarkerGoogleType.red_dot);
                     // Asignar los datos al Tag para usarlos en el click
                     marker.Tag = restaurantInfo;
-                    // Opcional: asignar un ToolTip con la leyenda
-                    marker.ToolTipText = $"Nombre: {restaurantInfo.Name}\nApertura: {restaurantInfo.OpeningTime?.ToString(@"hh\:mm") ?? "No disponible"}\nCierre: {restaurantInfo.ClosingTime?.ToString(@"hh\:mm") ?? "No disponible"}";
+                    // Asignar un ToolTip con la leyenda usando las cadenas de horario directamente
+                    marker.ToolTipText = $"Nombre: {restaurantInfo.Name}\nApertura: {restaurantInfo.OpeningTime ?? "No disponible"}\nCierre: {restaurantInfo.ClosingTime ?? "No disponible"}";
 
                     overlayRestaurant.Markers.Add(marker);
 
@@ -207,15 +204,14 @@ namespace NavyBeats_C_
         {
             if (item.Tag is Models.RestaurantInfo info)
             {
-                // Asignar el texto de la leyenda al marker
-                item.ToolTipMode = MarkerTooltipMode.Always; // Siempre mostrar la leyenda tras hacer clic
-                item.ToolTipText = $"📍 {info.Name}\n🕒 Apertura: {info.OpeningTime:hh\\:mm} - Cierre: {info.ClosingTime:hh\\:mm}";
+                // Mostrar siempre el ToolTip al hacer clic
+                item.ToolTipMode = MarkerTooltipMode.Always;
+                item.ToolTipText = $"📍 {info.Name}\n🕒 Apertura: {info.OpeningTime ?? "No disponible"} - Cierre: {info.ClosingTime ?? "No disponible"}";
 
                 // Hacer zoom al marker
                 gMapControl1.Position = item.Position;
                 gMapControl1.Zoom = 15;
 
-                // Refrescar el mapa para que la leyenda aparezca
                 gMapControl1.Refresh();
             }
         }
