@@ -21,7 +21,7 @@ namespace NavyBeats_C_.Models
         }
     
         public int chat_id { get; set; }
-        public Nullable<System.DateTime> creation_date { get; set; }
+        public string creation_date { get; set; }
         public Nullable<int> restaurant_id { get; set; }
         public Nullable<int> musician_id { get; set; }
     

@@ -12,8 +12,8 @@ namespace NavyBeats_C_.Models
         public string Name { get; set; }
         public string Municipality { get; set; }
         public string Email { get; set; }
-        public TimeSpan? OpeningTime { get; set; }
-        public TimeSpan? ClosingTime { get; set; }
+        public string OpeningTime { get; set; }
+        public string ClosingTime { get; set; }
         public double? Latitud { get; set; }  
         public double? Longitud { get; set; } 
     }

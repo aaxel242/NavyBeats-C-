@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NavyBeats_C_.Models
 {
-    class RestaurantsOrm
+    public static class RestaurantsOrm
     {
-        // Método para obtener todos los restaurantes
+        // Obtiene todos los restaurantes (usuarios que son locales)
         public static List<Users> GetRestaurants()
         {
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 var restaurants = (from r in context.Restaurant
                                    join u in context.Users on r.user_id equals u.user_id
@@ -21,10 +19,10 @@ namespace NavyBeats_C_.Models
             }
         }
 
-        // Método para obtener un restaurante por su ID
+        // Obtiene un restaurante por su ID
         public static Users GetRestaurantById(int userId)
         {
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 var restaurant = (from r in context.Restaurant
                                   join u in context.Users on r.user_id equals u.user_id
@@ -34,10 +32,10 @@ namespace NavyBeats_C_.Models
             }
         }
 
-        // Método para obtener la información detallada de los restaurantes
+        // Obtiene la información detallada de los restaurantes
         public static List<RestaurantInfo> GetRestaurantInfoList()
         {
-            using (var context = new NavyBeatsEntities())
+            using (var context = new NaivyBeatsEntities())
             {
                 var query = from r in context.Restaurant
                             join u in context.Users on r.user_id equals u.user_id
@@ -49,8 +47,9 @@ namespace NavyBeats_C_.Models
                                 Name = u.name,
                                 Municipality = mun.name,
                                 Email = u.email,
-                                OpeningTime = r.opening_time.HasValue ? r.opening_time.Value : (TimeSpan?)null,
-                                ClosingTime = r.closing_time.HasValue ? r.closing_time.Value : (TimeSpan?)null,
+                                // Dado que en la BD se almacenan como varchar, se obtienen directamente
+                                OpeningTime = r.opening_time,
+                                ClosingTime = r.closing_time,
                                 Latitud = (double?)u.latitud,
                                 Longitud = (double?)u.longitud
                             };
