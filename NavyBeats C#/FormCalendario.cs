@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsForms;
 using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
@@ -14,6 +11,9 @@ namespace NavyBeats_C_
     {
         private int currentYear;
         private int currentMonth;
+        private List<Models.EventoInfo> eventosDelDia = new List<Models.EventoInfo>();
+        private int eventoActualIndex = 0;
+
 
         public FormCalendario()
         {
@@ -29,22 +29,11 @@ namespace NavyBeats_C_
             panelCalendarioFondo.BackColor = Color.FromArgb(216, 255, 255, 255);
 
             // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            // Aquí se podría llamar a InsertOffers si es necesario para insertar datos de prueba
             //Models.CalendarioOrm.InsertOffers();
-
-
-            // Luego se mostrarán los días y se resaltarán los días con eventos
             MostrarDias(currentYear, currentMonth);
         }
 
@@ -103,19 +92,25 @@ namespace NavyBeats_C_
         private void ResaltarDiasConEventos()
         {
             // Se consultan las ofertas activas de ambas tablas según los criterios definidos
-            using (var context = new dam04Entities())
+            using (var context = new NaivyBeatsEntities())
             {
                 // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
                 var offerDirDates = context.Offer_dir
-                    .Where(o => o.agreement == 1 && o.done == 0)
-                    .Select(o => o.event_date.Value)
+                    .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
+                    .Select(o => o.event_date)
+                    .AsEnumerable() // Cambia a LINQ to Objects para usar DateTime.Parse
+                    .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
+                    .Where(dt => dt != DateTime.MinValue)
                     .ToList();
 
                 // Obtener las fechas de los eventos de Offer_In (music_id_final no es nulo)
                 var offerInDates = context.Offer_In
-                    .Where(o => o.music_id_final != null)
-                    .Select(o => o.event_date.Value)
-                    .ToList();
+                      .Where(o => o.music_id_final != null && o.event_date != null)
+                      .Select(o => o.event_date)
+                      .AsEnumerable()
+                      .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
+                      .Where(dt => dt != DateTime.MinValue)
+                      .ToList();
 
                 // Combina ambas listas y elimina duplicados
                 var eventDates = offerDirDates.Union(offerInDates).ToList();
@@ -128,9 +123,6 @@ namespace NavyBeats_C_
                         // Compara solo la parte de la fecha
                         if (eventDates.Any(ev => ev.Date == btnDate.Date))
                         {
-                            // Resalta la celda (por ejemplo, en color amarillo)
-
-                            //poner color rgb 229, 177,129 en lugar de amarillo
                             btn.BackColor = Color.FromArgb(229, 177, 129);
                         }
                     }
@@ -143,9 +135,18 @@ namespace NavyBeats_C_
             Button btn = sender as Button;
             if (btn != null && btn.Tag is DateTime fecha)
             {
-                MessageBox.Show("Día seleccionado: " + fecha.ToShortDateString());
+                eventosDelDia = Models.CalendarioOrm.ObtenerEventosConPosicion(fecha);
+                eventoActualIndex = 0;
+                MostrarEventoActual();
             }
         }
+
+        private void MostrarEventoActual()
+        {
+            
+        }
+
+
 
         private string ObtenerNombreMes(int mes)
         {
@@ -176,21 +177,27 @@ namespace NavyBeats_C_
             MostrarDias(currentYear, currentMonth);
         }
 
-        private void lblMes_Click(object sender, EventArgs e)
+        private void btnAvanzar_Click_1(object sender, EventArgs e)
         {
-            // Posicionar el DateTimePicker justo debajo del label
-            dateTimePickerCalendario.Location = new Point(lblMes.Left, lblMes.Bottom);
-            dateTimePickerCalendario.Value = new DateTime(currentYear, currentMonth, 1);
-            dateTimePickerCalendario.Visible = true;
-            dateTimePickerCalendario.Focus();
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                eventoActualIndex = (eventoActualIndex + 1) % eventosDelDia.Count;
+                MostrarEventoActual();
+            }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void btnRetroceder_Click_1(object sender, EventArgs e)
         {
-            currentYear = dateTimePickerCalendario.Value.Year;
-            currentMonth = dateTimePickerCalendario.Value.Month;
-            MostrarDias(currentYear, currentMonth);
-            dateTimePickerCalendario.Visible = false;
+            if (eventosDelDia != null && eventosDelDia.Count > 0)
+            {
+                eventoActualIndex = (eventoActualIndex - 1 + eventosDelDia.Count) % eventosDelDia.Count;
+                MostrarEventoActual();
+            }
+        }
+
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

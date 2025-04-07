@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
@@ -13,9 +7,13 @@ namespace NavyBeats_C_
 {
     public partial class FormLocalMusico: Form
     {
-        public FormLocalMusico(bool local)
+        bool local;
+        bool created;
+        public FormLocalMusico(bool _local)
         {
             InitializeComponent();
+
+            local = _local;
 
             if (local)
             {
@@ -59,6 +57,52 @@ namespace NavyBeats_C_
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void customBotonModificar_Click(object sender, EventArgs e)
+        {
+            if (local)
+            {
+                Restaurant user = restauranteSeleccionado();
+                created = false;
+
+                FormInfoLocal modificar = new FormInfoLocal(user, created);
+
+                if (modificar.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
+                }
+            }
+            else
+            {
+                Musician user = musicoSeleccionado();
+                created = false;
+
+                FormInfoMusico modificar = new FormInfoMusico(user, created);
+
+                if (modificar.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceMusicos.DataSource = UsuarioMovilOrm.SelectMusician();
+                }
+            }
+        }
+
+        private Musician musicoSeleccionado()
+        {
+            int rowSelected = dataGridView.CurrentCell.RowIndex;
+            int id = (int)dataGridView.Rows[rowSelected].Cells[0].Value;
+            Musician user = UsuarioMovilOrm.SelectMusicianById(id);
+
+            return user;
+        }
+
+        private Restaurant restauranteSeleccionado()
+        {
+            int rowSelected = dataGridView.CurrentCell.RowIndex;
+            int id = (int)dataGridView.Rows[rowSelected].Cells[0].Value;
+            Restaurant user = UsuarioMovilOrm.SelectRestaurantById(id);
+
+            return user;
         }
     }
 }

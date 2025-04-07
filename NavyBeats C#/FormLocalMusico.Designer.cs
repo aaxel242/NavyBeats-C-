@@ -33,18 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.customBotonModificar = new NavyBeats_C_.Controles.CustomBoton();
+            this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.bindingSourceMusicos = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceLocales = new System.Windows.Forms.BindingSource(this.components);
             this.panel.SuspendLayout();
-            this.customPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
+            this.customPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             // 
             this.panel.AutoSize = true;
             this.panel.BackColor = System.Drawing.Color.White;
-            this.panel.Controls.Add(this.label1);
+            this.panel.Controls.Add(this.customBotonModificar);
             this.panel.Controls.Add(this.customPanel);
             this.panel.Controls.Add(this.pictureBox1);
             this.panel.Controls.Add(this.pboxAtras);
@@ -62,22 +62,50 @@
             this.panel.Size = new System.Drawing.Size(1215, 650);
             this.panel.TabIndex = 2;
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label1.Location = new System.Drawing.Point(396, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 39);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "falta la opcion de editar";
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pboxAtras
+            // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
+            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
+            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
+            this.pboxAtras.Name = "pboxAtras";
+            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
+            this.pboxAtras.TabIndex = 2;
+            this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
+            // 
+            // customBotonModificar
+            // 
+            this.customBotonModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.customBotonModificar.BorderRadius = 20;
+            this.customBotonModificar.FlatAppearance.BorderSize = 0;
+            this.customBotonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customBotonModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customBotonModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.customBotonModificar.Location = new System.Drawing.Point(515, 37);
+            this.customBotonModificar.Name = "customBotonModificar";
+            this.customBotonModificar.Size = new System.Drawing.Size(183, 49);
+            this.customBotonModificar.TabIndex = 11;
+            this.customBotonModificar.Text = "Modificar";
+            this.customBotonModificar.UseVisualStyleBackColor = false;
+            this.customBotonModificar.Click += new System.EventHandler(this.customBotonModificar_Click);
             // 
             // customPanel
             // 
             this.customPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.customPanel.BorderRadius = 20;
             this.customPanel.Controls.Add(this.dataGridView);
-            this.customPanel.Location = new System.Drawing.Point(89, 82);
+            this.customPanel.Location = new System.Drawing.Point(89, 105);
             this.customPanel.Name = "customPanel";
             this.customPanel.Padding = new System.Windows.Forms.Padding(10);
             this.customPanel.Size = new System.Drawing.Size(1004, 518);
@@ -132,28 +160,6 @@
             this.dataGridView.Size = new System.Drawing.Size(984, 498);
             this.dataGridView.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pboxAtras
-            // 
-            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
-            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
-            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
-            this.pboxAtras.Name = "pboxAtras";
-            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
-            this.pboxAtras.TabIndex = 2;
-            this.pboxAtras.TabStop = false;
-            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
-            // 
             // bindingSourceMusicos
             // 
             this.bindingSourceMusicos.DataSource = typeof(NavyBeats_C_.Models.Musico);
@@ -176,11 +182,10 @@
             this.Text = "FormLocalMusico";
             this.Load += new System.EventHandler(this.FormLocalMusico_Load);
             this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
-            this.customPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
+            this.customPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).EndInit();
             this.ResumeLayout(false);
@@ -197,6 +202,6 @@
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.BindingSource bindingSourceMusicos;
         private System.Windows.Forms.BindingSource bindingSourceLocales;
-        private System.Windows.Forms.Label label1;
+        private Controles.CustomBoton customBotonModificar;
     }
 }

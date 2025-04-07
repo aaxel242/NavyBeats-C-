@@ -64,7 +64,7 @@ namespace NavyBeats_C_
         {
             if (local)
             {
-                /*Restaurant user = new Restaurant();
+                Restaurant user = new Restaurant();
                 created = true;
 
                 FormInfoLocal crear = new FormInfoLocal(user, created);
@@ -72,7 +72,7 @@ namespace NavyBeats_C_
                 if (crear.ShowDialog() == DialogResult.OK)
                 {
                     bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
-                }*/
+                }
             }
             else
             {
@@ -92,7 +92,7 @@ namespace NavyBeats_C_
         {
             if (local)
             {
-                /*Restaurant user = usuarioSeleccionado();
+                Restaurant user = restauranteSeleccionado();
                 created = false;
 
                 FormInfoLocal modificar = new FormInfoLocal(user, created);
@@ -100,7 +100,7 @@ namespace NavyBeats_C_
                 if (modificar.ShowDialog() == DialogResult.OK)
                 {
                     bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
-                }*/
+                }
             }
             else
                 {
@@ -160,13 +160,13 @@ namespace NavyBeats_C_
             return user;
         }
 
-        /*private Restaurant restauranteSeleccionado()
+        private Restaurant restauranteSeleccionado()
         {
             int rowSelected = dataGridView.CurrentCell.RowIndex;
-            int id = (int)dataGridView.Rows[rowSelected].Cells["useridDataGridViewTextBoxColumn"].Value;
-            Restaurant user = UsuarioMovilOrm.restaurantSelectById(id);
+            int id = (int)dataGridView.Rows[rowSelected].Cells[0].Value;
+            Restaurant user = UsuarioMovilOrm.SelectRestaurantById(id);
 
             return user;
-        }*/
+        }
     }
 }

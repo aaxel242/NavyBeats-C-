@@ -13,7 +13,7 @@ namespace NavyBeats_C_.Models
         public string name { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public int phone_number { get; set; }
+        public string phone_number { get; set; }
         public string municipality { get; set; }
         public Nullable<decimal> latitud { get; set; }
         public Nullable<decimal> longitud { get; set; }
@@ -25,12 +25,12 @@ namespace NavyBeats_C_.Models
         public string name { get; set; }
         public string email { get; set; }
         public string password { get; set; }
-        public int phone_number { get; set; }
+        public string phone_number { get; set; }
         public string municipality { get; set; }
         public Nullable<decimal> latitud { get; set; }
         public Nullable<decimal> longitud { get; set; }
-        public Nullable<System.TimeSpan> opening_time { get; set; }
-        public Nullable<System.TimeSpan> closing_time { get; set; }
+        public string opening_time { get; set; }
+        public string closing_time { get; set; }
     }
 
     public static class UsuarioMovilOrm
@@ -149,6 +149,18 @@ namespace NavyBeats_C_.Models
             return insert;
         }
 
+        public static bool InsertRestaurant(Restaurant _restaurant)
+        {
+            bool insert;
+
+            Orm.bd.Restaurant.Add(_restaurant);
+            Orm.bd.SaveChanges();
+
+            insert = true;
+
+            return insert;
+        }
+
         public static int UpdateUser(Users user, Users newUser) 
         {
             int id = user.user_id;
@@ -161,7 +173,7 @@ namespace NavyBeats_C_.Models
                 user.password = newUser.password;
                 user.latitud = newUser.latitud;
                 user.longitud = newUser.longitud;
-                user.edition_date = DateTime.Today;
+                user.edition_date = DateTime.Today.ToString();
 
                 Orm.bd.SaveChanges();
             }
@@ -169,7 +181,7 @@ namespace NavyBeats_C_.Models
             return id;
         }
 
-        public static bool UpadateMusician(Musician musician, Musician newMusician1, List<Style> styles)
+        public static bool UpdateMusician(Musician musician, Musician newMusician1, List<Style> styles)
         {
             bool update;
 
@@ -201,13 +213,29 @@ namespace NavyBeats_C_.Models
             return update;
         }
 
+        public static bool UpdateRestaurant(Restaurant restaurant, Restaurant newRestaurant)
+        {
+            bool update;
+
+            if (restaurant != null)
+            {
+                restaurant.opening_time = newRestaurant.opening_time;
+                restaurant.closing_time = newRestaurant.closing_time;
+                Orm.bd.SaveChanges();
+            }
+
+            update = true;
+
+            return update;
+        }
+
         public static bool Delete(Users user)
         {
             bool delete;
 
             if (user != null)
             {
-                user.deleted_at = DateTime.Today;
+                user.deleted_at = DateTime.Today.ToString();
 
                 Orm.bd.SaveChanges();
             }

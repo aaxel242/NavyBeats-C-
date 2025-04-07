@@ -58,7 +58,7 @@ namespace NavyBeats_C_.Models
 
             if (user != null)
             {
-                user.delete_at = DateTime.Today;
+                user.delete_at = DateTime.Today.ToString();
 
                 Orm.bd.SaveChanges();
             }

@@ -65,6 +65,7 @@
             this.pboxAtras.Size = new System.Drawing.Size(61, 59);
             this.pboxAtras.TabIndex = 35;
             this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
             // botonRedondoGuardar
             // 
@@ -80,6 +81,7 @@
             this.botonRedondoGuardar.TabIndex = 34;
             this.botonRedondoGuardar.Text = "Guardar";
             this.botonRedondoGuardar.UseVisualStyleBackColor = false;
+            this.botonRedondoGuardar.Click += new System.EventHandler(this.botonRedondoGuardar_Click);
             // 
             // textBoxConfirmar
             // 

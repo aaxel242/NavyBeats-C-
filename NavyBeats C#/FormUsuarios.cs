@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
@@ -10,13 +9,16 @@ namespace NavyBeats_C_
 {
     public partial class FormUsuarios : Form
     {
+        Super_User userLogin;
         private Timer filterTimer;
         bool created;
 
-        public FormUsuarios()
+        public FormUsuarios(Super_User user)
         {
             InitializeComponent();
             bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+
+            userLogin = user;
 
             filterTimer = new Timer();
             filterTimer.Interval = 100;
@@ -51,11 +53,17 @@ namespace NavyBeats_C_
             Super_User user = usuarioSeleccionado();
             created = false;
 
-            FormInfoUsusario modificar = new FormInfoUsusario(user, created);
-
-            if (modificar.ShowDialog() == DialogResult.OK)
+            if (user == userLogin)
             {
-                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                MessageBox.Show("No puedes modificar tu propio usuario.");
+            }
+            else
+            {
+                FormInfoUsusario modificar = new FormInfoUsusario(user, created);
+                if (modificar.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                }
             }
         }
 
@@ -68,7 +76,14 @@ namespace NavyBeats_C_
             {
                 Super_User user = usuarioSeleccionado();
 
-                delete = UsuarioEscritorioOrm.Delete(user);
+                if (user == userLogin)
+                {
+                    MessageBox.Show("No puedes eliminar tu propio usuario.");
+                }
+                else
+                {
+                    delete = UsuarioEscritorioOrm.Delete(user);
+                }
             }
 
             if (delete)

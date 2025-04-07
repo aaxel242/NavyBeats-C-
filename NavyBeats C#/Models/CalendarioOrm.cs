@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace NavyBeats_C_.Models
@@ -9,99 +10,150 @@ namespace NavyBeats_C_.Models
         /// <summary>
         /// Inserta 5 ofertas de prueba en las tablas Offer_dir y Offer_In.
         /// Se insertan solo si no existen ofertas previas.
-        /// Se utilizan valores válidos para musician_id y restaurant_id consultando la base de datos.
-        /// Requisitos:
-        ///   - En Offer_dir: done = 0 y agreement = 1.
-        ///   - En Offer_In: music_id_final no nulo.
+        /// Se usan valores válidos para musician_id y restaurant_id.
+        /// Los campos publish_date y event_date se almacenan como string.
         /// </summary>
         public static void InsertOffers()
         {
-            using (var context = new dam04Entities())
+            using (var context = new NaivyBeatsEntities())
             {
-                // Evitar duplicar la inserción si ya existen ofertas
                 if (context.Offer_dir.Any() || context.Offer_In.Any())
                     return;
 
-                // Obtener un musician_id válido (ignorando valores 0)
                 int validMusicianId = context.Musician
                     .Where(m => m.user_id > 0)
                     .Select(m => m.user_id)
                     .FirstOrDefault();
                 if (validMusicianId == 0)
-                    throw new Exception("No se encontró un Musician válido en la base de datos.");
+                    throw new Exception("No se encontró un Musician válido.");
 
-                // Obtener un restaurant_id válido (ignorando valores 0)
                 int validRestaurantId = context.Restaurant
                     .Where(r => r.user_id > 0)
                     .Select(r => r.user_id)
                     .FirstOrDefault();
                 if (validRestaurantId == 0)
-                    throw new Exception("No se encontró un Restaurant válido en la base de datos.");
+                    throw new Exception("No se encontró un Restaurant válido.");
 
-                // Insertar 5 ofertas en Offer_dir
                 for (int i = 0; i < 5; i++)
                 {
-                    // Fecha de evento: 1 de abril de 2025 + (3 * i) días para variar los días
                     DateTime fechaEvento = new DateTime(2025, 4, 1).AddDays(i * 3);
-
                     var offerDir = new Offer_dir
                     {
-                        publish_date = DateTime.Now,
+                        publish_date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         salary = 1000 + (i * 100),
-                        event_date = fechaEvento,
-                        agreement = 1,    // tinyint: 1 (evento programado)
-                        done = 0,         // tinyint: 0 (no realizado)
+                        event_date = fechaEvento.ToString("yyyy-MM-dd HH:mm:ss"),
+                        agreement = 1,
+                        done = 0,
                         restaurant_id = validRestaurantId,
                         musician_id = validMusicianId
                     };
-
                     context.Offer_dir.Add(offerDir);
                 }
-         
-                
-                // Insertar 5 ofertas en Offer_In
+
                 for (int i = 0; i < 5; i++)
                 {
-                    // Usar la misma fecha para relacionar la oferta (puedes ajustar si lo prefieres)
                     DateTime fechaEvento = new DateTime(2025, 4, 1).AddDays(i * 3);
-
                     var offerIn = new Offer_In
                     {
-                        publish_date = DateTime.Now,
+                        publish_date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         salary = 1000 + (i * 100),
-                        event_date = fechaEvento,   
-                        music_id_final = validMusicianId, // valor no nulo, indica que hay acuerdo
+                        event_date = fechaEvento.ToString("yyyy-MM-dd HH:mm:ss"),
+                        music_id_final = validMusicianId,
                         restaurant_id = validRestaurantId
                     };
-
                     context.Offer_In.Add(offerIn);
                 }
 
                 context.SaveChanges();
             }
         }
+
         /// <summary>
-        /// Obtiene las fechas de eventos activos a partir de Offer_dir (agreement = 1 y done = 0)
-        /// y de Offer_In (donde music_id_final no es nulo), eliminando duplicados.
+        /// Obtiene una lista de fechas de eventos a partir de Offer_dir y Offer_In.
         /// </summary>
-        /// <returns>Lista de fechas de eventos (DateTime).</returns>
         public static List<DateTime> GetEventDates()
         {
-            using (var context = new dam04Entities())
+            using (var context = new NaivyBeatsEntities())
             {
                 var offerDirDates = context.Offer_dir
                     .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
-                    .Select(o => o.event_date.Value) // Convertir DateTime? a DateTime
+                    .AsEnumerable()
+                    .Select(o => DateTime.Parse(o.event_date))
                     .ToList();
 
                 var offerInDates = context.Offer_In
                     .Where(o => o.music_id_final != null && o.event_date != null)
-                    .Select(o => o.event_date.Value) // Convertir DateTime? a DateTime
+                    .AsEnumerable()
+                    .Select(o => DateTime.Parse(o.event_date))
                     .ToList();
 
-                // Concatenar las fechas de ambas tablas sin eliminar duplicados
                 return offerDirDates.Concat(offerInDates).ToList();
             }
+        }
+
+        /// <summary>
+        /// Obtiene la lista de eventos para una fecha específica.
+        /// Convierte el event_date (string) a DateTime para su comparación y formateo.
+        /// </summary>
+        public static List<EventoInfo> ObtenerEventosConPosicion(DateTime fecha)
+        {
+            DateTime fechaSinHora = fecha.Date;
+            List<EventoInfo> eventos = new List<EventoInfo>();
+
+            using (var context = new NaivyBeatsEntities())
+            {
+                // Eventos de Offer_dir
+                var eventosDir = (from o in context.Offer_dir
+                                  join mu in context.Users on o.musician_id equals mu.user_id
+                                  join ru in context.Users on o.restaurant_id equals ru.user_id
+                                  where o.agreement == 1 && o.done == 0 && o.event_date != null
+                                  select new
+                                  {
+                                      o.event_date,
+                                      o.salary,
+                                      Musico = mu.name,
+                                      Local = ru.name
+                                  })
+                                  .AsEnumerable()
+                                  .Where(o => DateTime.TryParse(o.event_date, out DateTime dt) && dt.Date == fechaSinHora)
+                                  .Select(o => new EventoInfo
+                                  {
+                                      Musico = o.Musico,
+                                      Local = o.Local,
+                                      // Convertir el string a DateTime y luego formatearlo a string para su uso en el form
+                                      Horario = DateTime.Parse(o.event_date).ToString("yyyy-MM-dd HH:mm:ss"),
+                                      Salario = (int)o.salary
+                                  })
+                                  .ToList();
+
+                // Eventos de Offer_In
+                var eventosIn = (from o in context.Offer_In
+                                 join mu in context.Users on o.music_id_final equals mu.user_id
+                                 join ru in context.Users on o.restaurant_id equals ru.user_id
+                                 where o.music_id_final != null && o.event_date != null
+                                 select new
+                                 {
+                                     o.event_date,
+                                     o.salary,
+                                     Musico = mu.name,
+                                     Local = ru.name
+                                 })
+                                 .AsEnumerable()
+                                 .Where(o => DateTime.TryParse(o.event_date, out DateTime dt) && dt.Date == fechaSinHora)
+                                 .Select(o => new EventoInfo
+                                 {
+                                     Musico = o.Musico,
+                                     Local = o.Local,
+                                     Horario = DateTime.Parse(o.event_date).ToString("yyyy-MM-dd HH:mm:ss"),
+                                     Salario = (int)o.salary
+                                 })
+                                 .ToList();
+
+                eventos = eventosDir.Concat(eventosIn)
+                                     .OrderBy(e => DateTime.Parse(e.Horario))
+                                     .ToList();
+            }
+            return eventos;
         }
     }
 }

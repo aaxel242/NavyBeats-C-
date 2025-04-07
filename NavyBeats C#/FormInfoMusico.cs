@@ -37,7 +37,8 @@ namespace NavyBeats_C_
                 textBoxNombre.Texts = _user.name;
                 textBoxTelefono.Texts = _user.phone_number.ToString();
                 textBoxCorreo.Texts = _user.email;
-                customComboBoxMunicipio.Texts = municipio.name;
+                textBoxCorreo.Texts = _user.email;
+                customComboBoxMunicipio.SelectedIndex = municipio.municipality_id - 1;
                 textBoxContra.Texts = _user.password;
                 textBoxConfirmar.Texts = _user.password;
                 textBoxLongitud.Texts = _user.longitud.ToString();
@@ -92,14 +93,14 @@ namespace NavyBeats_C_
                 {
                     Users newUser = new Users();
                     newUser.name = name;
-                    newUser.phone_number = phone;
+                    newUser.phone_number = phone.ToString();
                     newUser.email = email;
                     newUser.municipality_id = municipaly.municipality_id;
                     newUser.password = psswd;
                     newUser.latitud = latitud;
                     newUser.longitud = longitud;
-                    newUser.creation_date = DateTime.Today;
-                    newUser.edition_date = DateTime.Today;
+                    newUser.creation_date = DateTime.Today.ToString();
+                    newUser.edition_date = DateTime.Today.ToString();
 
                     if (_created)
                     {
@@ -136,7 +137,7 @@ namespace NavyBeats_C_
                         }).ToList();
                         bool save = false;
                         
-                        save = UsuarioMovilOrm.UpadateMusician(_musician, newMusician, styles);
+                        save = UsuarioMovilOrm.UpdateMusician(_musician, newMusician, styles);
 
                         if (save)
                         {
