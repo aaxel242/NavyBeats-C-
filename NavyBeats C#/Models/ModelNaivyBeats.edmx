@@ -721,8 +721,8 @@
             <PropertyRef Name="city_id" />
           </Key>
           <Property Name="city_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Municipality" Relationship="Self.fk_municipality_city" FromRole="City" ToRole="Municipality" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Municipality" Relationship="dam04Model.fk_municipality_city" FromRole="City" ToRole="Municipality" />
         </EntityType>
         <EntityType Name="Comment_Restaurant_Publication">
           <Key>
@@ -764,10 +764,10 @@
             <PropertyRef Name="municipality_id" />
           </Key>
           <Property Name="municipality_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="city_id" Type="Int32" />
-          <NavigationProperty Name="City" Relationship="Self.fk_municipality_city" FromRole="Municipality" ToRole="City" />
-          <NavigationProperty Name="Users" Relationship="Self.fk_users_municipality" FromRole="Municipality" ToRole="Users" />
+          <NavigationProperty Name="City" Relationship="dam04Model.fk_municipality_city" FromRole="Municipality" ToRole="City" />
+          <NavigationProperty Name="Users" Relationship="dam04Model.fk_users_municipality" FromRole="Municipality" ToRole="Users" />
         </EntityType>
         <EntityType Name="Musician">
           <Key>
@@ -924,10 +924,10 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="photo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="creation_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="edition_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -992,8 +992,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_municipality_city">
-          <End Role="City" Type="Self.City" Multiplicity="0..1" />
-          <End Role="Municipality" Type="Self.Municipality" Multiplicity="*" />
+          <End Type="dam04Model.City" Role="City" Multiplicity="0..1" />
+          <End Type="dam04Model.Municipality" Role="Municipality" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="City">
               <PropertyRef Name="city_id" />
@@ -1064,8 +1064,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_users_municipality">
-          <End Role="Municipality" Type="Self.Municipality" Multiplicity="0..1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <End Type="dam04Model.Municipality" Role="Municipality" Multiplicity="0..1" />
+          <End Type="dam04Model.Users" Role="Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Municipality">
               <PropertyRef Name="municipality_id" />
@@ -1136,10 +1136,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Style_Musician">
-          <End Role="Musician" Type="Self.Musician" Multiplicity="1">
+          <End Type="dam04Model.Musician" Role="Musician" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="User_Style" Type="Self.User_Style" Multiplicity="*" />
+          <End Type="dam04Model.User_Style" Role="User_Style" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Musician">
               <PropertyRef Name="user_id" />
@@ -1270,8 +1270,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Follow">
-          <End Role="Musician" Type="Self.Musician" Multiplicity="*" />
-          <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="*" />
+          <End Type="dam04Model.Musician" Role="Musician" Multiplicity="*" />
+          <End Type="dam04Model.Restaurant" Role="Restaurant" Multiplicity="*" />
         </Association>
         <EntityContainer Name="dam04Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Chat" EntityType="Self.Chat" />
@@ -1412,58 +1412,58 @@
           <EntitySetMapping Name="Chat">
             <EntityTypeMapping TypeName="dam04Model.Chat">
               <MappingFragment StoreEntitySet="Chat">
-                <ScalarProperty Name="chat_id" ColumnName="chat_id" />
-                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
-                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="musician_id" ColumnName="musician_id" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="chat_id" ColumnName="chat_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="City">
             <EntityTypeMapping TypeName="dam04Model.City">
               <MappingFragment StoreEntitySet="City">
-                <ScalarProperty Name="city_id" ColumnName="city_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Comment_Restaurant_Publication">
             <EntityTypeMapping TypeName="dam04Model.Comment_Restaurant_Publication">
               <MappingFragment StoreEntitySet="Comment_Restaurant_Publication">
-                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
-                <ScalarProperty Name="content" ColumnName="content" />
-                <ScalarProperty Name="publication_id" ColumnName="publication_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="publication_id" ColumnName="publication_id" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Like_Restaurant_Publication">
             <EntityTypeMapping TypeName="dam04Model.Like_Restaurant_Publication">
               <MappingFragment StoreEntitySet="Like_Restaurant_Publication">
-                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
-                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="publication_id" ColumnName="publication_id" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Message">
             <EntityTypeMapping TypeName="dam04Model.Message">
               <MappingFragment StoreEntitySet="Message">
-                <ScalarProperty Name="message_id" ColumnName="message_id" />
-                <ScalarProperty Name="text" ColumnName="text" />
-                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
-                <ScalarProperty Name="reading_date" ColumnName="reading_date" />
-                <ScalarProperty Name="chat_id" ColumnName="chat_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="chat_id" ColumnName="chat_id" />
+                <ScalarProperty Name="reading_date" ColumnName="reading_date" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Municipality">
             <EntityTypeMapping TypeName="dam04Model.Municipality">
               <MappingFragment StoreEntitySet="Municipality">
-                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1477,63 +1477,64 @@
           <EntitySetMapping Name="Offer_dir">
             <EntityTypeMapping TypeName="dam04Model.Offer_dir">
               <MappingFragment StoreEntitySet="Offer_dir">
-                <ScalarProperty Name="offer_id" ColumnName="offer_id" />
-                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
-                <ScalarProperty Name="salary" ColumnName="salary" />
-                <ScalarProperty Name="event_date" ColumnName="event_date" />
-                <ScalarProperty Name="agreement" ColumnName="agreement" />
-                <ScalarProperty Name="done" ColumnName="done" />
-                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="musician_id" ColumnName="musician_id" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="done" ColumnName="done" />
+                <ScalarProperty Name="agreement" ColumnName="agreement" />
+                <ScalarProperty Name="event_date" ColumnName="event_date" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="offer_id" ColumnName="offer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Offer_In">
             <EntityTypeMapping TypeName="dam04Model.Offer_In">
               <MappingFragment StoreEntitySet="Offer_In">
-                <ScalarProperty Name="offer_in_id" ColumnName="offer_in_id" />
-                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
-                <ScalarProperty Name="salary" ColumnName="salary" />
-                <ScalarProperty Name="event_date" ColumnName="event_date" />
-                <ScalarProperty Name="music_id_final" ColumnName="music_id_final" />
-                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="music_id_final" ColumnName="music_id_final" />
+                <ScalarProperty Name="event_date" ColumnName="event_date" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="offer_in_id" ColumnName="offer_in_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Offer_in_Styles">
             <EntityTypeMapping TypeName="dam04Model.Offer_in_Styles">
               <MappingFragment StoreEntitySet="Offer_in_Styles">
-                <ScalarProperty Name="style_id" ColumnName="style_id" />
-                <ScalarProperty Name="id_offer_in" ColumnName="id_offer_in" />
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="id_offer_in" ColumnName="id_offer_in" />
+                <ScalarProperty Name="style_id" ColumnName="style_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Publication">
             <EntityTypeMapping TypeName="dam04Model.Publication">
               <MappingFragment StoreEntitySet="Publication">
-                <ScalarProperty Name="publication_id" ColumnName="publication_id" />
-                <ScalarProperty Name="publication_date" ColumnName="publication_date" />
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="multimedia_content" ColumnName="multimedia_content" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="multimedia_content" ColumnName="multimedia_content" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="publication_date" ColumnName="publication_date" />
+                <ScalarProperty Name="publication_id" ColumnName="publication_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Restaurant">
             <EntityTypeMapping TypeName="dam04Model.Restaurant">
               <MappingFragment StoreEntitySet="Restaurant">
-                <ScalarProperty Name="opening_time" ColumnName="opening_time" />
-                <ScalarProperty Name="closing_time" ColumnName="closing_time" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="closing_time" ColumnName="closing_time" />
+                <ScalarProperty Name="opening_time" ColumnName="opening_time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Style">
             <EntityTypeMapping TypeName="dam04Model.Style">
               <MappingFragment StoreEntitySet="Style">
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="style_id" ColumnName="style_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
 				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
@@ -1543,12 +1544,12 @@
           <EntitySetMapping Name="Super_User">
             <EntityTypeMapping TypeName="dam04Model.Super_User">
               <MappingFragment StoreEntitySet="Super_User">
-                <ScalarProperty Name="user_id_admin" ColumnName="user_id_admin" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="delete_at" ColumnName="delete_at" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="user_id_admin" ColumnName="user_id_admin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1572,6 +1573,7 @@
           <EntitySetMapping Name="time">
             <EntityTypeMapping TypeName="dam04Model.time">
               <MappingFragment StoreEntitySet="time">
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
 				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
@@ -1581,56 +1583,53 @@
           <EntitySetMapping Name="User_Style">
             <EntityTypeMapping TypeName="dam04Model.User_Style">
               <MappingFragment StoreEntitySet="User_Style">
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="style_id" ColumnName="style_id" />
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="style_id" ColumnName="style_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Time">
             <EntityTypeMapping TypeName="dam04Model.User_Time">
               <MappingFragment StoreEntitySet="User_Time">
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="time_id" ColumnName="time_id" />
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="time_id" ColumnName="time_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="dam04Model.Users">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="photo" ColumnName="photo" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
-                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
-                <ScalarProperty Name="edition_date" ColumnName="edition_date" />
-                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
-                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
-                <ScalarProperty Name="latitud" ColumnName="latitud" />
-                <ScalarProperty Name="longitud" ColumnName="longitud" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+                <ScalarProperty Name="latitud" ColumnName="latitud" />
+                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
+                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+                <ScalarProperty Name="edition_date" ColumnName="edition_date" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Valorar">
             <EntityTypeMapping TypeName="dam04Model.Valorar">
               <MappingFragment StoreEntitySet="Valorar">
-                <ScalarProperty Name="puntuation" ColumnName="puntuation" />
-                <ScalarProperty Name="comment" ColumnName="comment" />
-                <ScalarProperty Name="appraiser_id" ColumnName="appraiser_id" />
                 <ScalarProperty Name="valued_id" ColumnName="valued_id" />
+                <ScalarProperty Name="appraiser_id" ColumnName="appraiser_id" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="puntuation" ColumnName="puntuation" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <AssociationSetMapping Name="Follow" TypeName="dam04Model.Follow" StoreEntitySet="Follow">
             <EndProperty Name="Musician">
               <ScalarProperty Name="user_id" ColumnName="musician_id" />
-            </EndProperty>
-            <EndProperty Name="Restaurant">
-              <ScalarProperty Name="user_id" ColumnName="restaurant_id" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>
