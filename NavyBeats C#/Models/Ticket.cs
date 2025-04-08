@@ -19,12 +19,12 @@ namespace NavyBeats_C_.Models
         public string type { get; set; }
         public string creation_date { get; set; }
         public string closing_date { get; set; }
-        public Nullable<int> user_id { get; set; }
-        public Nullable<int> user_id_admin { get; set; }
         public string subject { get; set; }
         public bool status { get; set; }
+        public int created_by_super_user_id { get; set; }
+        public Nullable<int> closed_by_super_user_id { get; set; }
     
         public virtual Super_User Super_User { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Super_User Super_User1 { get; set; }
     }
 }

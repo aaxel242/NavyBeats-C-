@@ -107,38 +107,48 @@ namespace NavyBeats_C_
 
         private void btnEnviarForm_Click(object sender, EventArgs e)
         {
-            // Determine query type based on the selected RadioButton
-            string queryType = radioButtonTipo.Checked ? "Inquiry" : (radioButtonTipo2.Checked ? "Issue" : "");
-            string subject = txtBoxAsunto.Text.Trim();
-            string description = txtBoxDescripcion.Text.Trim();
-
-            // Validate required fields
-            if (string.IsNullOrEmpty(queryType) || string.IsNullOrEmpty(subject))
+            try
             {
-                MessageBox.Show("Please fill in all required fields.");
-                return;
+                // Determine query type based on the selected RadioButton
+                string queryType = radioButtonTipo.Checked ? "Consulta" : (radioButtonTipo2.Checked ? "Incidencia" : "");
+                string subject = txtBoxAsunto.Text.Trim();
+                string description = txtBoxDescripcion.Text.Trim();
+
+                // Validate required fields
+                if (string.IsNullOrEmpty(queryType) || string.IsNullOrEmpty(subject))
+                {
+                    MessageBox.Show("Completa tots els camps.");
+                }
+
+                // Map the form data to a TicketInfo object.
+                TicketInfo ticket = new TicketInfo
+                {
+                    QueryType = queryType,
+                    Subject = subject,
+                    Description = "Subject: " + subject + "\nDescription: " + description,
+                    CreatedBySuperUserId = loggedUserId, // Usamos el ID del Super_User logueado
+                    Status = false,
+                    CreationDate = DateTime.Now
+                };
+
+                // Insert the ticket into the database using TicketOrm
+                bool inserted = TicketOrm.InsertTicket(ticket);
+                if (inserted)
+                {
+                    MessageBox.Show("Ticket enviat correctament.");
+                    // Clear the fields after sending the ticket
+                    txtBoxAsunto.Text = "";
+                    txtBoxDescripcion.Text = "";
+                }   
+                else
+                {
+                    MessageBox.Show("Error al enviar ticket.");
+                }
             }
-
-            // Map the form data to a TicketInfo object.
-            TicketInfo ticket = new TicketInfo
+            catch (Exception ex)
             {
-                QueryType = queryType,
-                Subject = subject, // Aseguramos que se asigne el subject
-                Description = "Subject: " + subject + "\nDescription: " + description,
-                UserId = loggedUserId,
-                Status = false,
-                CreationDate = DateTime.Now,
-                ClosingDate = null
-            };
-
-            // Insert the ticket into the database using TicketOrm
-            bool inserted = TicketOrm.InsertTicket(ticket);
-            if (inserted)
-            {
-                MessageBox.Show("Ticket sent successfully.");
-                // Clear the fields after sending the ticket
-                txtBoxAsunto.Text = "";
-                txtBoxDescripcion.Text = "";
+                MessageBox.Show("Error inserting ticket: " + ex.Message +
+                                "\nInner Exception: " + ex.InnerException?.Message);
             }
         }
     }
