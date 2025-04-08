@@ -96,7 +96,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDatos\Bd.cs" />
     <Compile Include="Controles\CustomBoton.cs">
       <SubType>Component</SubType>
     </Compile>

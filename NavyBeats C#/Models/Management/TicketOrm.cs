@@ -14,21 +14,17 @@ namespace NavyBeats_C_.Models
         {
             try
             {
-                using (var context = new NaivyBeatsEntities())
+                using (var context = new dam04Entities1())
                 {
-                    // Convertir las fechas a string con el formato adecuado, ya que en la BD son cadenas.
                     var ticket = new Ticket
                     {
-                        type = ticketInfo.QueryType,              // Mapea 'QueryType' a 'type'
-                        subject = ticketInfo.Subject,             // Mapea 'Subject' a 'subject'
-                        description = ticketInfo.Description,     // Mapea 'Description' a 'description'
-                        user_id = ticketInfo.UserId,              // Mapea 'UserId' a 'user_id'
-                        status = ticketInfo.Status,               // Mapea 'Status' a 'status'
+                        type = ticketInfo.QueryType,
+                        subject = ticketInfo.Subject,
+                        description = ticketInfo.Description,
+                        created_by_super_user_id = ticketInfo.CreatedBySuperUserId, // Campo actualizado
+                        status = ticketInfo.Status,
                         creation_date = ticketInfo.CreationDate.ToString("yyyy-MM-dd HH:mm:ss"),
-                        closing_date = ticketInfo.ClosingDate.HasValue
-                                        ? ticketInfo.ClosingDate.Value.ToString("yyyy-MM-dd HH:mm:ss")
-                                        : null,
-                        // Se asigna el id del superusuario en MarkTicketAsResolved, si es necesario.
+                        closing_date = ticketInfo.ClosingDate?.ToString("yyyy-MM-dd HH:mm:ss")
                     };
 
                     context.Ticket.Add(ticket);
@@ -49,11 +45,11 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static List<TicketInfo> GetTicketsPendientes()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities1())
             {
-                // Obtener datos sin conversión a DateTime
                 var query = (from t in context.Ticket
-                             join u in context.Super_User on t.user_id equals u.user_id_admin
+                             join su in context.Super_User
+                                 on t.created_by_super_user_id equals su.user_id_admin // Join con Super_User
                              where t.status == false
                              orderby t.creation_date descending
                              select new
@@ -62,20 +58,20 @@ namespace NavyBeats_C_.Models
                                  QueryType = t.type,
                                  Subject = t.subject,
                                  Description = t.description,
-                                 UserId = (int)t.user_id,
+                                 CreatedBySuperUserId = t.created_by_super_user_id,
                                  Status = t.status,
                                  CreationDateStr = t.creation_date,
                                  ClosingDateStr = t.closing_date,
-                                 Username = u.name
+                                 Username = su.name // Nombre del Super_User
                              });
-                // Conversión en memoria
+
                 var tickets = query.AsEnumerable().Select(x => new TicketInfo
                 {
                     TicketId = x.TicketId,
                     QueryType = x.QueryType,
                     Subject = x.Subject,
                     Description = x.Description,
-                    UserId = x.UserId,
+                    CreatedBySuperUserId = x.CreatedBySuperUserId, // Mapeo correcto
                     Status = x.Status,
                     CreationDate = DateTime.Parse(x.CreationDateStr),
                     ClosingDate = x.ClosingDateStr != null ? (DateTime?)DateTime.Parse(x.ClosingDateStr) : null,
@@ -85,16 +81,17 @@ namespace NavyBeats_C_.Models
                 return tickets;
             }
         }
-
         /// <summary>
         /// Obtiene todos los tickets registrados.
         /// Se realiza la conversión de las fechas en memoria.
         /// </summary>
         public static List<TicketInfo> GetAllTickets()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities1())
             {
                 var query = (from t in context.Ticket
+                             join su in context.Super_User
+                                 on t.created_by_super_user_id equals su.user_id_admin 
                              orderby t.creation_date descending
                              select new
                              {
@@ -102,21 +99,26 @@ namespace NavyBeats_C_.Models
                                  QueryType = t.type,
                                  Subject = t.subject,
                                  Description = t.description,
-                                 UserId = (int)t.user_id,
+                                 CreatedBySuperUserId = t.created_by_super_user_id,
                                  Status = t.status,
                                  CreationDateStr = t.creation_date,
-                                 ClosingDateStr = t.closing_date
+                                 ClosingDateStr = t.closing_date,
+                                 Username = su.name, 
+                                 ClosedBySuperUserId = t.closed_by_super_user_id 
                              });
+
                 var tickets = query.AsEnumerable().Select(x => new TicketInfo
                 {
                     TicketId = x.TicketId,
                     QueryType = x.QueryType,
                     Subject = x.Subject,
                     Description = x.Description,
-                    UserId = x.UserId,
+                    CreatedBySuperUserId = x.CreatedBySuperUserId, // Mapeo correcto
                     Status = x.Status,
                     CreationDate = DateTime.Parse(x.CreationDateStr),
-                    ClosingDate = x.ClosingDateStr != null ? (DateTime?)DateTime.Parse(x.ClosingDateStr) : null
+                    ClosingDate = x.ClosingDateStr != null ? (DateTime?)DateTime.Parse(x.ClosingDateStr) : null,
+                    Username = x.Username,
+                    ClosedBySuperUserId = x.ClosedBySuperUserId // Si tu modelo lo requiere
                 }).ToList();
 
                 return tickets;
@@ -130,15 +132,14 @@ namespace NavyBeats_C_.Models
         {
             try
             {
-                using (var context = new NaivyBeatsEntities())
+                using (var context = new dam04Entities1())
                 {
                     var ticket = context.Ticket.FirstOrDefault(t => t.ticket_id == ticketId);
                     if (ticket != null)
                     {
-                        ticket.status = true; // Marcar como resuelto
-                        // Convertir la fecha actual a string
+                        ticket.status = true;
                         ticket.closing_date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                        ticket.user_id_admin = adminUserId; // Asignar el id del superusuario que resuelve el ticket
+                        ticket.closed_by_super_user_id = adminUserId; // Campo actualizado
                         context.SaveChanges();
                         return true;
                     }

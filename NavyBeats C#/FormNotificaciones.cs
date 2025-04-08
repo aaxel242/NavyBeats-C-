@@ -66,13 +66,14 @@ namespace NavyBeats_C_
                     Size = new Size(flowLayoutPanelTickets.Width - 20, 100),
                     Padding = new Padding(5),
                     Margin = new Padding(5),
-                    BackColor = Color.White,
+                    BackColor = Color.FromArgb(8, 61, 119),
                     BorderStyle = BorderStyle.FixedSingle
                 };
 
                 Label lblTicketInfo = new Label
                 {
-                    Text = $"User: {ticket.Username} | Type: {ticket.QueryType} | Subject: {ticket.Subject} | Date: {ticket.CreationDate:dd/MM/yyyy HH:mm}",
+                    Text = $"User: {ticket.Username} | Tipo: {ticket.QueryType} | Date: {ticket.CreationDate:dd/MM/yyyy HH:mm} \n | Asunto: {ticket.Subject} | {ticket.Description}" +
+                    $"",
                     AutoSize = true,
                     Font = new Font("Arial", 10, FontStyle.Regular),
                     ForeColor = Color.Black,

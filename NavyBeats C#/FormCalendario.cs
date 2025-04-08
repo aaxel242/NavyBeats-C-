@@ -129,7 +129,7 @@ namespace NavyBeats_C_
         private void ResaltarDiasConEventos()
         {
             // Se consultan las ofertas activas de ambas tablas según los criterios definidos
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities1())
             {
                 // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
                 var offerDirDates = context.Offer_dir
