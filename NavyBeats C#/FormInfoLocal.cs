@@ -80,7 +80,7 @@ namespace NavyBeats_C_
                     newUser.phone_number = phone.ToString();
                     newUser.email = email;
                     newUser.municipality_id = municipaly.municipality_id;
-                    newUser.password = psswd;
+                    newUser.password = Encrypt.Encriptar(psswd);
                     newUser.latitud = latitud;
                     newUser.longitud = longitud;
                     newUser.creation_date = DateTime.Today.ToString();

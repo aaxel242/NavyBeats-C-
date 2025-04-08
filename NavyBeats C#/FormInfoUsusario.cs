@@ -48,14 +48,13 @@ namespace NavyBeats_C_
                     Super_User newUser = new Super_User();
                     newUser.name = name;
                     newUser.email = email;
-                    newUser.password = psswd;
+                    newUser.password = Encrypt.Encriptar(psswd);
                     newUser.role = role;
 
                     bool save = false;
 
                     if (_created)
                     {
-
                         save = UsuarioEscritorioOrm.Insert(newUser);
 
                         if (save)

@@ -227,6 +227,7 @@
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Encrypt.cs" />
     <Compile Include="Models\EstilosOrm.cs" />
     <Compile Include="Models\EventoInfo.cs" />
     <Compile Include="Models\Like_Restaurant_Publication.cs">
@@ -305,6 +306,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Idiomas.ca.Designer.cs">
+      <DependentUpon>Idiomas.ca.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Idiomas.en.Designer.cs">
+      <DependentUpon>Idiomas.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Idiomas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Idiomas.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controles\CustomComboBox.resx">
       <DependentUpon>CustomComboBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +390,18 @@
     </Compile>
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Idiomas.ca.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Idiomas.ca.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Idiomas.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Idiomas.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Idiomas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Idiomas.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="Models\ModelNaivyBeats.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
