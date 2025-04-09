@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="697e73aa40ed41af871c8e9f87196681" Name="Diagram1" ZoomLevel="34">
+        <EntityTypeShape EntityType="dam04Model.Chat" Width="1.5" PointX="9.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.City" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Comment_Restaurant_Publication" Width="1.5" PointX="12" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Like_Restaurant_Publication" Width="1.5" PointX="12" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Message" Width="1.5" PointX="7.5" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Municipality" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Musician" Width="1.5" PointX="7.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Offer_dir" Width="1.5" PointX="12.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Offer_In" Width="1.5" PointX="9.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Offer_in_Styles" Width="1.5" PointX="15" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Publication" Width="1.5" PointX="9.75" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Restaurant" Width="1.5" PointX="12.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Style" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Super_User" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Ticket" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.time" Width="1.5" PointX="7.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.User_Style" Width="1.5" PointX="9.75" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.User_Time" Width="1.5" PointX="9.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Users" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dam04Model.Valorar" Width="1.5" PointX="7.5" PointY="22.875" IsExpanded="true" />
+        <AssociationConnector Association="dam04Model.FK__Chat__musician_i__4E1E9780" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Chat__restaurant__4F12BBB9" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Message__chat_id__55BFB948" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.fk_municipality_city" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Comment_R__publi__5006DFF2" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Comment_R__user___50FB042B" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Like_Rest__publi__53D770D6" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Like_Rest__resta__54CB950F" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Message__user_id__56B3DD81" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.fk_users_municipality" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Musician__user_i__589C25F3" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Offer_dir__music__59904A2C" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Offer_In__music___5B78929E" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Publicati__user___5F492382" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__User_Time__user___6319B466" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK_User_Style_Musician" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Offer_dir__resta__5A846E65" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Offer_in___id_of__5D60DB10" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Offer_In__restau__5C6CB6D7" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Offer_in___style__5E54FF49" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Restauran__user___603D47BB" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK_Ticket_Closed_SuperUser" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK_Ticket_Created_SuperUser" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__User_Time__time___6225902D" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Valorar__apprais__6501FCD8" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.FK__Valorar__valued___65F62111" ManuallyRouted="false" />
+        <AssociationConnector Association="dam04Model.Follow" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

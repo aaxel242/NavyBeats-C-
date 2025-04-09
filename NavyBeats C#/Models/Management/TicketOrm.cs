@@ -14,7 +14,7 @@ namespace NavyBeats_C_.Models
         {
             try
             {
-                using (var context = new dam04Entities1())
+                using (var context = new dam04Entities())
                 {
                     var ticket = new Ticket
                     {
@@ -45,7 +45,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static List<TicketInfo> GetTicketsPendientes()
         {
-            using (var context = new dam04Entities1())
+            using (var context = new dam04Entities())
             {
                 var query = (from t in context.Ticket
                              join su in context.Super_User
@@ -87,7 +87,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static List<TicketInfo> GetAllTickets()
         {
-            using (var context = new dam04Entities1())
+            using (var context = new dam04Entities())
             {
                 var query = (from t in context.Ticket
                              join su in context.Super_User
@@ -132,7 +132,7 @@ namespace NavyBeats_C_.Models
         {
             try
             {
-                using (var context = new dam04Entities1())
+                using (var context = new dam04Entities())
                 {
                     var ticket = context.Ticket.FirstOrDefault(t => t.ticket_id == ticketId);
                     if (ticket != null)
