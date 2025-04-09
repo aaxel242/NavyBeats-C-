@@ -125,7 +125,7 @@ namespace NavyBeats_C_
                 {
                     QueryType = queryType,
                     Subject = subject,
-                    Description = "Subject: " + subject + "\nDescription: " + description,
+                    Description = description,
                     CreatedBySuperUserId = loggedUserId, // Usamos el ID del Super_User logueado
                     Status = false,
                     CreationDate = DateTime.Now
