@@ -104,22 +104,41 @@ namespace NavyBeats_C_
             lblMes.Text = $"{ObtenerNombreMes(month)} {year}";
         }
 
-        private void ResaltarDiasConEvento(List<Offer_dir> ofertas)
+        private void ResaltarDiasConEventos()
         {
-            // Recorre cada oferta y resalta el día correspondiente en tu panelDias.
-            foreach (var oferta in ofertas)
+            // Se consultan las ofertas activas de ambas tablas según los criterios definidos
+            using (var context = new dam04Entities())
             {
-                DateTime fechaEvento = oferta.event_date;
+                // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
+                var offerDirDates = context.Offer_dir
+                    .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
+                    .Select(o => o.event_date)
+                    .AsEnumerable() // Cambia a LINQ to Objects para usar DateTime.Parse
+                    .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
+                    .Where(dt => dt != DateTime.MinValue)
+                    .ToList();
 
-                // Busca el botón correspondiente a ese día en el TableLayoutPanel 'panelDias'
-                foreach (Control control in panelDias.Controls)
+                // Obtener las fechas de los eventos de Offer_In (music_id_final no es nulo)
+                var offerInDates = context.Offer_In
+                      .Where(o => o.music_id_final != null && o.event_date != null)
+                      .Select(o => o.event_date)
+                      .AsEnumerable()
+                      .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
+                      .Where(dt => dt != DateTime.MinValue)
+                      .ToList();
+
+                // Combina ambas listas y elimina duplicados
+                var eventDates = offerDirDates.Union(offerInDates).ToList();
+
+                // Recorrer los botones en panelDias y resaltar aquellos cuyo Tag (fecha) coincide con algún evento
+                foreach (Control ctrl in panelDias.Controls)
                 {
-                    if (control is Button btn && btn.Tag is DateTime fechaBoton)
+                    if (ctrl is Button btn && btn.Tag is DateTime btnDate)
                     {
-                        // Si el día coincide, cambia el color (ejemplo: Amarillo)
-                        if (fechaBoton.Date == fechaEvento.Date)
+                        // Compara solo la parte de la fecha
+                        if (eventDates.Any(ev => ev.Date == btnDate.Date))
                         {
-                            btn.BackColor = Color.Yellow;
+                            btn.BackColor = Color.FromArgb(229, 177, 129);
                         }
                     }
                 }

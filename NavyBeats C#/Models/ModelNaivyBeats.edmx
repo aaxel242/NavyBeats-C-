@@ -1645,6 +1645,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="User_Style">
+            <EntityTypeMapping TypeName="dam04Model.User_Style">
+              <MappingFragment StoreEntitySet="User_Style">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="style_id" ColumnName="style_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Time">
+            <EntityTypeMapping TypeName="dam04Model.User_Time">
+              <MappingFragment StoreEntitySet="User_Time">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="time_id" ColumnName="time_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="dam04Model.Users">
               <MappingFragment StoreEntitySet="Users">
