@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 using NavyBeats_C_.Models;
 
@@ -10,13 +9,21 @@ namespace NavyBeats_C_
 {
     public partial class FormUsuarios : Form
     {
+        Super_User userLogin;
         private Timer filterTimer;
         bool created;
 
-        public FormUsuarios()
+        public FormUsuarios(Super_User user)
         {
             InitializeComponent();
+
+            customBotonCrear.Text = Resources.Strings.btnCrear;
+            customBotonModificar.Text = Resources.Strings.btnModificar;
+            customBotonEliminar.Text = Resources.Strings.btnEliminar;
+
             bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+
+            userLogin = user;
 
             filterTimer = new Timer();
             filterTimer.Interval = 100;
@@ -35,7 +42,7 @@ namespace NavyBeats_C_
 
         private void botonRedondoCrear_Click(object sender, EventArgs e)
         {
-            Super_User user = usuarioSeleccionado();
+            Super_User user = new Super_User();
             created = true;
 
             FormInfoUsusario crear = new FormInfoUsusario(user, created);
@@ -51,24 +58,37 @@ namespace NavyBeats_C_
             Super_User user = usuarioSeleccionado();
             created = false;
 
-            FormInfoUsusario modificar = new FormInfoUsusario(user, created);
-
-            if (modificar.ShowDialog() == DialogResult.OK)
+            if (user == userLogin)
             {
-                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                MessageBox.Show(Resources.Strings.msgModificar);
+            }
+            else
+            {
+                FormInfoUsusario modificar = new FormInfoUsusario(user, created);
+                if (modificar.ShowDialog() == DialogResult.OK)
+                {
+                    bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                }
             }
         }
 
         private void botonRedondoEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Estas seguro de eliminar al usuario?", "Confirmar", MessageBoxButtons.YesNo);
+            DialogResult confirm = MessageBox.Show(Resources.Strings.msgEliminar, Resources.Strings.msgConfirmar, MessageBoxButtons.YesNo);
             bool delete = false;
 
             if (confirm == DialogResult.Yes)
             {
                 Super_User user = usuarioSeleccionado();
 
-                delete = UsuarioEscritorioOrm.Delete(user);
+                if (user == userLogin)
+                {
+                    MessageBox.Show(Resources.Strings.msgAutoEliminar);
+                }
+                else
+                {
+                    delete = UsuarioEscritorioOrm.Delete(user);
+                }
             }
 
             if (delete)

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsForms;
 using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
@@ -22,6 +19,14 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            lblLunes.Text = Resources.Strings.lblLunes;
+            lblMartes.Text = Resources.Strings.lblMartes;
+            lblMiercoles.Text = Resources.Strings.lblMiercoles;
+            lblJueves.Text = Resources.Strings.lblJueves;
+            lblViernes.Text = Resources.Strings.lblViernes;
+            lblSabado.Text = Resources.Strings.lblSabado;
+            lblDomingo.Text = Resources.Strings.lblDomingo;
+
             currentYear = DateTime.Now.Year;
             currentMonth = DateTime.Now.Month;
             MostrarDias(currentYear, currentMonth);
@@ -30,18 +35,6 @@ namespace NavyBeats_C_
         private void FormCalendario_Load(object sender, EventArgs e)
         {
             panelCalendarioFondo.BackColor = Color.FromArgb(216, 255, 255, 255);
-
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
 
             btnRetroceder.BackgroundImage = Properties.Resources.imgFlechaRetroceder;
             btnRetroceder.BackgroundImageLayout = ImageLayout.Stretch;
@@ -145,48 +138,6 @@ namespace NavyBeats_C_
             }
         }
 
-        private void ResaltarDiasConEventos()
-        {
-            // Se consultan las ofertas activas de ambas tablas según los criterios definidos
-            using (var context = new dam04Entities())
-            {
-                // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
-                var offerDirDates = context.Offer_dir
-                    .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
-                    .Select(o => o.event_date)
-                    .AsEnumerable() // Cambia a LINQ to Objects para usar DateTime.Parse
-                    .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
-                    .Where(dt => dt != DateTime.MinValue)
-                    .ToList();
-
-                // Obtener las fechas de los eventos de Offer_In (music_id_final no es nulo)
-                var offerInDates = context.Offer_In
-                      .Where(o => o.music_id_final != null && o.event_date != null)
-                      .Select(o => o.event_date)
-                      .AsEnumerable()
-                      .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
-                      .Where(dt => dt != DateTime.MinValue)
-                      .ToList();
-
-                // Combina ambas listas y elimina duplicados
-                var eventDates = offerDirDates.Union(offerInDates).ToList();
-
-                // Recorrer los botones en panelDias y resaltar aquellos cuyo Tag (fecha) coincide con algún evento
-                foreach (Control ctrl in panelDias.Controls)
-                {
-                    if (ctrl is Button btn && btn.Tag is DateTime btnDate)
-                    {
-                        // Compara solo la parte de la fecha
-                        if (eventDates.Any(ev => ev.Date == btnDate.Date))
-                        {
-                            btn.BackColor = Color.FromArgb(229, 177, 129);
-                        }
-                    }
-                }
-            }
-        }
-
-
         private void BtnDia_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -199,14 +150,14 @@ namespace NavyBeats_C_
         }
 
         private void MostrarEventoActual()
-        {
+        {            
             if (eventosDelDia != null && eventosDelDia.Count > 0)
             {
                 btnAvanzar.Visible = true;
                 btnRetroceder.Visible = true;
                 lblNumEventos.Visible = true;
                 lblMusico.Visible = true;
-                lblMusico.Text = "Músico";
+                lblMusico.Text = Resources.Strings.lblMusico;
                 lblLocal.Visible = true;
                 lblHorario.Visible = true;
                 lblPrecio.Visible = true;
@@ -236,7 +187,7 @@ namespace NavyBeats_C_
                 btnRetroceder.Visible = false;
                 lblNumEventos.Visible = false;
                 lblMusico.Visible = true;
-                lblMusico.Text = "Sin Eventos";
+                lblMusico.Text = Resources.Strings.lblSinEvento;
                 lblLocal.Visible = false;
                 lblHorario.Visible = false;
                 lblPrecio.Visible = false;
@@ -251,8 +202,9 @@ namespace NavyBeats_C_
 
         private string ObtenerNombreMes(int mes)
         {
-            string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                               "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            string[] meses = { Resources.Strings.lblEnero, Resources.Strings.lblFebrero, Resources.Strings.lblMarzo, Resources.Strings.lblAbril,
+                Resources.Strings.lblMayo, Resources.Strings.lblJunio, Resources.Strings.lblJulio, Resources.Strings.lblAgosto,
+                Resources.Strings.lblSeptiembre, Resources.Strings.lblOctubre, Resources.Strings.lblNoviembre, Resources.Strings.lblDiciembre };
             return meses[mes - 1];
         }
 

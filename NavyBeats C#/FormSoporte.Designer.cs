@@ -40,7 +40,7 @@
             this.radioButtonTipo = new System.Windows.Forms.RadioButton();
             this.lblConsulta = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.lblFornSoporteTit = new System.Windows.Forms.Label();
+            this.lblFormSoporteTit = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
@@ -89,7 +89,7 @@
             this.panelFormulario.Controls.Add(this.radioButtonTipo);
             this.panelFormulario.Controls.Add(this.lblConsulta);
             this.panelFormulario.Controls.Add(this.lblTipo);
-            this.panelFormulario.Controls.Add(this.lblFornSoporteTit);
+            this.panelFormulario.Controls.Add(this.lblFormSoporteTit);
             this.panelFormulario.Controls.Add(this.pictureBox2);
             this.panelFormulario.Location = new System.Drawing.Point(324, 42);
             this.panelFormulario.Name = "panelFormulario";
@@ -196,16 +196,16 @@
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "Tipo:";
             // 
-            // lblFornSoporteTit
+            // lblFormSoporteTit
             // 
-            this.lblFornSoporteTit.AutoSize = true;
-            this.lblFornSoporteTit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFornSoporteTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblFornSoporteTit.Location = new System.Drawing.Point(134, 18);
-            this.lblFornSoporteTit.Name = "lblFornSoporteTit";
-            this.lblFornSoporteTit.Size = new System.Drawing.Size(299, 31);
-            this.lblFornSoporteTit.TabIndex = 6;
-            this.lblFornSoporteTit.Text = "Formulario de soporte";
+            this.lblFormSoporteTit.AutoSize = true;
+            this.lblFormSoporteTit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormSoporteTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblFormSoporteTit.Location = new System.Drawing.Point(134, 18);
+            this.lblFormSoporteTit.Name = "lblFormSoporteTit";
+            this.lblFormSoporteTit.Size = new System.Drawing.Size(299, 31);
+            this.lblFormSoporteTit.TabIndex = 6;
+            this.lblFormSoporteTit.Text = "Formulario de soporte";
             // 
             // pictureBox2
             // 
@@ -289,7 +289,7 @@
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblFornSoporteTit;
+        private System.Windows.Forms.Label lblFormSoporteTit;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblConsulta;
         private System.Windows.Forms.RadioButton radioButtonTipo;

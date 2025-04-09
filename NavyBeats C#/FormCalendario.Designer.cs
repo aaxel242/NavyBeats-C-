@@ -194,7 +194,7 @@
             this.lblPrecio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblPrecio.Location = new System.Drawing.Point(781, 422);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(80, 30);
+            this.lblPrecio.Size = new System.Drawing.Size(75, 30);
             this.lblPrecio.TabIndex = 15;
             this.lblPrecio.Text = "Precio";
             this.lblPrecio.Visible = false;
@@ -207,7 +207,7 @@
             this.lblHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblHorario.Location = new System.Drawing.Point(781, 334);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(90, 30);
+            this.lblHorario.Size = new System.Drawing.Size(85, 30);
             this.lblHorario.TabIndex = 14;
             this.lblHorario.Text = "Horario";
             this.lblHorario.Visible = false;
@@ -220,7 +220,7 @@
             this.lblLocal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblLocal.Location = new System.Drawing.Point(781, 245);
             this.lblLocal.Name = "lblLocal";
-            this.lblLocal.Size = new System.Drawing.Size(68, 30);
+            this.lblLocal.Size = new System.Drawing.Size(65, 30);
             this.lblLocal.TabIndex = 13;
             this.lblLocal.Text = "Local";
             this.lblLocal.Visible = false;
@@ -233,7 +233,7 @@
             this.lblMusico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.lblMusico.Location = new System.Drawing.Point(781, 162);
             this.lblMusico.Name = "lblMusico";
-            this.lblMusico.Size = new System.Drawing.Size(87, 30);
+            this.lblMusico.Size = new System.Drawing.Size(83, 30);
             this.lblMusico.TabIndex = 12;
             this.lblMusico.Text = "Músico";
             this.lblMusico.Visible = false;
@@ -254,77 +254,77 @@
             // lblDomingo
             // 
             this.lblDomingo.AutoSize = true;
-            this.lblDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblDomingo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblDomingo.Location = new System.Drawing.Point(656, 101);
+            this.lblDomingo.Location = new System.Drawing.Point(661, 110);
             this.lblDomingo.Name = "lblDomingo";
-            this.lblDomingo.Size = new System.Drawing.Size(94, 24);
+            this.lblDomingo.Size = new System.Drawing.Size(80, 20);
             this.lblDomingo.TabIndex = 9;
             this.lblDomingo.Text = "Domingo";
             // 
             // lblSabado
             // 
             this.lblSabado.AutoSize = true;
-            this.lblSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblSabado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblSabado.Location = new System.Drawing.Point(563, 101);
+            this.lblSabado.Location = new System.Drawing.Point(568, 110);
             this.lblSabado.Name = "lblSabado";
-            this.lblSabado.Size = new System.Drawing.Size(81, 24);
+            this.lblSabado.Size = new System.Drawing.Size(71, 20);
             this.lblSabado.TabIndex = 8;
             this.lblSabado.Text = "Sábado";
             // 
             // lblViernes
             // 
             this.lblViernes.AutoSize = true;
-            this.lblViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblViernes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblViernes.Location = new System.Drawing.Point(469, 101);
+            this.lblViernes.Location = new System.Drawing.Point(474, 110);
             this.lblViernes.Name = "lblViernes";
-            this.lblViernes.Size = new System.Drawing.Size(82, 24);
+            this.lblViernes.Size = new System.Drawing.Size(70, 20);
             this.lblViernes.TabIndex = 7;
             this.lblViernes.Text = "Viernes";
             // 
             // lblJueves
             // 
             this.lblJueves.AutoSize = true;
-            this.lblJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblJueves.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblJueves.Location = new System.Drawing.Point(378, 102);
+            this.lblJueves.Location = new System.Drawing.Point(383, 111);
             this.lblJueves.Name = "lblJueves";
-            this.lblJueves.Size = new System.Drawing.Size(76, 24);
+            this.lblJueves.Size = new System.Drawing.Size(65, 20);
             this.lblJueves.TabIndex = 6;
             this.lblJueves.Text = "Jueves";
             // 
             // lblMiercoles
             // 
             this.lblMiercoles.AutoSize = true;
-            this.lblMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblMiercoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMiercoles.Location = new System.Drawing.Point(269, 101);
+            this.lblMiercoles.Location = new System.Drawing.Point(274, 110);
             this.lblMiercoles.Name = "lblMiercoles";
-            this.lblMiercoles.Size = new System.Drawing.Size(101, 24);
+            this.lblMiercoles.Size = new System.Drawing.Size(85, 20);
             this.lblMiercoles.TabIndex = 5;
             this.lblMiercoles.Text = "Miércoles";
             // 
             // lblMartes
             // 
             this.lblMartes.AutoSize = true;
-            this.lblMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblMartes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblMartes.Location = new System.Drawing.Point(188, 101);
+            this.lblMartes.Location = new System.Drawing.Point(193, 110);
             this.lblMartes.Name = "lblMartes";
-            this.lblMartes.Size = new System.Drawing.Size(72, 24);
+            this.lblMartes.Size = new System.Drawing.Size(64, 20);
             this.lblMartes.TabIndex = 4;
             this.lblMartes.Text = "Martes";
             // 
             // lblLunes
             // 
             this.lblLunes.AutoSize = true;
-            this.lblLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblLunes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblLunes.Location = new System.Drawing.Point(94, 101);
+            this.lblLunes.Location = new System.Drawing.Point(99, 110);
             this.lblLunes.Name = "lblLunes";
-            this.lblLunes.Size = new System.Drawing.Size(67, 24);
+            this.lblLunes.Size = new System.Drawing.Size(58, 20);
             this.lblLunes.TabIndex = 3;
             this.lblLunes.Text = "Lunes";
             // 
