@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNotificaciones));
             this.panelNotificaciones = new System.Windows.Forms.Panel();
             this.panelNotificaciones2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelTickets = new System.Windows.Forms.FlowLayoutPanel();
             this.lblNotificaciones = new System.Windows.Forms.Label();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -54,18 +55,29 @@
             // panelNotificaciones2
             // 
             this.panelNotificaciones2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
+            this.panelNotificaciones2.Controls.Add(this.flowLayoutPanelTickets);
             this.panelNotificaciones2.Controls.Add(this.lblNotificaciones);
-            this.panelNotificaciones2.Location = new System.Drawing.Point(313, 39);
+            this.panelNotificaciones2.Location = new System.Drawing.Point(141, 39);
             this.panelNotificaciones2.Name = "panelNotificaciones2";
-            this.panelNotificaciones2.Size = new System.Drawing.Size(599, 573);
+            this.panelNotificaciones2.Size = new System.Drawing.Size(960, 573);
             this.panelNotificaciones2.TabIndex = 5;
+            // 
+            // flowLayoutPanelTickets
+            // 
+            this.flowLayoutPanelTickets.AutoScroll = true;
+            this.flowLayoutPanelTickets.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelTickets.Location = new System.Drawing.Point(20, 93);
+            this.flowLayoutPanelTickets.Name = "flowLayoutPanelTickets";
+            this.flowLayoutPanelTickets.Size = new System.Drawing.Size(919, 457);
+            this.flowLayoutPanelTickets.TabIndex = 7;
+            this.flowLayoutPanelTickets.WrapContents = false;
             // 
             // lblNotificaciones
             // 
             this.lblNotificaciones.AutoSize = true;
             this.lblNotificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificaciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblNotificaciones.Location = new System.Drawing.Point(197, 19);
+            this.lblNotificaciones.Location = new System.Drawing.Point(385, 22);
             this.lblNotificaciones.Name = "lblNotificaciones";
             this.lblNotificaciones.Size = new System.Drawing.Size(199, 31);
             this.lblNotificaciones.TabIndex = 6;
@@ -121,5 +133,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelNotificaciones2;
         private System.Windows.Forms.Label lblNotificaciones;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTickets;
     }
 }

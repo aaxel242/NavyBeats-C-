@@ -17,10 +17,22 @@ namespace NavyBeats_C_.Models
                     where user.email == email && user.password == psswd
                     select user).FirstOrDefault();
 
-            return _user;
+            if (user != null)
+            {
+                return new Super_User
+                {
+                    user_id_admin = user.user_id_admin,
+                    name = user.name,
+                    email = user.email,
+                    password = user.password,
+                    role = user.role
+                };
+            }
+
+            return null;
         }
 
-        public static List<Super_User>SelectUsers()
+        public static List<Super_User> SelectUsers()
         {
             List<Super_User> _users =
                 (from user in Orm.bd.Super_User
@@ -30,7 +42,7 @@ namespace NavyBeats_C_.Models
             return _users;
         }
 
-        public static Super_User selectById(int _id)
+        public static Super_User SelectById(int _id)
         {
             Super_User _user =
                 (from user in Orm.bd.Super_User
@@ -39,6 +51,7 @@ namespace NavyBeats_C_.Models
 
             return _user;
         }
+
 
         public static bool Insert(Super_User _user)
         {
@@ -68,9 +81,9 @@ namespace NavyBeats_C_.Models
             return delete;
         }
 
-        public static bool Upadate(Super_User user, Super_User newUser)
+        public static bool Update(Super_User user, Super_User newUser)
         {
-            bool update;
+            bool update = false;
 
             if (user != null)
             {
@@ -80,11 +93,13 @@ namespace NavyBeats_C_.Models
                 user.role = newUser.role;
 
                 Orm.bd.SaveChanges();
+                update = true;
             }
-
-            update = true;
 
             return update;
         }
+
+
+
     }
 }

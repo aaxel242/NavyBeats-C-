@@ -31,13 +31,10 @@
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
-            this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtBoxDescripcion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
             this.lblAsunto = new System.Windows.Forms.Label();
-            this.txtBoxNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.lblIncidencia = new System.Windows.Forms.Label();
             this.radioButtonTipo2 = new System.Windows.Forms.RadioButton();
             this.radioButtonTipo = new System.Windows.Forms.RadioButton();
@@ -47,6 +44,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
+            this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
             this.panelSoporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelFormulario.SuspendLayout();
@@ -82,12 +80,10 @@
             // 
             this.panelFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.panelFormulario.Controls.Add(this.btnEnviarForm);
-            this.panelFormulario.Controls.Add(this.textBox3);
-            this.panelFormulario.Controls.Add(this.lblDescripcion);
+            this.panelFormulario.Controls.Add(this.txtBoxDescripcion);
+            this.panelFormulario.Controls.Add(this.label1);
             this.panelFormulario.Controls.Add(this.txtBoxAsunto);
             this.panelFormulario.Controls.Add(this.lblAsunto);
-            this.panelFormulario.Controls.Add(this.txtBoxNombre);
-            this.panelFormulario.Controls.Add(this.lblNombre);
             this.panelFormulario.Controls.Add(this.lblIncidencia);
             this.panelFormulario.Controls.Add(this.radioButtonTipo2);
             this.panelFormulario.Controls.Add(this.radioButtonTipo);
@@ -100,53 +96,38 @@
             this.panelFormulario.Size = new System.Drawing.Size(599, 573);
             this.panelFormulario.TabIndex = 4;
             // 
-            // btnEnviarForm
+            // txtBoxDescripcion
             // 
-            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.btnEnviarForm.BorderRadius = 20;
-            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
-            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.btnEnviarForm.Location = new System.Drawing.Point(254, 512);
-            this.btnEnviarForm.Name = "btnEnviarForm";
-            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
-            this.btnEnviarForm.TabIndex = 23;
-            this.btnEnviarForm.Text = "Enviar";
-            this.btnEnviarForm.UseVisualStyleBackColor = false;
+            this.txtBoxDescripcion.BackColor = System.Drawing.Color.White;
+            this.txtBoxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxDescripcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDescripcion.Location = new System.Drawing.Point(185, 196);
+            this.txtBoxDescripcion.MinimumSize = new System.Drawing.Size(4, 20);
+            this.txtBoxDescripcion.Multiline = true;
+            this.txtBoxDescripcion.Name = "txtBoxDescripcion";
+            this.txtBoxDescripcion.Size = new System.Drawing.Size(306, 299);
+            this.txtBoxDescripcion.TabIndex = 21;
             // 
-            // textBox3
+            // label1
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(180, 265);
-            this.textBox3.MinimumSize = new System.Drawing.Size(4, 20);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(306, 241);
-            this.textBox3.TabIndex = 21;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(37, 257);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(127, 24);
-            this.lblDescripcion.TabIndex = 20;
-            this.lblDescripcion.Text = "Descripcion:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.label1.Location = new System.Drawing.Point(42, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 24);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Descripcion:";
             // 
             // txtBoxAsunto
             // 
             this.txtBoxAsunto.BackColor = System.Drawing.Color.White;
             this.txtBoxAsunto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxAsunto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxAsunto.Location = new System.Drawing.Point(180, 211);
+            this.txtBoxAsunto.Location = new System.Drawing.Point(185, 142);
             this.txtBoxAsunto.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtBoxAsunto.Name = "txtBoxAsunto";
-            this.txtBoxAsunto.Size = new System.Drawing.Size(304, 19);
+            this.txtBoxAsunto.Size = new System.Drawing.Size(304, 30);
             this.txtBoxAsunto.TabIndex = 18;
             // 
             // lblAsunto
@@ -154,33 +135,11 @@
             this.lblAsunto.AutoSize = true;
             this.lblAsunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAsunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblAsunto.Location = new System.Drawing.Point(86, 208);
+            this.lblAsunto.Location = new System.Drawing.Point(91, 139);
             this.lblAsunto.Name = "lblAsunto";
             this.lblAsunto.Size = new System.Drawing.Size(87, 24);
             this.lblAsunto.TabIndex = 17;
             this.lblAsunto.Text = "Asunto: ";
-            // 
-            // txtBoxNombre
-            // 
-            this.txtBoxNombre.BackColor = System.Drawing.Color.White;
-            this.txtBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxNombre.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtBoxNombre.Location = new System.Drawing.Point(180, 150);
-            this.txtBoxNombre.MinimumSize = new System.Drawing.Size(4, 30);
-            this.txtBoxNombre.Name = "txtBoxNombre";
-            this.txtBoxNombre.Size = new System.Drawing.Size(304, 19);
-            this.txtBoxNombre.TabIndex = 15;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblNombre.Location = new System.Drawing.Point(74, 147);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(91, 24);
-            this.lblNombre.TabIndex = 14;
-            this.lblNombre.Text = "Nombre:";
             // 
             // lblIncidencia
             // 
@@ -280,6 +239,22 @@
             this.pboxAtras.TabStop = false;
             this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
+            // btnEnviarForm
+            // 
+            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.btnEnviarForm.BorderRadius = 20;
+            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
+            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.btnEnviarForm.Location = new System.Drawing.Point(259, 501);
+            this.btnEnviarForm.Name = "btnEnviarForm";
+            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
+            this.btnEnviarForm.TabIndex = 23;
+            this.btnEnviarForm.Text = "Enviar";
+            this.btnEnviarForm.UseVisualStyleBackColor = false;
+            this.btnEnviarForm.Click += new System.EventHandler(this.btnEnviarForm_Click);
+            // 
             // FormSoporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,12 +295,10 @@
         private System.Windows.Forms.RadioButton radioButtonTipo;
         private System.Windows.Forms.RadioButton radioButtonTipo2;
         private System.Windows.Forms.Label lblIncidencia;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtBoxNombre;
         private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.TextBox txtBoxAsunto;
-        private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBoxDescripcion;
         private Controles.CustomBoton btnEnviarForm;
     }
 }

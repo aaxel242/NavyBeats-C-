@@ -2,56 +2,49 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
 {
     public partial class FormSoporte : Form
     {
-        public FormSoporte()
+        private int loggedUserId;
+
+        public FormSoporte(Super_User user)
         {
             InitializeComponent();
-
-            lblFormSoporteTit.Text = Resources.Strings.lblFormSoporte;
-            lblTipo.Text = Resources.Strings.lblTipo;
-            lblConsulta.Text = Resources.Strings.lblConsulta;
-            lblIncidencia.Text = Resources.Strings.lblIncidencia;
-            lblNombre.Text = Resources.Strings.lblNombre;
-            lblAsunto.Text = Resources.Strings.lblAsunto;
-            lblDescripcion.Text = Resources.Strings.lblDescripcion;
-            btnEnviarForm.Text = Resources.Strings.btnEnviar;
+            loggedUserId = user.user_id_admin; // Se usa user_id_admin para identificar al usuario logueado
         }
+
+        public FormSoporte() { }
 
         private void FormSoporte_Load(object sender, EventArgs e)
         {
             panelSoporte.BackColor = Color.FromArgb(216, 255, 255, 255);
 
-            // Centrar el formulario
+            // Center the form on the screen
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-
             int formWidth = this.Width;
             int formHeight = this.Height;
-
             int positionX = (screenWidth - formWidth) / 2;
             int positionY = (screenHeight - formHeight) / 2;
-
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(positionX, positionY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
+            ApplyRoundedCorners(panelFormulario, 30);
+            AdjustRadioButtons();
 
-            AplicarEsquinasRedondeadas(panelFormulario, 30);
-            ajustarRadioButton();
-            txtBoxNombre.Size = new Size(300, 40);
+            // Set sizes and margins for the TextBoxes
             txtBoxAsunto.Size = new Size(300, 40);
-            txtBoxNombre.Margin = new Padding(0, 5, 0, 0);
             txtBoxAsunto.Margin = new Padding(0, 5, 0, 0);
         }
 
-        private void ajustarRadioButton()
+        private void AdjustRadioButtons()
         {
-            // Configurar el CheckBox existente
+            // Configure the RadioButtons to appear as buttons
             radioButtonTipo.Appearance = Appearance.Button;
             radioButtonTipo.AutoSize = false;
             radioButtonTipo.Size = new Size(30, 30);
@@ -60,58 +53,42 @@ namespace NavyBeats_C_
             radioButtonTipo2.AutoSize = false;
             radioButtonTipo2.Size = new Size(30, 30);
 
-            // Aplicar color inicial
-            radioButtonTipo.BackColor = radioButtonTipo.Checked
-                ? Color.FromArgb(229, 177, 129)
-                : Color.White;
+            // Set initial colors based on checked state
+            radioButtonTipo.BackColor = radioButtonTipo.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
+            radioButtonTipo2.BackColor = radioButtonTipo2.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
 
-            radioButtonTipo2.BackColor = radioButtonTipo2.Checked
-                ? Color.FromArgb(229, 177, 129)
-                : Color.White;
-
-            radioButtonTipo.CheckedChanged += CheckBoxTipo_CheckedChanged;
-            radioButtonTipo2.CheckedChanged += CheckBoxTipo_CheckedChanged;
+            radioButtonTipo.CheckedChanged += RadioButton_CheckedChanged;
+            radioButtonTipo2.CheckedChanged += RadioButton_CheckedChanged;
         }
-        private void CheckBoxTipo_CheckedChanged(object sender, EventArgs e)
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            RadioButton radioButton = sender as RadioButton;
-            if (radioButton != null)
+            if (sender is RadioButton rb)
             {
-                radioButton.BackColor = radioButton.Checked
-                    ? Color.FromArgb(229, 177, 129)
-                    : Color.White;
+                rb.BackColor = rb.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
             }
         }
-        private void AplicarEsquinasRedondeadas(Panel panel, int radio)
+
+        private void ApplyRoundedCorners(Panel panel, int radius)
         {
             GraphicsPath path = new GraphicsPath();
-
-            // Esquina superior izquierda (redondeada)
-            path.AddArc(0, 0, radio * 2, radio * 2, 180, 90);
-
-            // Línea superior
-            path.AddLine(radio, 0, panel.Width - radio, 0);
-
-            // Esquina superior derecha (redondeada)
-            path.AddArc(panel.Width - radio * 2, 0, radio * 2, radio * 2, 270, 90);
-
-            // Línea derecha
-            path.AddLine(panel.Width, radio, panel.Width, panel.Height - radio);
-
-            // Esquina inferior derecha (redondeada)
-            path.AddArc(panel.Width - radio * 2, panel.Height - radio * 2, radio * 2, radio * 2, 0, 90);
-
-            // Línea inferior
-            path.AddLine(panel.Width - radio, panel.Height, 0, panel.Height);
-
-            // Línea izquierda
-            path.AddLine(0, panel.Height, 0, radio);
-
+            // Top-left arc
+            path.AddArc(0, 0, radius * 2, radius * 2, 180, 90);
+            // Top line
+            path.AddLine(radius, 0, panel.Width - radius, 0);
+            // Top-right arc
+            path.AddArc(panel.Width - radius * 2, 0, radius * 2, radius * 2, 270, 90);
+            // Right line
+            path.AddLine(panel.Width, radius, panel.Width, panel.Height - radius);
+            // Bottom-right arc
+            path.AddArc(panel.Width - radius * 2, panel.Height - radius * 2, radius * 2, radius * 2, 0, 90);
+            // Bottom line
+            path.AddLine(panel.Width - radius, panel.Height, 0, panel.Height);
+            // Left line
+            path.AddLine(0, panel.Height, 0, radius);
             path.CloseFigure();
             panel.Region = new Region(path);
         }
-
-     
 
         private void lblConsulta_Click(object sender, EventArgs e)
         {
@@ -120,12 +97,59 @@ namespace NavyBeats_C_
 
         private void lblIncidencia_Click(object sender, EventArgs e)
         {
-            radioButtonTipo2.Checked = true;    
+            radioButtonTipo2.Checked = true;
         }
 
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEnviarForm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Determine query type based on the selected RadioButton
+                string queryType = radioButtonTipo.Checked ? "Consulta" : (radioButtonTipo2.Checked ? "Incidencia" : "");
+                string subject = txtBoxAsunto.Text.Trim();
+                string description = txtBoxDescripcion.Text.Trim();
+
+                // Validate required fields
+                if (string.IsNullOrEmpty(queryType) || string.IsNullOrEmpty(subject))
+                {
+                    MessageBox.Show("Completa tots els camps.");
+                }
+
+                // Map the form data to a TicketInfo object.
+                TicketInfo ticket = new TicketInfo
+                {
+                    QueryType = queryType,
+                    Subject = subject,
+                    Description = description,
+                    CreatedBySuperUserId = loggedUserId, // Usamos el ID del Super_User logueado
+                    Status = false,
+                    CreationDate = DateTime.Now
+                };
+
+                // Insert the ticket into the database using TicketOrm
+                bool inserted = TicketOrm.InsertTicket(ticket);
+                if (inserted)
+                {
+                    MessageBox.Show("Ticket enviat correctament.");
+                    // Clear the fields after sending the ticket
+                    txtBoxAsunto.Text = "";
+                    txtBoxDescripcion.Text = "";
+                }   
+                else
+                {
+                    MessageBox.Show("Error al enviar ticket.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inserting ticket: " + ex.Message +
+                                "\nInner Exception: " + ex.InnerException?.Message);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace NavyBeats_C_
 {
     public partial class FormMapaLocales : Form
     {
-        // Límites de Cataluña
+        // Límites para restringir el movimiento del mapa (Cataluña)
         private readonly double minLat = 40.5;
         private readonly double maxLat = 42.9;
         private readonly double minLng = 0.15;
@@ -121,7 +121,9 @@ namespace NavyBeats_C_
 
                 // Label para el horario (apertura y cierre)
                 Label lblHorario = new Label();
-                lblHorario.Text = $"Apertura: {restaurant.OpeningTime.ToString(@"hh\:mm")} - Cierre: {restaurant.ClosingTime.ToString(@"hh\:mm")}";
+                string openingTime = !string.IsNullOrEmpty(restaurant.OpeningTime) ? restaurant.OpeningTime : "No disponible";
+                string closingTime = !string.IsNullOrEmpty(restaurant.ClosingTime) ? restaurant.ClosingTime : "No disponible";
+                lblHorario.Text = $"Apertura: {openingTime} - Cierre: {closingTime}";
                 lblHorario.Font = new Font("Montserrat", 8, FontStyle.Regular);
                 lblHorario.Location = new Point(10, 65);
                 lblHorario.AutoSize = true;
@@ -182,8 +184,8 @@ namespace NavyBeats_C_
                     GMapMarker marker = new GMarkerGoogle(punto, GMarkerGoogleType.red_dot);
                     // Asignar los datos al Tag para usarlos en el click
                     marker.Tag = restaurantInfo;
-                    // Opcional: asignar un ToolTip con la leyenda
-                    marker.ToolTipText = $"Nombre: {restaurantInfo.Name}\nApertura: {restaurantInfo.OpeningTime.ToString(@"hh\:mm")}\nCierre: {restaurantInfo.ClosingTime.ToString(@"hh\:mm")}";
+                    // Asignar un ToolTip con la leyenda usando las cadenas de horario directamente
+                    marker.ToolTipText = $"Nombre: {restaurantInfo.Name}\nApertura: {restaurantInfo.OpeningTime ?? "No disponible"}\nCierre: {restaurantInfo.ClosingTime ?? "No disponible"}";
 
                     overlayRestaurant.Markers.Add(marker);
 
@@ -197,25 +199,22 @@ namespace NavyBeats_C_
             }
         }
 
-
         // Evento para click en marker: hacer zoom y mostrar una leyenda
         private void gMapControl1_OnMarkerClick(GMapMarker item, MouseEventArgs e)
-{
-    if (item.Tag is Models.RestaurantInfo info)
-    {
-        // Asignar el texto de la leyenda al marker
-        item.ToolTipMode = MarkerTooltipMode.Always; // Siempre mostrar la leyenda tras hacer clic
-        item.ToolTipText = $"📍 {info.Name}\n🕒 Apertura: {info.OpeningTime:hh\\:mm} - Cierre: {info.ClosingTime:hh\\:mm}";
+        {
+            if (item.Tag is Models.RestaurantInfo info)
+            {
+                // Mostrar siempre el ToolTip al hacer clic
+                item.ToolTipMode = MarkerTooltipMode.Always;
+                item.ToolTipText = $"📍 {info.Name}\n🕒 Apertura: {info.OpeningTime ?? "No disponible"} - Cierre: {info.ClosingTime ?? "No disponible"}";
 
-        // Hacer zoom al marker
-        gMapControl1.Position = item.Position;
-        gMapControl1.Zoom = 15;
+                // Hacer zoom al marker
+                gMapControl1.Position = item.Position;
+                gMapControl1.Zoom = 15;
 
-        // Refrescar el mapa para que la leyenda aparezca
-        gMapControl1.Refresh();
-    }
-}
-
+                gMapControl1.Refresh();
+            }
+        }
 
         private void btnLocalMapa_Click(object sender, EventArgs e)
         {

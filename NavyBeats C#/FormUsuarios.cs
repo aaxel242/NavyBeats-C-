@@ -107,7 +107,7 @@ namespace NavyBeats_C_
         {
             int rowSelected = dataGridView.CurrentCell.RowIndex;
             int id = (int)dataGridView.Rows[rowSelected].Cells["useridadminDataGridViewTextBoxColumn"].Value;
-            Super_User user = UsuarioEscritorioOrm.selectById(id);
+            Super_User user = UsuarioEscritorioOrm.SelectById(id);
 
             return user;
         }
