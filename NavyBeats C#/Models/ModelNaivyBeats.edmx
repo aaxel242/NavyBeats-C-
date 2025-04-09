@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dam04Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="dam04Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Chat">
           <Key>
             <PropertyRef Name="chat_id" />
@@ -126,13 +126,13 @@
           <Property Name="user_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Style">
-          <Key>  
+          <Key>
             <PropertyRef Name="style_id" />
           </Key>
           <Property Name="style_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="100" />
 	      <Property Name="creation_date" Type="datetime" Nullable="false" />
-		</EntityType>
+        </EntityType>
         <EntityType Name="Super_User">
           <Key>
             <PropertyRef Name="user_id_admin" />
@@ -165,27 +165,27 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
 	      <Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
-		</EntityType>
-		<EntityType Name="User_Style">
-			<Key>
-				<PropertyRef Name="user_id" />
-				<PropertyRef Name="style_id" />
-			</Key>
-			<Property Name="user_id" Type="int" Nullable="false" />
-			<Property Name="style_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Style">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="style_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="style_id" Type="int" Nullable="false" />
 			<Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
-		</EntityType>
+        </EntityType>
 
-		<EntityType Name="User_Time">
-			<Key>
-				<PropertyRef Name="user_id" />
-				<PropertyRef Name="time_id" />
-			</Key>
-			<Property Name="user_id" Type="int" Nullable="false" />
-			<Property Name="time_id" Type="int" Nullable="false" />
+        <EntityType Name="User_Time">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="time_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="time_id" Type="int" Nullable="false" />
 			<Property Name="creation_date" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
-		</EntityType>
-		<EntityType Name="Users">
+        </EntityType>
+        <EntityType Name="Users">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
@@ -553,7 +553,7 @@
 				</Dependent>
 			</ReferentialConstraint>
 		</Association>
-		<Association Name="fk_users_municipality">
+        <Association Name="fk_users_municipality">
           <End Role="Municipality" Type="Self.Municipality" Multiplicity="0..1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -574,7 +574,7 @@
           <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Municipality" EntityType="Self.Municipality" Schema="dbo" store:Type="Tables" />
 		  <EntitySet Name="Musician" EntityType="Self.Musician" store:Type="Tables" Schema="dbo" />
-		  <EntitySet Name="Offer_dir" EntityType="Self.Offer_dir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offer_dir" EntityType="Self.Offer_dir" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offer_In" EntityType="Self.Offer_In" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Offer_in_Styles" EntityType="Self.Offer_in_Styles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
@@ -583,9 +583,9 @@
           <EntitySet Name="Super_User" EntityType="Self.Super_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
 		  <EntitySet Name="time" EntityType="Self.time" store:Type="Tables" Schema="dbo" />
-		  <EntitySet Name="User_Style" EntityType="Self.User_Style" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
-		  <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Style" EntityType="Self.User_Style" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Time" EntityType="Self.User_Time" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valorar" EntityType="Self.Valorar" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Chat__musician_i__4E1E9780" Association="Self.FK__Chat__musician_i__4E1E9780">
             <End Role="Musician" EntitySet="Musician" />
@@ -1412,6 +1412,9 @@
           <EntitySetMapping Name="Chat">
             <EntityTypeMapping TypeName="dam04Model.Chat">
               <MappingFragment StoreEntitySet="Chat">
+                <ScalarProperty Name="chat_id" ColumnName="chat_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="musician_id" ColumnName="musician_id" />
                 <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
@@ -1422,6 +1425,7 @@
           <EntitySetMapping Name="City">
             <EntityTypeMapping TypeName="dam04Model.City">
               <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="city_id" ColumnName="city_id" />
               </MappingFragment>
@@ -1430,6 +1434,9 @@
           <EntitySetMapping Name="Comment_Restaurant_Publication">
             <EntityTypeMapping TypeName="dam04Model.Comment_Restaurant_Publication">
               <MappingFragment StoreEntitySet="Comment_Restaurant_Publication">
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="publication_id" ColumnName="publication_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="publication_id" ColumnName="publication_id" />
                 <ScalarProperty Name="content" ColumnName="content" />
@@ -1440,6 +1447,8 @@
           <EntitySetMapping Name="Like_Restaurant_Publication">
             <EntityTypeMapping TypeName="dam04Model.Like_Restaurant_Publication">
               <MappingFragment StoreEntitySet="Like_Restaurant_Publication">
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="publication_id" ColumnName="publication_id" />
                 <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
@@ -1449,6 +1458,11 @@
           <EntitySetMapping Name="Message">
             <EntityTypeMapping TypeName="dam04Model.Message">
               <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="message_id" ColumnName="message_id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="reading_date" ColumnName="reading_date" />
+                <ScalarProperty Name="chat_id" ColumnName="chat_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="chat_id" ColumnName="chat_id" />
                 <ScalarProperty Name="reading_date" ColumnName="reading_date" />
@@ -1461,6 +1475,8 @@
           <EntitySetMapping Name="Municipality">
             <EntityTypeMapping TypeName="dam04Model.Municipality">
               <MappingFragment StoreEntitySet="Municipality">
+                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="city_id" ColumnName="city_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
@@ -1485,6 +1501,13 @@
                 <ScalarProperty Name="salary" ColumnName="salary" />
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
                 <ScalarProperty Name="offer_id" ColumnName="offer_id" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="event_date" ColumnName="event_date" />
+                <ScalarProperty Name="agreement" ColumnName="agreement" />
+                <ScalarProperty Name="done" ColumnName="done" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="musician_id" ColumnName="musician_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1498,6 +1521,12 @@
                 <ScalarProperty Name="salary" ColumnName="salary" />
                 <ScalarProperty Name="publish_date" ColumnName="publish_date" />
                 <ScalarProperty Name="offer_in_id" ColumnName="offer_in_id" />
+                <ScalarProperty Name="publish_date" ColumnName="publish_date" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="event_date" ColumnName="event_date" />
+                <ScalarProperty Name="music_id_final" ColumnName="music_id_final" />
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1507,6 +1536,8 @@
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
                 <ScalarProperty Name="id_offer_in" ColumnName="id_offer_in" />
                 <ScalarProperty Name="style_id" ColumnName="style_id" />
+                <ScalarProperty Name="id_offer_in" ColumnName="id_offer_in" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1519,6 +1550,11 @@
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="publication_date" ColumnName="publication_date" />
                 <ScalarProperty Name="publication_id" ColumnName="publication_id" />
+                <ScalarProperty Name="publication_date" ColumnName="publication_date" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="multimedia_content" ColumnName="multimedia_content" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1528,6 +1564,8 @@
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="closing_time" ColumnName="closing_time" />
                 <ScalarProperty Name="opening_time" ColumnName="opening_time" />
+                <ScalarProperty Name="closing_time" ColumnName="closing_time" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1538,7 +1576,7 @@
                 <ScalarProperty Name="style_id" ColumnName="style_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
 				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
-			  </MappingFragment>
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Super_User">
@@ -1550,6 +1588,11 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="user_id_admin" ColumnName="user_id_admin" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="delete_at" ColumnName="delete_at" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1577,7 +1620,7 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
 				<ScalarProperty Name="creation_date" ColumnName="creation_date" />
-			  </MappingFragment>
+              </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_Style">
@@ -1586,6 +1629,8 @@
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
                 <ScalarProperty Name="style_id" ColumnName="style_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="style_id" ColumnName="style_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1595,6 +1640,8 @@
                 <ScalarProperty Name="creation_date" ColumnName="creation_date" />
                 <ScalarProperty Name="time_id" ColumnName="time_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="time_id" ColumnName="time_id" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1614,6 +1661,18 @@
                 <ScalarProperty Name="photo" ColumnName="photo" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+                <ScalarProperty Name="edition_date" ColumnName="edition_date" />
+                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+                <ScalarProperty Name="municipality_id" ColumnName="municipality_id" />
+                <ScalarProperty Name="latitud" ColumnName="latitud" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1624,12 +1683,18 @@
                 <ScalarProperty Name="appraiser_id" ColumnName="appraiser_id" />
                 <ScalarProperty Name="comment" ColumnName="comment" />
                 <ScalarProperty Name="puntuation" ColumnName="puntuation" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="appraiser_id" ColumnName="appraiser_id" />
+                <ScalarProperty Name="valued_id" ColumnName="valued_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <AssociationSetMapping Name="Follow" TypeName="dam04Model.Follow" StoreEntitySet="Follow">
             <EndProperty Name="Musician">
               <ScalarProperty Name="user_id" ColumnName="musician_id" />
+            </EndProperty>
+            <EndProperty Name="Restaurant">
+              <ScalarProperty Name="user_id" ColumnName="restaurant_id" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>
