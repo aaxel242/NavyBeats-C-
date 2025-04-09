@@ -13,10 +13,10 @@ namespace NavyBeats_C_.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NaivyBeatsEntities : DbContext
+    public partial class dam04Entities : DbContext
     {
-        public NaivyBeatsEntities()
-            : base("name=NaivyBeatsEntities")
+        public dam04Entities()
+            : base("name=dam04Entities")
         {
         }
     

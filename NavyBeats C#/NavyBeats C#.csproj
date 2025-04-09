@@ -219,6 +219,7 @@
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CalendarioOrm.cs" />
+    <Compile Include="Entitites\Encrypt.cs" />
     <Compile Include="Models\Chat.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -228,7 +229,6 @@
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entitites\Encrypt.cs" />
     <Compile Include="Models\EstilosOrm.cs" />
     <Compile Include="Models\EventoInfo.cs" />
     <Compile Include="Models\Like_Restaurant_Publication.cs">

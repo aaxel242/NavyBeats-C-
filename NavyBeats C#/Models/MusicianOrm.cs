@@ -11,7 +11,7 @@ namespace NavyBeats_C_.Models
         /// <returns>Lista de User con músicos.</returns>
         public static List<Users> GetMusicians()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 var musicians = (from m in context.Musician
                                  join u in context.Users on m.user_id equals u.user_id
@@ -28,7 +28,7 @@ namespace NavyBeats_C_.Models
         /// <returns>El usuario con sus coordenadas o null si no existe.</returns>
         public static Users GetMusicianById(int userId)
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 var musician = (from m in context.Musician
                                 join u in context.Users on m.user_id equals u.user_id
@@ -45,7 +45,7 @@ namespace NavyBeats_C_.Models
         /// <returns>Lista de MusicianInfo.</returns>
         public static List<MusicianInfo> GetMusicianInfoList()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 var query = from m in context.Musician
                             join u in context.Users on m.user_id equals u.user_id

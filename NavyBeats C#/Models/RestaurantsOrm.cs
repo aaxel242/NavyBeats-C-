@@ -10,7 +10,7 @@ namespace NavyBeats_C_.Models
     {
         public static List<Users> GetRestaurants()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 var restaurants = (from r in context.Restaurant
                                  join u in context.Users on r.user_id equals u.user_id
@@ -21,7 +21,7 @@ namespace NavyBeats_C_.Models
         }
         public static Users GetRestaurantById(int userId)
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 var restaurant = (from r in context.Restaurant
                                   join u in context.Users on r.user_id equals u.user_id
@@ -33,7 +33,7 @@ namespace NavyBeats_C_.Models
 
         public static List<RestaurantInfo> GetRestaurantInfoList()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 var query = from r in context.Restaurant
                             join u in context.Users on r.user_id equals u.user_id
