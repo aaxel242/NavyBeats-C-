@@ -13,6 +13,8 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            customBotonModificar.Text = Resources.Strings.btnModificar;
+
             local = _local;
 
             if (local)

@@ -19,6 +19,9 @@ namespace NavyBeats_C_
         public FormMapaMenu()
         {
             InitializeComponent();
+
+            labelDispoMusico.Text = Resources.Strings.lblDispoMusico;
+            labelVisualizar.Text = Resources.Strings.lblVisuLocales;
         }
 
         private void FormMapaMenu_Load(object sender, EventArgs e)

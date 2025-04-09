@@ -19,6 +19,14 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            lblLunes.Text = Resources.Strings.lblLunes;
+            lblMartes.Text = Resources.Strings.lblMartes;
+            lblMiercoles.Text = Resources.Strings.lblMiercoles;
+            lblJueves.Text = Resources.Strings.lblJueves;
+            lblViernes.Text = Resources.Strings.lblViernes;
+            lblSabado.Text = Resources.Strings.lblSabado;
+            lblDomingo.Text = Resources.Strings.lblDomingo;
+
             currentYear = DateTime.Now.Year;
             currentMonth = DateTime.Now.Month;
             MostrarDias(currentYear, currentMonth);
@@ -27,11 +35,6 @@ namespace NavyBeats_C_
         private void FormCalendario_Load(object sender, EventArgs e)
         {
             panelCalendarioFondo.BackColor = Color.FromArgb(216, 255, 255, 255);
-
-            // Centrar el formulario
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
 
             btnRetroceder.BackgroundImage = Properties.Resources.imgFlechaRetroceder;
             btnRetroceder.BackgroundImageLayout = ImageLayout.Stretch;
@@ -97,7 +100,7 @@ namespace NavyBeats_C_
         private void ResaltarDiasConEventos()
         {
             // Se consultan las ofertas activas de ambas tablas según los criterios definidos
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
                 var offerDirDates = context.Offer_dir
@@ -154,14 +157,14 @@ namespace NavyBeats_C_
                 btnRetroceder.Visible = true;
                 lblNumEventos.Visible = true;
                 lblMusico.Visible = true;
-                lblMusico.Text = "Músico";
+                lblMusico.Text = Resources.Strings.lblMusico;
                 lblLocal.Visible = true;
                 lblHorario.Visible = true;
                 lblPrecio.Visible = true;
                 var evt = eventosDelDia[eventoActualIndex];
                 lblMusicoSelect.Text = evt.Musico;
                 lblLocalSelect.Text = evt.Local;
-                lblHorarioSelect.Text = evt.Horario.ToString("HH:mm");
+                //lblHorarioSelect.Text = evt.Horario.ToString("HH:mm");
                 lblPrecioSelect.Text = evt.Salario.ToString("C");  // "C" formato moneda
 
                 lblNumEventos.Text = $"{eventoActualIndex + 1}/{eventosDelDia.Count}";
@@ -172,7 +175,7 @@ namespace NavyBeats_C_
                 btnRetroceder.Visible = false;
                 lblNumEventos.Visible = false;
                 lblMusico.Visible = true;
-                lblMusico.Text = "Sin Eventos";
+                lblMusico.Text = Resources.Strings.lblSinEvento;
                 lblLocal.Visible = false;
                 lblHorario.Visible = false;
                 lblPrecio.Visible = false;
@@ -186,8 +189,9 @@ namespace NavyBeats_C_
 
         private string ObtenerNombreMes(int mes)
         {
-            string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                               "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            string[] meses = { Resources.Strings.lblEnero, Resources.Strings.lblFebrero, Resources.Strings.lblMarzo, Resources.Strings.lblAbril,
+                Resources.Strings.lblMayo, Resources.Strings.lblJunio, Resources.Strings.lblJulio, Resources.Strings.lblAgosto,
+                Resources.Strings.lblSeptiembre, Resources.Strings.lblOctubre, Resources.Strings.lblNoviembre, Resources.Strings.lblDiciembre };
             return meses[mes - 1];
         }
 

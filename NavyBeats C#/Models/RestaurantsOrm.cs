@@ -45,8 +45,8 @@ namespace NavyBeats_C_.Models
                                 Name = u.name,
                                 Municipality = mun.name,
                                 Email = u.email,
-                                OpeningTime = r.opening_time,
-                                ClosingTime = r.closing_time,
+                                //OpeningTime = r.opening_time,
+                                //ClosingTime = r.closing_time,
                                 Latitud = (double?)u.latitud,  
                                 Longitud = (double?)u.longitud 
                             };

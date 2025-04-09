@@ -42,16 +42,16 @@
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
             this.customComboBoxMunicipio = new NavyBeats_C_.Controles.CustomComboBox();
             this.textBoxTelefono = new NavyBeats_C_.Controles.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelMunicipio = new System.Windows.Forms.Label();
+            this.labelTel = new System.Windows.Forms.Label();
             this.textBoxLongitud = new NavyBeats_C_.Controles.TextBox();
             this.textBoxLatitud = new NavyBeats_C_.Controles.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelLongitud = new System.Windows.Forms.Label();
+            this.labelLatitud = new System.Windows.Forms.Label();
             this.textBoxCierre = new NavyBeats_C_.Controles.TextBox();
             this.textBoxApertura = new NavyBeats_C_.Controles.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelCierre = new System.Windows.Forms.Label();
+            this.labelApertura = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNombre)).BeginInit();
             this.SuspendLayout();
@@ -269,25 +269,25 @@
             this.textBoxTelefono.Texts = "";
             this.textBoxTelefono.UnderlinedStyle = false;
             // 
-            // label3
+            // labelMunicipio
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(509, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 31);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Municipio";
+            this.labelMunicipio.AutoSize = true;
+            this.labelMunicipio.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMunicipio.Location = new System.Drawing.Point(509, 183);
+            this.labelMunicipio.Name = "labelMunicipio";
+            this.labelMunicipio.Size = new System.Drawing.Size(118, 31);
+            this.labelMunicipio.TabIndex = 45;
+            this.labelMunicipio.Text = "Municipio";
             // 
-            // label4
+            // labelTel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 426);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 31);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Teléfeono";
+            this.labelTel.AutoSize = true;
+            this.labelTel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTel.Location = new System.Drawing.Point(20, 426);
+            this.labelTel.Name = "labelTel";
+            this.labelTel.Size = new System.Drawing.Size(118, 31);
+            this.labelTel.TabIndex = 44;
+            this.labelTel.Text = "Teléfeono";
             // 
             // textBoxLongitud
             // 
@@ -333,25 +333,25 @@
             this.textBoxLatitud.Texts = "";
             this.textBoxLatitud.UnderlinedStyle = false;
             // 
-            // label1
+            // labelLongitud
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(509, 308);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 31);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Longitud";
+            this.labelLongitud.AutoSize = true;
+            this.labelLongitud.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLongitud.Location = new System.Drawing.Point(509, 308);
+            this.labelLongitud.Name = "labelLongitud";
+            this.labelLongitud.Size = new System.Drawing.Size(110, 31);
+            this.labelLongitud.TabIndex = 49;
+            this.labelLongitud.Text = "Longitud";
             // 
-            // label2
+            // labelLatitud
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(509, 243);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 31);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Latitud";
+            this.labelLatitud.AutoSize = true;
+            this.labelLatitud.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLatitud.Location = new System.Drawing.Point(509, 243);
+            this.labelLatitud.Name = "labelLatitud";
+            this.labelLatitud.Size = new System.Drawing.Size(90, 31);
+            this.labelLatitud.TabIndex = 48;
+            this.labelLatitud.Text = "Latitud";
             // 
             // textBoxCierre
             // 
@@ -397,25 +397,25 @@
             this.textBoxApertura.Texts = "";
             this.textBoxApertura.UnderlinedStyle = false;
             // 
-            // label5
+            // labelCierre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(509, 430);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 31);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Cierre";
+            this.labelCierre.AutoSize = true;
+            this.labelCierre.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCierre.Location = new System.Drawing.Point(509, 430);
+            this.labelCierre.Name = "labelCierre";
+            this.labelCierre.Size = new System.Drawing.Size(78, 31);
+            this.labelCierre.TabIndex = 53;
+            this.labelCierre.Text = "Cierre";
             // 
-            // label6
+            // labelApertura
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(509, 365);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 31);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Apertura";
+            this.labelApertura.AutoSize = true;
+            this.labelApertura.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApertura.Location = new System.Drawing.Point(509, 365);
+            this.labelApertura.Name = "labelApertura";
+            this.labelApertura.Size = new System.Drawing.Size(108, 31);
+            this.labelApertura.TabIndex = 52;
+            this.labelApertura.Text = "Apertura";
             // 
             // FormInfoLocal
             // 
@@ -425,16 +425,16 @@
             this.ClientSize = new System.Drawing.Size(984, 591);
             this.Controls.Add(this.textBoxCierre);
             this.Controls.Add(this.textBoxApertura);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelCierre);
+            this.Controls.Add(this.labelApertura);
             this.Controls.Add(this.textBoxLongitud);
             this.Controls.Add(this.textBoxLatitud);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelLongitud);
+            this.Controls.Add(this.labelLatitud);
             this.Controls.Add(this.customComboBoxMunicipio);
             this.Controls.Add(this.textBoxTelefono);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelMunicipio);
+            this.Controls.Add(this.labelTel);
             this.Controls.Add(this.pboxAtras);
             this.Controls.Add(this.botonRedondoGuardar);
             this.Controls.Add(this.textBoxConfirmar);
@@ -472,15 +472,15 @@
         private System.Windows.Forms.PictureBox pictureBoxNombre;
         private Controles.CustomComboBox customComboBoxMunicipio;
         private Controles.TextBox textBoxTelefono;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelMunicipio;
+        private System.Windows.Forms.Label labelTel;
         private Controles.TextBox textBoxLongitud;
         private Controles.TextBox textBoxLatitud;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelLongitud;
+        private System.Windows.Forms.Label labelLatitud;
         private Controles.TextBox textBoxCierre;
         private Controles.TextBox textBoxApertura;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelCierre;
+        private System.Windows.Forms.Label labelApertura;
     }
 }

@@ -13,6 +13,18 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            labelNombre.Text = Resources.Strings.lblNombre;
+            labelCorreo.Text = Resources.Strings.lblCorreo;
+            labelContra.Text = Resources.Strings.lblContra;
+            labelConf.Text = Resources.Strings.lblConfContra;
+            labelTel.Text = Resources.Strings.lblTel;
+            labelMunicipio.Text = Resources.Strings.lblMunicipio;
+            labelLongitud.Text = Resources.Strings.lblLongitud;
+            labelLatitud.Text = Resources.Strings.lblLatitud;
+            labelApertura.Text = Resources.Strings.lblApertura;
+            labelCierre.Text = Resources.Strings.lblCierre;
+            botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
+
             _restaurant = restaurant;
             _created = created;
 
@@ -65,13 +77,13 @@ namespace NavyBeats_C_
                 string.IsNullOrEmpty(psswd) || string.IsNullOrEmpty(confirm) || municipaly == null || !validLatitud || latitud == null
                 || !validLongitud || longitud == null || string.IsNullOrEmpty(openingTime) || string.IsNullOrEmpty(closingTime))
             {
-                MessageBox.Show("Completa todos los campos correctamente.");
+                MessageBox.Show(Resources.Strings.msgCompleta);
             }
             else
             {
                 if (!psswd.Equals(confirm))
                 {
-                    MessageBox.Show("La contraseña no coincide.");
+                    MessageBox.Show(Resources.Strings.msgContra);
                 }
                 else
                 {
@@ -80,7 +92,7 @@ namespace NavyBeats_C_
                     newUser.phone_number = phone.ToString();
                     newUser.email = email;
                     newUser.municipality_id = municipaly.municipality_id;
-                    newUser.password = psswd;
+                    newUser.password = Encrypt.Encriptar(psswd);
                     newUser.latitud = latitud;
                     newUser.longitud = longitud;
                     newUser.creation_date = DateTime.Today.ToString();

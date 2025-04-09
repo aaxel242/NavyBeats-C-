@@ -12,6 +12,14 @@ namespace NavyBeats_C_
         public FormInfoUsusario(Super_User user, bool created)
         {
             InitializeComponent();
+
+            labelNombre.Text = Resources.Strings.lblNombre;
+            labelCorreo.Text = Resources.Strings.lblCorreo;
+            labelContra.Text = Resources.Strings.lblContra;
+            labelConf.Text = Resources.Strings.lblConfContra;
+            customComboBoxRol.Text = Resources.Strings.lblRol;
+            botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
+
             _user = user;
             _created = created;
 
@@ -35,27 +43,26 @@ namespace NavyBeats_C_
 
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(psswd) || string.IsNullOrEmpty(confirm) || string.IsNullOrEmpty(role))
             {
-                MessageBox.Show("No dejes campos vacíos.");
+                MessageBox.Show(Resources.Strings.msgCompleta);
             }
             else
             {
                 if (!psswd.Equals(confirm))
                 {
-                    MessageBox.Show("La contraseña no coincide.");
+                    MessageBox.Show(Resources.Strings.msgContra);
                 }
                 else
                 {
                     Super_User newUser = new Super_User();
                     newUser.name = name;
                     newUser.email = email;
-                    newUser.password = psswd;
+                    newUser.password = Encrypt.Encriptar(psswd);
                     newUser.role = role;
 
                     bool save = false;
 
                     if (_created)
                     {
-
                         save = UsuarioEscritorioOrm.Insert(newUser);
 
                         if (save)

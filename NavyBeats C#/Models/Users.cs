@@ -18,7 +18,6 @@ namespace NavyBeats_C_.Models
         public Users()
         {
             this.Message = new HashSet<Message>();
-            this.Ticket = new HashSet<Ticket>();
             this.Valorar = new HashSet<Valorar>();
             this.Valorar1 = new HashSet<Valorar>();
         }
@@ -42,8 +41,6 @@ namespace NavyBeats_C_.Models
         public virtual Municipality Municipality { get; set; }
         public virtual Musician Musician { get; set; }
         public virtual Restaurant Restaurant { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ticket> Ticket { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Valorar> Valorar { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

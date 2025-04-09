@@ -33,18 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.customBotonModificar = new NavyBeats_C_.Controles.CustomBoton();
             this.customPanel = new NavyBeats_C_.Controles.CustomPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.bindingSourceMusicos = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceLocales = new System.Windows.Forms.BindingSource(this.components);
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             this.customPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).BeginInit();
             this.SuspendLayout();
@@ -61,28 +61,6 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1215, 650);
             this.panel.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pboxAtras
-            // 
-            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
-            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
-            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
-            this.pboxAtras.Name = "pboxAtras";
-            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
-            this.pboxAtras.TabIndex = 2;
-            this.pboxAtras.TabStop = false;
-            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
             // customBotonModificar
             // 
@@ -160,6 +138,28 @@
             this.dataGridView.Size = new System.Drawing.Size(984, 498);
             this.dataGridView.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::NavyBeats_C_.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1133, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pboxAtras
+            // 
+            this.pboxAtras.BackColor = System.Drawing.Color.Transparent;
+            this.pboxAtras.Image = global::NavyBeats_C_.Properties.Resources.imgAtras;
+            this.pboxAtras.Location = new System.Drawing.Point(12, 13);
+            this.pboxAtras.Name = "pboxAtras";
+            this.pboxAtras.Size = new System.Drawing.Size(61, 59);
+            this.pboxAtras.TabIndex = 2;
+            this.pboxAtras.TabStop = false;
+            this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
+            // 
             // bindingSourceMusicos
             // 
             this.bindingSourceMusicos.DataSource = typeof(NavyBeats_C_.Models.Musico);
@@ -182,10 +182,10 @@
             this.Text = "FormLocalMusico";
             this.Load += new System.EventHandler(this.FormLocalMusico_Load);
             this.panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             this.customPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMusicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLocales)).EndInit();
             this.ResumeLayout(false);

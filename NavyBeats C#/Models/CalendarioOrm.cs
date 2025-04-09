@@ -15,7 +15,7 @@ namespace NavyBeats_C_.Models
         /// </summary>
         public static void InsertOffers()
         {
-            using (var context = new NaivyBeatsEntities())
+            using (var context = new dam04Entities())
             {
                 if (context.Offer_dir.Any() || context.Offer_In.Any())
                     return;

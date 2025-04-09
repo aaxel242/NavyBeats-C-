@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCrear" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="btnEliminar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="btnEntrar" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="btnGuardar" xml:space="preserve">
+    <value>Desar</value>
+  </data>
+  <data name="btnModificar" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="lblAbril" xml:space="preserve">
+    <value>Abril</value>
+  </data>
+  <data name="lblAgosto" xml:space="preserve">
+    <value>Agost</value>
+  </data>
+  <data name="lblApertura" xml:space="preserve">
+    <value>Obertura</value>
+  </data>
+  <data name="lblCalendario" xml:space="preserve">
+    <value>Calendari</value>
+  </data>
+  <data name="lblCierre" xml:space="preserve">
+    <value>Tancament</value>
+  </data>
+  <data name="lblConfContra" xml:space="preserve">
+    <value>Conf. Contrasenya</value>
+  </data>
+  <data name="lblContra" xml:space="preserve">
+    <value>Contrasenya</value>
+  </data>
+  <data name="lblCorreo" xml:space="preserve">
+    <value>Correu</value>
+  </data>
+  <data name="lblDiaSeleccionado" xml:space="preserve">
+    <value>Dia Seleccionat</value>
+  </data>
+  <data name="lblDiciembre" xml:space="preserve">
+    <value>Desembre</value>
+  </data>
+  <data name="lblDispoMusico" xml:space="preserve">
+    <value>Disponibilitat Músic</value>
+  </data>
+  <data name="lblDomingo" xml:space="preserve">
+    <value>Diumenge</value>
+  </data>
+  <data name="lblEnero" xml:space="preserve">
+    <value>Gener</value>
+  </data>
+  <data name="lblEstilos" xml:space="preserve">
+    <value>Estils</value>
+  </data>
+  <data name="lblFebrero" xml:space="preserve">
+    <value>Febrer</value>
+  </data>
+  <data name="lblGestion" xml:space="preserve">
+    <value>Gestió d'Usuaris</value>
+  </data>
+  <data name="lblIdioma" xml:space="preserve">
+    <value>Canviar Idioma</value>
+  </data>
+  <data name="lblJueves" xml:space="preserve">
+    <value>Dijous</value>
+  </data>
+  <data name="lblJulio" xml:space="preserve">
+    <value>Juliol</value>
+  </data>
+  <data name="lblJunio" xml:space="preserve">
+    <value>Juny</value>
+  </data>
+  <data name="lblLatitud" xml:space="preserve">
+    <value>Latitud</value>
+  </data>
+  <data name="lblLocal" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="lblLongitud" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="lblLunes" xml:space="preserve">
+    <value>Dilluns</value>
+  </data>
+  <data name="lblMapa" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="lblMartes" xml:space="preserve">
+    <value>Dimarts</value>
+  </data>
+  <data name="lblMarzo" xml:space="preserve">
+    <value>Març</value>
+  </data>
+  <data name="lblMayo" xml:space="preserve">
+    <value>Maig</value>
+  </data>
+  <data name="lblMiercoles" xml:space="preserve">
+    <value>Dimecres</value>
+  </data>
+  <data name="lblMunicipio" xml:space="preserve">
+    <value>Municipi</value>
+  </data>
+  <data name="lblMusico" xml:space="preserve">
+    <value>Músic</value>
+  </data>
+  <data name="lblNoti" xml:space="preserve">
+    <value>Notificacions</value>
+  </data>
+  <data name="lblNombre" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="lblNombreMusico" xml:space="preserve">
+    <value>Nom del Músic</value>
+  </data>
+  <data name="lblNoviembre" xml:space="preserve">
+    <value>Novembre</value>
+  </data>
+  <data name="lblOctubre" xml:space="preserve">
+    <value>Octubre</value>
+  </data>
+  <data name="lblRol" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="lblSabado" xml:space="preserve">
+    <value>Dissabte</value>
+  </data>
+  <data name="lblSelecIdioma" xml:space="preserve">
+    <value>Selecciona un Idioma</value>
+  </data>
+  <data name="lblSeptiembre" xml:space="preserve">
+    <value>Setembre</value>
+  </data>
+  <data name="lblSinEvento" xml:space="preserve">
+    <value>Sense Esdeveniments</value>
+  </data>
+  <data name="lblSoporte" xml:space="preserve">
+    <value>Suport Tècnic</value>
+  </data>
+  <data name="lblTel" xml:space="preserve">
+    <value>Telèfon</value>
+  </data>
+  <data name="lblUsuario" xml:space="preserve">
+    <value>Usuaris del Sistema</value>
+  </data>
+  <data name="lblViernes" xml:space="preserve">
+    <value>Divendres</value>
+  </data>
+  <data name="lblVisuLocales" xml:space="preserve">
+    <value>Visualitzar Locals</value>
+  </data>
+  <data name="lblTipo" xml:space="preserve">
+    <value>Tipus</value>
+  </data>
+  <data name="lblConsulta" xml:space="preserve">
+    <value>Consulta</value>
+  </data>
+  <data name="lblIncidencia" xml:space="preserve">
+    <value>Incidència</value>
+  </data>
+  <data name="lblAsunto" xml:space="preserve">
+    <value>Assumpte</value>
+  </data>
+  <data name="lblDescripcion" xml:space="preserve">
+    <value>Descripció</value>
+  </data>
+  <data name="btnEnviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="lblFormSoporte" xml:space="preserve">
+    <value>Formulari de suport</value>
+  </data>
+  <data name="msgCompleta" xml:space="preserve">
+    <value>Completa tots els camps requerits.</value>
+  </data>
+  <data name="msgContra" xml:space="preserve">
+    <value> La contrasenya no coincideix.</value>
+  </data>
+  <data name="msgEliminar" xml:space="preserve">
+    <value>Estàs segur que vols eliminar l'usuari?</value>
+  </data>
+  <data name="msgConfirmar" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="msgUsuarioContra" xml:space="preserve">
+    <value>Usuari i/o contrasenya incorrecte.</value>
+  </data>
+  <data name="msgCoordMusico" xml:space="preserve">
+    <value>No s'han trobat coordenades pel músic.</value>
+  </data>
+  <data name="msgError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="msgCoordRestaurante" xml:space="preserve">
+    <value>No s'han trobat coordenades pel restaurant.</value>
+  </data>
+  <data name="msgPermiso" xml:space="preserve">
+    <value>No tens permís per accedir a aquesta opció.</value>
+  </data>
+  <data name="msgModificar" xml:space="preserve">
+    <value>No pots modificar el vostre propi usuari.</value>
+  </data>
+  <data name="msgAutoEliminar" xml:space="preserve">
+    <value>No pots eliminar el teu propi usuari.</value>
+  </data>
+</root>
