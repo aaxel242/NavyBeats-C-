@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using GMap.NET;
-using GMap.NET.MapProviders;
-using GMap.NET.WindowsForms;
 using NavyBeats_C_.Models;
 
 namespace NavyBeats_C_
@@ -22,6 +19,14 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            lblLunes.Text = Resources.Strings.lblLunes;
+            lblMartes.Text = Resources.Strings.lblMartes;
+            lblMiercoles.Text = Resources.Strings.lblMiercoles;
+            lblJueves.Text = Resources.Strings.lblJueves;
+            lblViernes.Text = Resources.Strings.lblViernes;
+            lblSabado.Text = Resources.Strings.lblSabado;
+            lblDomingo.Text = Resources.Strings.lblDomingo;
+
             currentYear = DateTime.Now.Year;
             currentMonth = DateTime.Now.Month;
             MostrarDias(currentYear, currentMonth);
@@ -30,18 +35,6 @@ namespace NavyBeats_C_
         private void FormCalendario_Load(object sender, EventArgs e)
         {
             panelCalendarioFondo.BackColor = Color.FromArgb(216, 255, 255, 255);
-
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
 
             btnRetroceder.BackgroundImage = Properties.Resources.imgFlechaRetroceder;
             btnRetroceder.BackgroundImageLayout = ImageLayout.Stretch;
@@ -199,14 +192,14 @@ namespace NavyBeats_C_
         }
 
         private void MostrarEventoActual()
-        {
+        {            
             if (eventosDelDia != null && eventosDelDia.Count > 0)
             {
                 btnAvanzar.Visible = true;
                 btnRetroceder.Visible = true;
                 lblNumEventos.Visible = true;
                 lblMusico.Visible = true;
-                lblMusico.Text = "Músico";
+                lblMusico.Text = Resources.Strings.lblMusico;
                 lblLocal.Visible = true;
                 lblHorario.Visible = true;
                 lblPrecio.Visible = true;
@@ -236,7 +229,7 @@ namespace NavyBeats_C_
                 btnRetroceder.Visible = false;
                 lblNumEventos.Visible = false;
                 lblMusico.Visible = true;
-                lblMusico.Text = "Sin Eventos";
+                lblMusico.Text = Resources.Strings.lblSinEvento;
                 lblLocal.Visible = false;
                 lblHorario.Visible = false;
                 lblPrecio.Visible = false;
@@ -251,8 +244,9 @@ namespace NavyBeats_C_
 
         private string ObtenerNombreMes(int mes)
         {
-            string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                               "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            string[] meses = { Resources.Strings.lblEnero, Resources.Strings.lblFebrero, Resources.Strings.lblMarzo, Resources.Strings.lblAbril,
+                Resources.Strings.lblMayo, Resources.Strings.lblJunio, Resources.Strings.lblJulio, Resources.Strings.lblAgosto,
+                Resources.Strings.lblSeptiembre, Resources.Strings.lblOctubre, Resources.Strings.lblNoviembre, Resources.Strings.lblDiciembre };
             return meses[mes - 1];
         }
 

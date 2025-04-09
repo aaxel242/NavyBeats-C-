@@ -12,9 +12,10 @@ namespace NavyBeats_C_.Models
     {
         public static Super_User SelectLogin(string email, string psswd)
         {
-            var user = (from u in Orm.bd.Super_User
-                        where u.email == email && u.password == psswd
-                        select u).FirstOrDefault();
+            Super_User _user =
+                (from user in Orm.bd.Super_User
+                    where user.email == email && user.password == psswd
+                    select user).FirstOrDefault();
 
             if (user != null)
             {
@@ -44,8 +45,8 @@ namespace NavyBeats_C_.Models
         public static Super_User SelectById(int _id)
         {
             Super_User _user =
-                (Super_User)(from user in Orm.bd.Super_User
-                             where user.user_id_admin == _id 
+                (from user in Orm.bd.Super_User
+                             where user.user_id_admin == _id
                              select user).FirstOrDefault();
 
             return _user;

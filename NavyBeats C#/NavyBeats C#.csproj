@@ -114,6 +114,7 @@
     <Compile Include="Controles\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entitites\ManageString.cs" />
     <Compile Include="FormActuaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +126,18 @@
     </Compile>
     <Compile Include="FormCalendario.Designer.cs">
       <DependentUpon>FormCalendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfoLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoLocal.Designer.cs">
+      <DependentUpon>FormInfoLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfoMusico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoMusico.Designer.cs">
+      <DependentUpon>FormInfoMusico.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInfoUsusario.cs">
       <SubType>Form</SubType>
@@ -204,10 +217,8 @@
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <Compile Include="Models\Management\CalendarioOrm.cs" />
->>>>>>> pre fix
+    <Compile Include="Models\CalendarioOrm.cs" />
+    <Compile Include="Entitites\Encrypt.cs" />
     <Compile Include="Models\Chat.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -217,10 +228,8 @@
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <Compile Include="Models\Management\EventoInfo.cs" />
->>>>>>> pre fix
+    <Compile Include="Models\EstilosOrm.cs" />
+    <Compile Include="Models\EventoInfo.cs" />
     <Compile Include="Models\Like_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -255,6 +264,7 @@
     <Compile Include="Models\Municipality.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MunicipiosOrm.cs" />
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -267,6 +277,9 @@
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Offer_In.cs">
+      <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Offer_in_Styles.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Offer_in_Styles.cs">
@@ -310,15 +323,33 @@
     <Compile Include="Models\User_Time.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
-    <Compile Include="Models\Management\UsuarioEscritorioOrm.cs" />
->>>>>>> pre fix
+    <Compile Include="Models\UsuarioEscritorioOrm.cs" />
+    <Compile Include="Models\UsuarioMovilOrm.cs" />
     <Compile Include="Models\Valorar.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings.es.Designer.cs">
+      <DependentUpon>Strings.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Strings.en.Designer.cs">
+      <DependentUpon>Strings.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Strings.ca.Designer.cs">
+      <DependentUpon>Strings.ca.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controles\CustomComboBox.resx">
       <DependentUpon>CustomComboBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,6 +361,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCalendario.resx">
       <DependentUpon>FormCalendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoLocal.resx">
+      <DependentUpon>FormInfoLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfoMusico.resx">
+      <DependentUpon>FormInfoMusico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInfoUsusario.resx">
       <DependentUpon>FormInfoUsusario.cs</DependentUpon>
@@ -383,6 +420,22 @@
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.ca.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.ca.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EntityDeploy Include="Models\ModelNaivyBeats.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelNaivyBeats.Designer.cs</LastGenOutput>
@@ -399,12 +452,13 @@
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Message.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Municipality.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Musician.datasource" />
-    <None Include="Properties\DataSources\NavyBeats_C_.Models.MusicianOrm.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Musico.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_dir.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Offer_In.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Orm.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Publication.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Restaurant.datasource" />
+    <None Include="Properties\DataSources\NavyBeats_C_.Models.Restaurante.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Style.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Super_User.datasource" />
     <None Include="Properties\DataSources\NavyBeats_C_.Models.Ticket.datasource" />

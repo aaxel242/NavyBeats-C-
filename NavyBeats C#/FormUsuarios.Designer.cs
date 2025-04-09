@@ -43,8 +43,8 @@
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceUsuarios = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBoxNombre = new System.Windows.Forms.PictureBox();
-            this.botonRedondoEliminar = new NavyBeats_C_.Controles.CustomBoton();
-            this.botonRedondoCrear = new NavyBeats_C_.Controles.CustomBoton();
+            this.customBotonEliminar = new NavyBeats_C_.Controles.CustomBoton();
+            this.customBotonCrear = new NavyBeats_C_.Controles.CustomBoton();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelAzul = new System.Windows.Forms.Panel();
             this.checkedListBoxUsuarios = new System.Windows.Forms.CheckedListBox();
@@ -65,8 +65,8 @@
             this.panel.Controls.Add(this.customBotonModificar);
             this.panel.Controls.Add(this.customPanel);
             this.panel.Controls.Add(this.pictureBoxNombre);
-            this.panel.Controls.Add(this.botonRedondoEliminar);
-            this.panel.Controls.Add(this.botonRedondoCrear);
+            this.panel.Controls.Add(this.customBotonEliminar);
+            this.panel.Controls.Add(this.customBotonCrear);
             this.panel.Controls.Add(this.pictureBoxLogo);
             this.panel.Location = new System.Drawing.Point(335, 29);
             this.panel.Name = "panel";
@@ -208,37 +208,37 @@
             this.pictureBoxNombre.TabIndex = 10;
             this.pictureBoxNombre.TabStop = false;
             // 
-            // botonRedondoEliminar
+            // customBotonEliminar
             // 
-            this.botonRedondoEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondoEliminar.BorderRadius = 20;
-            this.botonRedondoEliminar.FlatAppearance.BorderSize = 0;
-            this.botonRedondoEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondoEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondoEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.botonRedondoEliminar.Location = new System.Drawing.Point(439, 571);
-            this.botonRedondoEliminar.Name = "botonRedondoEliminar";
-            this.botonRedondoEliminar.Size = new System.Drawing.Size(150, 40);
-            this.botonRedondoEliminar.TabIndex = 9;
-            this.botonRedondoEliminar.Text = "Eliminar";
-            this.botonRedondoEliminar.UseVisualStyleBackColor = false;
-            this.botonRedondoEliminar.Click += new System.EventHandler(this.botonRedondoEliminar_Click);
+            this.customBotonEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.customBotonEliminar.BorderRadius = 20;
+            this.customBotonEliminar.FlatAppearance.BorderSize = 0;
+            this.customBotonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customBotonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customBotonEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.customBotonEliminar.Location = new System.Drawing.Point(439, 571);
+            this.customBotonEliminar.Name = "customBotonEliminar";
+            this.customBotonEliminar.Size = new System.Drawing.Size(150, 40);
+            this.customBotonEliminar.TabIndex = 9;
+            this.customBotonEliminar.Text = "Eliminar";
+            this.customBotonEliminar.UseVisualStyleBackColor = false;
+            this.customBotonEliminar.Click += new System.EventHandler(this.botonRedondoEliminar_Click);
             // 
-            // botonRedondoCrear
+            // customBotonCrear
             // 
-            this.botonRedondoCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.botonRedondoCrear.BorderRadius = 20;
-            this.botonRedondoCrear.FlatAppearance.BorderSize = 0;
-            this.botonRedondoCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonRedondoCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonRedondoCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.botonRedondoCrear.Location = new System.Drawing.Point(52, 571);
-            this.botonRedondoCrear.Name = "botonRedondoCrear";
-            this.botonRedondoCrear.Size = new System.Drawing.Size(150, 40);
-            this.botonRedondoCrear.TabIndex = 8;
-            this.botonRedondoCrear.Text = "Crear";
-            this.botonRedondoCrear.UseVisualStyleBackColor = false;
-            this.botonRedondoCrear.Click += new System.EventHandler(this.botonRedondoCrear_Click);
+            this.customBotonCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.customBotonCrear.BorderRadius = 20;
+            this.customBotonCrear.FlatAppearance.BorderSize = 0;
+            this.customBotonCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customBotonCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customBotonCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.customBotonCrear.Location = new System.Drawing.Point(52, 571);
+            this.customBotonCrear.Name = "customBotonCrear";
+            this.customBotonCrear.Size = new System.Drawing.Size(150, 40);
+            this.customBotonCrear.TabIndex = 8;
+            this.customBotonCrear.Text = "Crear";
+            this.customBotonCrear.UseVisualStyleBackColor = false;
+            this.customBotonCrear.Click += new System.EventHandler(this.botonRedondoCrear_Click);
             // 
             // pictureBoxLogo
             // 
@@ -301,6 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormUsuarios";
             this.Load += new System.EventHandler(this.FormUsuarios_Load);
             this.panel.ResumeLayout(false);
@@ -321,8 +322,8 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Panel panelAzul;
         private System.Windows.Forms.PictureBox pbSalir;
-        private Controles.CustomBoton botonRedondoEliminar;
-        private Controles.CustomBoton botonRedondoCrear;
+        private Controles.CustomBoton customBotonEliminar;
+        private Controles.CustomBoton customBotonCrear;
         private System.Windows.Forms.PictureBox pictureBoxNombre;
         private Controles.CustomPanel customPanel;
         private System.Windows.Forms.DataGridView dataGridView;

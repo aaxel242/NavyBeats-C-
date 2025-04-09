@@ -13,6 +13,8 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            AplicarTexto();
+
             ClickControles(panelUsuarios);
             ClickControles(panelNotificaciones);
             ClickControles(panelCalendario);
@@ -21,6 +23,16 @@ namespace NavyBeats_C_
             ClickControles(panelSoporte);
 
             userLogin = user;
+        }
+
+        private void AplicarTexto()
+        {
+            lblGestionUsuarios.Text = Resources.Strings.lblGestion;
+            lblNotificaciones.Text = Resources.Strings.lblNoti;
+            lblCalendario.Text = Resources.Strings.lblCalendario;
+            lblMapa.Text = Resources.Strings.lblMapa;
+            lblCambiarIdioma.Text = Resources.Strings.lblIdioma;
+            lblSoporteTecnico.Text = Resources.Strings.lblSoporte;
         }
 
         private void ClickControles(Panel panel)
@@ -80,7 +92,11 @@ namespace NavyBeats_C_
                 FormIdiomas idiomas = new FormIdiomas();
                 idiomas.Show();
 
-                idiomas.FormClosed += (s, args) => this.Show();
+                idiomas.FormClosed += (s, args) =>
+                {
+                    this.Show();
+                    AplicarTexto();
+                };
                 this.Hide();
             }
             else if (panel == panelSoporte)
