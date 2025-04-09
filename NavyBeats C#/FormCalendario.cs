@@ -138,48 +138,6 @@ namespace NavyBeats_C_
             }
         }
 
-        private void ResaltarDiasConEventos()
-        {
-            // Se consultan las ofertas activas de ambas tablas según los criterios definidos
-            using (var context = new dam04Entities())
-            {
-                // Obtener las fechas de los eventos de Offer_dir (agreement = 1 y done = 0)
-                var offerDirDates = context.Offer_dir
-                    .Where(o => o.agreement == 1 && o.done == 0 && o.event_date != null)
-                    .Select(o => o.event_date)
-                    .AsEnumerable() // Cambia a LINQ to Objects para usar DateTime.Parse
-                    .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
-                    .Where(dt => dt != DateTime.MinValue)
-                    .ToList();
-
-                // Obtener las fechas de los eventos de Offer_In (music_id_final no es nulo)
-                var offerInDates = context.Offer_In
-                      .Where(o => o.music_id_final != null && o.event_date != null)
-                      .Select(o => o.event_date)
-                      .AsEnumerable()
-                      .Select(ed => DateTime.TryParse(ed, out var dt) ? dt : DateTime.MinValue)
-                      .Where(dt => dt != DateTime.MinValue)
-                      .ToList();
-
-                // Combina ambas listas y elimina duplicados
-                var eventDates = offerDirDates.Union(offerInDates).ToList();
-
-                // Recorrer los botones en panelDias y resaltar aquellos cuyo Tag (fecha) coincide con algún evento
-                foreach (Control ctrl in panelDias.Controls)
-                {
-                    if (ctrl is Button btn && btn.Tag is DateTime btnDate)
-                    {
-                        // Compara solo la parte de la fecha
-                        if (eventDates.Any(ev => ev.Date == btnDate.Date))
-                        {
-                            btn.BackColor = Color.FromArgb(229, 177, 129);
-                        }
-                    }
-                }
-            }
-        }
-
-
         private void BtnDia_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;

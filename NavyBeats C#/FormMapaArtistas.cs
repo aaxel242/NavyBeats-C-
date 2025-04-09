@@ -128,19 +128,19 @@ namespace NavyBeats_C_
                 panelMusico.Margin = new Padding(5);
 
                 Label lblNombre = new Label();
-                lblNombre.Text = musician.Name;
+                lblNombre.Text = musician.name;
                 lblNombre.Font = new Font("Montserrat", 10, FontStyle.Bold);
                 lblNombre.Location = new Point(10, 10);
                 lblNombre.AutoSize = true;
 
                 Label lblEmail = new Label();
-                lblEmail.Text = musician.Email;
+                lblEmail.Text = musician.email;
                 lblEmail.Font = new Font("Montserrat", 9, FontStyle.Regular);
                 lblEmail.Location = new Point(10, 30);
                 lblEmail.AutoSize = true;
 
                 Label lblMunicipio = new Label();
-                lblMunicipio.Text = musician.Municipality;
+                lblMunicipio.Text = musician.municipality;
                 lblMunicipio.Font = new Font("Montserrat", 9, FontStyle.Regular);
                 lblMunicipio.Location = new Point(10, 50);
                 lblMunicipio.AutoSize = true;
