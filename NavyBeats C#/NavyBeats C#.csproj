@@ -115,6 +115,7 @@
     <Compile Include="Controles\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entitites\ManageString.cs" />
     <Compile Include="FormActuaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,7 +228,7 @@
     <Compile Include="Models\Comment_Restaurant_Publication.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Encrypt.cs" />
+    <Compile Include="Entitites\Encrypt.cs" />
     <Compile Include="Models\EstilosOrm.cs" />
     <Compile Include="Models\EventoInfo.cs" />
     <Compile Include="Models\Like_Restaurant_Publication.cs">
@@ -306,20 +307,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Idiomas.ca.Designer.cs">
-      <DependentUpon>Idiomas.ca.resx</DependentUpon>
+    <Compile Include="Resources\Strings.es.Designer.cs">
+      <DependentUpon>Strings.es.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\Idiomas.en.Designer.cs">
-      <DependentUpon>Idiomas.en.resx</DependentUpon>
+    <Compile Include="Resources\Strings.en.Designer.cs">
+      <DependentUpon>Strings.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\Idiomas.Designer.cs">
+    <Compile Include="Resources\Strings.ca.Designer.cs">
+      <DependentUpon>Strings.ca.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Idiomas.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Controles\CustomComboBox.resx">
       <DependentUpon>CustomComboBox.cs</DependentUpon>
@@ -391,17 +397,21 @@
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Idiomas.ca.resx">
+    <EmbeddedResource Include="Resources\Strings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idiomas.ca.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Idiomas.en.resx">
+    <EmbeddedResource Include="Resources\Strings.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idiomas.en.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Idiomas.resx">
+    <EmbeddedResource Include="Resources\Strings.ca.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Idiomas.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.ca.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="Models\ModelNaivyBeats.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

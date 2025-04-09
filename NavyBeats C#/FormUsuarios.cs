@@ -16,6 +16,11 @@ namespace NavyBeats_C_
         public FormUsuarios(Super_User user)
         {
             InitializeComponent();
+
+            customBotonCrear.Text = Resources.Strings.btnCrear;
+            customBotonModificar.Text = Resources.Strings.btnModificar;
+            customBotonEliminar.Text = Resources.Strings.btnEliminar;
+
             bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
 
             userLogin = user;
@@ -55,7 +60,7 @@ namespace NavyBeats_C_
 
             if (user == userLogin)
             {
-                MessageBox.Show("No puedes modificar tu propio usuario.");
+                MessageBox.Show(Resources.Strings.msgModificar);
             }
             else
             {
@@ -69,7 +74,7 @@ namespace NavyBeats_C_
 
         private void botonRedondoEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Estas seguro de eliminar al usuario?", "Confirmar", MessageBoxButtons.YesNo);
+            DialogResult confirm = MessageBox.Show(Resources.Strings.msgEliminar, Resources.Strings.msgConfirmar, MessageBoxButtons.YesNo);
             bool delete = false;
 
             if (confirm == DialogResult.Yes)
@@ -78,7 +83,7 @@ namespace NavyBeats_C_
 
                 if (user == userLogin)
                 {
-                    MessageBox.Show("No puedes eliminar tu propio usuario.");
+                    MessageBox.Show(Resources.Strings.msgAutoEliminar);
                 }
                 else
                 {

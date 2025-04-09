@@ -192,7 +192,7 @@ namespace NavyBeats_C_
                 }
                 else
                 {
-                    MessageBox.Show("No se encontraron coordenadas para este restaurante.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.Strings.msgCoordRestaurante, Resources.Strings.msgError, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

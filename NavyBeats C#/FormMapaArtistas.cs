@@ -21,6 +21,8 @@ namespace NavyBeats_C_
         public FormMapaArtistas()
         {
             InitializeComponent();
+
+            //labelNombre.Text = Resources.Idiomas.lblNombreMusico;
         }
 
         private void FormMapaArtistas_Load(object sender, EventArgs e)
@@ -187,7 +189,7 @@ namespace NavyBeats_C_
                 }
                 else
                 {
-                    MessageBox.Show("No se encontraron coordenadas para este músico.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.Strings.msgCoordMusico, Resources.Strings.msgError, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

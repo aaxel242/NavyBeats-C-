@@ -117,157 +117,211 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Abril" xml:space="preserve">
-    <value />
+  <data name="btnCrear" xml:space="preserve">
+    <value>Crear</value>
   </data>
-  <data name="Agosto" xml:space="preserve">
-    <value />
+  <data name="btnEliminar" xml:space="preserve">
+    <value>Eliminar</value>
   </data>
-  <data name="lblArtista" xml:space="preserve">
-    <value />
+  <data name="btnEntrar" xml:space="preserve">
+    <value>Entrar</value>
   </data>
-  <data name="Asunto" xml:space="preserve">
-    <value />
+  <data name="btnGuardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="btnModificar" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="lblAbril" xml:space="preserve">
+    <value>Abril</value>
+  </data>
+  <data name="lblAgosto" xml:space="preserve">
+    <value>Agosto</value>
+  </data>
+  <data name="lblApertura" xml:space="preserve">
+    <value>Apertura</value>
   </data>
   <data name="lblCalendario" xml:space="preserve">
-    <value />
+    <value>Calendario</value>
   </data>
-  <data name="lblCatalan" xml:space="preserve">
-    <value />
+  <data name="lblCierre" xml:space="preserve">
+    <value>Cierre</value>
   </data>
-  <data name="lblConsulta" xml:space="preserve">
-    <value />
+  <data name="lblConfContra" xml:space="preserve">
+    <value>Conf. Contraseña</value>
   </data>
   <data name="lblContra" xml:space="preserve">
-    <value />
+    <value>Contraseña</value>
   </data>
   <data name="lblCorreo" xml:space="preserve">
     <value>Correo</value>
   </data>
-  <data name="btnCrear" xml:space="preserve">
-    <value />
+  <data name="lblDiaSeleccionado" xml:space="preserve">
+    <value>Dia Seleccionado</value>
   </data>
-  <data name="Descripcion" xml:space="preserve">
-    <value />
+  <data name="lblDiciembre" xml:space="preserve">
+    <value>Diciembre</value>
   </data>
-  <data name="Dia selected" xml:space="preserve">
-    <value />
+  <data name="lblDispoMusico" xml:space="preserve">
+    <value>Disponibilidad Musico</value>
   </data>
-  <data name="Diciembre" xml:space="preserve">
-    <value />
+  <data name="lblDomingo" xml:space="preserve">
+    <value>Domingo</value>
   </data>
-  <data name="Disponibilidad Musico" xml:space="preserve">
-    <value />
+  <data name="lblEnero" xml:space="preserve">
+    <value>Enero</value>
   </data>
-  <data name="Domingo" xml:space="preserve">
-    <value />
+  <data name="lblEstilos" xml:space="preserve">
+    <value>Estilos</value>
   </data>
-  <data name="Eliminar" xml:space="preserve">
-    <value />
+  <data name="lblFebrero" xml:space="preserve">
+    <value>Febrero</value>
   </data>
-  <data name="Enero" xml:space="preserve">
-    <value />
+  <data name="lblGestion" xml:space="preserve">
+    <value>Gestión de Usuarios</value>
   </data>
-  <data name="Entrar" xml:space="preserve">
-    <value />
+  <data name="lblIdioma" xml:space="preserve">
+    <value>Cambiar Idioma</value>
   </data>
-  <data name="Enviar" xml:space="preserve">
-    <value />
+  <data name="lblJueves" xml:space="preserve">
+    <value>Jueves</value>
   </data>
-  <data name="Español" xml:space="preserve">
-    <value />
+  <data name="lblJulio" xml:space="preserve">
+    <value>Julio</value>
   </data>
-  <data name="Febrero" xml:space="preserve">
-    <value />
+  <data name="lblJunio" xml:space="preserve">
+    <value>Junio</value>
   </data>
-  <data name="Form de soporte" xml:space="preserve">
-    <value />
+  <data name="lblLatitud" xml:space="preserve">
+    <value>Latitud</value>
   </data>
-  <data name="Gestion de user" xml:space="preserve">
-    <value />
+  <data name="lblLocal" xml:space="preserve">
+    <value>Local</value>
   </data>
-  <data name="Idioma" xml:space="preserve">
-    <value />
+  <data name="lblLongitud" xml:space="preserve">
+    <value>Longitud</value>
   </data>
-  <data name="Indicencia" xml:space="preserve">
-    <value />
+  <data name="lblLunes" xml:space="preserve">
+    <value>Lunes</value>
   </data>
-  <data name="Ingles" xml:space="preserve">
-    <value />
+  <data name="lblMapa" xml:space="preserve">
+    <value>Mapa</value>
   </data>
-  <data name="Jueves" xml:space="preserve">
-    <value />
+  <data name="lblMartes" xml:space="preserve">
+    <value>Martes</value>
   </data>
-  <data name="Julio" xml:space="preserve">
-    <value />
+  <data name="lblMarzo" xml:space="preserve">
+    <value>Marzo</value>
   </data>
-  <data name="Junio" xml:space="preserve">
-    <value />
+  <data name="lblMayo" xml:space="preserve">
+    <value>Mayo</value>
   </data>
-  <data name="Local" xml:space="preserve">
-    <value />
+  <data name="lblMiercoles" xml:space="preserve">
+    <value>Miercoles</value>
   </data>
-  <data name="Lunes" xml:space="preserve">
-    <value />
+  <data name="lblMunicipio" xml:space="preserve">
+    <value>Municipio</value>
   </data>
-  <data name="Mapa" xml:space="preserve">
-    <value />
+  <data name="lblMusico" xml:space="preserve">
+    <value>Musico</value>
   </data>
-  <data name="Martes" xml:space="preserve">
-    <value />
+  <data name="lblNoti" xml:space="preserve">
+    <value>Notificación</value>
   </data>
-  <data name="Marzo" xml:space="preserve">
-    <value />
+  <data name="lblNombre" xml:space="preserve">
+    <value>Nombre</value>
   </data>
-  <data name="Mayo" xml:space="preserve">
-    <value />
+  <data name="lblNombreMusico" xml:space="preserve">
+    <value>Nombre del Musico</value>
   </data>
-  <data name="Miercoles" xml:space="preserve">
-    <value />
+  <data name="lblNoviembre" xml:space="preserve">
+    <value>Noviembre</value>
   </data>
-  <data name="Modificar" xml:space="preserve">
-    <value />
+  <data name="lblOctubre" xml:space="preserve">
+    <value>Octubre</value>
   </data>
-  <data name="Nofi" xml:space="preserve">
-    <value />
+  <data name="lblRol" xml:space="preserve">
+    <value>Rol</value>
   </data>
-  <data name="Nombre" xml:space="preserve">
-    <value />
+  <data name="lblSabado" xml:space="preserve">
+    <value>Sabado</value>
   </data>
-  <data name="Nombre del musico" xml:space="preserve">
-    <value />
+  <data name="lblSelecIdioma" xml:space="preserve">
+    <value>Selecciona un Idioma</value>
   </data>
-  <data name="Noviembre" xml:space="preserve">
-    <value />
+  <data name="lblSeptiembre" xml:space="preserve">
+    <value>Septiembre</value>
   </data>
-  <data name="Octubre" xml:space="preserve">
-    <value />
+  <data name="lblSinEvento" xml:space="preserve">
+    <value>Sin Evento</value>
   </data>
-  <data name="Sabado" xml:space="preserve">
-    <value />
+  <data name="lblSoporte" xml:space="preserve">
+    <value>Soporte Técnico</value>
   </data>
-  <data name="Selecciona idioma" xml:space="preserve">
-    <value />
+  <data name="lblTel" xml:space="preserve">
+    <value>Teléfono</value>
   </data>
-  <data name="Septiembre" xml:space="preserve">
-    <value />
+  <data name="lblUsuario" xml:space="preserve">
+    <value>Usuarios del Sistema</value>
   </data>
-  <data name="Sin permiso" xml:space="preserve">
-    <value />
+  <data name="lblViernes" xml:space="preserve">
+    <value>Viernes</value>
   </data>
-  <data name="Soporte" xml:space="preserve">
-    <value />
+  <data name="lblVisuLocales" xml:space="preserve">
+    <value>Visualización Locales</value>
   </data>
-  <data name="Tipo" xml:space="preserve">
-    <value />
+  <data name="lblTipo" xml:space="preserve">
+    <value>Tipo</value>
   </data>
-  <data name="Usuar del sis" xml:space="preserve">
-    <value />
+  <data name="lblConsulta" xml:space="preserve">
+    <value>Consulta</value>
   </data>
-  <data name="Viernes" xml:space="preserve">
-    <value />
+  <data name="lblIncidencia" xml:space="preserve">
+    <value>Incidencia</value>
   </data>
-  <data name="Visualizar Locales" xml:space="preserve">
-    <value />
+  <data name="lblAsunto" xml:space="preserve">
+    <value>Asunto</value>
+  </data>
+  <data name="lblDescripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="btnEnviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="lblFormSoporte" xml:space="preserve">
+    <value>Formulario de Soporte</value>
+  </data>
+  <data name="msgCompleta" xml:space="preserve">
+    <value>Completa todos los campos correctamente.</value>
+  </data>
+  <data name="msgContra" xml:space="preserve">
+    <value>La contraseña no coincide.</value>
+  </data>
+  <data name="msgEliminar" xml:space="preserve">
+    <value>¿Estas seguro de eliminar al usuario?</value>
+  </data>
+  <data name="msgConfirmar" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="msgUsuarioContra" xml:space="preserve">
+    <value>Usuario y/o contraseña incorrecto.</value>
+  </data>
+  <data name="msgCoordMusico" xml:space="preserve">
+    <value>No se encontraron coordenadas para este músico.</value>
+  </data>
+  <data name="msgError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="msgCoordRestaurante" xml:space="preserve">
+    <value>No se encontraron coordenadas para este restaurante.</value>
+  </data>
+  <data name="msgPermiso" xml:space="preserve">
+    <value>No tienes permiso para acceder a esta opción.</value>
+  </data>
+  <data name="msgModificar" xml:space="preserve">
+    <value>No puedes modificar tu propio usuario.</value>
+  </data>
+  <data name="msgAutoEliminar" xml:space="preserve">
+    <value>No puedes eliminar tu propio usuario.</value>
   </data>
 </root>

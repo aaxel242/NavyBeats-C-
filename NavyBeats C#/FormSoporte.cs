@@ -10,6 +10,15 @@ namespace NavyBeats_C_
         public FormSoporte()
         {
             InitializeComponent();
+
+            lblFormSoporteTit.Text = Resources.Strings.lblFormSoporte;
+            lblTipo.Text = Resources.Strings.lblTipo;
+            lblConsulta.Text = Resources.Strings.lblConsulta;
+            lblIncidencia.Text = Resources.Strings.lblIncidencia;
+            lblNombre.Text = Resources.Strings.lblNombre;
+            lblAsunto.Text = Resources.Strings.lblAsunto;
+            lblDescripcion.Text = Resources.Strings.lblDescripcion;
+            btnEnviarForm.Text = Resources.Strings.btnEnviar;
         }
 
         private void FormSoporte_Load(object sender, EventArgs e)

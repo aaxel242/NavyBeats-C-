@@ -13,6 +13,10 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            labelArtista.Text = Resources.Strings.lblMusico;
+            labelLocal.Text = Resources.Strings.lblLocal;
+            labelUsuario.Text = Resources.Strings.lblUsuario;
+
             userLogin = user;
 
             ClickControles(panelSistema);
@@ -52,7 +56,7 @@ namespace NavyBeats_C_
                 }
                 else
                 {
-                    MessageBox.Show("No tienes permiso para acceder a esta opción.");
+                    MessageBox.Show(Resources.Strings.msgPermiso);
                 }
             }
             else

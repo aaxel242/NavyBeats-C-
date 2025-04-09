@@ -14,6 +14,10 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
+            customBotonCrear.Text = Resources.Strings.btnCrear;
+            customBotonModificar.Text = Resources.Strings.btnModificar;
+            customBotonEliminar.Text = Resources.Strings.btnEliminar;
+
             local = _local;
 
             if (local)
@@ -118,7 +122,7 @@ namespace NavyBeats_C_
 
         private void botonRedondoEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult confirm = MessageBox.Show("Estas seguro de eliminar al usuario?", "Confirmar", MessageBoxButtons.YesNo);
+            DialogResult confirm = MessageBox.Show(Resources.Strings.msgEliminar, Resources.Strings.msgConfirmar, MessageBoxButtons.YesNo);
             bool delete = false;
 
             if (confirm == DialogResult.Yes)

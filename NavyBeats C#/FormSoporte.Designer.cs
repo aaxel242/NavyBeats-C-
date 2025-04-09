@@ -33,7 +33,7 @@
             this.panelFormulario = new System.Windows.Forms.Panel();
             this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
             this.lblAsunto = new System.Windows.Forms.Label();
             this.txtBoxNombre = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             this.radioButtonTipo = new System.Windows.Forms.RadioButton();
             this.lblConsulta = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.lblFornSoporteTit = new System.Windows.Forms.Label();
+            this.lblFormSoporteTit = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
@@ -83,7 +83,7 @@
             this.panelFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(187)))), ((int)(((byte)(216)))));
             this.panelFormulario.Controls.Add(this.btnEnviarForm);
             this.panelFormulario.Controls.Add(this.textBox3);
-            this.panelFormulario.Controls.Add(this.label1);
+            this.panelFormulario.Controls.Add(this.lblDescripcion);
             this.panelFormulario.Controls.Add(this.txtBoxAsunto);
             this.panelFormulario.Controls.Add(this.lblAsunto);
             this.panelFormulario.Controls.Add(this.txtBoxNombre);
@@ -93,7 +93,7 @@
             this.panelFormulario.Controls.Add(this.radioButtonTipo);
             this.panelFormulario.Controls.Add(this.lblConsulta);
             this.panelFormulario.Controls.Add(this.lblTipo);
-            this.panelFormulario.Controls.Add(this.lblFornSoporteTit);
+            this.panelFormulario.Controls.Add(this.lblFormSoporteTit);
             this.panelFormulario.Controls.Add(this.pictureBox2);
             this.panelFormulario.Location = new System.Drawing.Point(324, 42);
             this.panelFormulario.Name = "panelFormulario";
@@ -127,16 +127,16 @@
             this.textBox3.Size = new System.Drawing.Size(306, 241);
             this.textBox3.TabIndex = 21;
             // 
-            // label1
+            // lblDescripcion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.label1.Location = new System.Drawing.Point(37, 257);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 24);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Descripcion:";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblDescripcion.Location = new System.Drawing.Point(37, 257);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(127, 24);
+            this.lblDescripcion.TabIndex = 20;
+            this.lblDescripcion.Text = "Descripcion:";
             // 
             // txtBoxAsunto
             // 
@@ -237,16 +237,16 @@
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "Tipo:";
             // 
-            // lblFornSoporteTit
+            // lblFormSoporteTit
             // 
-            this.lblFornSoporteTit.AutoSize = true;
-            this.lblFornSoporteTit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFornSoporteTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.lblFornSoporteTit.Location = new System.Drawing.Point(134, 18);
-            this.lblFornSoporteTit.Name = "lblFornSoporteTit";
-            this.lblFornSoporteTit.Size = new System.Drawing.Size(299, 31);
-            this.lblFornSoporteTit.TabIndex = 6;
-            this.lblFornSoporteTit.Text = "Formulario de soporte";
+            this.lblFormSoporteTit.AutoSize = true;
+            this.lblFormSoporteTit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormSoporteTit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.lblFormSoporteTit.Location = new System.Drawing.Point(134, 18);
+            this.lblFormSoporteTit.Name = "lblFormSoporteTit";
+            this.lblFormSoporteTit.Size = new System.Drawing.Size(299, 31);
+            this.lblFormSoporteTit.TabIndex = 6;
+            this.lblFormSoporteTit.Text = "Formulario de soporte";
             // 
             // pictureBox2
             // 
@@ -314,7 +314,7 @@
         private System.Windows.Forms.Panel panelFormulario;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblFornSoporteTit;
+        private System.Windows.Forms.Label lblFormSoporteTit;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Label lblConsulta;
         private System.Windows.Forms.RadioButton radioButtonTipo;
@@ -324,7 +324,7 @@
         private System.Windows.Forms.TextBox txtBoxNombre;
         private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.TextBox txtBoxAsunto;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox textBox3;
         private Controles.CustomBoton btnEnviarForm;
     }

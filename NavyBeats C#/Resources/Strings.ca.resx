@@ -117,157 +117,211 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Abril" xml:space="preserve">
-    <value />
+  <data name="btnCrear" xml:space="preserve">
+    <value>Crear</value>
   </data>
-  <data name="Agosto" xml:space="preserve">
-    <value />
+  <data name="btnEliminar" xml:space="preserve">
+    <value>Eliminar</value>
   </data>
-  <data name="lblArtista" xml:space="preserve">
-    <value>Artista</value>
+  <data name="btnEntrar" xml:space="preserve">
+    <value>Entrar</value>
   </data>
-  <data name="Asunto" xml:space="preserve">
-    <value>Asunto</value>
+  <data name="btnGuardar" xml:space="preserve">
+    <value>Desar</value>
+  </data>
+  <data name="btnModificar" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="lblAbril" xml:space="preserve">
+    <value>Abril</value>
+  </data>
+  <data name="lblAgosto" xml:space="preserve">
+    <value>Agost</value>
+  </data>
+  <data name="lblApertura" xml:space="preserve">
+    <value>Obertura</value>
   </data>
   <data name="lblCalendario" xml:space="preserve">
-    <value>Calendario</value>
+    <value>Calendari</value>
   </data>
-  <data name="lblCatalan" xml:space="preserve">
-    <value />
+  <data name="lblCierre" xml:space="preserve">
+    <value>Tancament</value>
+  </data>
+  <data name="lblConfContra" xml:space="preserve">
+    <value>Conf. Contrasenya</value>
+  </data>
+  <data name="lblContra" xml:space="preserve">
+    <value>Contrasenya</value>
+  </data>
+  <data name="lblCorreo" xml:space="preserve">
+    <value>Correu</value>
+  </data>
+  <data name="lblDiaSeleccionado" xml:space="preserve">
+    <value>Dia Seleccionat</value>
+  </data>
+  <data name="lblDiciembre" xml:space="preserve">
+    <value>Desembre</value>
+  </data>
+  <data name="lblDispoMusico" xml:space="preserve">
+    <value>Disponibilitat Músic</value>
+  </data>
+  <data name="lblDomingo" xml:space="preserve">
+    <value>Diumenge</value>
+  </data>
+  <data name="lblEnero" xml:space="preserve">
+    <value>Gener</value>
+  </data>
+  <data name="lblEstilos" xml:space="preserve">
+    <value>Estils</value>
+  </data>
+  <data name="lblFebrero" xml:space="preserve">
+    <value>Febrer</value>
+  </data>
+  <data name="lblGestion" xml:space="preserve">
+    <value>Gestió d'Usuaris</value>
+  </data>
+  <data name="lblIdioma" xml:space="preserve">
+    <value>Canviar Idioma</value>
+  </data>
+  <data name="lblJueves" xml:space="preserve">
+    <value>Dijous</value>
+  </data>
+  <data name="lblJulio" xml:space="preserve">
+    <value>Juliol</value>
+  </data>
+  <data name="lblJunio" xml:space="preserve">
+    <value>Juny</value>
+  </data>
+  <data name="lblLatitud" xml:space="preserve">
+    <value>Latitud</value>
+  </data>
+  <data name="lblLocal" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="lblLongitud" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="lblLunes" xml:space="preserve">
+    <value>Dilluns</value>
+  </data>
+  <data name="lblMapa" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="lblMartes" xml:space="preserve">
+    <value>Dimarts</value>
+  </data>
+  <data name="lblMarzo" xml:space="preserve">
+    <value>Març</value>
+  </data>
+  <data name="lblMayo" xml:space="preserve">
+    <value>Maig</value>
+  </data>
+  <data name="lblMiercoles" xml:space="preserve">
+    <value>Dimecres</value>
+  </data>
+  <data name="lblMunicipio" xml:space="preserve">
+    <value>Municipi</value>
+  </data>
+  <data name="lblMusico" xml:space="preserve">
+    <value>Músic</value>
+  </data>
+  <data name="lblNoti" xml:space="preserve">
+    <value>Notificacions</value>
+  </data>
+  <data name="lblNombre" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="lblNombreMusico" xml:space="preserve">
+    <value>Nom del Músic</value>
+  </data>
+  <data name="lblNoviembre" xml:space="preserve">
+    <value>Novembre</value>
+  </data>
+  <data name="lblOctubre" xml:space="preserve">
+    <value>Octubre</value>
+  </data>
+  <data name="lblRol" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="lblSabado" xml:space="preserve">
+    <value>Dissabte</value>
+  </data>
+  <data name="lblSelecIdioma" xml:space="preserve">
+    <value>Selecciona un Idioma</value>
+  </data>
+  <data name="lblSeptiembre" xml:space="preserve">
+    <value>Setembre</value>
+  </data>
+  <data name="lblSinEvento" xml:space="preserve">
+    <value>Sense Esdeveniments</value>
+  </data>
+  <data name="lblSoporte" xml:space="preserve">
+    <value>Suport Tècnic</value>
+  </data>
+  <data name="lblTel" xml:space="preserve">
+    <value>Telèfon</value>
+  </data>
+  <data name="lblUsuario" xml:space="preserve">
+    <value>Usuaris del Sistema</value>
+  </data>
+  <data name="lblViernes" xml:space="preserve">
+    <value>Divendres</value>
+  </data>
+  <data name="lblVisuLocales" xml:space="preserve">
+    <value>Visualitzar Locals</value>
+  </data>
+  <data name="lblTipo" xml:space="preserve">
+    <value>Tipus</value>
   </data>
   <data name="lblConsulta" xml:space="preserve">
     <value>Consulta</value>
   </data>
-  <data name="lblContra" xml:space="preserve">
-    <value>Contraseña</value>
+  <data name="lblIncidencia" xml:space="preserve">
+    <value>Incidència</value>
   </data>
-  <data name="lblCorreo" xml:space="preserve">
-    <value>Correo</value>
+  <data name="lblAsunto" xml:space="preserve">
+    <value>Assumpte</value>
   </data>
-  <data name="btnCrear" xml:space="preserve">
-    <value>Crear</value>
+  <data name="lblDescripcion" xml:space="preserve">
+    <value>Descripció</value>
   </data>
-  <data name="Descripcion" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="Dia selected" xml:space="preserve">
-    <value>Dia seleccionado</value>
-  </data>
-  <data name="Diciembre" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Disponibilidad Musico" xml:space="preserve">
-    <value>Disponibilidad Musico</value>
-  </data>
-  <data name="Domingo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Eliminar" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="Enero" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Entrar" xml:space="preserve">
-    <value>Entrar</value>
-  </data>
-  <data name="Enviar" xml:space="preserve">
+  <data name="btnEnviar" xml:space="preserve">
     <value>Enviar</value>
   </data>
-  <data name="Español" xml:space="preserve">
-    <value />
+  <data name="lblFormSoporte" xml:space="preserve">
+    <value>Formulari de suport</value>
   </data>
-  <data name="Febrero" xml:space="preserve">
-    <value />
+  <data name="msgCompleta" xml:space="preserve">
+    <value>Completa tots els camps requerits.</value>
   </data>
-  <data name="Form de soporte" xml:space="preserve">
-    <value>Formulario de soporte</value>
+  <data name="msgContra" xml:space="preserve">
+    <value> La contrasenya no coincideix.</value>
   </data>
-  <data name="Gestion de user" xml:space="preserve">
-    <value>Gestión de Usuarios</value>
+  <data name="msgEliminar" xml:space="preserve">
+    <value>Estàs segur que vols eliminar l'usuari?</value>
   </data>
-  <data name="Idioma" xml:space="preserve">
-    <value>Cambiar Idioma</value>
+  <data name="msgConfirmar" xml:space="preserve">
+    <value>Confirmar</value>
   </data>
-  <data name="Indicencia" xml:space="preserve">
-    <value>Incidencia</value>
+  <data name="msgUsuarioContra" xml:space="preserve">
+    <value>Usuari i/o contrasenya incorrecte.</value>
   </data>
-  <data name="Ingles" xml:space="preserve">
-    <value />
+  <data name="msgCoordMusico" xml:space="preserve">
+    <value>No s'han trobat coordenades pel músic.</value>
   </data>
-  <data name="Jueves" xml:space="preserve">
-    <value />
+  <data name="msgError" xml:space="preserve">
+    <value>Error</value>
   </data>
-  <data name="Julio" xml:space="preserve">
-    <value />
+  <data name="msgCoordRestaurante" xml:space="preserve">
+    <value>No s'han trobat coordenades pel restaurant.</value>
   </data>
-  <data name="Junio" xml:space="preserve">
-    <value />
+  <data name="msgPermiso" xml:space="preserve">
+    <value>No tens permís per accedir a aquesta opció.</value>
   </data>
-  <data name="Local" xml:space="preserve">
-    <value>Local</value>
+  <data name="msgModificar" xml:space="preserve">
+    <value>No pots modificar el vostre propi usuari.</value>
   </data>
-  <data name="Lunes" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Mapa" xml:space="preserve">
-    <value>Mapa</value>
-  </data>
-  <data name="Martes" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Marzo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Mayo" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Miercoles" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Modificar" xml:space="preserve">
-    <value>Modificar</value>
-  </data>
-  <data name="Nofi" xml:space="preserve">
-    <value>Nofificaciones</value>
-  </data>
-  <data name="Nombre" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="Nombre del musico" xml:space="preserve">
-    <value>Nombre del musico</value>
-  </data>
-  <data name="Noviembre" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Octubre" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Sabado" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Selecciona idioma" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Septiembre" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Sin permiso" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Soporte" xml:space="preserve">
-    <value>Soporte técnico</value>
-  </data>
-  <data name="Tipo" xml:space="preserve">
-    <value>Tipo</value>
-  </data>
-  <data name="Usuar del sis" xml:space="preserve">
-    <value>Usuarios del sistema</value>
-  </data>
-  <data name="Viernes" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Visualizar Locales" xml:space="preserve">
-    <value>Visualizar Locales</value>
+  <data name="msgAutoEliminar" xml:space="preserve">
+    <value>No pots eliminar el teu propi usuari.</value>
   </data>
 </root>

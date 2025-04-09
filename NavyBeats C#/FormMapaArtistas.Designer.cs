@@ -32,11 +32,11 @@
             this.panelMapa = new System.Windows.Forms.Panel();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelMenuMapa = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelMusicos = new System.Windows.Forms.FlowLayoutPanel();
             this.cboxMusicos = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanelMusicos = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMapa.SuspendLayout();
             this.panelMenuMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
@@ -85,12 +85,22 @@
             this.panelMenuMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
             this.panelMenuMapa.Controls.Add(this.flowLayoutPanelMusicos);
             this.panelMenuMapa.Controls.Add(this.cboxMusicos);
-            this.panelMenuMapa.Controls.Add(this.label1);
+            this.panelMenuMapa.Controls.Add(this.labelNombre);
             this.panelMenuMapa.Controls.Add(this.pboxAtras);
             this.panelMenuMapa.Location = new System.Drawing.Point(0, 0);
             this.panelMenuMapa.Name = "panelMenuMapa";
             this.panelMenuMapa.Size = new System.Drawing.Size(291, 650);
             this.panelMenuMapa.TabIndex = 2;
+            // 
+            // flowLayoutPanelMusicos
+            // 
+            this.flowLayoutPanelMusicos.AutoScroll = true;
+            this.flowLayoutPanelMusicos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelMusicos.Location = new System.Drawing.Point(23, 199);
+            this.flowLayoutPanelMusicos.Name = "flowLayoutPanelMusicos";
+            this.flowLayoutPanelMusicos.Size = new System.Drawing.Size(252, 403);
+            this.flowLayoutPanelMusicos.TabIndex = 10;
+            this.flowLayoutPanelMusicos.WrapContents = false;
             // 
             // cboxMusicos
             // 
@@ -101,17 +111,17 @@
             this.cboxMusicos.TabIndex = 9;
             this.cboxMusicos.SelectedIndexChanged += new System.EventHandler(this.cboxMusicos_SelectedIndexChanged);
             // 
-            // label1
+            // labelNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(20, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 30);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Nombre del musico";
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.BackColor = System.Drawing.Color.Transparent;
+            this.labelNombre.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.labelNombre.Location = new System.Drawing.Point(20, 114);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(201, 30);
+            this.labelNombre.TabIndex = 8;
+            this.labelNombre.Text = "Nombre del musico";
             // 
             // pboxAtras
             // 
@@ -135,16 +145,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // flowLayoutPanelMusicos
-            // 
-            this.flowLayoutPanelMusicos.AutoScroll = true;
-            this.flowLayoutPanelMusicos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelMusicos.Location = new System.Drawing.Point(23, 199);
-            this.flowLayoutPanelMusicos.Name = "flowLayoutPanelMusicos";
-            this.flowLayoutPanelMusicos.Size = new System.Drawing.Size(252, 403);
-            this.flowLayoutPanelMusicos.TabIndex = 10;
-            this.flowLayoutPanelMusicos.WrapContents = false;
             // 
             // FormMapaArtistas
             // 
@@ -172,7 +172,7 @@
         private System.Windows.Forms.Panel panelMenuMapa;
         private System.Windows.Forms.PictureBox pboxAtras;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.ComboBox cboxMusicos;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMusicos;
     }

@@ -10,6 +10,8 @@ namespace NavyBeats_C_
         public FormNotificaciones()
         {
             InitializeComponent();
+
+            lblNotificaciones.Text = Resources.Strings.lblNoti;
         }
 
         private void FormNotificaciones_Load(object sender, EventArgs e)

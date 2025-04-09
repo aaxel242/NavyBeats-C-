@@ -32,8 +32,8 @@
             this.panelMapa = new System.Windows.Forms.Panel();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelMenuMapa = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDispoMusico = new System.Windows.Forms.Label();
+            this.labelVisualizar = new System.Windows.Forms.Label();
             this.btnLocalMapa = new System.Windows.Forms.Button();
             this.btnMusicoMapa = new System.Windows.Forms.Button();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
@@ -84,8 +84,8 @@
             // panelMenuMapa
             // 
             this.panelMenuMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.panelMenuMapa.Controls.Add(this.label2);
-            this.panelMenuMapa.Controls.Add(this.label1);
+            this.panelMenuMapa.Controls.Add(this.labelDispoMusico);
+            this.panelMenuMapa.Controls.Add(this.labelVisualizar);
             this.panelMenuMapa.Controls.Add(this.btnLocalMapa);
             this.panelMenuMapa.Controls.Add(this.btnMusicoMapa);
             this.panelMenuMapa.Controls.Add(this.pboxAtras);
@@ -94,27 +94,27 @@
             this.panelMenuMapa.Size = new System.Drawing.Size(291, 650);
             this.panelMenuMapa.TabIndex = 2;
             // 
-            // label2
+            // labelDispoMusico
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.label2.Location = new System.Drawing.Point(21, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 30);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Disponibilidad Musico";
+            this.labelDispoMusico.AutoSize = true;
+            this.labelDispoMusico.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDispoMusico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.labelDispoMusico.Location = new System.Drawing.Point(21, 119);
+            this.labelDispoMusico.Name = "labelDispoMusico";
+            this.labelDispoMusico.Size = new System.Drawing.Size(233, 30);
+            this.labelDispoMusico.TabIndex = 5;
+            this.labelDispoMusico.Text = "Disponibilidad Musico";
             // 
-            // label1
+            // labelVisualizar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.label1.Location = new System.Drawing.Point(46, 382);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Visualizar Locales";
+            this.labelVisualizar.AutoSize = true;
+            this.labelVisualizar.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVisualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.labelVisualizar.Location = new System.Drawing.Point(46, 382);
+            this.labelVisualizar.Name = "labelVisualizar";
+            this.labelVisualizar.Size = new System.Drawing.Size(189, 30);
+            this.labelVisualizar.TabIndex = 4;
+            this.labelVisualizar.Text = "Visualizar Locales";
             // 
             // btnLocalMapa
             // 
@@ -193,7 +193,7 @@
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.Button btnLocalMapa;
         private System.Windows.Forms.Button btnMusicoMapa;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelVisualizar;
+        private System.Windows.Forms.Label labelDispoMusico;
     }
 }
