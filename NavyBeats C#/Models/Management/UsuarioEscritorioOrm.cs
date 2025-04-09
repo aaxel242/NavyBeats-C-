@@ -17,15 +17,15 @@ namespace NavyBeats_C_.Models
                     where user.email == email && user.password == psswd
                     select user).FirstOrDefault();
 
-            if (user != null)
+            if (_user != null)
             {
                 return new Super_User
                 {
-                    user_id_admin = user.user_id_admin,
-                    name = user.name,
-                    email = user.email,
-                    password = user.password,
-                    role = user.role
+                    user_id_admin = _user.user_id_admin,
+                    name = _user.name,
+                    email = _user.email,
+                    password = _user.password,
+                    role = _user.role
                 };
             }
 
