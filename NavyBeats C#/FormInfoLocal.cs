@@ -13,49 +13,25 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
-            labelNombre.Text = Resources.Strings.lblNombre;
-            labelCorreo.Text = Resources.Strings.lblCorreo;
-            labelContra.Text = Resources.Strings.lblContra;
-            labelConf.Text = Resources.Strings.lblConfContra;
-            labelTel.Text = Resources.Strings.lblTel;
-            labelMunicipio.Text = Resources.Strings.lblMunicipio;
-            labelLongitud.Text = Resources.Strings.lblLongitud;
-            labelLatitud.Text = Resources.Strings.lblLatitud;
-            labelApertura.Text = Resources.Strings.lblApertura;
-            labelCierre.Text = Resources.Strings.lblCierre;
-            botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
-
             _restaurant = restaurant;
             _created = created;
 
-            customComboBoxMunicipio.DataSource = MunicipiosOrm.Select();
-            customComboBoxMunicipio.DisplayMember = "name";
-            customComboBoxMunicipio.ValueMember = "municipality_id";
-            customComboBoxMunicipio.SelectedIndex = -1;
+            AplicarTexto();
+            ConfigurarComboBox();
 
             if (!created)
             {
-                _user = UsuarioMovilOrm.SelectUserById(restaurant.user_id);
-                Municipality municipio = MunicipiosOrm.SelectById(_user.municipality_id);
-
-                textBoxNombre.Texts = _user.name;
-                textBoxTelefono.Texts = _user.phone_number.ToString();
-                textBoxCorreo.Texts = _user.email;
-                customComboBoxMunicipio.SelectedIndex = municipio.municipality_id - 1;
-                textBoxContra.Texts = _user.password;
-                textBoxConfirmar.Texts = _user.password;
-                textBoxLongitud.Texts = _user.longitud.ToString();
-                textBoxLatitud.Texts = _user.latitud.ToString();
-                textBoxApertura.Texts = _restaurant.opening_time;
-                textBoxCierre.Texts = _restaurant.closing_time;
+                AplicarInfo(restaurant);
             }
         }
 
+        // Cierra el form
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Guarda la información del restaurante
         private void botonRedondoGuardar_Click(object sender, EventArgs e)
         {
             string name = textBoxNombre.Texts.Trim();
@@ -98,6 +74,7 @@ namespace NavyBeats_C_
                     newUser.creation_date = DateTime.Today.ToString();
                     newUser.edition_date = DateTime.Today.ToString();
 
+                    // Si estan creado el restaurante
                     if (_created)
                     {
                         int _id = UsuarioMovilOrm.InsertUser(newUser);
@@ -115,6 +92,7 @@ namespace NavyBeats_C_
                             this.DialogResult = DialogResult.OK;
                         }
                     }
+                    // Si el restaurante esta siendo editado
                     else
                     {
                         int _id = UsuarioMovilOrm.UpdateUser(_user, newUser);
@@ -135,6 +113,49 @@ namespace NavyBeats_C_
                     this.Close();
                 }
             }
+        }
+
+        // Aplica los textos localizados
+        private void AplicarTexto()
+        {
+            labelNombre.Text = Resources.Strings.lblNombre;
+            labelCorreo.Text = Resources.Strings.lblCorreo;
+            labelContra.Text = Resources.Strings.lblContra;
+            labelConf.Text = Resources.Strings.lblConfContra;
+            labelTel.Text = Resources.Strings.lblTel;
+            labelMunicipio.Text = Resources.Strings.lblMunicipio;
+            labelLongitud.Text = Resources.Strings.lblLongitud;
+            labelLatitud.Text = Resources.Strings.lblLatitud;
+            labelApertura.Text = Resources.Strings.lblApertura;
+            labelCierre.Text = Resources.Strings.lblCierre;
+            botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
+        }
+
+        // Configura el comboBox de los municipios
+        private void ConfigurarComboBox()
+        {
+            customComboBoxMunicipio.DataSource = MunicipiosOrm.Select();
+            customComboBoxMunicipio.DisplayMember = "name";
+            customComboBoxMunicipio.ValueMember = "municipality_id";
+            customComboBoxMunicipio.SelectedIndex = -1;
+        }
+
+        // Rellena el form con la información del restaurante
+        private void AplicarInfo(Restaurant restaurant)
+        {
+            _user = UsuarioMovilOrm.SelectUserById(restaurant.user_id);
+            Municipality municipio = MunicipiosOrm.SelectById(_user.municipality_id);
+
+            textBoxNombre.Texts = _user.name;
+            textBoxTelefono.Texts = _user.phone_number.ToString();
+            textBoxCorreo.Texts = _user.email;
+            customComboBoxMunicipio.SelectedIndex = municipio.municipality_id - 1;
+            textBoxContra.Texts = _user.password;
+            textBoxConfirmar.Texts = _user.password;
+            textBoxLongitud.Texts = _user.longitud.ToString();
+            textBoxLatitud.Texts = _user.latitud.ToString();
+            textBoxApertura.Texts = _restaurant.opening_time;
+            textBoxCierre.Texts = _restaurant.closing_time;
         }
     }
 }
