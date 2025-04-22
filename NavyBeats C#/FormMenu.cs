@@ -13,46 +13,25 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
-            AplicarTexto();
-
-            ClickControles(panelUsuarios);
-            ClickControles(panelNotificaciones);
-            ClickControles(panelCalendario);
-            ClickControles(panelMapa);
-            ClickControles(panelIdioma);
-            ClickControles(panelSoporte);
-
             userLogin = user;
+
+            AplicarTexto();
+            ClickPanel();
         }
 
-        private void AplicarTexto()
-        {
-            lblGestionUsuarios.Text = Resources.Strings.lblGestion;
-            lblNotificaciones.Text = Resources.Strings.lblNoti;
-            lblCalendario.Text = Resources.Strings.lblCalendario;
-            lblMapa.Text = Resources.Strings.lblMapa;
-            lblCambiarIdioma.Text = Resources.Strings.lblIdioma;
-            lblSoporteTecnico.Text = Resources.Strings.lblSoporte;
-        }
-
-        private void ClickControles(Panel panel)
-        {
-            foreach (Control c in panel.Controls)
-            {
-                c.Click += (o, ev) => panel_Click(panel, ev);
-            }
-        }
-
+        // Configura el color de fondo
         private void FormMenu_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
+        // Cierra el form
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Maneja el clic en los paneles, abriendo diferentes forms
         private void panel_Click(object panel, EventArgs e)
         {
             if (panel == panelUsuarios)
@@ -106,6 +85,37 @@ namespace NavyBeats_C_
 
                 soporte.FormClosed += (s, args) => this.Show();
                 this.Hide();
+            }
+        }
+
+        // Aplica los textos localizados
+        private void AplicarTexto()
+        {
+            lblGestionUsuarios.Text = Resources.Strings.lblGestion;
+            lblNotificaciones.Text = Resources.Strings.lblNoti;
+            lblCalendario.Text = Resources.Strings.lblCalendario;
+            lblMapa.Text = Resources.Strings.lblMapa;
+            lblCambiarIdioma.Text = Resources.Strings.lblIdioma;
+            lblSoporteTecnico.Text = Resources.Strings.lblSoporte;
+        }
+
+        // Configura los controles de los paneles para que respondan al clic
+        private void ClickPanel()
+        {
+            ClickControles(panelUsuarios);
+            ClickControles(panelNotificaciones);
+            ClickControles(panelCalendario);
+            ClickControles(panelMapa);
+            ClickControles(panelIdioma);
+            ClickControles(panelSoporte);
+        }
+
+        // Asocia el evento de clic a cada control dentro de un panel
+        private void ClickControles(Panel panel)
+        {
+            foreach (Control c in panel.Controls)
+            {
+                c.Click += (o, ev) => panel_Click(panel, ev);
             }
         }
     }

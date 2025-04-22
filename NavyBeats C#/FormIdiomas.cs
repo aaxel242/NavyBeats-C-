@@ -14,20 +14,22 @@ namespace NavyBeats_C_
             InitializeComponent();
 
             AplicarTexto();
-
-            ClickControles(panelCatalan);
-            ClickControles(panelEspañol);
-            ClickControles(panelIngles);
+            ClickPanel();
         }
 
-        private void ClickControles(Panel panel)
+        // Configura el color de fondo
+        private void FormIdiomas_Load(object sender, EventArgs e)
         {
-            foreach (Control c in panel.Controls)
-            {
-                c.Click += (o, ev) => panel_Click(panel, ev);
-            }
+            panelIdiomas.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
+        // Cierra el form
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // Maneja el clic en los paneles, cambiando el idioma
         private void panel_Click(object panel, EventArgs e)
         {
             if (panel == panelCatalan)
@@ -46,6 +48,7 @@ namespace NavyBeats_C_
             AplicarTexto();
         }
 
+        // Aplica los textos localizados
         private void AplicarTexto()
         {
             ManageString.CambiarIdioma();
@@ -53,14 +56,21 @@ namespace NavyBeats_C_
             lblIdiomas.Text = Resources.Strings.lblSelecIdioma;
         }
 
-        private void FormIdiomas_Load(object sender, EventArgs e)
+        // Configura los controles de los paneles para que respondan al clic
+        private void ClickPanel()
         {
-            panelIdiomas.BackColor = Color.FromArgb(216, 255, 255, 255);
+            ClickControles(panelCatalan);
+            ClickControles(panelEspañol);
+            ClickControles(panelIngles);
         }
 
-        private void pboxAtras_Click(object sender, EventArgs e)
+        // Asocia el evento de clic a cada control dentro de un panel
+        private void ClickControles(Panel panel)
         {
-            this.Close();
+            foreach (Control c in panel.Controls)
+            {
+                c.Click += (o, ev) => panel_Click(panel, ev);
+            }
         }
     }
 }

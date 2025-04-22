@@ -222,7 +222,7 @@
             this.customBotonEliminar.TabIndex = 9;
             this.customBotonEliminar.Text = "Eliminar";
             this.customBotonEliminar.UseVisualStyleBackColor = false;
-            this.customBotonEliminar.Click += new System.EventHandler(this.botonRedondoEliminar_Click);
+            this.customBotonEliminar.Click += new System.EventHandler(this.customBotonEliminar_Click);
             // 
             // customBotonCrear
             // 
@@ -238,7 +238,7 @@
             this.customBotonCrear.TabIndex = 8;
             this.customBotonCrear.Text = "Crear";
             this.customBotonCrear.UseVisualStyleBackColor = false;
-            this.customBotonCrear.Click += new System.EventHandler(this.botonRedondoCrear_Click);
+            this.customBotonCrear.Click += new System.EventHandler(this.customBotonCrear_Click);
             // 
             // pictureBoxLogo
             // 

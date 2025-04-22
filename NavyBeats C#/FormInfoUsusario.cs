@@ -13,26 +13,24 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
-            labelNombre.Text = Resources.Strings.lblNombre;
-            labelCorreo.Text = Resources.Strings.lblCorreo;
-            labelContra.Text = Resources.Strings.lblContra;
-            labelConf.Text = Resources.Strings.lblConfContra;
-            customComboBoxRol.Text = Resources.Strings.lblRol;
-            botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
-
             _user = user;
             _created = created;
 
+            AplicarTexto();
+
             if (!created)
             {
-                textBoxNombre.Texts = user.name;
-                textBoxCorreo.Texts = user.email;
-                textBoxContra.Texts = user.password;
-                textBoxConfirmar.Texts = user.password;
-                customComboBoxRol.SelectedItem = user.role;
+                AplicarInfo(user);
             }
         }
 
+        // Cierra el form
+        private void pboxAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // Guarda la información del usuario
         private void botonRedondoGuardar_Click(object sender, EventArgs e)
         {
             string name = textBoxNombre.Texts.Trim();
@@ -61,6 +59,7 @@ namespace NavyBeats_C_
 
                     bool save = false;
 
+                    // Si el usuario esta siendo creado
                     if (_created)
                     {
                         save = UsuarioEscritorioOrm.Insert(newUser);
@@ -70,6 +69,7 @@ namespace NavyBeats_C_
                             this.DialogResult = DialogResult.OK;
                         }
                     }
+                    // Si el usuario esta siendo editado
                     else
                     {
                         save = UsuarioEscritorioOrm.Update(_user, newUser);
@@ -82,6 +82,27 @@ namespace NavyBeats_C_
                     this.Close();
                 }
             }
+        }
+
+        // Aplica los textos localizados
+        private void AplicarTexto()
+        {
+            labelNombre.Text = Resources.Strings.lblNombre;
+            labelCorreo.Text = Resources.Strings.lblCorreo;
+            labelContra.Text = Resources.Strings.lblContra;
+            labelConf.Text = Resources.Strings.lblConfContra;
+            customComboBoxRol.Text = Resources.Strings.lblRol;
+            botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
+        }
+
+        // Rellena el form con la información del usuario
+        private void AplicarInfo(Super_User user)
+        {
+            textBoxNombre.Texts = user.name;
+            textBoxCorreo.Texts = user.email;
+            textBoxContra.Texts = user.password;
+            textBoxConfirmar.Texts = user.password;
+            customComboBoxRol.SelectedItem = user.role;
         }
     }
 }

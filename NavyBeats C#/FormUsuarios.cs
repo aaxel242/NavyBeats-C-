@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,30 +16,27 @@ namespace NavyBeats_C_
         {
             InitializeComponent();
 
-            customBotonCrear.Text = Resources.Strings.btnCrear;
-            customBotonModificar.Text = Resources.Strings.btnModificar;
-            customBotonEliminar.Text = Resources.Strings.btnEliminar;
-
-            bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
-
             userLogin = user;
 
-            filterTimer = new Timer();
-            filterTimer.Interval = 100;
-            filterTimer.Tick += FilterTimer_Tick;
+            AplicarTexto();
+            BindingDataGridView();
+            TimerDataGridView();
         }
 
+        // Configura color del panel
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
+        // Cierra el formu
         private void pbSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void botonRedondoCrear_Click(object sender, EventArgs e)
+        // Abre el FormInfoUsuario para crear un nuevo usuario
+        private void customBotonCrear_Click(object sender, EventArgs e)
         {
             Super_User user = new Super_User();
             created = true;
@@ -49,13 +45,14 @@ namespace NavyBeats_C_
 
             if (crear.ShowDialog() == DialogResult.OK)
             {
-                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                BindingDataGridView();
             }
         }
 
+        // Abre el FormInfoUsuario para modificar el usuario seleccionado, excepto si es el usuario logueado
         private void customBotonModificar_Click(object sender, EventArgs e)
         {
-            Super_User user = usuarioSeleccionado();
+            Super_User user = UsuarioSeleccionado();
             created = false;
 
             if (user == userLogin)
@@ -67,19 +64,20 @@ namespace NavyBeats_C_
                 FormInfoUsusario modificar = new FormInfoUsusario(user, created);
                 if (modificar.ShowDialog() == DialogResult.OK)
                 {
-                    bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                    BindingDataGridView();
                 }
             }
         }
 
-        private void botonRedondoEliminar_Click(object sender, EventArgs e)
+        // Elimina el usuario seleccionado, excepto si es el usuario actual
+        private void customBotonEliminar_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show(Resources.Strings.msgEliminar, Resources.Strings.msgConfirmar, MessageBoxButtons.YesNo);
             bool delete = false;
 
             if (confirm == DialogResult.Yes)
             {
-                Super_User user = usuarioSeleccionado();
+                Super_User user = UsuarioSeleccionado();
 
                 if (user == userLogin)
                 {
@@ -93,17 +91,41 @@ namespace NavyBeats_C_
 
             if (delete)
             {
-                bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+                BindingDataGridView();
             }
         }
 
+        // Reinicia el temporizador cuando se cambia un ítem del filtro
         private void checkedListBoxUsuarios_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             filterTimer.Stop();
             filterTimer.Start();
         }
 
-        private Super_User usuarioSeleccionado()
+        // Aplica textos localizados del form
+        private void AplicarTexto()
+        {
+            customBotonCrear.Text = Resources.Strings.btnCrear;
+            customBotonModificar.Text = Resources.Strings.btnModificar;
+            customBotonEliminar.Text = Resources.Strings.btnEliminar;
+        }
+
+        // Asocia la fuente de datos del DataGridView con la lista de usuarios
+        private void BindingDataGridView()
+        {
+            bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
+        }
+
+        // Configura un timer que se usará para filtrar usuarios
+        private void TimerDataGridView()
+        {
+            filterTimer = new Timer();
+            filterTimer.Interval = 100;
+            filterTimer.Tick += FilterTimer_Tick;
+        }
+
+        // Obtiene el usuario seleccionado en el DataGridView
+        private Super_User UsuarioSeleccionado()
         {
             int rowSelected = dataGridView.CurrentCell.RowIndex;
             int id = (int)dataGridView.Rows[rowSelected].Cells["useridadminDataGridViewTextBoxColumn"].Value;
@@ -112,6 +134,7 @@ namespace NavyBeats_C_
             return user;
         }
 
+        // Filtra los usuarios mostrados según los roles seleccionados en el CheckedListBox
         private void FilterTimer_Tick(object sender, EventArgs e)
         {
             filterTimer.Stop();
@@ -120,18 +143,13 @@ namespace NavyBeats_C_
 
             if (selectedRole.Count == 0)
             {
-                bindingSourceUsuarios.DataSource = users;
+                BindingDataGridView();
             }
             else
             {
-                filter(users, selectedRole);
+                var filteredItems = users.Where(item => selectedRole.Contains(item.role)).ToList();
+                bindingSourceUsuarios.DataSource = filteredItems;
             }
-        }
-
-        private void filter(List<Super_User> users, List<string> selectedRole)
-        {
-            var filteredItems = users.Where(item => selectedRole.Contains(item.role)).ToList();
-            bindingSourceUsuarios.DataSource = filteredItems;
         }
     }
 }
