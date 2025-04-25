@@ -33,7 +33,7 @@ namespace NavyBeats_C_
         private void FormMapaLocales_Load(object sender, EventArgs e)
         {
             // Llenar el ComboBox con los restaurantes (usuarios que son locales).
-            var restaurants = Models.RestaurantsOrm.GetRestaurants();
+            var restaurants = Models.UsuarioMovilOrm.SelectRestaurant();
             cBoxMunicipios.DataSource = restaurants;
             cBoxMunicipios.DisplayMember = "name";
             cBoxMunicipios.ValueMember = "user_id";
@@ -87,7 +87,7 @@ namespace NavyBeats_C_
             flowLayoutPanel.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel.Controls.Clear();
 
-            var restaurantList = Models.RestaurantsOrm.GetRestaurantInfoList();
+            var restaurantList = Models.UsuarioMovilOrm.SelectRestaurant();
 
             foreach (var restaurant in restaurantList)
             {
@@ -99,29 +99,29 @@ namespace NavyBeats_C_
 
                 // Label para el nombre.
                 Label lblNombre = new Label();
-                lblNombre.Text = restaurant.Name;
+                lblNombre.Text = restaurant.name;
                 lblNombre.Font = new Font("Montserrat", 10, FontStyle.Bold);
                 lblNombre.Location = new Point(10, 5);
                 lblNombre.AutoSize = true;
 
                 // Label para el email.
                 Label lblEmail = new Label();
-                lblEmail.Text = restaurant.Email;
+                lblEmail.Text = restaurant.email;
                 lblEmail.Font = new Font("Montserrat", 9, FontStyle.Regular);
                 lblEmail.Location = new Point(10, 25);
                 lblEmail.AutoSize = true;
 
                 // Label para el municipio.
                 Label lblMunicipio = new Label();
-                lblMunicipio.Text = restaurant.Municipality;
+                lblMunicipio.Text = restaurant.municipality;
                 lblMunicipio.Font = new Font("Montserrat", 9, FontStyle.Regular);
                 lblMunicipio.Location = new Point(10, 45);
                 lblMunicipio.AutoSize = true;
 
                 // Label para el horario (apertura y cierre).
                 Label lblHorario = new Label();
-                string openingTime = !string.IsNullOrEmpty(restaurant.OpeningTime) ? restaurant.OpeningTime : "No disponible";
-                string closingTime = !string.IsNullOrEmpty(restaurant.ClosingTime) ? restaurant.ClosingTime : "No disponible";
+                string openingTime = !string.IsNullOrEmpty(restaurant.opening_time) ? restaurant.opening_time : "No disponible";
+                string closingTime = !string.IsNullOrEmpty(restaurant.closing_time) ? restaurant.closing_time : "No disponible";
                 lblHorario.Text = $"Apertura: {openingTime} - Cierre: {closingTime}";
                 lblHorario.Font = new Font("Montserrat", 8, FontStyle.Regular);
                 lblHorario.Location = new Point(10, 65);
@@ -180,13 +180,13 @@ namespace NavyBeats_C_
             if (cBoxMunicipios.SelectedValue is int selectedUserId)
             {
                 // Obtener RestaurantInfo para este restaurante.
-                var restaurantInfo = Models.RestaurantsOrm.GetRestaurantInfoList()
-                    .FirstOrDefault(r => r.UserId == selectedUserId);
+                var restaurantInfo = Models.UsuarioMovilOrm.SelectRestaurant()
+                    .FirstOrDefault(r => r.user_id == selectedUserId);
 
-                if (restaurantInfo != null && restaurantInfo.Latitud.HasValue && restaurantInfo.Longitud.HasValue)
+                if (restaurantInfo != null && restaurantInfo.latitud.HasValue && restaurantInfo.longitud.HasValue)
                 {
-                    double lat = restaurantInfo.Latitud.Value;
-                    double lng = restaurantInfo.Longitud.Value;
+                    double lat = restaurantInfo.latitud.Value;
+                    double lng = restaurantInfo.longitud.Value;
                     PointLatLng punto = new PointLatLng(lat, lng);
 
                     // Eliminar cualquier marker previo.
@@ -197,7 +197,7 @@ namespace NavyBeats_C_
                     // Asignar los datos al Tag para usarlos en el click.
                     marker.Tag = restaurantInfo;
                     // Asignar un ToolTip con la leyenda usando las cadenas de horario directamente.
-                    marker.ToolTipText = $"Nombre: {restaurantInfo.Name}\nApertura: {restaurantInfo.OpeningTime ?? "No disponible"}\nCierre: {restaurantInfo.ClosingTime ?? "No disponible"}";
+                    marker.ToolTipText = $"Nombre: {restaurantInfo.name}\nApertura: {restaurantInfo.opening_time ?? "No disponible"}\nCierre: {restaurantInfo.closing_time ?? "No disponible"}";
 
                     overlayRestaurant.Markers.Add(marker);
 
@@ -217,11 +217,11 @@ namespace NavyBeats_C_
         /// <param name="e"></param>
         private void gMapControl1_OnMarkerClick(GMapMarker item, MouseEventArgs e)
         {
-            if (item.Tag is Models.RestaurantInfo info)
+            if (item.Tag is Models.Restaurante info)
             {
                 // Mostrar siempre el ToolTip al hacer clic.
                 item.ToolTipMode = MarkerTooltipMode.Always;
-                item.ToolTipText = $"📍 {info.Name}\n🕒 Apertura: {info.OpeningTime ?? "No disponible"} - Cierre: {info.ClosingTime ?? "No disponible"}";
+                item.ToolTipText = $"📍 {info.name}\n🕒 Apertura: {info.opening_time ?? "No disponible"} - Cierre: {info.closing_time ?? "No disponible"}";
 
                 // Hacer zoom al marker.
                 gMapControl1.Position = item.Position;

@@ -10,6 +10,12 @@ namespace NavyBeats_C_.Models
 {
     public static class UsuarioEscritorioOrm
     {
+        /// <summary>
+        /// Selecciona un usuario de la base de datos basado en su email y contraseña.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="psswd"></param>
+        /// <returns></returns>
         public static Super_User SelectLogin(string email, string psswd)
         {
             Super_User _user =
@@ -32,6 +38,10 @@ namespace NavyBeats_C_.Models
             return null;
         }
 
+        /// <summary>
+        /// Selecciona todos los usuarios de la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public static List<Super_User> SelectUsers()
         {
             List<Super_User> _users =
@@ -42,6 +52,11 @@ namespace NavyBeats_C_.Models
             return _users;
         }
 
+        /// <summary>
+        /// Selecciona un usuario de la base de datos basado en su ID.
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <returns></returns>
         public static Super_User SelectById(int _id)
         {
             Super_User _user =
@@ -52,7 +67,11 @@ namespace NavyBeats_C_.Models
             return _user;
         }
 
-
+        /// <summary>
+        /// Inserta un nuevo usuario en la base de datos.
+        /// </summary>
+        /// <param name="_user"></param>
+        /// <returns></returns>
         public static bool Insert(Super_User _user)
         {
             bool insert;
@@ -65,6 +84,11 @@ namespace NavyBeats_C_.Models
             return insert;
         }
 
+        /// <summary>
+        /// Elimina un usuario de la base de datos.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool Delete(Super_User user)
         {
             bool delete;
@@ -81,6 +105,12 @@ namespace NavyBeats_C_.Models
             return delete;
         }
 
+        /// <summary>
+        /// Actualiza un usuario en la base de datos.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="newUser"></param>
+        /// <returns></returns>
         public static bool Update(Super_User user, Super_User newUser)
         {
             bool update = false;
@@ -98,8 +128,5 @@ namespace NavyBeats_C_.Models
 
             return update;
         }
-
-
-
     }
 }

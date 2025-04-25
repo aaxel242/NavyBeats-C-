@@ -33,7 +33,7 @@ namespace NavyBeats_C_
         private void FormMapaArtistas_Load(object sender, EventArgs e)
         {
             // Cargar músicos en el ComboBox.
-            var musicians = Models.MusicianOrm.GetMusicians();
+            var musicians = Models.UsuarioMovilOrm.SelectMusician();
             cboxMusicos.DataSource = musicians;
             cboxMusicos.DisplayMember = "name";
             cboxMusicos.ValueMember = "user_id";
@@ -126,7 +126,7 @@ namespace NavyBeats_C_
             // Cargar los músicos en el panel solo una vez.
             flowLayoutPanel.Controls.Clear();
 
-            var musicianList = Models.MusicianOrm.GetMusicianInfoList();
+            var musicianList = Models.UsuarioMovilOrm.SelectMusician();
 
             foreach (var musician in musicianList)
             {
@@ -167,7 +167,7 @@ namespace NavyBeats_C_
         {
             if (cboxMusicos.SelectedValue is int selectedUserId)
             {
-                var musico = Models.MusicianOrm.GetMusicianById(selectedUserId);
+                var musico = Models.UsuarioMovilOrm.SelectMusicianByIdFromUsers(selectedUserId);
 
                 if (musico != null && musico.latitud.HasValue && musico.longitud.HasValue)
                 {

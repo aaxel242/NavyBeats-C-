@@ -71,7 +71,7 @@ namespace NavyBeats_C_
             Super_User user = UsuarioSeleccionado();
             created = false;
 
-            if (user == userLogin)
+            if (user.email == userLogin.email)
             {
                 MessageBox.Show(Resources.Strings.msgModificar);
             }
@@ -99,7 +99,7 @@ namespace NavyBeats_C_
             {
                 Super_User user = UsuarioSeleccionado();
 
-                if (user == userLogin)
+                if (user.email == userLogin.email)
                 {
                     MessageBox.Show(Resources.Strings.msgAutoEliminar);
                 }

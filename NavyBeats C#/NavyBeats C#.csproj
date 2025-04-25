@@ -233,10 +233,7 @@
     </Compile>
     <Compile Include="Models\Management\CalendarioOrm.cs" />
     <Compile Include="Models\Management\EventoInfo.cs" />
-    <Compile Include="Models\Management\MusicianOrm.cs" />
     <Compile Include="Models\Management\Orm.cs" />
-    <Compile Include="Models\Management\RestaurantInfo.cs" />
-    <Compile Include="Models\Management\RestaurantsOrm.cs" />
     <Compile Include="Models\Management\TicketInfo.cs" />
     <Compile Include="Models\Management\TicketOrm.cs" />
     <Compile Include="Models\Management\UsuarioEscritorioOrm.cs" />
@@ -262,7 +259,6 @@
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Management\MunicipiosOrm.cs" />
-    <Compile Include="Models\Management\MusicianOrm.cs" />
     <Compile Include="Models\Musician.cs">
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
@@ -276,8 +272,6 @@
       <DependentUpon>ModelNaivyBeats.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Management\Orm.cs" />
-    <Compile Include="Models\Management\RestaurantInfo.cs" />
-    <Compile Include="Models\Management\RestaurantsOrm.cs" />
     <Compile Include="Models\Management\TicketInfo.cs" />
     <Compile Include="Models\Management\TicketOrm.cs" />
     <Compile Include="Models\Publication.cs">

@@ -27,14 +27,18 @@ namespace NavyBeats_C_.Models
         public string password { get; set; }
         public string phone_number { get; set; }
         public string municipality { get; set; }
-        public Nullable<decimal> latitud { get; set; }
-        public Nullable<decimal> longitud { get; set; }
+        public double? latitud { get; set; }
+        public double? longitud { get; set; }
         public string opening_time { get; set; }
         public string closing_time { get; set; }
     }
 
     public static class UsuarioMovilOrm
     {
+        /// <summary>
+        /// Obtiene la lista de musicos de la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public static List<Musico> SelectMusician()
         {
             List<Musico> _musician = (from user in Orm.bd.Users
@@ -58,6 +62,10 @@ namespace NavyBeats_C_.Models
             return _musician;
         }
 
+        /// <summary>
+        /// Obtiene la lista de restaurantes de la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public static List<Restaurante> SelectRestaurant()
         {
             List<Restaurante> _restaurant = (from user in Orm.bd.Users
@@ -73,8 +81,8 @@ namespace NavyBeats_C_.Models
                                           password = user.password,
                                           phone_number = user.phone_number,
                                           municipality = municipality != null ? municipality.name : "Sin ciudad",
-                                          latitud = user.latitud,
-                                          longitud = user.longitud,
+                                          latitud = (double?)user.latitud,
+                                          longitud = (double?)user.longitud,
                                           opening_time = res.opening_time,
                                           closing_time = res.closing_time
                                       })
@@ -83,6 +91,11 @@ namespace NavyBeats_C_.Models
             return _restaurant;
         }
 
+        /// <summary>
+        /// Obtiene un usuario por su ID.
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <returns></returns>
         public static Users SelectUserById(int _id)
         {
             Users _user =
@@ -93,16 +106,26 @@ namespace NavyBeats_C_.Models
             return _user;
         }
 
+        /// <summary>
+        /// Obtiene un músico por su ID.
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <returns></returns>
         public static Musician SelectMusicianById(int _id)
         {
             Musician _user =
                 (from user in Orm.bd.Musician
-                             where user.user_id == _id
-                             select user).FirstOrDefault();
+                    where user.user_id == _id
+                 select user).FirstOrDefault();
 
             return _user;
         }
 
+        /// <summary>
+        /// Obtiene un restaurante por su ID.
+        /// </summary>
+        /// <param name="_id"></param>
+        /// <returns></returns>
         public static Restaurant SelectRestaurantById(int _id)
         {
             Restaurant _user =
@@ -113,6 +136,45 @@ namespace NavyBeats_C_.Models
             return _user;
         }
 
+        /// <summary>
+        /// Obtiene un músico con su latitud y longitud basado en el user_id.
+        /// </summary>
+        /// <param name="userId">El ID del músico.</param>
+        /// <returns>El usuario con sus coordenadas o null si no existe.</returns>
+        public static Users SelectMusicianByIdFromUsers(int userId)
+        {
+            using (var context = new dam04Entities())
+            {
+                var musician = (from m in context.Musician
+                                join u in context.Users on m.user_id equals u.user_id
+                                where u.user_id == userId
+                                select u).FirstOrDefault();
+                return musician;
+            }
+        }
+
+        /// <summary>
+        /// Obtiene un restaurante con su latitud y longitud basado en el user_id.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public static Users SelectRestaurantByIdFromUsers(int userId)
+        {
+            using (var context = new dam04Entities())
+            {
+                var restaurant = (from r in context.Restaurant
+                                  join u in context.Users on r.user_id equals u.user_id
+                                  where u.user_id == userId
+                                  select u).FirstOrDefault();
+                return restaurant;
+            }
+        }
+
+        /// <summary>
+        /// Inserta un nuevo usuario en la base de datos.
+        /// </summary>
+        /// <param name="_user"></param>
+        /// <returns></returns>
         public static int InsertUser(Users _user)
         {
             Orm.bd.Users.Add(_user);
@@ -121,6 +183,12 @@ namespace NavyBeats_C_.Models
             return _user.user_id;
         }
 
+        /// <summary>
+        /// Inserta un nuevo músico en la base de datos.
+        /// </summary>
+        /// <param name="_user"></param>
+        /// <param name="styles"></param>
+        /// <returns></returns>
         public static bool InsertMusician(Musician _user, List<Style> styles)
         {
             bool insert;
@@ -149,6 +217,11 @@ namespace NavyBeats_C_.Models
             return insert;
         }
 
+        /// <summary>
+        /// Inserta un nuevo restaurante en la base de datos.
+        /// </summary>
+        /// <param name="_restaurant"></param>
+        /// <returns></returns>
         public static bool InsertRestaurant(Restaurant _restaurant)
         {
             bool insert;
@@ -161,6 +234,12 @@ namespace NavyBeats_C_.Models
             return insert;
         }
 
+        /// <summary>
+        /// Actualiza un usuario existente en la base de datos.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="newUser"></param>
+        /// <returns></returns>
         public static int UpdateUser(Users user, Users newUser) 
         {
             int id = user.user_id;
@@ -181,6 +260,13 @@ namespace NavyBeats_C_.Models
             return id;
         }
 
+        /// <summary>
+        /// Actualiza un músico existente en la base de datos.
+        /// </summary>
+        /// <param name="musician"></param>
+        /// <param name="newMusician1"></param>
+        /// <param name="styles"></param>
+        /// <returns></returns>
         public static bool UpdateMusician(Musician musician, Musician newMusician1, List<Style> styles)
         {
             bool update;
@@ -213,6 +299,12 @@ namespace NavyBeats_C_.Models
             return update;
         }
 
+        /// <summary>
+        /// Actualiza un restaurante existente en la base de datos.
+        /// </summary>
+        /// <param name="restaurant"></param>
+        /// <param name="newRestaurant"></param>
+        /// <returns></returns>
         public static bool UpdateRestaurant(Restaurant restaurant, Restaurant newRestaurant)
         {
             bool update;
@@ -229,6 +321,11 @@ namespace NavyBeats_C_.Models
             return update;
         }
 
+        /// <summary>
+        /// Elimina un usuario de la base de datos actualizando su atributo deleted_at.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public static bool Delete(Users user)
         {
             bool delete;
