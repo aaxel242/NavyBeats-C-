@@ -10,12 +10,13 @@ namespace NavyBeats_C_
 {
     public partial class FormMapaArtistas : Form
     {
-        // Límites para restringir el movimiento del mapa (Cataluña)
+        // Límites para restringir el movimiento del mapa.
         private readonly double minLat = 40.5;
         private readonly double maxLat = 42.9;
         private readonly double minLng = 0.15;
         private readonly double maxLng = 3.33;
 
+        // Overlay para el círculo del músico.
         private GMapOverlay overlayMusico = new GMapOverlay("zonasMusico");
 
         public FormMapaArtistas()
@@ -24,33 +25,29 @@ namespace NavyBeats_C_
 
             //labelNombre.Text = Resources.Idiomas.lblNombreMusico;
         }
-
+        /// <summary>
+        /// Configuraciones iniciales del mapa y del formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormMapaArtistas_Load(object sender, EventArgs e)
         {
-            // Cargar músicos en el ComboBox (esto se hace una sola vez)
+            // Cargar músicos en el ComboBox.
             var musicians = Models.MusicianOrm.GetMusicians();
             cboxMusicos.DataSource = musicians;
             cboxMusicos.DisplayMember = "name";
             cboxMusicos.ValueMember = "user_id";
 
-            // Configurar el FlowLayoutPanel (una sola vez)
+            // Configurar el FlowLayoutPanel.
             ConfiguracionFlowLayoutPanel(flowLayoutPanelMusicos);
 
             panelMapa.BackColor = Color.FromArgb(216, 255, 255, 255);
 
-            // Centrar el formulario
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
+            //Configuraciones iniciales del formulario.
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            // Configuración del mapa
+            // Configuración del mapa.
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
             gMapControl1.ShowCenter = false;
@@ -60,21 +57,21 @@ namespace NavyBeats_C_
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
             GMaps.Instance.Mode = AccessMode.ServerOnly;
 
-            // Posición inicial en el centro de Barcelona
+            // Posición inicial en el centro de Barcelona.
             PointLatLng centroBarcelona = new PointLatLng(41.3851, 2.1734);
             gMapControl1.Position = centroBarcelona;
             gMapControl1.MinZoom = 6;
             gMapControl1.MaxZoom = 18;
             gMapControl1.Zoom = 8;
 
-            // Crear un overlay para otras zonas (si es necesario)
+            // Crear un overlay para otras zonas.
             GMapOverlay overlayZonas = new GMapOverlay("zonas");
             gMapControl1.Overlays.Add(overlayZonas);
 
-            // Manejar el evento para restringir el movimiento dentro de Cataluña
+            // Manejar el evento para restringir el movimiento dentro de Cataluña.
             gMapControl1.OnMapDrag += GMapControl1_OnMapDrag;
 
-            // (Opcional) Forzar la carga inicial del círculo si hay un músico seleccionado por defecto:
+            // (Opcional) Forzar la carga inicial del círculo si hay un músico seleccionado por defecto.
             if (cboxMusicos.SelectedValue is int selectedUserId)
             {
                 MostrarCirculosEnMapa();
@@ -84,7 +81,13 @@ namespace NavyBeats_C_
 
         }
 
-        // Método para generar un círculo (lista de puntos)
+        /// <summary>
+        /// Crea un círculo de puntos alrededor de un centro dado.
+        /// </summary>
+        /// <param name="centro"></param>
+        /// <param name="radioKm"></param>
+        /// <param name="segmentos"></param>
+        /// <returns></returns>
         public static List<PointLatLng> CrearCirculo(PointLatLng centro, double radioKm, int segmentos)
         {
             List<PointLatLng> puntos = new List<PointLatLng>();
@@ -99,7 +102,9 @@ namespace NavyBeats_C_
             }
             return puntos;
         }
-
+        /// <summary>
+        /// Evento que se ejecuta al arrastrar el mapa.
+        /// </summary>
         private void GMapControl1_OnMapDrag()
         {
             double lat = gMapControl1.Position.Lat;
@@ -112,10 +117,13 @@ namespace NavyBeats_C_
 
             gMapControl1.Position = new PointLatLng(lat, lng);
         }
-
+        /// <summary>
+        /// Configura el FlowLayoutPanel con los músicos.
+        /// </summary>
+        /// <param name="flowLayoutPanel"></param>
         private void ConfiguracionFlowLayoutPanel(FlowLayoutPanel flowLayoutPanel)
         {
-            // Cargar los músicos en el panel solo una vez
+            // Cargar los músicos en el panel solo una vez.
             flowLayoutPanel.Controls.Clear();
 
             var musicianList = Models.MusicianOrm.GetMusicianInfoList();
@@ -152,7 +160,9 @@ namespace NavyBeats_C_
                 flowLayoutPanel.Controls.Add(panelMusico);
             }
         }
-
+        /// <summary>
+        /// Muestra un círculo en el mapa basado en la selección del ComboBox.
+        /// </summary>
         private void MostrarCirculosEnMapa()
         {
             if (cboxMusicos.SelectedValue is int selectedUserId)
@@ -165,25 +175,25 @@ namespace NavyBeats_C_
                     double lng = Convert.ToDouble(musico.longitud.Value);
                     PointLatLng centroMusico = new PointLatLng(lat, lng);
 
-                    // Eliminar el overlay anterior si existe
+                    // Eliminar el overlay anterior si existe.
                     if (overlayMusico.Polygons.Count > 0)
                     {
                         gMapControl1.Overlays.Remove(overlayMusico);
                         overlayMusico.Polygons.Clear();
                     }
 
-                    // Crear el círculo
+                    // Crear el círculo.
                     List<PointLatLng> puntos = CrearCirculo(centroMusico, 10, 100);
                     GMapPolygon circulo = new GMapPolygon(puntos, "Zona Músico")
                     {
                         Stroke = new Pen(Color.Red, 4),
-                        Fill = new SolidBrush(Color.FromArgb(128, 255, 0, 0)) // 50% transparente
+                        Fill = new SolidBrush(Color.FromArgb(128, 255, 0, 0)) 
                     };
 
                     overlayMusico.Polygons.Add(circulo);
                     gMapControl1.Overlays.Add(overlayMusico);
 
-                    // Forzar actualización del mapa
+                    // Forzar actualización del mapa.
                     gMapControl1.Refresh();
                     gMapControl1.Invalidate();
                 }
@@ -193,13 +203,21 @@ namespace NavyBeats_C_
                 }
             }
         }
-
+        /// <summary>
+        /// Evento que se ejecuta al cambiar la selección del ComboBox de músicos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboxMusicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Actualizar el círculo sin recargar el FlowLayoutPanel (ya cargado en Load)
+            // Actualizar el círculo sin recargar el FlowLayoutPanel (ya cargado en Load).
             MostrarCirculosEnMapa();
         }
-
+        /// <summary>
+        /// Evento que se ejecuta al hacer clic en el botón de mapa de músicos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLocalMapa_Click(object sender, EventArgs e)
         {
             using (FormMapaLocales formMapaLocales = new FormMapaLocales())
@@ -209,7 +227,11 @@ namespace NavyBeats_C_
                 this.Show();
             }
         }
-
+        /// <summary>
+        /// Cierra el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();

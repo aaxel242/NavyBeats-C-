@@ -154,6 +154,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelMapa);
             this.Name = "FormMapaArtistas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMapaArtistas";
             this.Load += new System.EventHandler(this.FormMapaArtistas_Load);
             this.panelMapa.ResumeLayout(false);

@@ -115,6 +115,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormNotificaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormNotificaciones";
             this.Load += new System.EventHandler(this.FormNotificaciones_Load);
             this.panelNotificaciones.ResumeLayout(false);

@@ -101,7 +101,7 @@
             this.labelDispoMusico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
             this.labelDispoMusico.Location = new System.Drawing.Point(21, 119);
             this.labelDispoMusico.Name = "labelDispoMusico";
-            this.labelDispoMusico.Size = new System.Drawing.Size(233, 30);
+            this.labelDispoMusico.Size = new System.Drawing.Size(245, 30);
             this.labelDispoMusico.TabIndex = 5;
             this.labelDispoMusico.Text = "Disponibilidad Musico";
             // 
@@ -112,7 +112,7 @@
             this.labelVisualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
             this.labelVisualizar.Location = new System.Drawing.Point(46, 382);
             this.labelVisualizar.Name = "labelVisualizar";
-            this.labelVisualizar.Size = new System.Drawing.Size(189, 30);
+            this.labelVisualizar.Size = new System.Drawing.Size(196, 30);
             this.labelVisualizar.TabIndex = 4;
             this.labelVisualizar.Text = "Visualizar Locales";
             // 
@@ -173,6 +173,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelMapa);
             this.Name = "FormMapaMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMapaMenu";
             this.Load += new System.EventHandler(this.FormMapaMenu_Load);
             this.panelMapa.ResumeLayout(false);
