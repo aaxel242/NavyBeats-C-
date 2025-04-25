@@ -13,38 +13,36 @@ namespace NavyBeats_C_
         public FormSoporte(Super_User user)
         {
             InitializeComponent();
-            loggedUserId = user.user_id_admin; // Se usa user_id_admin para identificar al usuario logueado
+            loggedUserId = user.user_id_admin; // Variable que guarda el id del super_user logueado
         }
 
         public FormSoporte() { }
-
+        /// <summary>
+        /// Inicializa el formulario de soporte mas configuraciones extras.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormSoporte_Load(object sender, EventArgs e)
         {
             panelSoporte.BackColor = Color.FromArgb(216, 255, 255, 255);
 
-            // Center the form on the screen
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
+            //Configuración del formulario
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
             ApplyRoundedCorners(panelFormulario, 30);
             AdjustRadioButtons();
 
-            // Set sizes and margins for the TextBoxes
+            // Pone los margins para los textboxes
             txtBoxAsunto.Size = new Size(300, 40);
             txtBoxAsunto.Margin = new Padding(0, 5, 0, 0);
         }
-
+        /// <summary>
+        /// Configura los RadioButtons para que aparezcan como botones y cambia su color de fondo al ser seleccionados.
+        /// </summary>
         private void AdjustRadioButtons()
         {
-            // Configure the RadioButtons to appear as buttons
+            // Configurar los RadioButtons para que aparezcan como botones
             radioButtonTipo.Appearance = Appearance.Button;
             radioButtonTipo.AutoSize = false;
             radioButtonTipo.Size = new Size(30, 30);
@@ -53,14 +51,18 @@ namespace NavyBeats_C_
             radioButtonTipo2.AutoSize = false;
             radioButtonTipo2.Size = new Size(30, 30);
 
-            // Set initial colors based on checked state
+            // Establecer colores iniciales según el estado marcado
             radioButtonTipo.BackColor = radioButtonTipo.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
             radioButtonTipo2.BackColor = radioButtonTipo2.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
 
             radioButtonTipo.CheckedChanged += RadioButton_CheckedChanged;
             radioButtonTipo2.CheckedChanged += RadioButton_CheckedChanged;
         }
-
+        /// <summary>
+        /// Manejador de eventos para cambiar el color de fondo del RadioButton al ser seleccionado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (sender is RadioButton rb)
@@ -68,7 +70,11 @@ namespace NavyBeats_C_
                 rb.BackColor = rb.Checked ? Color.FromArgb(229, 177, 129) : Color.White;
             }
         }
-
+        /// <summary>
+        /// Aplica esquinas redondeadas a un panel.
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="radius"></param>
         private void ApplyRoundedCorners(Panel panel, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -89,54 +95,70 @@ namespace NavyBeats_C_
             path.CloseFigure();
             panel.Region = new Region(path);
         }
-
+        /// <summary>
+        /// Cambiar el RadioButton seleccionado al hacer clic en la etiqueta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblConsulta_Click(object sender, EventArgs e)
         {
             radioButtonTipo.Checked = true;
         }
-
+        /// <summary>
+        /// Cambiar el RadioButton seleccionado al hacer clic en la etiqueta.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lblIncidencia_Click(object sender, EventArgs e)
         {
             radioButtonTipo2.Checked = true;
         }
-
+        /// <summary>
+        /// Manejador de eventos para el botón de atrás. Cierra el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Valida los campos y envía el ticket.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnviarForm_Click(object sender, EventArgs e)
         {
             try
             {
-                // Determine query type based on the selected RadioButton
+                // Determinar el tipo de consulta en función del botón de opción seleccionado
                 string queryType = radioButtonTipo.Checked ? "Consulta" : (radioButtonTipo2.Checked ? "Incidencia" : "");
                 string subject = txtBoxAsunto.Text.Trim();
                 string description = txtBoxDescripcion.Text.Trim();
 
-                // Validate required fields
+                // Valida los campos necesarios
                 if (string.IsNullOrEmpty(queryType) || string.IsNullOrEmpty(subject))
                 {
                     MessageBox.Show("Completa tots els camps.");
                 }
 
-                // Map the form data to a TicketInfo object.
+                // Asigna los datos del formulario a un objeto TicketInfo.
                 TicketInfo ticket = new TicketInfo
                 {
                     QueryType = queryType,
                     Subject = subject,
                     Description = description,
-                    CreatedBySuperUserId = loggedUserId, // Usamos el ID del Super_User logueado
+                    CreatedBySuperUserId = loggedUserId,
                     Status = false,
                     CreationDate = DateTime.Now
                 };
 
-                // Insert the ticket into the database using TicketOrm
+                // Insertar el ticket en la base de datos usando TicketOrm
                 bool inserted = TicketOrm.InsertTicket(ticket);
                 if (inserted)
                 {
                     MessageBox.Show("Ticket enviat correctament.");
-                    // Clear the fields after sending the ticket
+                    // Limpiar los campos del formulario tras el envío
                     txtBoxAsunto.Text = "";
                     txtBoxDescripcion.Text = "";
                 }   
