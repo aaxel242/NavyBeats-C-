@@ -23,19 +23,31 @@ namespace NavyBeats_C_
             TimerDataGridView();
         }
 
-        // Configura color del panel
+        /// <summary>
+        /// Configura color del panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
-        // Cierra el formu
+        /// <summary>
+        /// Cierra el formu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pbSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Abre el FormInfoUsuario para crear un nuevo usuario
+        /// <summary>
+        /// Abre el FormInfoUsuario para crear un nuevo usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void customBotonCrear_Click(object sender, EventArgs e)
         {
             Super_User user = new Super_User();
@@ -49,7 +61,11 @@ namespace NavyBeats_C_
             }
         }
 
-        // Abre el FormInfoUsuario para modificar el usuario seleccionado, excepto si es el usuario logueado
+        /// <summary>
+        /// Abre el FormInfoUsuario para modificar el usuario seleccionado, excepto si es el usuario logueado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void customBotonModificar_Click(object sender, EventArgs e)
         {
             Super_User user = UsuarioSeleccionado();
@@ -69,7 +85,11 @@ namespace NavyBeats_C_
             }
         }
 
-        // Elimina el usuario seleccionado, excepto si es el usuario actual
+        /// <summary>
+        /// Elimina el usuario seleccionado, excepto si es el usuario actual
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void customBotonEliminar_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show(Resources.Strings.msgEliminar, Resources.Strings.msgConfirmar, MessageBoxButtons.YesNo);
@@ -95,14 +115,20 @@ namespace NavyBeats_C_
             }
         }
 
-        // Reinicia el temporizador cuando se cambia un ítem del filtro
+        /// <summary>
+        /// Reinicia el temporizador cuando se cambia un ítem del filtro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkedListBoxUsuarios_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             filterTimer.Stop();
             filterTimer.Start();
         }
 
-        // Aplica textos localizados del form
+        /// <summary>
+        /// Aplica textos localizados del form
+        /// </summary>
         private void AplicarTexto()
         {
             customBotonCrear.Text = Resources.Strings.btnCrear;
@@ -110,13 +136,17 @@ namespace NavyBeats_C_
             customBotonEliminar.Text = Resources.Strings.btnEliminar;
         }
 
-        // Asocia la fuente de datos del DataGridView con la lista de usuarios
+        /// <summary>
+        /// Asocia la fuente de datos del DataGridView con la lista de usuarios
+        /// </summary>
         private void BindingDataGridView()
         {
             bindingSourceUsuarios.DataSource = UsuarioEscritorioOrm.SelectUsers();
         }
 
-        // Configura un timer que se usará para filtrar usuarios
+        /// <summary>
+        /// Configura un timer que se usará para filtrar usuarios
+        /// </summary>
         private void TimerDataGridView()
         {
             filterTimer = new Timer();
@@ -124,7 +154,10 @@ namespace NavyBeats_C_
             filterTimer.Tick += FilterTimer_Tick;
         }
 
-        // Obtiene el usuario seleccionado en el DataGridView
+        /// <summary>
+        /// Obtiene el usuario seleccionado en el DataGridView
+        /// </summary>
+        /// <returns></returns>
         private Super_User UsuarioSeleccionado()
         {
             int rowSelected = dataGridView.CurrentCell.RowIndex;
@@ -134,7 +167,11 @@ namespace NavyBeats_C_
             return user;
         }
 
-        // Filtra los usuarios mostrados según los roles seleccionados en el CheckedListBox
+        /// <summary>
+        /// Filtra los usuarios mostrados según los roles seleccionados en el CheckedListBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FilterTimer_Tick(object sender, EventArgs e)
         {
             filterTimer.Stop();

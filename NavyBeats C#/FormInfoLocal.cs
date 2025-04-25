@@ -25,13 +25,21 @@ namespace NavyBeats_C_
             }
         }
 
-        // Cierra el form
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Guarda la información del restaurante
+        /// <summary>
+        /// Guarda la información del restaurante
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void botonRedondoGuardar_Click(object sender, EventArgs e)
         {
             string name = textBoxNombre.Texts.Trim();
@@ -45,6 +53,7 @@ namespace NavyBeats_C_
             string openingTime = textBoxApertura.Texts.Trim();
             string closingTime = textBoxCierre.Texts.Trim();
 
+            // Variables para poder validar que el campo esta completo
             bool validPhone = int.TryParse(textBoxTelefono.Texts.Trim(), out phone);
             bool validLatitud = decimal.TryParse(textBoxLatitud.Texts.Trim(), out latitud);
             bool validLongitud = decimal.TryParse(textBoxLongitud.Texts.Trim(), out longitud);
@@ -115,7 +124,9 @@ namespace NavyBeats_C_
             }
         }
 
-        // Aplica los textos localizados
+        /// <summary>
+        /// Aplica los textos localizados
+        /// </summary>
         private void AplicarTexto()
         {
             labelNombre.Text = Resources.Strings.lblNombre;
@@ -131,7 +142,9 @@ namespace NavyBeats_C_
             botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
         }
 
-        // Configura el comboBox de los municipios
+        /// <summary>
+        /// Configura el comboBox de los municipios
+        /// </summary>
         private void ConfigurarComboBox()
         {
             customComboBoxMunicipio.DataSource = MunicipiosOrm.Select();
@@ -140,7 +153,10 @@ namespace NavyBeats_C_
             customComboBoxMunicipio.SelectedIndex = -1;
         }
 
-        // Rellena el form con la información del restaurante
+        /// <summary>
+        /// Rellena el form con la información del restaurante
+        /// </summary>
+        /// <param name="restaurant"></param>
         private void AplicarInfo(Restaurant restaurant)
         {
             _user = UsuarioMovilOrm.SelectUserById(restaurant.user_id);
