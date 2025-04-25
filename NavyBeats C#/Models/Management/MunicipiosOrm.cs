@@ -8,6 +8,10 @@ namespace NavyBeats_C_.Models
 {
     public static class MunicipiosOrm
     {
+        /// <summary>
+        /// Selecciona todos los municipios de la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public static List<Municipality> Select()
         {
             List<Municipality> _municipio =
