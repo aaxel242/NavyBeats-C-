@@ -17,19 +17,31 @@ namespace NavyBeats_C_
             ClickPanel();
         }
 
-        // Configura el color de fondo
+        /// <summary>
+        /// Configura el color de fondo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormIdiomas_Load(object sender, EventArgs e)
         {
             panelIdiomas.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
-        // Cierra el form
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Maneja el clic en los paneles, cambiando el idioma
+        /// <summary>
+        /// Maneja el clic en los paneles, cambiando el idioma
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="e"></param>
         private void panel_Click(object panel, EventArgs e)
         {
             if (panel == panelCatalan)
@@ -48,7 +60,9 @@ namespace NavyBeats_C_
             AplicarTexto();
         }
 
-        // Aplica los textos localizados
+        /// <summary>
+        /// Aplica los textos localizados
+        /// </summary>
         private void AplicarTexto()
         {
             ManageString.CambiarIdioma();
@@ -56,7 +70,9 @@ namespace NavyBeats_C_
             lblIdiomas.Text = Resources.Strings.lblSelecIdioma;
         }
 
-        // Configura los controles de los paneles para que respondan al clic
+        /// <summary>
+        /// Configura los controles de los paneles para que respondan al clic
+        /// </summary>
         private void ClickPanel()
         {
             ClickControles(panelCatalan);
@@ -64,7 +80,10 @@ namespace NavyBeats_C_
             ClickControles(panelIngles);
         }
 
-        // Asocia el evento de clic a cada control dentro de un panel
+        /// <summary>
+        /// Asocia el evento de clic a cada control dentro de un panel
+        /// </summary>
+        /// <param name="panel"></param>
         private void ClickControles(Panel panel)
         {
             foreach (Control c in panel.Controls)

@@ -13,13 +13,21 @@ namespace NavyBeats_C_
             InitializeComponent();
         }
 
-        // Configura el color del panel.
+        /// <summary>
+        /// Configura el color del panel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormLogin_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
-        // Maneja el clic en el botón de login y encripta la contraseña
+        /// <summary>
+        /// Maneja el clic en el botón de login y encripta la contraseña
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void botonRedondoLogin_Click(object sender, EventArgs e)
         {
             string contra = Encrypt.Encriptar(textBoxContra.Texts.Trim());
@@ -47,7 +55,11 @@ namespace NavyBeats_C_
             }
         }
 
-        // Maneja el clic en las imágenes de cambio de idioma
+        /// <summary>
+        /// Maneja el clic en las imágenes de cambio de idioma
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void imageClick(object sender, EventArgs e)
         {
             if (sender == pictureBoxCatalan)
@@ -66,7 +78,9 @@ namespace NavyBeats_C_
             AplicarTexto();
         }
 
-        // Aplica textos localizados del form
+        /// <summary>
+        /// Aplica textos localizados del form
+        /// </summary>
         private void AplicarTexto()
         {
             ManageString.CambiarIdioma();

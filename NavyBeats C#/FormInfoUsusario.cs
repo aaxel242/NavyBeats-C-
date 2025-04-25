@@ -24,13 +24,21 @@ namespace NavyBeats_C_
             }
         }
 
-        // Cierra el form
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Guarda la información del usuario
+        /// <summary>
+        /// Guarda la información del usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void botonRedondoGuardar_Click(object sender, EventArgs e)
         {
             string name = textBoxNombre.Texts.Trim();
@@ -84,7 +92,9 @@ namespace NavyBeats_C_
             }
         }
 
-        // Aplica los textos localizados
+        /// <summary>
+        /// Aplica los textos localizados
+        /// </summary>
         private void AplicarTexto()
         {
             labelNombre.Text = Resources.Strings.lblNombre;
@@ -95,7 +105,10 @@ namespace NavyBeats_C_
             botonRedondoGuardar.Text = Resources.Strings.btnGuardar;
         }
 
-        // Rellena el form con la información del usuario
+        /// <summary>
+        /// Rellena el form con la información del usuario
+        /// </summary>
+        /// <param name="user"></param>
         private void AplicarInfo(Super_User user)
         {
             textBoxNombre.Texts = user.name;

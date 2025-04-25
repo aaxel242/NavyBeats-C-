@@ -27,19 +27,31 @@ namespace NavyBeats_C_
             }
         }
 
-        // Configura el color de fondo
+        /// <summary>
+        /// Configura el color de fondo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormLocalMusico_Load(object sender, EventArgs e)
         {
             panel.BackColor = Color.FromArgb(216, 255, 255, 255);
         }
 
-        // Cierra el form
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Abre un form para modificar el usuario seleccionado
+        /// <summary>
+        /// Abre un form para modificar el usuario seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void customBotonModificar_Click(object sender, EventArgs e)
         {
             // Abre el FormInfoLocal
@@ -70,13 +82,17 @@ namespace NavyBeats_C_
             }
         }
 
-        // Aplica los textos localizados
+        /// <summary>
+        /// Aplica los textos localizados
+        /// </summary>
         private void AplicarTexto()
         {
             customBotonModificar.Text = Resources.Strings.btnModificar;
         }
 
-        // Asocia los datos dependiendo de si es Restaurante o Musico al DataGridView
+        /// <summary>
+        /// Asocia los datos dependiendo de si es Restaurante o Musico al DataGridView
+        /// </summary>
         private void AsignarDataGridLocal()
         {
             dataGridView.DataSource = bindingSourceLocales;
@@ -111,7 +127,9 @@ namespace NavyBeats_C_
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        // Asocia los datos dependiendo de si es Restaurante o Musico al DataGridView
+        /// <summary>
+        /// Asocia los datos dependiendo de si es Restaurante o Musico al DataGridView
+        /// </summary>
         private void BindingDataGridViewRestaurante()
         {
             bindingSourceLocales.DataSource = UsuarioMovilOrm.SelectRestaurant();
@@ -122,7 +140,10 @@ namespace NavyBeats_C_
             bindingSourceMusicos.DataSource = UsuarioMovilOrm.SelectMusician();
         }
 
-        // Obtiene el el usuario (dependiendo de lo necesario Restaurante, Musico o Usuario) seleccionado en el DataGridView
+        /// <summary>
+        /// Obtiene el el usuario (dependiendo de lo necesario Restaurante o Musico) seleccionado en el DataGridView
+        /// </summary>
+        /// <returns></returns>
         private Restaurant RestauranteSeleccionado()
         {
             int id = SeleccionarFila();
@@ -139,7 +160,10 @@ namespace NavyBeats_C_
             return user;
         }
 
-        // Selecciona la fila actual en el DataGridView y devuelve su ID
+        /// <summary>
+        /// Selecciona la fila actual en el DataGridView y devuelve su ID
+        /// </summary>
+        /// <returns></returns>
         private int SeleccionarFila()
         {
             int rowSelected = dataGridView.CurrentCell.RowIndex;
