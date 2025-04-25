@@ -32,10 +32,10 @@
             this.panelMapa = new System.Windows.Forms.Panel();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelMenuMapa = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelLocales = new System.Windows.Forms.FlowLayoutPanel();
             this.cBoxMunicipios = new System.Windows.Forms.ComboBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanelLocales = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMapa.SuspendLayout();
             this.panelMenuMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxAtras)).BeginInit();
@@ -92,6 +92,16 @@
             this.panelMenuMapa.TabIndex = 2;
             this.panelMenuMapa.TabStop = true;
             // 
+            // flowLayoutPanelLocales
+            // 
+            this.flowLayoutPanelLocales.AutoScroll = true;
+            this.flowLayoutPanelLocales.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelLocales.Location = new System.Drawing.Point(23, 195);
+            this.flowLayoutPanelLocales.Name = "flowLayoutPanelLocales";
+            this.flowLayoutPanelLocales.Size = new System.Drawing.Size(250, 407);
+            this.flowLayoutPanelLocales.TabIndex = 5;
+            this.flowLayoutPanelLocales.WrapContents = false;
+            // 
             // cBoxMunicipios
             // 
             this.cBoxMunicipios.BackColor = System.Drawing.Color.White;
@@ -127,16 +137,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // flowLayoutPanelLocales
-            // 
-            this.flowLayoutPanelLocales.AutoScroll = true;
-            this.flowLayoutPanelLocales.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelLocales.Location = new System.Drawing.Point(23, 195);
-            this.flowLayoutPanelLocales.Name = "flowLayoutPanelLocales";
-            this.flowLayoutPanelLocales.Size = new System.Drawing.Size(250, 407);
-            this.flowLayoutPanelLocales.TabIndex = 5;
-            this.flowLayoutPanelLocales.WrapContents = false;
-            // 
             // FormMapaLocales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,6 +145,7 @@
             this.ClientSize = new System.Drawing.Size(1284, 711);
             this.Controls.Add(this.panelMapa);
             this.Name = "FormMapaLocales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMapaLocales";
             this.Load += new System.EventHandler(this.FormMapaLocales_Load);
             this.panelMapa.ResumeLayout(false);

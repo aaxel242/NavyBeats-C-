@@ -18,29 +18,25 @@ namespace NavyBeats_C_
 
         public FormNotificaciones() { }
 
+        /// <summary>
+        /// Método que se ejecuta al cargar el formulario + modificaciones de estilo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormNotificaciones_Load(object sender, EventArgs e)
         {
             panelNotificaciones.BackColor = Color.FromArgb(216, 255, 255, 255);
             ApplyRoundedCorners(panelNotificaciones2, 30);
-            CenterForm();
-            LoadNotifications();
-        }
-
-        private void CenterForm()
-        {
-            int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
-            int formHeight = this.Height;
-            int positionX = (screenWidth - formWidth) / 2;
-            int positionY = (screenHeight - formHeight) / 2;
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(positionX, positionY);
+            LoadNotifications(); //Llamamos a la función que carga las notificaciones.
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
         }
 
-        // Función para redondear esquinas; se aplica solo a panelNotificaciones2.
+        /// <summary>
+        /// Aplica esquinas redondeadas a un panel.
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="radius"></param>
         private void ApplyRoundedCorners(Panel panel, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -59,7 +55,9 @@ namespace NavyBeats_C_
             path.CloseFigure();
             panel.Region = new Region(path);
         }
-
+        /// <summary>
+        /// Carga las notificaciones de tickets pendientes en el panel.
+        /// </summary>
         private void LoadNotifications()
         {
             List<TicketInfo> pendingTickets = TicketOrm.GetTicketsPendientes();
@@ -68,7 +66,6 @@ namespace NavyBeats_C_
             foreach (var ticket in pendingTickets)
             {
                 // Crear un panel para cada notificación.
-                // Aquí no se aplican esquinas redondeadas.
                 Panel panelTicket = new Panel
                 {
                     Width = flowLayoutPanelTickets.Width - 40,
@@ -77,7 +74,7 @@ namespace NavyBeats_C_
                     Margin = new Padding(5)
                 };
 
-                // Crear un RichTextBox para mostrar el contenido formateado (RTF).
+                // Crear un RichTextBox para mostrar el contenido formateado.
                 RichTextBox rtb = new RichTextBox
                 {
                     ReadOnly = true,
@@ -90,36 +87,32 @@ namespace NavyBeats_C_
                 };
 
                 // Generar el contenido en RTF con los títulos en negrita y cada título en línea separada.
-                // Puedes ajustar \fs24 para cambiar el tamaño en RTF (24/2 = 12pt, por ejemplo).
                 string rtfContent = @"{\rtf1\ansi\deff0 
-{\fonttbl{\f0 Montserrat;}}
-\fs24
-\b Nombre: \b0 " + ticket.Username + @"\par " +
-@"\b Tipo: \b0 " + ticket.QueryType + @"\par " +
-@"\b Fecha: \b0 " + ticket.CreationDate.ToString("dd/MM/yyyy HH:mm") + @"\par " +
-@"\b Asunto: \b0 " + ticket.Subject + @"\par\par " +
-ticket.Description +
-@"}";
+                {\fonttbl{\f0 Montserrat;}}
+                \fs24
+                \b Nombre: \b0 " + ticket.Username + @"\par " +
+                @"\b Tipo: \b0 " + ticket.QueryType + @"\par " +
+                @"\b Fecha: \b0 " + ticket.CreationDate.ToString("dd/MM/yyyy HH:mm") + @"\par " +
+                @"\b Asunto: \b0 " + ticket.Subject + @"\par\par " +
+                ticket.Description +
+                @"}";
                 rtb.Rtf = rtfContent;
 
-                // Asignar una altura mayor para que se vea cómodo.
-                rtb.Height = 140;  // Aumentamos la altura base
+                rtb.Height = 140;  // Aumentamos la altura base.
 
                 // Crear el botón "Resolve Ticket" y posicionarlo en la esquina inferior derecha.
                 Button btnResolve = new Button
                 {
-                    Text = "Resolve Ticket",
+                    Text = "Cerrar Ticket",
                     Size = new Size(100, 30),
                     BackColor = Color.FromArgb(229, 177, 129),
                     ForeColor = Color.White
                 };
 
-                // Posicionar el botón: 10px del borde derecho y 10px debajo del RichTextBox.
+                // Posicionar el botón debajo del RichTextBox.
                 btnResolve.Location = new Point(panelTicket.Width - btnResolve.Width - 10, rtb.Bottom + 10);
 
                 btnResolve.Click += (s, e) => MarkTicketResolved(ticket.TicketId);
-
-                // Ajustar la altura del panel para que incluya el RichTextBox y el botón.
                 panelTicket.Height = btnResolve.Bottom + 10;
 
                 // Agregar controles al panel.
@@ -130,26 +123,28 @@ ticket.Description +
                 flowLayoutPanelTickets.Controls.Add(panelTicket);
             }
         }
-
+        /// <summary>
+        /// Marca un ticket como resuelto y actualiza la interfaz.
+        /// </summary>
+        /// <param name="ticketId"></param>
         private void MarkTicketResolved(int ticketId)
         {
             bool resolved = TicketOrm.MarkTicketAsResolved(ticketId, loggedUserId);
             if (resolved)
             {
                 MessageBox.Show("Ticket marked as resolved.");
-                LoadNotifications();
+                LoadNotifications(); // Recargar las notificaciones después de resolver una.
             }
             else
             {
                 MessageBox.Show("Failed to mark ticket as resolved.");
             }
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        /// <summary>
+        /// Cerrar formulario al hacer clic en el botón de atrás.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pboxAtras_Click(object sender, EventArgs e)
         {
             this.Close();

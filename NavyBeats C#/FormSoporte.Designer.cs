@@ -31,6 +31,7 @@
             this.panelSoporte = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelFormulario = new System.Windows.Forms.Panel();
+            this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
             this.txtBoxDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxAsunto = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pboxAtras = new System.Windows.Forms.PictureBox();
-            this.btnEnviarForm = new NavyBeats_C_.Controles.CustomBoton();
             this.panelSoporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelFormulario.SuspendLayout();
@@ -96,6 +96,22 @@
             this.panelFormulario.Size = new System.Drawing.Size(599, 573);
             this.panelFormulario.TabIndex = 4;
             // 
+            // btnEnviarForm
+            // 
+            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
+            this.btnEnviarForm.BorderRadius = 20;
+            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
+            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
+            this.btnEnviarForm.Location = new System.Drawing.Point(259, 501);
+            this.btnEnviarForm.Name = "btnEnviarForm";
+            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
+            this.btnEnviarForm.TabIndex = 23;
+            this.btnEnviarForm.Text = "Enviar";
+            this.btnEnviarForm.UseVisualStyleBackColor = false;
+            this.btnEnviarForm.Click += new System.EventHandler(this.btnEnviarForm_Click);
+            // 
             // txtBoxDescripcion
             // 
             this.txtBoxDescripcion.BackColor = System.Drawing.Color.White;
@@ -127,7 +143,7 @@
             this.txtBoxAsunto.Location = new System.Drawing.Point(185, 142);
             this.txtBoxAsunto.MinimumSize = new System.Drawing.Size(4, 30);
             this.txtBoxAsunto.Name = "txtBoxAsunto";
-            this.txtBoxAsunto.Size = new System.Drawing.Size(304, 30);
+            this.txtBoxAsunto.Size = new System.Drawing.Size(304, 19);
             this.txtBoxAsunto.TabIndex = 18;
             // 
             // lblAsunto
@@ -239,22 +255,6 @@
             this.pboxAtras.TabStop = false;
             this.pboxAtras.Click += new System.EventHandler(this.pboxAtras_Click);
             // 
-            // btnEnviarForm
-            // 
-            this.btnEnviarForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(177)))), ((int)(((byte)(129)))));
-            this.btnEnviarForm.BorderRadius = 20;
-            this.btnEnviarForm.FlatAppearance.BorderSize = 0;
-            this.btnEnviarForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviarForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnviarForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(61)))), ((int)(((byte)(119)))));
-            this.btnEnviarForm.Location = new System.Drawing.Point(259, 501);
-            this.btnEnviarForm.Name = "btnEnviarForm";
-            this.btnEnviarForm.Size = new System.Drawing.Size(150, 40);
-            this.btnEnviarForm.TabIndex = 23;
-            this.btnEnviarForm.Text = "Enviar";
-            this.btnEnviarForm.UseVisualStyleBackColor = false;
-            this.btnEnviarForm.Click += new System.EventHandler(this.btnEnviarForm_Click);
-            // 
             // FormSoporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +267,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormSoporte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Soporte";
             this.Load += new System.EventHandler(this.FormSoporte_Load);
             this.panelSoporte.ResumeLayout(false);
